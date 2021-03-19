@@ -12,6 +12,7 @@ import Thermometer from './Thermometer.js';
 import LoveDisplay from './LoveDisplay.js';
 import ExampleEvent from './ExampleEvent.js';
 import ProgressChart from './ProgressChart.js';
+import ActionList from './ActionList.js';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <ExampleEvent />
         <FinalScreen />
         <StartScreen />
+        <ActionList />
       </div>
       Clock: <Clock />
     </div>

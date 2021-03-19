@@ -22,6 +22,29 @@ const store = configureStore({
       tick: 0,
     },
     records: [],
+    actions: {
+      available: [
+        {
+          title: 'CO2-Bla',
+          duration: 10,
+          temp: -5,
+          love: 4,
+        },
+        {
+          title: 'Panzerwagen verbiegen',
+          duration: 3,
+          temp: -2,
+          love: 13,
+        },
+        {
+          title: 'Moore austrocknen',
+          duration: 20,
+          temp: -10,
+          love: -1,
+        },
+      ],
+      active: [],
+    }
   },
 });
 
