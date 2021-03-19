@@ -1,0 +1,7 @@
+.love-display {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-weight: bold;
+  font-size: 2rem;
+}

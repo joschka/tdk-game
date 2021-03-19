@@ -10,6 +10,19 @@ import App from './components/App.js';
 
 const store = configureStore({
   reducer: rootReducer,
+  preloadedState: {
+    temperature: {
+      current: 40,
+      threshold: 15,
+    },
+    love: 40,
+    clock: {
+      isRunning: false,
+      duration: 700,
+      tick: 0,
+    },
+    records: [],
+  },
 });
 
 if (process.env.NODE_ENV !== 'production' && module.hot) {

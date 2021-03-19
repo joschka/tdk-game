@@ -3,9 +3,29 @@ import { hot } from 'react-hot-loader';
 
 import './App.css';
 
+import Clock from './Clock.js';
+import ToggleClock from './ToggleClock.js';
+import ProgressBar from './ProgressBar.js';
+import StartScreen from './StartScreen.js';
+import FinalScreen from './FinalScreen.js';
+import Thermometer from './Thermometer.js';
+import LoveDisplay from './LoveDisplay.js';
+import ExampleEvent from './ExampleEvent.js';
+import ProgressChart from './ProgressChart.js';
+
 function App() {
   return (
-    <div className='app'>
+    <div>
+      <div className='app'>
+        <ProgressChart />
+        <LoveDisplay />
+        <Thermometer />
+        <ProgressBar />
+        <ExampleEvent />
+        <FinalScreen />
+        <StartScreen />
+      </div>
+      Clock: <Clock />
     </div>
   );
 }
