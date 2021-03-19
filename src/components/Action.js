@@ -17,9 +17,13 @@ function Action(props) {
 
   const progress = props.duration - (tick - startTick);
   
-  if (progress <= 0) {
-
-  }
+  useEffect(() => {
+    console.log({progress});
+    if (progress === 0) {
+      dispatch({ type: 'love/increase', data: props.love });
+      dispatch({ type: 'temperature/increase', data: props.temp });
+    }
+  });
 
   return (
     <div className='action'>

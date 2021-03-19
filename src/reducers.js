@@ -36,6 +36,15 @@ export default function rootReducer(state = {}, action) {
           tick,
         }
       };
+    case 'temperature/increase':
+      const currentTemp = state.temperature.current + action.data;
+      return {
+        ...state,
+        temperature: {
+          ...state.temperature,
+          current: currentTemp,
+        }
+      };
     case 'temperature/decrease':
       const current = state.temperature.current - action.data;
       return {
@@ -67,6 +76,19 @@ export default function rootReducer(state = {}, action) {
             ...state.actions.active,
             newActiveAction,
           ]
+        },
+      };
+    case 'action/end':
+      const newEndedAction = state.actions.active.filter(a => a.title === action.data.title)[0];
+      return {
+        ...state,
+        actions: {
+          ...state.actions,
+          active: state.actions.active.filter(a => a.title !== action.data.title),
+          ended: [
+            ...state.actions.ended,
+            newEndedAction,
+          ],
         },
       };
     default:
