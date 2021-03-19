@@ -21,7 +21,6 @@ function ProgressChart() {
       love: r.love,
     };
   });
-  console.log(JSON.stringify(data));
 
 
   return (

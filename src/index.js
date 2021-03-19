@@ -22,29 +22,32 @@ const store = configureStore({
       tick: 0,
     },
     records: [],
-    actions: {
-      available: [
-        {
-          title: 'CO2-Bla',
-          duration: 10,
-          temp: -5,
-          love: 4,
-        },
-        {
-          title: 'Panzerwagen verbiegen',
-          duration: 3,
-          temp: -2,
-          love: 13,
-        },
-        {
-          title: 'Moore austrocknen',
-          duration: 20,
-          temp: -10,
-          love: -1,
-        },
-      ],
-      active: [],
-    }
+    actions: [
+      {
+        id: '1',
+        title: 'CO2-Steuer',
+        duration: 10,
+        temp: -5,
+        love: 4,
+        state: 'available',
+      },
+      {
+        id: '2',
+        title: 'Verbrenner verbieten',
+        duration: 3,
+        temp: -2,
+        love: 13,
+        state: 'available',
+      },
+      {
+        id: '3',
+        title: 'Moore renaturieren',
+        duration: 20,
+        temp: -10,
+        love: -1,
+        state: 'available',
+      },
+    ]
   },
 });
 

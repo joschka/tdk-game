@@ -9,28 +9,19 @@ import Action from './Action.js';
 function ActionList() {
   const dispatch = useDispatch();
 
-  const availableActions = useSelector(state => state.actions.available);
-  const activeActions = useSelector(state => state.actions.active);
+  const actions = useSelector(state => state.actions);
 
-  function renderActiveActions() {
-    return activeActions.map(a => {
-      return <Action title={a.title} duration={a.duration} temp={a.temp} love={a.love} active={true} />;
-    });
-  }
-
-  function renderAvailableActions() {
-    return availableActions.map(a => {
-      return <Action title={a.title} duration={a.duration} temp={a.temp} love={a.love} active={false} />;
-    });
-  }
+  const activeActions = actions.filter(a => a.state === 'active');
+  const availableActions = actions.filter(a => a.state === 'available');
+  const endedActions = actions.filter(a => a.state === 'ended');
 
   return (
     <div className='action-list'>
-      <h3>Active</h3>
-      {renderActiveActions()}
+      {activeActions.map(a => <Action key={a.id} {...a} />)}
       <hr />
-      <h3>Verfügbar</h3>
-      {renderAvailableActions()}
+      {availableActions.map(a => <Action key={a.id} {...a} />)}
+      <hr />
+      {endedActions.map(a => <Action key={a.id} {...a} />)}
     </div>
   );
 }

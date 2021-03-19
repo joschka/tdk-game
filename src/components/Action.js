@@ -11,26 +11,40 @@ function Action(props) {
 
   const [startTick, setStartTick] = useState(tick);
 
+  const {
+    id,
+    state,
+    title,
+    duration,
+    temp,
+    love
+  } = props;
+
   function handleClick() {
-    dispatch({ type: 'action/activate', data: props.title });
+    dispatch({ type: 'action/activate', data: { id } });
   }
 
-  const progress = props.duration - (tick - startTick);
+  const progress = duration - (tick - startTick);
   
   useEffect(() => {
-    console.log({progress});
-    if (progress === 0) {
-      dispatch({ type: 'love/increase', data: props.love });
-      dispatch({ type: 'temperature/increase', data: props.temp });
+    if (state === 'active' && progress === 0) {
+      dispatch({ type: 'love/increase', data: love });
+      dispatch({ type: 'temperature/increase', data: temp });
+      dispatch({ type: 'action/end', data: { id } });
     }
   });
 
+  const cssClasses = [
+    'action',
+    `action_${state}`,
+  ];
+
   return (
-    <div className='action'>
-      { props.title || 'No title :(' }
-      temp { props.temp }, beliebtheit { props.love }
-      { !props.active && <button onClick={handleClick}>Los</button> }
-      { props.active && progress }
+    <div className={cssClasses.join(' ')}>
+      { title || 'No title :(' }
+      temp { temp }, beliebtheit { love }
+      { state === 'available' && <button onClick={handleClick}>Los</button> }
+      { state === 'active' && progress }
     </div>
   );
 }

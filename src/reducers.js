@@ -67,29 +67,14 @@ export default function rootReducer(state = {}, action) {
         love: increasedLove,
       };
     case 'action/activate':
-      const newActiveAction = state.actions.available.filter(a => a.title === action.data)[0];
       return {
         ...state,
-        actions: {
-          available: state.actions.available.filter(a => a.title !== action.data),
-          active: [
-            ...state.actions.active,
-            newActiveAction,
-          ]
-        },
+        actions: state.actions.map(a => a.id === action.data.id ? { ...a, state: 'active' } : a),
       };
     case 'action/end':
-      const newEndedAction = state.actions.active.filter(a => a.title === action.data.title)[0];
       return {
         ...state,
-        actions: {
-          ...state.actions,
-          active: state.actions.active.filter(a => a.title !== action.data.title),
-          ended: [
-            ...state.actions.ended,
-            newEndedAction,
-          ],
-        },
+        actions: state.actions.map(a => a.id === action.data.id ? { ...a, state: 'ended' } : a),
       };
     default:
       return state;
