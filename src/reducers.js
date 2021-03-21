@@ -76,6 +76,16 @@ export default function rootReducer(state = {}, action) {
         ...state,
         actions: state.actions.map(a => a.id === action.data.id ? { ...a, state: 'ended' } : a),
       };
+    case 'actions/open':
+      return {
+        ...state,
+        actionsVisible: true,
+      };
+    case 'actions/close':
+      return {
+        ...state,
+        actionsVisible: false,
+      };
     default:
       return state;
   }

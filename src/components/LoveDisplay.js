@@ -11,8 +11,12 @@ function LoveDisplay() {
 
   const formatted = `${love}%`;
 
+  const style = {
+    top: `${250 - love * 2.5}px`,
+  };
+
   return (
-    <div className='love-display'>
+    <div className='love-display' style={style}>
       { formatted }
     </div>
   );

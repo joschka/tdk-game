@@ -1,7 +1,129 @@
 .thermometer {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  font-size: 2rem;
-  font-weight: bold;
+  position: relative;
+  padding: 15px;
 }
+
+.thermometer--medium {
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.thermometer--small {
+  padding: 5px 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.thermometer__current-temperature {
+}
+
+.thermometer--large .thermometer__current-temperature {
+  position: absolute;
+  top: 30px;
+  left: 70px;
+  padding: 5px 5px 5px 8px;
+  border-radius: 8px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+  transition: top 2s linear;
+}
+
+.thermometer--medium .thermometer__current-temperature {
+  margin-left: 8px;
+}
+
+.thermometer--large .thermometer__current-temperature::after,
+.thermometer--large .thermometer__target-temperature::after {
+  content: '';
+  position: absolute;
+  height: 2px;
+  width: 12px;
+  background-color: #999;
+  left: -12px;
+  top: 16px;
+}
+
+.thermometer--small .thermometer__current-temperature {
+  margin-left: 5px;
+}
+
+.thermometer__target-temperature {
+  position: absolute;
+  top: 140px;
+  left: 70px;
+  padding: 5px 5px 5px 8px;
+  border-radius: 8px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+}
+
+.thermometer__container {
+  position: relative;
+  width: 57px;
+  height: 200px;
+}
+
+.thermometer--medium .thermometer__container {
+  position: relative;
+  width: 28px;
+  height: 100px;
+}
+
+.thermometer--small .thermometer__container {
+  position: relative;
+  width: 14px;
+  height: 50px;
+}
+
+.thermometer__mask {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  background-image: url('./Thermometer.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.thermometer__mask-background {
+  position: absolute;
+  right: 30%;
+  bottom: 20%;
+  left: 30%;
+  height: 76%;
+  border-radius: 5px;
+  background-color: #ccc;
+}
+
+.thermometer__bar {
+  position: absolute;
+  right: 30%;
+  bottom: 27%;
+  left: 30%;
+  z-index: 1;
+  overflow: hidden;
+  height: 10%;
+  transition: height 2s linear;
+}
+
+.thermometer__bar-background {
+  height: 150px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(to bottom, #be1623, #be1632 60%, #fce90e);
+}
+
+.thermometer--medium .thermometer__bar-background {
+  height: 75px;
+}
+
+.thermometer--small .thermometer__bar-background {
+  height: 32px;
+}
+

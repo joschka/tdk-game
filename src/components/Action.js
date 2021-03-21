@@ -17,14 +17,27 @@ function Action(props) {
     title,
     duration,
     temp,
-    love
+    love,
+    actionable
   } = props;
 
-  function handleClick() {
+  function handleClick(e) {
+    e.stopPropagation();
+    e.preventDefault();
     dispatch({ type: 'action/activate', data: { id } });
   }
 
   const progress = duration - (tick - startTick);
+
+  function renderProgress() {
+    const style = {
+      width: `${progress / duration * 100}%`
+    };
+
+    return <div className='action__progress-outer'>
+      <div className='action__progress-inner' style={style}></div>
+    </div>;
+  }
   
   useEffect(() => {
     if (state === 'active' && progress === 0) {
@@ -41,10 +54,12 @@ function Action(props) {
 
   return (
     <div className={cssClasses.join(' ')}>
+      <div className='action__progress-label'>
       { title || 'No title :(' }
-      temp { temp }, beliebtheit { love }
-      { state === 'available' && <button onClick={handleClick}>Los</button> }
-      { state === 'active' && progress }
+      temp({ temp }), beliebtheit({ love })
+      { state === 'available' && actionable && <button className='action__button' onClick={handleClick}>+</button> }
+      </div>
+      { state === 'active' && renderProgress() }
     </div>
   );
 }

@@ -1,0 +1,58 @@
+.love-chart {
+  height: 200px;
+  position: relative;
+  xwidth: 180px;
+  background-color: #fff;
+  padding: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.love-chart--medium {
+  flex-direction: row;
+  height: 100px;
+}
+
+.love-chart--small {
+  width: 100px;
+  height: 80px;
+}
+
+.love-chart__svg-container {
+  width: 100%;
+  overflow: hidden;
+}
+
+.love-chart__slide {
+  transition: transform 1s linear;
+}
+
+.love-chart > svg {
+  border: 1px solid black;
+}
+
+.love-chart__label {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.love-chart__heart {
+  width: 30px;
+  margin-right: 10px;
+}
+
+@keyframes lovechart {
+  from {
+    transform: translateX(0);
+  }
+  
+  to {
+    transform: translateX(-5%);
+  }
+}

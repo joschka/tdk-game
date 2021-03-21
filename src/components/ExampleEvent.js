@@ -21,13 +21,15 @@ function ExampleEvent() {
 
   useEffect(() => {
     if (tick === 10) {
-      dispatch({ type: 'clock/stop' });
+      //dispatch({ type: 'clock/stop' });
     }
   });
 
   const show = tick === 10;
 
   if (!show) return '';
+
+  return '';
 
   return (
     <div className='example-event'>

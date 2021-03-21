@@ -10,18 +10,48 @@ function ActionList() {
   const dispatch = useDispatch();
 
   const actions = useSelector(state => state.actions);
+  const visible = useSelector(state => state.actionsVisible);
 
   const activeActions = actions.filter(a => a.state === 'active');
   const availableActions = actions.filter(a => a.state === 'available');
   const endedActions = actions.filter(a => a.state === 'ended');
 
+  const emptySlots = Array.from('x'.repeat(3 - activeActions.length));
+
+  function handleOpenClick(e) {
+    e.stopPropagation();
+    e.preventDefault();
+    dispatch({ type: 'actions/open' });
+    dispatch({ type: 'clock/stop' });
+  }
+
+  function handleCloseClick(e) {
+    console.log("close", e);
+    e.stopPropagation();
+    e.preventDefault();
+    dispatch({ type: 'actions/close' });
+    dispatch({ type: 'clock/start' });
+  }
+
+  const opts = {
+    className: [
+      'action-list',
+      visible ? 'action-list--open' : '',
+    ].join(' '),
+    onClick: handleCloseClick,
+  };
+
   return (
-    <div className='action-list'>
-      {activeActions.map(a => <Action key={a.id} {...a} />)}
-      <hr />
-      {availableActions.map(a => <Action key={a.id} {...a} />)}
-      <hr />
-      {endedActions.map(a => <Action key={a.id} {...a} />)}
+    <div {...opts}>
+      <div className='action-list__list'>
+        <strong>Maßnahmen in der Umsetzung</strong><br />
+        {activeActions.map(a => <Action key={a.id} {...a} />)}
+        {emptySlots.map((s, index) => <div key={`empty_${index}`} className='action action__empty'></div>)}
+        {!visible && <button onClick={handleOpenClick}>weitere Maßnahmen auswählen</button>}
+        {visible && <button onClick={handleCloseClick}>schließen</button>}
+        {visible && availableActions.map(a => <Action key={a.id} {...a} actionable={emptySlots.length > 0}/>)}
+        {visible && endedActions.map(a => <Action key={a.id} {...a} />)}
+      </div>
     </div>
   );
 }

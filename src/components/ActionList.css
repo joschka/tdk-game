@@ -2,4 +2,21 @@
   position: absolute;
   bottom: 0;
   left: 0;
+  right: 0;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background: rgba(0, 255, 0, 0.4);
+z-index: 1;
+}
+
+.action-list--open {
+  top: 0;
+}
+
+
+.action-list__list {
+  background: khaki;
+  overflow-y: scroll;
 }

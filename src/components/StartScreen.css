@@ -6,4 +6,5 @@
   right: 0;
   background: lightblue;
   text-align: center;
+  z-index: 4;
 }

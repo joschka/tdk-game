@@ -1,7 +1,19 @@
+.app *,
+.app *::after,
+.app *::before {
+  box-sizing: border-box;
+}
+
+
 .app {
   position: relative;
   margin: 10px auto;
   width: 375px;
   height: 667px;
   border: 1px solid #999;
+  font-family: sans-serif;
+}
+
+.bg-gradient {
+  background: linear-gradient(to bottom, #ffe2f5, #cbdffc);
 }

@@ -1,2 +1,45 @@
 .action {
+  margin-bottom: 5px;
+  position: relative;
+  min-height: 16px;
+}
+
+.action__button {
+  border-radius: 50%;
+  background-color: green;
+  color: white;
+  font-weight: bold;
+}
+
+.action__progress-outer {
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  height: 10px;
+  width: 50px;
+}
+
+.action__progress-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  background-color: green;
+}
+
+.action__progress-label {
+  padding-right: 70px;
+}
+
+/* urks, fix this */
+.action__empty {
+  height: 16px;
+  border: 1px solid gray;
+}
+
+.action_active {
+}
+
+.action_ended {
+  color: lightgray;
 }

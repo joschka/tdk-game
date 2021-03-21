@@ -14,6 +14,7 @@ function ProgressChart() {
   const dispatch = useDispatch();
 
   const records = useSelector(state => state.records);
+  const currentLove = useSelector(state => state.love);
 
   const data = records.slice(-15, -1).map((r, index) => {
     return {
@@ -21,6 +22,16 @@ function ProgressChart() {
       love: r.love,
     };
   });
+
+  if (data.length < 15) {
+    const missing = 15 - data.length;
+    for (let i = data.length; i < missing; i++) {
+      data.push({
+        name: i,
+        love: currentLove,
+      });
+    }
+  }
 
   const options = {
     chart: {
