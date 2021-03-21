@@ -23,6 +23,7 @@ function ActionList() {
     e.preventDefault();
     dispatch({ type: 'actions/open' });
     dispatch({ type: 'clock/stop' });
+    dispatch({ type: 'dashboard/small' });
   }
 
   function handleCloseClick(e) {
@@ -31,6 +32,11 @@ function ActionList() {
     e.preventDefault();
     dispatch({ type: 'actions/close' });
     dispatch({ type: 'clock/start' });
+    if (activeActions.length > 0) {
+      dispatch({ type: 'dashboard/medium' });
+    } else {
+      dispatch({ type: 'dashboard/large' });
+    }
   }
 
   const opts = {

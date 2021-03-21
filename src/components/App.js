@@ -20,10 +20,7 @@ function App() {
   return (
     <div>
       <div className='app'>
-        <Dashboard size='small' />
-        <Dashboard size='medium' />
-        <Dashboard size='large' />
-        <ProgressBar />
+        <Dashboard />
         <ExampleEvent />
         <FinalScreen />
         <StartScreen />

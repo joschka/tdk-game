@@ -86,6 +86,30 @@ export default function rootReducer(state = {}, action) {
         ...state,
         actionsVisible: false,
       };
+    case 'dashboard/large':
+      return {
+        ...state,
+        dashboard: {
+          ...state.dashboard,
+          size: 'large',
+        },
+      };
+    case 'dashboard/medium':
+      return {
+        ...state,
+        dashboard: {
+          ...state.dashboard,
+          size: 'medium',
+        },
+      };
+    case 'dashboard/small':
+      return {
+        ...state,
+        dashboard: {
+          ...state.dashboard,
+          size: 'small',
+        },
+      };
     default:
       return state;
   }
