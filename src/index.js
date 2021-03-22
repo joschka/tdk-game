@@ -27,6 +27,7 @@ const store = configureStore({
     love: 40,
     clock: {
       isRunning: false,
+      isFast: false,
       duration: 159 * 4, // 159 Monate (4 ticks == 1 month)
       tick: 0,
     },

@@ -7,6 +7,7 @@ import './Dashboard.css';
 import Thermometer from './Thermometer.js';
 import LoveChart from './LoveChart.js';
 import ProgressBar from './ProgressBar.js';
+import PlayFastForwardButton from './PlayFastForwardButton.js';
 
 function Dashboard(props) {
   const dispatch = useDispatch();
@@ -27,6 +28,7 @@ function Dashboard(props) {
       <Thermometer size={size} />
       <LoveChart size={size} />
       <ProgressBar size={size} />
+      <PlayFastForwardButton size={size} />
     </div>
   );
 }

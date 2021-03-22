@@ -33,6 +33,12 @@
   width: 100%;
 }
 
+.dashboard > :nth-child(4) {
+  grid-column: 10 / 13;
+  grid-row: 2;
+  width: 100%;
+}
+
 .dashboard--small > * {
   border-radius: 8px;
   font-size: 18px;
@@ -62,6 +68,12 @@
 
 .dashboard--small > :nth-child(3) {
   grid-column: 8 / 10;
+  grid-row: 1;
+  height: 60px;
+}
+
+.dashboard--small > :nth-child(4) {
+  grid-column: 10 / 13;
   grid-row: 1;
   height: 60px;
 }

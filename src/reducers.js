@@ -12,6 +12,22 @@ export default function rootReducer(state = {}, action) {
           isRunning: true
         }
       };
+    case 'clock/fast':
+      return {
+        ...state,
+        clock: {
+          ...state.clock,
+          isFast: true,
+        }
+      };
+    case 'clock/normal':
+      return {
+        ...state,
+        clock: {
+          ...state.clock,
+          isFast: false,
+        }
+      };
     case 'clock/stop':
       return {
         ...state,

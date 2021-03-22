@@ -7,6 +7,7 @@ import './Clock.css';
 function Clock() {
   const dispatch = useDispatch();
   const isRunning = useSelector(state => state.clock.isRunning);
+  const isFast = useSelector(state => state.clock.isFast);
   const ticks = useSelector(state => state.clock.ticks);
 
   useEffect(() => {
@@ -17,16 +18,15 @@ function Clock() {
     const intervalId = setInterval(() => {
       _ticks++;
       dispatch({ type: 'clock/tick', data: _ticks });
-    }, 1000);
+    }, isFast ? 250 : 1000);
 
     return function() {
       clearInterval(intervalId);
     }
-  }, [isRunning]);
+  }, [isRunning, isFast]);
 
   return (
     <div className='clock'>
-      {isRunning ? 'Läuft' : 'Pause'}
     </div>
   );
 }
