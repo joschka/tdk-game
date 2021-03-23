@@ -21,6 +21,7 @@ function PlayFastForwardButton() {
   function onClick() {
     if (!isRunning) {
       dispatch({ type: 'clock/start' });
+      dispatch({ type: 'ui/state', data: 'top' });
     }
   }
 

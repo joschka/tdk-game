@@ -13,22 +13,40 @@ function Dashboard(props) {
   const dispatch = useDispatch();
 
   // large, medium, small
-  const size = props.size || useSelector(state => state.dashboard.size);
+  const uiState = useSelector(state => state.ui.state);
 
-  const opts = {
+  const size = props.size || (uiState === 'top' && 'large') || (uiState === 'bottom' && 'small');
+
+  const optsLarge = {
     className: [
       'dashboard',
-      `dashboard--${size}`,
+      `dashboard--large`,
+      'bg-gradient',
+    ].join(' '),
+  };
+
+  const optsSmall = {
+    className: [
+      'dashboard',
+      `dashboard--small`,
       'bg-gradient',
     ].join(' '),
   };
 
   return (
-    <div {...opts}>
-      <Thermometer size={size} />
-      <LoveChart size={size} />
-      <ProgressBar size={size} />
-      <PlayFastForwardButton size={size} />
+    <div>
+      <div {...optsLarge}>
+        <Thermometer size={'large'} />
+        <LoveChart size={'large'} />
+        <ProgressBar size={'large'} />
+        <PlayFastForwardButton size={'large'} />
+      </div>
+      { uiState === 'bottom' && <div {...optsSmall}>
+        <Thermometer size={'small'} />
+        <LoveChart size={'small'} />
+        <ProgressBar size={'small'} />
+        <PlayFastForwardButton size={'small'} />
+      </div> }
     </div>
   );
 }

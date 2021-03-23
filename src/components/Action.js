@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { hot } from 'react-hot-loader';
 
+import MiniThermometer from './MiniThermometer.js';
+
 import './Action.css';
 
 function Action(props) {
@@ -49,17 +51,19 @@ function Action(props) {
 
   const cssClasses = [
     'action',
-    `action_${state}`,
+    `action--${state}`,
+    props.minimized && 'action--minimized',
   ];
 
   return (
     <div className={cssClasses.join(' ')}>
-      <div className='action__progress-label'>
-      { title || 'No title :(' }
-      temp({ temp }), beliebtheit({ love })
-      { state === 'available' && actionable && <button className='action__button' onClick={handleClick}>+</button> }
+      <div className='action__title'>{ title }</div>
+      <div className='action__tools'>
+        { state === 'available' && `L: ${love}` }
+        { state === 'available' && <MiniThermometer percentage={temp * -400} /> }
+        { state === 'available' && actionable && <button className='action__button' onClick={handleClick}>+</button> }
+        { state === 'active' && renderProgress() }
       </div>
-      { state === 'active' && renderProgress() }
     </div>
   );
 }

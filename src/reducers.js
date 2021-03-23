@@ -126,6 +126,14 @@ export default function rootReducer(state = {}, action) {
           size: 'small',
         },
       };
+    case 'ui/state':
+      return {
+        ...state,
+        ui: {
+          ...state.ui,
+          state: action.data,
+        },
+      };
     default:
       return state;
   }

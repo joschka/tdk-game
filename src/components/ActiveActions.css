@@ -1,0 +1,20 @@
+.active-actions {
+}
+
+.active-actions--minimized {
+  display: grid;
+  grid-gap: 8px;
+  grid-template-columns: 1fr;
+}
+
+.active-actions--minimized-2 {
+  grid-template-columns: 1fr 1fr;
+}
+
+.active-actions--minimized-3 {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.active-actions--minimized-4 {
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}

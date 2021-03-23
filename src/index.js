@@ -17,6 +17,9 @@ const duration = {
 const store = configureStore({
   reducer: rootReducer,
   preloadedState: {
+    ui: {
+      state: 'top',
+    },
     dashboard: {
       size: 'large',
     },
@@ -148,6 +151,7 @@ const store = configureStore({
       },
     ],
     actionsVisible: false,
+    activeActionsMinimized: true,
   },
 });
 

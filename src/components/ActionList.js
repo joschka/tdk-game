@@ -10,7 +10,8 @@ function ActionList() {
   const dispatch = useDispatch();
 
   const actions = useSelector(state => state.actions);
-  const visible = useSelector(state => state.actionsVisible);
+  const uiState = useSelector(state => state.ui.state);
+  const visible = uiState === 'bottom';
 
   const activeActions = actions.filter(a => a.state === 'active');
   const availableActions = actions.filter(a => a.state === 'available');
@@ -23,7 +24,7 @@ function ActionList() {
     e.preventDefault();
     dispatch({ type: 'actions/open' });
     dispatch({ type: 'clock/stop' });
-    dispatch({ type: 'dashboard/small' });
+    dispatch({ type: 'ui/state', data: 'bottom' });
   }
 
   function handleCloseClick(e) {
@@ -32,6 +33,7 @@ function ActionList() {
     e.preventDefault();
     dispatch({ type: 'actions/close' });
     dispatch({ type: 'clock/start' });
+    dispatch({ type: 'ui/state', data: 'top' });
     if (activeActions.length > 0) {
       dispatch({ type: 'dashboard/medium' });
     } else {
@@ -50,13 +52,8 @@ function ActionList() {
   return (
     <div {...opts}>
       <div className='action-list__list'>
-        <strong>Maßnahmen in der Umsetzung</strong><br />
-        {activeActions.map(a => <Action key={a.id} {...a} />)}
-        {emptySlots.map((s, index) => <div key={`empty_${index}`} className='action action__empty'></div>)}
-        {!visible && <button onClick={handleOpenClick}>weitere Maßnahmen auswählen</button>}
-        {visible && <button onClick={handleCloseClick}>schließen</button>}
-        {visible && availableActions.map(a => <Action key={a.id} {...a} actionable={emptySlots.length > 0}/>)}
-        {visible && endedActions.map(a => <Action key={a.id} {...a} />)}
+        { availableActions.map(a => <Action key={a.id} {...a} actionable={emptySlots.length > 0}/>)}
+        { endedActions.map(a => <Action key={a.id} {...a} />)}
       </div>
     </div>
   );

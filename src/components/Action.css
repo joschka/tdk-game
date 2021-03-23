@@ -1,45 +1,62 @@
 .action {
-  margin-bottom: 5px;
-  position: relative;
-  min-height: 16px;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid gray;
 }
 
-.action__button {
-  border-radius: 50%;
-  background-color: green;
-  color: white;
+.action--minimized {
+  overflow: hidden;
+  border-bottom: 0;
+}
+
+.action--minimized .action__title {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  margin-right: 5px;
+}
+
+.action__title {
   font-weight: bold;
 }
 
+.action__tools {
+  flex-shrink: 0;
+  display: flex;
+}
+
 .action__progress-outer {
-  position: absolute;
-  top: 3px;
-  right: 3px;
+  margin-top: 3px;
+  position: relative;
   height: 10px;
   width: 50px;
+  box-shadow: 0 0 4px gray;
+  border-radius: 5px;
+  overflow: hidden;
 }
 
 .action__progress-inner {
   position: absolute;
   top: 0;
-  left: 0;
   bottom: 0;
-  background-color: green;
+  left: 0;
+  background-color: red;
 }
 
-.action__progress-label {
-  padding-right: 70px;
+.action__button {
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  background-color: #3eb237;
+  color: white;
+  font-weight: bold;
+  font-size: 32px;
+  border: 0;
+  box-shadow: 0 2px 0 darkgreen, 0 2px 10px gray;
+  margin-left: 10px;
 }
 
-/* urks, fix this */
-.action__empty {
-  height: 16px;
-  border: 1px solid gray;
-}
-
-.action_active {
-}
-
-.action_ended {
+.action--ended {
   color: lightgray;
 }
