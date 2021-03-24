@@ -22,6 +22,7 @@ function PlayFastForwardButton() {
     if (!isRunning) {
       dispatch({ type: 'clock/start' });
       dispatch({ type: 'ui/state', data: 'top' });
+      window.scrollTo(0,0);
     }
   }
 

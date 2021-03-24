@@ -134,6 +134,11 @@ export default function rootReducer(state = {}, action) {
           state: action.data,
         },
       };
+    case 'action/show':
+      return {
+        ...state,
+        actionShown: action.data.id,
+      };
     default:
       return state;
   }

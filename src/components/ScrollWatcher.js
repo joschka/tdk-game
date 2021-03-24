@@ -12,8 +12,10 @@ function ScrollWatcher() {
   function onScroll() {
     if (window.scrollY > 264 && uiState === 'top') {
       dispatch({ type: 'ui/state', data: 'bottom' });
+      dispatch({ type: 'clock/stop' });
     } else if (window.scrollY <= 264 && uiState === 'bottom') {
       dispatch({ type: 'ui/state', data: 'top' });
+      dispatch({ type: 'clock/start' });
     }
   }
 

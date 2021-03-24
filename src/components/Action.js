@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { hot } from 'react-hot-loader';
 
 import MiniThermometer from './MiniThermometer.js';
+import MiniHeart from './MiniHeart.js';
 
 import './Action.css';
 
@@ -10,6 +11,7 @@ function Action(props) {
   const dispatch = useDispatch();
 
   const tick = useSelector(state => state.clock.tick);
+  const shownAction = useSelector(state => state.actionShown);
 
   const [startTick, setStartTick] = useState(tick);
 
@@ -17,6 +19,7 @@ function Action(props) {
     id,
     state,
     title,
+    description,
     duration,
     temp,
     love,
@@ -27,6 +30,14 @@ function Action(props) {
     e.stopPropagation();
     e.preventDefault();
     dispatch({ type: 'action/activate', data: { id } });
+  }
+
+  function onStripeClick() {
+    if (shownAction === id) {
+      dispatch({ type: 'action/show', data: { id: null } });
+    } else {
+      dispatch({ type: 'action/show', data: { id } });
+    }
   }
 
   const progress = duration - (tick - startTick);
@@ -57,13 +68,18 @@ function Action(props) {
 
   return (
     <div className={cssClasses.join(' ')}>
-      <div className='action__title'>{ title }</div>
-      <div className='action__tools'>
-        { state === 'available' && `L: ${love}` }
-        { state === 'available' && <MiniThermometer percentage={temp * -400} /> }
-        { state === 'available' && actionable && <button className='action__button' onClick={handleClick}>+</button> }
-        { state === 'active' && renderProgress() }
+      <div className='action__stripe' onClick={onStripeClick}>
+        <div className='action__title'>{ title }</div>
+        <div className='action__tools'>
+          { state === 'available' && <MiniThermometer percentage={temp * -300} /> }
+          { state === 'available' && <MiniHeart love={love} /> }
+          { state === 'available' && actionable && <button className='action__button' onClick={handleClick}>+</button> }
+          { state === 'active' && renderProgress() }
+        </div>
       </div>
+      { state === 'available' && shownAction === id && <div className='action__description'>
+        <p>{ description }</p>
+      </div> }
     </div>
   );
 }

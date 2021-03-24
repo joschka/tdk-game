@@ -10,7 +10,7 @@ function MiniThermometer(props) {
   const width = 40;
   const height = 75 + 6;
 
-  const percentage = props.percentage;
+  const percentage = Math.min(props.percentage, 100);
 
   function renderShape(delta, color) {
     const center = width / 2;
