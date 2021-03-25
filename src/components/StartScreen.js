@@ -10,13 +10,19 @@ function StartScreen() {
   const gameStarted = useSelector(state => state.game.started);
   const introStep = useSelector(state => state.game.introStep);
 
-  if (gameStarted || introStep !== 0) return null;
 
   function nextStep(e) {
     dispatch({ type: 'game/introStep', data: 1 });
-    document.querySelector('#audio-player').play();
   } 
 
+  useEffect(() => {
+    document.querySelector('.start-screen svg').addEventListener('click', () => {
+      document.querySelector('#audio-player').play();
+    });
+    return () => {};
+  }, []);
+
+  if (gameStarted || introStep !== 0) return null;
   return (
     <div className='start-screen fixed-screen'>
       <h1 className='start-screen__title'>
