@@ -17,6 +17,10 @@ const duration = {
 const store = configureStore({
   reducer: rootReducer,
   preloadedState: {
+    game: {
+      started: false,
+      introStep: 0,
+    },
     ui: {
       state: 'top',
     },

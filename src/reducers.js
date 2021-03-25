@@ -4,6 +4,22 @@ function randomIntFromInterval(min, max) { // min and max included
 
 export default function rootReducer(state = {}, action) {
   switch (action.type) {
+    case 'game/start':
+      return {
+        ...state,
+        game: {
+          ...state.game,
+          started: true,
+        },
+      };
+    case 'game/introStep':
+      return {
+        ...state,
+        game: {
+          ...state.game,
+          introStep: action.data,
+        },
+      };
     case 'clock/start':
       return {
         ...state,

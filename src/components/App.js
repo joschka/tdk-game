@@ -1,14 +1,16 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import { hot } from 'react-hot-loader';
 
 import './App.css';
 
+import StartScreen from './StartScreen.js';
+import Explainer from './Explainer.js';
 import Dashboard from './Dashboard.js';
 import LoveChart from './LoveChart.js';
 import Clock from './Clock.js';
 import ToggleClock from './ToggleClock.js';
 import ProgressBar from './ProgressBar.js';
-import StartScreen from './StartScreen.js';
 import FinalScreen from './FinalScreen.js';
 import Thermometer from './Thermometer.js';
 import LoveDisplay from './LoveDisplay.js';
@@ -18,17 +20,29 @@ import ActionArea from './ActionArea.js';
 import ScrollWatcher from './ScrollWatcher.js';
 
 function App() {
+  const gameStarted = useSelector(state => state.game.started);
+  const introStep = useSelector(state => state.game.introStep);
+
   return (
     <div>
       <div className='app'>
-        <Dashboard />
-        <ActionArea />
-        <ExampleEvent />
-        <FinalScreen />
-        <StartScreen />
+        <StartScreen />        
+        <Explainer />
+        { gameStarted &&
+        <>
+          <Dashboard />
+          <ActionArea />
+          <ExampleEvent />
+          <FinalScreen />
+        </>
+        }
       </div>
       <Clock />
       <ScrollWatcher />
+      <audio  id='audio-player'>
+        <source src='/test.mp3' type='audio/mpeg' />
+      </audio>
+
     </div>
   );
 }
