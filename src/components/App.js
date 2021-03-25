@@ -40,7 +40,7 @@ function App() {
       <Clock />
       <ScrollWatcher />
       <audio  id='audio-player'>
-        <source src='/test.mp3' type='audio/mpeg' />
+        <source src='./test.mp3' type='audio/mp3' />
       </audio>
 
     </div>
