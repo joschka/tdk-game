@@ -18,7 +18,7 @@ function Clock() {
     const intervalId = setInterval(() => {
       _ticks++;
       dispatch({ type: 'clock/tick', data: _ticks });
-    }, isFast ? 250 : 1000);
+    }, isFast ? 100 : 500);
 
     return function() {
       clearInterval(intervalId);

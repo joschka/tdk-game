@@ -27,21 +27,25 @@ function PlayFastForwardButton() {
   }
 
   function onMouseDown() {
+    console.log('mousedown');
     if (isRunning && !isFast) {
+      console.log('mousedown! fast');
       dispatch({ type: 'clock/fast' });
     }
   }
 
   function onMouseUp() {
+    console.log('mouseUP');
     if (isRunning && isFast) {
+      console.log('mouseUP! normal');
       dispatch({ type: 'clock/normal' });
     }
   }
 
   return (
-    <button onClick={onClick} onMouseDown={onMouseDown} onTouchStart={onMouseDown} onTouchEnd={onMouseUp} onMouseUp={onMouseUp} className='play-fast-forward-button'>
+    <div onClick={onClick} onMouseDown={onMouseDown} onTouchStart={onMouseDown} onTouchEnd={onMouseUp} onMouseUp={onMouseUp} className='play-fast-forward-button'>
       { renderIcon() }
-    </button>
+    </div>
   );
 }
 

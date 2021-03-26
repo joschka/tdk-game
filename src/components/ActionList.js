@@ -11,13 +11,12 @@ function ActionList() {
 
   const actions = useSelector(state => state.actions);
   const uiState = useSelector(state => state.ui.state);
-  const visible = uiState === 'bottom';
 
   const activeActions = actions.filter(a => a.state === 'active');
   const availableActions = actions.filter(a => a.state === 'available');
   const endedActions = actions.filter(a => a.state === 'ended');
 
-  const emptySlots = Array.from('x'.repeat(3 - activeActions.length));
+  const emptySlots = Array.from('x'.repeat(4 - activeActions.length));
 
   function handleOpenClick(e) {
     e.stopPropagation();
@@ -44,7 +43,6 @@ function ActionList() {
   const opts = {
     className: [
       'action-list',
-      visible ? 'action-list--open' : '',
     ].join(' '),
     onClick: handleCloseClick,
   };

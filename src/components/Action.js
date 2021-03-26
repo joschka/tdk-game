@@ -54,7 +54,7 @@ function Action(props) {
   
   useEffect(() => {
     if (state === 'active' && progress === 0) {
-      dispatch({ type: 'love/increase', data: love });
+      dispatch({ type: 'love/change', data: love });
       dispatch({ type: 'temperature/increase', data: temp });
       dispatch({ type: 'action/end', data: { id } });
     }

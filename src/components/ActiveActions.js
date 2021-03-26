@@ -14,7 +14,7 @@ function ActiveActions() {
 
   const activeActions = actions.filter(a => a.state === 'active');
 
-  const minimized = uiState === 'bottom';
+  const minimized = false;//uiState === 'bottom';
 
   const opts = {
     className: [

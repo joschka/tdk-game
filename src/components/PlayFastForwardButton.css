@@ -1,6 +1,10 @@
 .play-fast-forward-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .play-fast-forward-button svg {
   height: 50%;
+  width: 50%;
 }

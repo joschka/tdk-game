@@ -86,17 +86,15 @@ export default function rootReducer(state = {}, action) {
           current,
         }
       };
-    case 'love/decrease':
-      const decreasedLove = state.love - action.data;
+    case 'love/change':
+      let multiplier = 1;
+      if (state.love > 20 && state.love < 80) {
+        multiplier = 10;
+      }
+      const newLove = state.love + action.data * multiplier;
       return {
         ...state,
-        love: decreasedLove,
-      };
-    case 'love/increase':
-      const increasedLove = state.love + action.data;
-      return {
-        ...state,
-        love: increasedLove,
+        love: newLove,
       };
     case 'action/activate':
       return {
