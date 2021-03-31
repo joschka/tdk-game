@@ -50,8 +50,7 @@ function ActionList() {
   return (
     <div {...opts}>
       <div className='action-list__list'>
-        { availableActions.map(a => <Action key={a.id} {...a} actionable={emptySlots.length > 0}/>)}
-        { endedActions.map(a => <Action key={a.id} {...a} />)}
+        { actions.map(a => <Action key={a.id} {...a} actionable={emptySlots.length > 0}/>)}
       </div>
     </div>
   );

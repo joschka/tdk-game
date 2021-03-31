@@ -19,7 +19,6 @@ function ActionArea() {
   return (
     <div className='action-area' style={style}>
       <div className='action-area__active-actions'>
-        <ActiveActions />
       </div>
       <ActionList />
     </div>

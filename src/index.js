@@ -48,6 +48,7 @@ const store = configureStore({
         temp: -0.25,
         love: 2,
         state: 'available',
+        activeSinceTick: null,
       },
       {
         id: '3',
@@ -57,6 +58,7 @@ const store = configureStore({
         temp: -0.1,
         love: 1,
         state: 'available',
+        activeSinceTick: null,
       },
       {
         id: '4',
@@ -66,6 +68,7 @@ const store = configureStore({
         temp: -0.075,
         love: -1,
         state: 'available',
+        activeSinceTick: null,
       },
       {
         id: '5',
@@ -75,6 +78,7 @@ const store = configureStore({
         temp: -0.075,
         love: 1,
         state: 'available',
+        activeSinceTick: null,
       },
       {
         id: '6',
@@ -84,6 +88,7 @@ const store = configureStore({
         temp: -0.025,
         love: 2,
         state: 'available',
+        activeSinceTick: null,
       },
       {
         id: '7',
@@ -93,6 +98,7 @@ const store = configureStore({
         temp: -0.175,
         love: -3,
         state: 'available',
+        activeSinceTick: null,
       },
       {
         id: '8',
@@ -102,6 +108,7 @@ const store = configureStore({
         temp: -0.0375,
         love: 2,
         state: 'available',
+        activeSinceTick: null,
       },
       {
         id: '9',
@@ -111,6 +118,7 @@ const store = configureStore({
         temp: -0.1,
         love: -1,
         state: 'available',
+        activeSinceTick: null,
       },
       {
         id: '10',
@@ -121,6 +129,7 @@ const store = configureStore({
         temp: -0.15,
         love: 2,
         state: 'available',
+        activeSinceTick: null,
       },
       {
         id: '11',
@@ -130,6 +139,7 @@ const store = configureStore({
         temp: -0.15,
         love: -1,
         state: 'available',
+        activeSinceTick: null,
       },
       {
         id: '12',
@@ -139,6 +149,7 @@ const store = configureStore({
         temp: -0.15,
         love: 0,
         state: 'available',
+        activeSinceTick: null,
       },
       {
         id: '13',
@@ -148,6 +159,7 @@ const store = configureStore({
         temp: -0.15,
         love: 2,
         state: 'available',
+        activeSinceTick: null,
       },
       {
         id: '14',
@@ -157,6 +169,7 @@ const store = configureStore({
         temp: -0.175,
         love: -3,
         state: 'available',
+        activeSinceTick: null,
       },
       {
         id: '15',
@@ -166,6 +179,7 @@ const store = configureStore({
         temp: -0.0875,
         love: -1,
         state: 'available',
+        activeSinceTick: null,
       },
       {
         id: '16',
@@ -175,6 +189,7 @@ const store = configureStore({
         temp: -0.725,
         love: -3,
         state: 'available',
+        activeSinceTick: null,
       },
       {
         id: '17',
@@ -184,6 +199,7 @@ const store = configureStore({
         temp: -0.125,
         love: 2,
         state: 'available',
+        activeSinceTick: null,
       },
     ],
     actionsVisible: false,

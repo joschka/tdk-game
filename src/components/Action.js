@@ -5,12 +5,20 @@ import { hot } from 'react-hot-loader';
 import MiniThermometer from './MiniThermometer.js';
 import MiniHeart from './MiniHeart.js';
 
+import IconAvailable from '../../todo-available.inline.svg';
+import IconActive from '../../todo-active.inline.svg';
+import IconDisabled from '../../todo-disabled.inline.svg';
+import IconEnded from '../../todo-ended.inline.svg';
+
 import './Action.css';
 
 function Action(props) {
   const dispatch = useDispatch();
 
   const tick = useSelector(state => state.clock.tick);
+  const isRunning = useSelector(state => state.clock.isRunning);
+  const isFast = useSelector(state => state.clock.isFast);
+
   const shownAction = useSelector(state => state.actionShown);
 
   const [startTick, setStartTick] = useState(tick);
@@ -21,6 +29,7 @@ function Action(props) {
     title,
     description,
     duration,
+    activeSinceTick,
     temp,
     love,
     actionable
@@ -29,7 +38,9 @@ function Action(props) {
   function handleClick(e) {
     e.stopPropagation();
     e.preventDefault();
-    dispatch({ type: 'action/activate', data: { id } });
+    if (state === 'available' && actionable) {
+      dispatch({ type: 'action/activate', data: { id } });
+    }
   }
 
   function onStripeClick() {
@@ -40,20 +51,69 @@ function Action(props) {
     }
   }
 
-  const progress = duration - (tick - startTick);
+  const progressPercentage = activeSinceTick ? (tick - activeSinceTick) / duration * 100 : 100;
 
   function renderProgress() {
     const style = {
-      width: `${progress / duration * 100}%`
+      width: `${progressPercentage}%`
     };
 
     return <div className='action__progress-outer'>
       <div className='action__progress-inner' style={style}></div>
     </div>;
   }
+
+  function renderProgressIcon(props) {
+    console.log(isRunning);
+    const scale = isFast ? 0.2 : 1;
+    const minute = `${isRunning ? scale * 2 : 999999}s`;
+    const hour = `${isRunning ? scale * 24 : 999999}s`;
+    const clockStyle = {
+      display: isRunning ? 'block' : 'none',
+    }
+    const pauseStyle = {
+      display: isRunning ? 'none' : 'block',
+    }
+
+    const progressStyle = {
+      strokeDasharray: `${Math.PI * 2 * 185}px`,
+      strokeDashoffset: `${((100 - progressPercentage) / 100) * Math.PI * 2 * 185}px`,
+    };
+    return <svg xmlns="http://www.w3.org/2000/svg" {...props}>
+      <circle fill="none" stroke="#ccc" strokeWidth="30" cx="200" cy="200" r="185"/>
+      <circle fill="none" stroke="#3eb237" strokeWidth="30" cx="200" cy="200" r="185" style={progressStyle} />
+      <rect fill="#ccc" width="30" height="120" x="185" y="80" rx="0" ry="0" style={clockStyle}>
+        <animateTransform attributeName="transform" attributeType="XML" type="rotate" from="0 200 200" to="360 200 200" dur={minute} repeatCount="indefinite"/>
+      </rect>
+      <rect fill="#ccc" width="30" height="120" x="185" y="80" rx="0" ry="0" style={clockStyle}>
+        <animateTransform attributeName="transform" attributeType="XML" type="rotate" from="0 200 200" to="360 200 200" dur={hour} repeatCount="indefinite"/>
+      </rect>
+      <circle fill="#ccc" cx="200" cy="200" r="15" style={clockStyle}/>
+      <rect fill="#ccc" width="60" height="200" x="120" y="100" style={pauseStyle}/>
+      <rect fill="#ccc" width="60" height="200" x="220" y="100" style={pauseStyle}/>
+
+    </svg>;
+  }
+
+  function renderIcon() {
+    const props = {
+      width: 40,
+      height: 40,
+      viewBox: '0 0 400 400',
+      className: 'action__icon',
+    };
+
+    if (state === 'available' && actionable) {
+      return <IconAvailable {...props} />;
+    } else if (state === 'ended') {
+      return <IconEnded {...props} />;
+    } else if (state === 'available' && !actionable) {
+      return <IconDisabled {...props} />;
+    }
+  }
   
   useEffect(() => {
-    if (state === 'active' && progress === 0) {
+    if (state === 'active' && progressPercentage === 100) {
       dispatch({ type: 'love/change', data: love });
       dispatch({ type: 'temperature/increase', data: temp });
       dispatch({ type: 'action/end', data: { id } });
@@ -68,13 +128,13 @@ function Action(props) {
 
   return (
     <div className={cssClasses.join(' ')}>
-      <div className='action__stripe' onClick={onStripeClick}>
+      <div className='action__stripe' onClick={handleClick}>
+        { state !== 'active' && renderIcon() }
+        { state === 'active' && renderProgressIcon({ className: 'action__icon', width: 40, height: 40, viewBox: '0 0 400 400'}) }
         <div className='action__title'>{ title }</div>
         <div className='action__tools'>
-          { state === 'available' && <MiniThermometer percentage={temp * -300} /> }
-          { state === 'available' && <MiniHeart love={love} /> }
-          { state === 'available' && actionable && <button className='action__button' onClick={handleClick}>+</button> }
-          { state === 'active' && renderProgress() }
+          { <MiniThermometer percentage={temp * -300} /> }
+          { <MiniHeart love={love} /> }
         </div>
       </div>
       { state === 'available' && shownAction === id && <div className='action__description'>

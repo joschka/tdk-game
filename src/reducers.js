@@ -99,7 +99,7 @@ export default function rootReducer(state = {}, action) {
     case 'action/activate':
       return {
         ...state,
-        actions: state.actions.map(a => a.id === action.data.id ? { ...a, state: 'active' } : a),
+        actions: state.actions.map(a => a.id === action.data.id ? { ...a, state: 'active', activeSinceTick: state.clock.tick } : a),
       };
     case 'action/end':
       return {

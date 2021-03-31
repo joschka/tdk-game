@@ -17,7 +17,15 @@ module.exports = {
         use: ['style-loader', 'css-loader']
       },
       {
-        test: /\.(png|jpg|gif|svg)$/i,
+        test: /\.inline.svg$/,
+        use: ['react-svg-loader']
+      },
+      {
+        test: /^(?!.*\.inline\.svg$).*\.svg$/,
+        use: ['url-loader']
+      },
+      {
+        test: /\.(png|jpg|gif)$/i,
         use: ['url-loader'],
       },
     ],
