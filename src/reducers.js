@@ -116,6 +116,55 @@ export default function rootReducer(state = {}, action) {
         ...state,
         actionsVisible: false,
       };
+    case 'actionPartitions/change':
+      const partitions = [action.data, ...state.actionPartitions.filter(p => p !== action.data)];
+      return {
+        ...state,
+        actions: [
+          ...state.actions.filter(a => a.state === partitions[0]),
+          ...state.actions.filter(a => a.state === partitions[1]),
+          ...state.actions.filter(a => a.state === partitions[2]),
+        ],
+        actionPartitions: partitions,
+      };
+    case 'actionsSortBy/change':
+      const sortBy = (a, b) => {
+        if (a[action.data] < b[action.data]) {
+          return state.actionsSortOrder === 'asc' ? -1 : 1;
+        }
+        if (a[action.data] > b[action.data]) {
+          return state.actionsSortOrder === 'asc' ? 1 : -1;
+        }
+        return 0;
+      };
+      return {
+        ...state,
+        actions: [
+          ...state.actions.filter(a => a.state === state.actionPartitions[0]).sort(sortBy),
+          ...state.actions.filter(a => a.state === state.actionPartitions[1]).sort(sortBy),
+          ...state.actions.filter(a => a.state === state.actionPartitions[2]).sort(sortBy),
+        ],
+        actionsSortBy: action.data,
+      };
+    case 'actionsSortOrder/change':
+      const sortOrder = (a, b) => {
+        if (a[state.actionsSortBy] < b[state.actionsSortBy]) {
+          return action.data === 'asc' ? -1 : 1;
+        }
+        if (a[state.actionsSortBy] > b[state.actionsSortBy]) {
+          return action.data === 'asc' ? 1 : -1;
+        }
+        return 0;
+      };
+      return {
+        ...state,
+        actions: [
+          ...state.actions.filter(a => a.state === state.actionPartitions[0]).sort(sortOrder),
+          ...state.actions.filter(a => a.state === state.actionPartitions[1]).sort(sortOrder),
+          ...state.actions.filter(a => a.state === state.actionPartitions[2]).sort(sortOrder),
+        ],
+        actionsSortOrder: action.data,
+      };
     case 'dashboard/large':
       return {
         ...state,

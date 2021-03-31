@@ -27,7 +27,7 @@
 }
 
 .action__title {
-  font-weight: bold;
+  font-size: 18px;
   width: 100%;
 }
 
@@ -69,5 +69,4 @@
 }
 
 .action--ended {
-  color: lightgray;
 }

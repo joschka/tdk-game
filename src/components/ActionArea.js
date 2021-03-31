@@ -4,6 +4,7 @@ import { hot } from 'react-hot-loader';
 
 import ActiveActions from './ActiveActions.js';
 import ActionList from './ActionList.js';
+import ActionListHeader from './ActionListHeader.js';
 
 import './ActionArea.css';
 
@@ -20,6 +21,7 @@ function ActionArea() {
     <div className='action-area' style={style}>
       <div className='action-area__active-actions'>
       </div>
+      <ActionListHeader />
       <ActionList />
     </div>
   );

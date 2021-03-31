@@ -30,7 +30,7 @@ function Action(props) {
     description,
     duration,
     activeSinceTick,
-    temp,
+    temperature,
     love,
     actionable
   } = props;
@@ -115,7 +115,7 @@ function Action(props) {
   useEffect(() => {
     if (state === 'active' && progressPercentage === 100) {
       dispatch({ type: 'love/change', data: love });
-      dispatch({ type: 'temperature/increase', data: temp });
+      dispatch({ type: 'temperature/increase', data: temperature });
       dispatch({ type: 'action/end', data: { id } });
     }
   });
@@ -133,7 +133,7 @@ function Action(props) {
         { state === 'active' && renderProgressIcon({ className: 'action__icon', width: 40, height: 40, viewBox: '0 0 400 400'}) }
         <div className='action__title'>{ title }</div>
         <div className='action__tools'>
-          { <MiniThermometer percentage={temp * -300} /> }
+          { <MiniThermometer percentage={temperature * -300} /> }
           { <MiniHeart love={love} /> }
         </div>
       </div>

@@ -1,0 +1,68 @@
+.action-list-header {
+  padding-top: 5px;
+  padding-top: 200px;
+  padding-bottom: 5px;
+  border-bottom: 3px solid #ccc;
+  display: flex;
+  justify-content: space-between;
+}
+
+.action-list-header__icons,
+.action-list-header__round-icons {
+  display: flex;
+  align-items: center;
+}
+
+.action-list-header__icons {
+  padding-right: 10px;
+}
+
+.action-list-header__round-icon {
+  position: relative;
+  margin-left: 10px;
+}
+
+.action-list-header__round-icon svg circle {
+  stroke: #ccc;
+}
+
+.action-list-header__round-icon svg g,
+.action-list-header__round-icon svg rect {
+  fill: #ccc;
+}
+
+.action-list-header__round-icon--active svg circle {
+  stroke: #000;
+}
+
+.action-list-header__round-icon--active svg g,
+.action-list-header__round-icon--active svg rect {
+  fill: #000;
+}
+
+.action-list-header__count {
+  font-weight: bold;
+  font-size: 18px;
+  position: absolute;
+  bottom: 2px;
+  left: 0;
+  right: 0;
+  text-align: right;
+}
+
+.action-list-header__count > span {
+  padding: 0 0 0 3px;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.action-list-header__thermometer {
+}
+
+.action-list-header__thermometer--active {
+}
+
+.action-list-header__thermometer--active .action-list-header__thermometer--asc {
+}
+
+.action-list-header__thermometer--active .action-list-header__thermometer--desc {
+}
