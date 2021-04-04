@@ -18,6 +18,7 @@ import ExampleEvent from './ExampleEvent.js';
 import ProgressChart from './ProgressChart.js';
 import ActionArea from './ActionArea.js';
 import ScrollWatcher from './ScrollWatcher.js';
+import FutureExecutor from './FutureExecutor.js';
 
 function App() {
   const gameStarted = useSelector(state => state.game.started);
@@ -34,6 +35,7 @@ function App() {
           <ActionArea />
           <ExampleEvent />
           <FinalScreen />
+          <FutureExecutor />
         </>
         }
       </div>

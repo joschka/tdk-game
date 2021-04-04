@@ -34,6 +34,8 @@ const store = configureStore({
     love: 40,
     clock: {
       isRunning: false,
+      isRunningMain: true,
+      isRunningOverlay: true,
       isFast: false,
       duration: 159 * 4, // 159 Monate (2 ticks == 1 month)
       tick: 0,
@@ -199,6 +201,12 @@ const store = configureStore({
     actionsVisible: false,
     actionShown: null,
     activeActionsMinimized: true,
+    futures: {
+      10: [
+        { type: 'foo' },
+        { type: 'bar' },
+      ],
+    },
   },
 });
 

@@ -21,11 +21,38 @@ export default function rootReducer(state = {}, action) {
         },
       };
     case 'clock/start':
+      const clockStart = {
+        isRunningMain: (action.data && action.data === 'main' ? true : state.clock.isRunningMain),
+        isRunningOverlay: (action.data && action.data === 'overlay' ? true : state.clock.isRunningOverlay),
+      };
+
+      return {
+        ...state,
+        clock: {
+          ...state.clock,
+          ...clockStart,
+          isRunning: clockStart.isRunningMain && clockStart.isRunningOverlay,
+        }
+      };
       return {
         ...state,
         clock: {
           ...state.clock,
           isRunning: true
+        }
+      };
+    case 'clock/stop':
+      const clockStop = {
+        isRunningMain: (action.data && action.data === 'main' ? false : state.clock.isRunningMain),
+        isRunningOverlay: (action.data && action.data === 'overlay' ? false : state.clock.isRunningOverlay),
+      };
+
+      return {
+        ...state,
+        clock: {
+          ...state.clock,
+          ...clockStop,
+          isRunning: clockStop.isRunningMain && clockStop.isRunningOverlay,
         }
       };
     case 'clock/fast':
@@ -42,14 +69,6 @@ export default function rootReducer(state = {}, action) {
         clock: {
           ...state.clock,
           isFast: false,
-        }
-      };
-    case 'clock/stop':
-      return {
-        ...state,
-        clock: {
-          ...state.clock,
-          isRunning: false
         }
       };
     case 'clock/tick':
@@ -201,6 +220,21 @@ export default function rootReducer(state = {}, action) {
       return {
         ...state,
         actionShown: action.data.id,
+      };
+    case 'futures/add':
+      console.log(action.data);
+      const newFutures = {};
+
+      newFutures[action.data.tick] = [
+        action.data.future,
+      ];
+
+      return {
+        ...state,
+        futures: {
+          ...state.futures,
+          ...newFutures,
+        },
       };
     default:
       return state;

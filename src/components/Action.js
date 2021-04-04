@@ -4,6 +4,7 @@ import { hot } from 'react-hot-loader';
 
 import MiniThermometer from './MiniThermometer.js';
 import MiniHeart from './MiniHeart.js';
+import ActionDetailView from './ActionDetailView.js';
 
 import IconAvailable from '../../todo-available.inline.svg';
 import IconActive from '../../todo-active.inline.svg';
@@ -22,6 +23,7 @@ function Action(props) {
   const shownAction = useSelector(state => state.actionShown);
 
   const [startTick, setStartTick] = useState(tick);
+  const [showDetailView, setShowDetailView] = useState(false);
 
   const {
     id,
@@ -38,18 +40,23 @@ function Action(props) {
   function handleClick(e) {
     e.stopPropagation();
     e.preventDefault();
+
+    setShowDetailView(true)
+    dispatch({ type: 'clock/stop', data: 'overlay' });
+
+    return;
     if (state === 'available' && actionable) {
       dispatch({ type: 'action/activate', data: { id } });
     }
   }
 
-  function onStripeClick() {
+  /*function onStripeClick() {
     if (shownAction === id) {
       dispatch({ type: 'action/show', data: { id: null } });
     } else {
       dispatch({ type: 'action/show', data: { id } });
     }
-  }
+  }*/
 
   const progressPercentage = activeSinceTick ? (tick - activeSinceTick) / duration * 100 : 100;
 
@@ -117,6 +124,7 @@ function Action(props) {
       dispatch({ type: 'love/change', data: love });
       dispatch({ type: 'temperature/increase', data: temperature });
       dispatch({ type: 'action/end', data: { id } });
+      dispatch({ type: 'futures/add', data: { tick: tick + 12, future: { type: 'follow-up' }}}); 
     }
   });
 
@@ -125,6 +133,19 @@ function Action(props) {
     `action--${state}`,
     props.minimized && 'action--minimized',
   ];
+
+  const onDetailStartClick = () => {
+    setShowDetailView(false);
+    dispatch({ type: 'clock/start', data: 'overlay' });
+    if (state === 'available' && actionable) {
+      dispatch({ type: 'action/activate', data: { id } });
+    }
+  };
+
+  const onDetailBackClick = () => {
+    setShowDetailView(false);
+    dispatch({ type: 'clock/start', data: 'overlay' });
+  };
 
   return (
     <div className={cssClasses.join(' ')}>
@@ -140,6 +161,8 @@ function Action(props) {
       { state === 'available' && shownAction === id && <div className='action__description'>
         <p>{ description }</p>
       </div> }
+
+      { showDetailView && <ActionDetailView {...props} onStartClick={onDetailStartClick} onBackClick={onDetailBackClick} /> }
     </div>
   );
 }

@@ -16,7 +16,8 @@ function FinalScreen() {
 
   useEffect(() => {
     if (show) {
-      dispatch({ type: 'clock/stop' });
+      dispatch({ type: 'clock/stop', data: 'overlay' });
+      dispatch({ type: 'clock/stop', data: 'main' });
     }
   });
 

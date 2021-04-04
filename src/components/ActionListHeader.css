@@ -1,6 +1,6 @@
 .action-list-header {
   padding-top: 5px;
-  padding-top: 200px;
+  xpadding-top: 200px;
   padding-bottom: 5px;
   border-bottom: 3px solid #ccc;
   display: flex;
