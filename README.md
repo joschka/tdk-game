@@ -1,13 +1,13 @@
-# tdk-game
+# Spiel Klimakanzler:in
 
-## Setup
+## Development
 
-You need `node` and `yarn` installed.
+You need `node` and `npm` installed.
 
 ```
   git clone git@github.com:tagdesklimas/tdk-game.git
   cd tdk-game
-  yarn start
+  npm start
 ```
 
 Go to `localhost:4444`.
