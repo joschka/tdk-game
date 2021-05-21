@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { hot } from 'react-hot-loader';
+import React, {useState, useEffect} from 'react';
+import {useSelector, useDispatch} from 'react-redux';
+import {hot} from 'react-hot-loader';
 
 import './ActionDetailView.css';
 
@@ -34,16 +34,16 @@ function ActionDetailView(props) {
 
   return (
     <div className='action-detail-view fixed-screen'>
-      <h1>{ title }</h1>
-      <p>{ description }</p>
-      <strong>...{ state }</strong>
+      <h1>{title}</h1>
+      <p>{description}</p>
+      <strong>...{state}</strong>
       <ul>
         <li>Pros</li>
         <li>Cons</li>
       </ul>
       <p>Prognose…</p>
       <hr />
-      { renderButtons() }
+      { renderButtons()}
       <div style={{height: '100vh'}} />
     </div>
   );

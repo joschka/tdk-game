@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { hot } from 'react-hot-loader';
+import React, {useState, useEffect} from 'react';
+import {useSelector, useDispatch} from 'react-redux';
+import {hot} from 'react-hot-loader';
 
 import Dashboard from './Dashboard.js';
 import ActionArea from './ActionArea.js';
@@ -22,20 +22,20 @@ function Explainer() {
   function nextStep() {
     clearTimeout(timerId);
     if (introStep === 3) {
-      dispatch({ type: 'game/start' });
-      dispatch({ type: 'clock/start' });
+      dispatch({type: 'game/start'});
+      dispatch({type: 'clock/start'});
       document.querySelector('#audio-player').pause();
     } else {
-      dispatch({ type: 'game/introStep', data: introStep + 1 });
+      dispatch({type: 'game/introStep', data: introStep + 1});
       const time = [0, 19, 32][introStep]
       document.querySelector('#audio-player').currentTime = time;
     }
-  } 
+  }
 
   timerId = setTimeout(() => {
     console.log("time over");
     nextStep();
-    
+
   }, stepDuration * 1000);
 
   return (
@@ -45,9 +45,9 @@ function Explainer() {
       <div className='explainer__smoke-screen'></div>
       <div className='explainer__dude'></div>
       <div className='explainer__text'>
-        { introStep === 1 && <><p><span>Glückwunsch zur gewonnen Wahl! Ihr Versprechen bis 2035 dafür zu sorgen, dass sich das Erdklima nur um 1,5° erhöht, ist extrem schwer zu erreichen.</span></p><p><span>Zurzeit sagen Wissenschaft&shy;ler:innen eine Erwärmung von 4,5° voraus.</span></p></> }
-        { introStep === 2 && <><p><span>Setzen Sie konsequent Maßnahmen um! Behalten Sie dabei aber Ihre Beliebtheit in der Öffentlichkeit im Auge. Sinkt Ihr Ansehen zu stark, droht die Abwahl.</span></p></> }
-        { introStep === 3 && <><p><span>Wählen Sie mögliche Maßnahmen aus. Sie haben jeweils Auswirkungen auf Beliebtheit und Temperatur. Sie können bis zu vier Maßnahmen gleichzeitig laufen lassen.</span></p><p><span>Viel Glück!</span></p></> }
+        {introStep === 1 && <><p><span>Glückwunsch zur gewonnen Wahl! Ihr Versprechen bis 2035 dafür zu sorgen, dass sich das Erdklima nur um 1,5° erhöht, ist extrem schwer zu erreichen.</span></p><p><span>Zurzeit sagen Wissenschaft&shy;ler:innen eine Erwärmung von 4,5° voraus.</span></p></>}
+        {introStep === 2 && <><p><span>Setzen Sie konsequent Maßnahmen um! Behalten Sie dabei aber Ihre Beliebtheit in der Öffentlichkeit im Auge. Sinkt Ihr Ansehen zu stark, droht die Abwahl.</span></p></>}
+        {introStep === 3 && <><p><span>Wählen Sie mögliche Maßnahmen aus. Sie haben jeweils Auswirkungen auf Beliebtheit und Temperatur. Sie können bis zu vier Maßnahmen gleichzeitig laufen lassen.</span></p><p><span>Viel Glück!</span></p></>}
       </div>
 
     </div>

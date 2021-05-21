@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { hot } from 'react-hot-loader';
+import React, {useState, useEffect} from 'react';
+import {useSelector, useDispatch} from 'react-redux';
+import {hot} from 'react-hot-loader';
 
 import './StartScreen.css';
 
@@ -10,10 +10,19 @@ function StartScreen() {
   const gameStarted = useSelector(state => state.game.started);
   const introStep = useSelector(state => state.game.introStep);
 
+  // skip intro
+  const queryParams = new URLSearchParams(window.location.search);
+  const param = queryParams.get('intro');
+  if (param && param === '0') {
+    console.log('intro=0')
+    dispatch({type: 'game/start'});
+    dispatch({type: 'clock/start'});
+    return null;
+  }
 
   function nextStep(e) {
-    dispatch({ type: 'game/introStep', data: 1 });
-  } 
+    dispatch({type: 'game/introStep', data: 1});
+  }
 
   useEffect(() => {
     document.querySelector('.start-screen svg').addEventListener('click', () => {
