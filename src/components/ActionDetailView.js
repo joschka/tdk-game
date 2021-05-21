@@ -34,17 +34,13 @@ function ActionDetailView(props) {
 
   return (
     <div className='action-detail-view fixed-screen'>
+      <img src='/' />
       <h1>{title}</h1>
-      <p>{description}</p>
-      <strong>...{state}</strong>
-      <ul>
-        <li>Pros</li>
-        <li>Cons</li>
-      </ul>
-      <p>Prognose…</p>
+      <p>Klimawirkung: 1-5</p>
       <hr />
       { renderButtons()}
       <div style={{height: '100vh'}} />
+      <strong>...{state}</strong>
     </div>
   );
 }
