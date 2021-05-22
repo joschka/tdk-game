@@ -57,7 +57,7 @@ function StartScreen() {
         <a href="https://www.germanzero.de/" target="_blank" rel="noopener">GermanZero e.V.</a>
         <br />
         <a href="https://www.germanzero.de/impressum" target="_blank" rel="noopener">Impressum</a>
-        |
+        &nbsp;|&nbsp;
         <a href="https://www.germanzero.de/datenschutz" target="_blank" rel="noopener">Datenschutz</a>
       </p>
     </div>
