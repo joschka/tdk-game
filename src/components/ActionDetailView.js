@@ -11,6 +11,7 @@ import imageWallstreet from "../images/wallstreet.jpg";
 import imageSanierung from "../images/sanierung.jpg";
 import imageSolarWind from "../images/solar-wind.jpg";
 import imageWork from "../images/work.gif";
+import imagePizza from "../images/pizza.jpg";
 
 import MiniThermometer from "./MiniThermometer";
 
@@ -55,7 +56,7 @@ function ActionDetailView(props) {
       imageSrc = imageSolarWind;
       break;
     default:
-      imageSrc = imageWork;
+      imageSrc = imagePizza;
       break;
   }
 
