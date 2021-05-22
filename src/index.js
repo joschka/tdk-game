@@ -1,8 +1,8 @@
 import React from "react";
-import { render } from "react-dom";
+import {render} from "react-dom";
 
-import { Provider } from "react-redux";
-import { configureStore } from "@reduxjs/toolkit";
+import {Provider} from "react-redux";
+import {configureStore} from "@reduxjs/toolkit";
 
 import rootReducer from "./reducers.js";
 
@@ -217,7 +217,7 @@ const store = configureStore({
     actionShown: null,
     activeActionsMinimized: true,
     futures: {
-      10: [{ type: "foo" }, { type: "bar" }],
+      10000: [{type: "foo"}, {type: "bar"}],
     },
   },
 });
