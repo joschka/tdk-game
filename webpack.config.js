@@ -11,7 +11,16 @@ const plugins = [
     minify: false,
   }),
   new FaviconsWebpackPlugin({
-    logo: "./src/favicon.png",
+    logo: "./src/favicon.svg",
+    favicons: {
+      icons: {
+        appName: 'Klimakanzler:in',
+        lang: 'de-DE',
+        coast: false,
+        yandex: false,
+        appleStartup: false,
+      }
+    }
   }),
 ];
 
@@ -28,7 +37,7 @@ module.exports = {
         test: /\.(js|jsx)$/,
         exclude: /(node_modules|bower_components)/,
         loader: "babel-loader",
-        options: { presets: ["@babel/env"] },
+        options: {presets: ["@babel/env"]},
       },
       {
         test: /\.css$/,
@@ -50,7 +59,7 @@ module.exports = {
       },
     ],
   },
-  resolve: { extensions: ["*", ".mjs", ".js", ".jsx"] },
+  resolve: {extensions: ["*", ".mjs", ".js", ".jsx"]},
   output: {
     path: path.resolve(__dirname, "dist/"),
     publicPath: "/",
