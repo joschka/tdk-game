@@ -1,66 +1,67 @@
-const path = require('path');
-const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const path = require("path");
+const webpack = require("webpack");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const FaviconsWebpackPlugin = require("favicons-webpack-plugin");
+const BundleAnalyzerPlugin = require("webpack-bundle-analyzer")
+  .BundleAnalyzerPlugin;
 
 const plugins = [
   new webpack.HotModuleReplacementPlugin(),
   new HtmlWebpackPlugin({
-    minify: false
+    minify: false,
   }),
   new FaviconsWebpackPlugin({
-    logo: './src/favicon.png',
-  })
+    logo: "./src/favicon.png",
+  }),
 ];
 
 if (process.env.ANALYZE_BUNDLE) {
-  plugins.push(new BundleAnalyzerPlugin())
+  plugins.push(new BundleAnalyzerPlugin());
 }
 
 module.exports = {
-  entry: './src/index.js',
-  mode: 'development',
+  entry: "./src/index.js",
+  mode: "development",
   module: {
     rules: [
       {
         test: /\.(js|jsx)$/,
         exclude: /(node_modules|bower_components)/,
-        loader: 'babel-loader',
-        options: {presets: ['@babel/env']}
+        loader: "babel-loader",
+        options: { presets: ["@babel/env"] },
       },
       {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader']
+        use: ["style-loader", "css-loader"],
       },
       {
         test: /\.inline.svg$/,
-        use: ['react-svg-loader']
+        use: ["react-svg-loader"],
       },
       {
         test: /^(?!.*\.inline\.svg$).*\.svg$/,
-        use: ['url-loader']
+        use: ["url-loader"],
       },
 
       {
         test: /\.(png|jpg|gif|mp3|woff|woff2)$/i,
-        type: 'asset/resource',
+        type: "asset/resource",
         //use: ['url-loader'],
       },
     ],
   },
-  resolve: {extensions: ['*', '.mjs', '.js', '.jsx']},
+  resolve: { extensions: ["*", ".mjs", ".js", ".jsx"] },
   output: {
-    path: path.resolve(__dirname, 'dist/'),
-    publicPath: '/',
-    filename: '[contenthash].js',
+    path: path.resolve(__dirname, "dist/"),
+    publicPath: "/",
+    filename: "[contenthash].js",
     clean: true,
   },
   devServer: {
-    contentBase: path.join(__dirname, 'dist/'),
+    contentBase: path.join(__dirname, "dist/"),
     port: 4444,
-    publicPath: 'http://localhost:4444/',
-    hotOnly: true
+    publicPath: "http://localhost:4444/",
+    hotOnly: true,
   },
   plugins,
 };

@@ -64,5 +64,6 @@
 .action-list-header__thermometer--active .action-list-header__thermometer--asc {
 }
 
-.action-list-header__thermometer--active .action-list-header__thermometer--desc {
+.action-list-header__thermometer--active
+  .action-list-header__thermometer--desc {
 }

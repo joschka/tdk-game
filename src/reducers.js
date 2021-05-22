@@ -1,10 +1,11 @@
-function randomIntFromInterval(min, max) { // min and max included 
+function randomIntFromInterval(min, max) {
+  // min and max included
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
 export default function rootReducer(state = {}, action) {
   switch (action.type) {
-    case 'game/start':
+    case "game/start":
       return {
         ...state,
         game: {
@@ -12,7 +13,7 @@ export default function rootReducer(state = {}, action) {
           started: true,
         },
       };
-    case 'game/introStep':
+    case "game/introStep":
       return {
         ...state,
         game: {
@@ -20,10 +21,16 @@ export default function rootReducer(state = {}, action) {
           introStep: action.data,
         },
       };
-    case 'clock/start':
+    case "clock/start":
       const clockStart = {
-        isRunningMain: (action.data && action.data === 'main' ? true : state.clock.isRunningMain),
-        isRunningOverlay: (action.data && action.data === 'overlay' ? true : state.clock.isRunningOverlay),
+        isRunningMain:
+          action.data && action.data === "main"
+            ? true
+            : state.clock.isRunningMain,
+        isRunningOverlay:
+          action.data && action.data === "overlay"
+            ? true
+            : state.clock.isRunningOverlay,
       };
 
       return {
@@ -32,19 +39,25 @@ export default function rootReducer(state = {}, action) {
           ...state.clock,
           ...clockStart,
           isRunning: clockStart.isRunningMain && clockStart.isRunningOverlay,
-        }
+        },
       };
       return {
         ...state,
         clock: {
           ...state.clock,
-          isRunning: true
-        }
+          isRunning: true,
+        },
       };
-    case 'clock/stop':
+    case "clock/stop":
       const clockStop = {
-        isRunningMain: (action.data && action.data === 'main' ? false : state.clock.isRunningMain),
-        isRunningOverlay: (action.data && action.data === 'overlay' ? false : state.clock.isRunningOverlay),
+        isRunningMain:
+          action.data && action.data === "main"
+            ? false
+            : state.clock.isRunningMain,
+        isRunningOverlay:
+          action.data && action.data === "overlay"
+            ? false
+            : state.clock.isRunningOverlay,
       };
 
       return {
@@ -53,25 +66,25 @@ export default function rootReducer(state = {}, action) {
           ...state.clock,
           ...clockStop,
           isRunning: clockStop.isRunningMain && clockStop.isRunningOverlay,
-        }
+        },
       };
-    case 'clock/fast':
+    case "clock/fast":
       return {
         ...state,
         clock: {
           ...state.clock,
           isFast: true,
-        }
+        },
       };
-    case 'clock/normal':
+    case "clock/normal":
       return {
         ...state,
         clock: {
           ...state.clock,
           isFast: false,
-        }
+        },
       };
-    case 'clock/tick':
+    case "clock/tick":
       const tick = state.clock.tick + 1;
       return {
         ...state,
@@ -79,33 +92,33 @@ export default function rootReducer(state = {}, action) {
           ...state.records,
           {
             temperature: state.temperature.current,
-            love: state.love
-          }
+            love: state.love,
+          },
         ],
         clock: {
           ...state.clock,
           tick,
-        }
+        },
       };
-    case 'temperature/increase':
+    case "temperature/increase":
       const currentTemp = state.temperature.current + action.data;
       return {
         ...state,
         temperature: {
           ...state.temperature,
           current: currentTemp,
-        }
+        },
       };
-    case 'temperature/decrease':
+    case "temperature/decrease":
       const current = state.temperature.current - action.data;
       return {
         ...state,
         temperature: {
           ...state.temperature,
           current,
-        }
+        },
       };
-    case 'love/change':
+    case "love/change":
       let multiplier = 1;
       if (state.love > 20 && state.love < 80) {
         multiplier = 10;
@@ -115,100 +128,121 @@ export default function rootReducer(state = {}, action) {
         ...state,
         love: newLove,
       };
-    case 'action/activate':
+    case "action/activate":
       return {
         ...state,
-        actions: state.actions.map(a => a.id === action.data.id ? { ...a, state: 'active', activeSinceTick: state.clock.tick } : a),
+        actions: state.actions.map((a) =>
+          a.id === action.data.id
+            ? { ...a, state: "active", activeSinceTick: state.clock.tick }
+            : a
+        ),
       };
-    case 'action/end':
+    case "action/end":
       return {
         ...state,
-        actions: state.actions.map(a => a.id === action.data.id ? { ...a, state: 'ended' } : a),
+        actions: state.actions.map((a) =>
+          a.id === action.data.id ? { ...a, state: "ended" } : a
+        ),
       };
-    case 'actions/open':
+    case "actions/open":
       return {
         ...state,
         actionsVisible: true,
       };
-    case 'actions/close':
+    case "actions/close":
       return {
         ...state,
         actionsVisible: false,
       };
-    case 'actionPartitions/change':
-      const partitions = [action.data, ...state.actionPartitions.filter(p => p !== action.data)];
+    case "actionPartitions/change":
+      const partitions = [
+        action.data,
+        ...state.actionPartitions.filter((p) => p !== action.data),
+      ];
       return {
         ...state,
         actions: [
-          ...state.actions.filter(a => a.state === partitions[0]),
-          ...state.actions.filter(a => a.state === partitions[1]),
-          ...state.actions.filter(a => a.state === partitions[2]),
+          ...state.actions.filter((a) => a.state === partitions[0]),
+          ...state.actions.filter((a) => a.state === partitions[1]),
+          ...state.actions.filter((a) => a.state === partitions[2]),
         ],
         actionPartitions: partitions,
       };
-    case 'actionsSortBy/change':
+    case "actionsSortBy/change":
       const sortBy = (a, b) => {
         if (a[action.data] < b[action.data]) {
-          return state.actionsSortOrder === 'asc' ? -1 : 1;
+          return state.actionsSortOrder === "asc" ? -1 : 1;
         }
         if (a[action.data] > b[action.data]) {
-          return state.actionsSortOrder === 'asc' ? 1 : -1;
+          return state.actionsSortOrder === "asc" ? 1 : -1;
         }
         return 0;
       };
       return {
         ...state,
         actions: [
-          ...state.actions.filter(a => a.state === state.actionPartitions[0]).sort(sortBy),
-          ...state.actions.filter(a => a.state === state.actionPartitions[1]).sort(sortBy),
-          ...state.actions.filter(a => a.state === state.actionPartitions[2]).sort(sortBy),
+          ...state.actions
+            .filter((a) => a.state === state.actionPartitions[0])
+            .sort(sortBy),
+          ...state.actions
+            .filter((a) => a.state === state.actionPartitions[1])
+            .sort(sortBy),
+          ...state.actions
+            .filter((a) => a.state === state.actionPartitions[2])
+            .sort(sortBy),
         ],
         actionsSortBy: action.data,
       };
-    case 'actionsSortOrder/change':
+    case "actionsSortOrder/change":
       const sortOrder = (a, b) => {
         if (a[state.actionsSortBy] < b[state.actionsSortBy]) {
-          return action.data === 'asc' ? -1 : 1;
+          return action.data === "asc" ? -1 : 1;
         }
         if (a[state.actionsSortBy] > b[state.actionsSortBy]) {
-          return action.data === 'asc' ? 1 : -1;
+          return action.data === "asc" ? 1 : -1;
         }
         return 0;
       };
       return {
         ...state,
         actions: [
-          ...state.actions.filter(a => a.state === state.actionPartitions[0]).sort(sortOrder),
-          ...state.actions.filter(a => a.state === state.actionPartitions[1]).sort(sortOrder),
-          ...state.actions.filter(a => a.state === state.actionPartitions[2]).sort(sortOrder),
+          ...state.actions
+            .filter((a) => a.state === state.actionPartitions[0])
+            .sort(sortOrder),
+          ...state.actions
+            .filter((a) => a.state === state.actionPartitions[1])
+            .sort(sortOrder),
+          ...state.actions
+            .filter((a) => a.state === state.actionPartitions[2])
+            .sort(sortOrder),
         ],
         actionsSortOrder: action.data,
       };
-    case 'dashboard/large':
+    case "dashboard/large":
       return {
         ...state,
         dashboard: {
           ...state.dashboard,
-          size: 'large',
+          size: "large",
         },
       };
-    case 'dashboard/medium':
+    case "dashboard/medium":
       return {
         ...state,
         dashboard: {
           ...state.dashboard,
-          size: 'medium',
+          size: "medium",
         },
       };
-    case 'dashboard/small':
+    case "dashboard/small":
       return {
         ...state,
         dashboard: {
           ...state.dashboard,
-          size: 'small',
+          size: "small",
         },
       };
-    case 'ui/state':
+    case "ui/state":
       return {
         ...state,
         ui: {
@@ -216,18 +250,16 @@ export default function rootReducer(state = {}, action) {
           state: action.data,
         },
       };
-    case 'action/show':
+    case "action/show":
       return {
         ...state,
         actionShown: action.data.id,
       };
-    case 'futures/add':
+    case "futures/add":
       console.log(action.data);
       const newFutures = {};
 
-      newFutures[action.data.tick] = [
-        action.data.future,
-      ];
+      newFutures[action.data.tick] = [action.data.future];
 
       return {
         ...state,

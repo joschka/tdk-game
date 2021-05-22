@@ -4,7 +4,6 @@ https://klimakanzlerin.netlify.app/
 
 Skip Intro: https://klimakanzlerin.netlify.app/?intro=0
 
-
 ## Development
 
 You need `node` and `npm` installed.
@@ -16,8 +15,6 @@ You need `node` and `npm` installed.
 ```
 
 Go to `localhost:4444`.
-
-
 
 ## Production build
 

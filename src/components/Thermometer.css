@@ -36,7 +36,7 @@
 
 .thermometer--large .thermometer__current-temperature::after,
 .thermometer--large .thermometer__target-temperature::after {
-  content: '';
+  content: "";
   position: absolute;
   height: 2px;
   width: 12px;
@@ -83,7 +83,7 @@
   bottom: 0;
   left: 0;
   z-index: 2;
-  background-image: url('./Thermometer.png');
+  background-image: url("./Thermometer.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
@@ -126,4 +126,3 @@
 .thermometer--small .thermometer__bar-background {
   height: 32px;
 }
-

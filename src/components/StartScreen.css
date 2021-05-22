@@ -4,7 +4,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-image: url('./arrow.svg');
+  background-image: url("./arrow.svg");
   background-repeat: no-repeat;
   background-position: center left;
   background-size: contain;
