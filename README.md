@@ -1,8 +1,8 @@
 # Spiel Klimakanzler:in
 
-https://klimakanzlerin.netlify.app/
+https://www.klimakanzler.in
 
-Skip Intro: https://klimakanzlerin.netlify.app/?intro=0
+Skip Intro: https://www.klimakanzler.in/?intro=0
 
 ## Development
 
@@ -16,14 +16,38 @@ You need `node` and `npm` installed.
 
 Go to `localhost:4444`.
 
-## Production build
+## Tasks
+
+### Production build
 
 ```
   npm run build
 ```
 
-Analyze bundle composition (will open browser window):
+### Analyze bundle
+
+Will open browser window.
 
 ```
   ANALYZE_BUNDLE=true npm run build
+```
+
+### Prettify
+
+```
+  prettier --write .
+```
+
+### Upgrade npm packages
+
+```
+  ncu -u
+```
+
+### Zip dist folder
+
+Zip file created in `/tmp`.
+
+```
+  npm run zip
 ```

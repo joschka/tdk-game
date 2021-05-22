@@ -5,7 +5,8 @@
   "private": true,
   "scripts": {
     "build": "webpack --mode production && cp ./src/og-image.png ./dist/",
-    "start": "webpack serve"
+    "start": "webpack serve",
+    "zip": "cd dist && zip -r \"/tmp/klimakanzlerin_dist_`date -I`.zip\" *"
   },
   "keywords": [],
   "author": "",
