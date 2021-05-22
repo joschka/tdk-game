@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { hot } from "react-hot-loader";
+import React, {useState, useEffect} from "react";
+import {useSelector, useDispatch} from "react-redux";
+import {hot} from "react-hot-loader";
 
 import "./App.css";
 
@@ -24,6 +24,15 @@ import testAudio from "./test.mp3";
 function App() {
   const gameStarted = useSelector((state) => state.game.started);
   const introStep = useSelector((state) => state.game.introStep);
+  const clockRunning = useSelector((state) => state.clock.isRunning);
+
+  if (clockRunning) {
+    window.onbeforeunload = function () {
+      return "Möchtest du das Spiel wirklich beenden?";
+    };
+  } else {
+    window.onbeforeunload = null;
+  }
 
   return (
     <div>

@@ -1,11 +1,15 @@
-import React, { useState, useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { hot } from "react-hot-loader";
+import React, {useState, useEffect} from "react";
+import {useSelector, useDispatch} from "react-redux";
+import {hot} from "react-hot-loader";
 
 import Dashboard from "./Dashboard.js";
 import ActionArea from "./ActionArea.js";
 
 import "./Explainer.css";
+
+import previewLove from "../images/intro-love.png";
+import previewTemperature from "../images/intro-temperature.png";
+import previewTodos from "../images/intro-todos.png";
 
 function Explainer() {
   const dispatch = useDispatch();
@@ -22,11 +26,11 @@ function Explainer() {
   function nextStep() {
     clearTimeout(timerId);
     if (introStep === 3) {
-      dispatch({ type: "game/start" });
-      dispatch({ type: "clock/start" });
+      dispatch({type: "game/start"});
+      dispatch({type: "clock/start"});
       document.querySelector("#audio-player").pause();
     } else {
-      dispatch({ type: "game/introStep", data: introStep + 1 });
+      dispatch({type: "game/introStep", data: introStep + 1});
       const time = [0, 19, 32][introStep];
       document.querySelector("#audio-player").currentTime = time;
     }
@@ -42,9 +46,10 @@ function Explainer() {
       className={`explainer explainer--${introStep} fixed-screen`}
       onClick={nextStep}
     >
-      {introStep < 3 && <Dashboard size="large" />}
-      {introStep === 3 && <ActionArea />}
       <div className="explainer__smoke-screen"></div>
+      {introStep === 1 && <img className="explainer__image" src={previewTemperature} />}
+      {introStep === 2 && <img className="explainer__image" src={previewLove} />}
+      {introStep === 3 && <img className="explainer__image" src={previewTodos} />}
       <div className="explainer__dude"></div>
       <div className="explainer__text">
         {introStep === 1 && (

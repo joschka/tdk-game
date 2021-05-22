@@ -28,8 +28,16 @@
   top: 40vh;
   z-index: 10;
   width: 50vw;
+  max-width: 330px;
   font-size: 18px;
   line-height: 1.3;
+}
+
+.explainer__image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
 }
 
 .explainer__text span {
@@ -42,6 +50,7 @@
 
 .explainer__text p:nth-child(2) {
   width: 40vw;
+  max-width: 330px;
 }
 
 .explainer--1 .thermometer {
