@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { hot } from "react-hot-loader";
+import React, {useState, useEffect} from "react";
+import {useSelector, useDispatch} from "react-redux";
+import {hot} from "react-hot-loader";
 
 import "./MiniThermometer.css";
 
@@ -59,10 +59,10 @@ function MiniThermometer(props) {
           y={height - percentage * 0.75 - 3}
           width={width}
           height={height - 6}
-          fill="#3eb237"
+          fill="#a3d869"
           clipPath="url(#thermo-bar)"
         />
-        #3eb237
+        #a3d869
       </svg>
     </div>
   );

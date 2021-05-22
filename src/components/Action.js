@@ -103,7 +103,7 @@ function Action(props) {
         />
         <circle
           fill="none"
-          stroke="#3eb237"
+          stroke="#a3d869"
           strokeWidth="30"
           cx="200"
           cy="200"
@@ -230,7 +230,10 @@ function Action(props) {
             height: 40,
             viewBox: "0 0 400 400",
           })}
-        <div className="action__title">{title}</div>
+        <div className="action__title"
+          dangerouslySetInnerHTML={{
+            __html: title
+          }}></div>
         <div className="action__tools">
           {<MiniThermometer percentage={temperature * -300} />}
           {false && <MiniHeart love={love} />}

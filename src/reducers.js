@@ -13,6 +13,14 @@ export default function rootReducer(state = {}, action) {
           started: true,
         },
       };
+    case "game/stop":
+      return {
+        ...state,
+        game: {
+          ...state.game,
+          started: false,
+        },
+      };
     case "game/introStep":
       return {
         ...state,
@@ -133,7 +141,7 @@ export default function rootReducer(state = {}, action) {
         ...state,
         actions: state.actions.map((a) =>
           a.id === action.data.id
-            ? { ...a, state: "active", activeSinceTick: state.clock.tick }
+            ? {...a, state: "active", activeSinceTick: state.clock.tick}
             : a
         ),
       };
@@ -141,7 +149,7 @@ export default function rootReducer(state = {}, action) {
       return {
         ...state,
         actions: state.actions.map((a) =>
-          a.id === action.data.id ? { ...a, state: "ended" } : a
+          a.id === action.data.id ? {...a, state: "ended"} : a
         ),
       };
     case "actions/open":

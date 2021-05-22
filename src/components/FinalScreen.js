@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { hot } from "react-hot-loader";
+import React, {useState, useEffect} from "react";
+import {useSelector, useDispatch} from "react-redux";
+import {hot} from "react-hot-loader";
 
 import "./FinalScreen.css";
 
@@ -16,8 +16,9 @@ function FinalScreen() {
 
   useEffect(() => {
     if (show) {
-      dispatch({ type: "clock/stop", data: "overlay" });
-      dispatch({ type: "clock/stop", data: "main" });
+      dispatch({type: "clock/stop", data: "overlay"});
+      dispatch({type: "clock/stop", data: "main"});
+      dispatch({type: "game/stop"});
     }
   });
 

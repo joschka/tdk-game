@@ -1,5 +1,53 @@
+@keyframes fadeIn {
+  0% {opacity:0;}
+  20% {opacity:0;}
+  100% {opacity:1;}
+}
+
 .action-detail-view {
   background: white;
   z-index: 1000;
   padding: 10px;
+}
+
+.action-detail-view__content {
+  animation: fadeIn 0.7s;
+}
+
+.action-detail-view__image {
+  width: calc(100% + 20px);
+  margin: -10px -10px 0;
+  object-fit: cover;
+  min-height: 150px;
+  background: lightgray;
+}
+
+.action-detail-view__stars {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.action-detail-view__stars > * {
+  margin: 0 3px;
+}
+
+.action-detail-view__stars > :first-child {
+  margin: 0 20px 0 0;
+}
+
+.action-detail-view__buttons {
+  margin-bottom: 30px;
+}
+
+.action-detail-view__buttons > :first-child {
+  margin-right: 10px;
+}
+
+.action-detail-view__dude {
+  background-image: url("./dude.png");
+  background-size: cover;
+  width: 187px;
+  height: 304px;
+  margin: 10px auto 0;
 }

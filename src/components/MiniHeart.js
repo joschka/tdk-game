@@ -18,7 +18,7 @@ function MiniHeart(props) {
       "-3": 84,
     }[props.love.toString()] * 0.85;
 
-  const color = props.love > 0 ? "#3eb237" : "tomato";
+  const color = props.love > 0 ? "#a3d869" : "tomato";
 
   return (
     <div className="mini-heart">

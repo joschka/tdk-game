@@ -24,9 +24,8 @@ import testAudio from "./test.mp3";
 function App() {
   const gameStarted = useSelector((state) => state.game.started);
   const introStep = useSelector((state) => state.game.introStep);
-  const clockRunning = useSelector((state) => state.clock.isRunning);
 
-  if (clockRunning) {
+  if (gameStarted) {
     window.onbeforeunload = function () {
       return "Möchtest du das Spiel wirklich beenden?";
     };

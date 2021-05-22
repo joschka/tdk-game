@@ -51,6 +51,7 @@ const store = configureStore({
         temperature: -0.25,
         love: 2,
         state: "available",
+        image: "industry",
         activeSinceTick: null,
       },
       {
@@ -106,6 +107,7 @@ const store = configureStore({
         temperature: -0.175,
         love: -3,
         state: "available",
+        image: "tesla",
         activeSinceTick: null,
       },
       {
@@ -129,6 +131,7 @@ const store = configureStore({
         temperature: -0.15,
         love: 2,
         state: "available",
+        image: "kohle",
         activeSinceTick: null,
       },
       {
@@ -140,6 +143,7 @@ const store = configureStore({
         temperature: -0.15,
         love: -1,
         state: "available",
+        image: "solar-wind",
         activeSinceTick: null,
       },
       {
@@ -173,6 +177,7 @@ const store = configureStore({
         temperature: -0.175,
         love: -3,
         state: "available",
+        image: "sanierung",
         activeSinceTick: null,
       },
       {
@@ -188,13 +193,14 @@ const store = configureStore({
       },
       {
         id: "16",
-        title: "CO2 Bepreisung",
+        title: "CO<sub>2</sub> Bepreisung",
         description:
           "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
         duration: duration.short,
         temperature: -0.725,
         love: -3,
         state: "available",
+        image: "wallstreet",
         activeSinceTick: null,
       },
       {
