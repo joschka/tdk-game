@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { hot } from "react-hot-loader";
+import React, {useState, useEffect} from "react";
+import {useSelector, useDispatch} from "react-redux";
+import {hot} from "react-hot-loader";
 
 import "./ActionList.css";
 
@@ -18,10 +18,16 @@ function ActionList() {
     className: ["action-list"].join(" "),
   };
 
+  const sortByImpact = (a, b) => {
+    if (a.temperature < b.temperature) return -1;
+    if (a.temperature > b.temperature) return 1;
+    return 0;
+  };
+
   return (
     <div {...opts}>
       <div className="action-list__list">
-        {actions.map((a) => (
+        {actions.sort(sortByImpact).map((a) => (
           <Action key={a.id} {...a} actionable={actionable} />
         ))}
       </div>

@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { hot } from "react-hot-loader";
+import React, {useState, useEffect} from "react";
+import {useSelector, useDispatch} from "react-redux";
+import {hot} from "react-hot-loader";
 
 import MiniThermometer from "./MiniThermometer.js";
 import MiniHeart from "./MiniHeart.js";
@@ -42,11 +42,11 @@ function Action(props) {
     e.preventDefault();
 
     setShowDetailView(true);
-    dispatch({ type: "clock/stop", data: "overlay" });
+    dispatch({type: "clock/stop", data: "overlay"});
 
     return;
     if (state === "available" && actionable) {
-      dispatch({ type: "action/activate", data: { id } });
+      dispatch({type: "action/activate", data: {id}});
     }
   }
 
@@ -88,9 +88,8 @@ function Action(props) {
 
     const progressStyle = {
       strokeDasharray: `${Math.PI * 2 * 185}px`,
-      strokeDashoffset: `${
-        ((100 - progressPercentage) / 100) * Math.PI * 2 * 185
-      }px`,
+      strokeDashoffset: `${((100 - progressPercentage) / 100) * Math.PI * 2 * 185
+        }px`,
     };
     return (
       <svg xmlns="http://www.w3.org/2000/svg" {...props}>
@@ -191,12 +190,12 @@ function Action(props) {
 
   useEffect(() => {
     if (state === "active" && progressPercentage === 100) {
-      dispatch({ type: "love/change", data: love });
-      dispatch({ type: "temperature/increase", data: temperature });
-      dispatch({ type: "action/end", data: { id } });
+      dispatch({type: "love/change", data: love});
+      dispatch({type: "temperature/increase", data: temperature});
+      dispatch({type: "action/end", data: {id}});
       dispatch({
         type: "futures/add",
-        data: { tick: tick + 12, future: { type: "follow-up" } },
+        data: {tick: tick + 12, future: {type: "follow-up"}},
       });
     }
   });
@@ -209,15 +208,15 @@ function Action(props) {
 
   const onDetailStartClick = () => {
     setShowDetailView(false);
-    dispatch({ type: "clock/start", data: "overlay" });
+    dispatch({type: "clock/start", data: "overlay"});
     if (state === "available" && actionable) {
-      dispatch({ type: "action/activate", data: { id } });
+      dispatch({type: "action/activate", data: {id}});
     }
   };
 
   const onDetailBackClick = () => {
     setShowDetailView(false);
-    dispatch({ type: "clock/start", data: "overlay" });
+    dispatch({type: "clock/start", data: "overlay"});
   };
 
   return (
@@ -234,7 +233,7 @@ function Action(props) {
         <div className="action__title">{title}</div>
         <div className="action__tools">
           {<MiniThermometer percentage={temperature * -300} />}
-          {<MiniHeart love={love} />}
+          {false && <MiniHeart love={love} />}
         </div>
       </div>
       {state === "available" && shownAction === id && (

@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { hot } from "react-hot-loader";
+import React, {useState, useEffect} from "react";
+import {useSelector, useDispatch} from "react-redux";
+import {hot} from "react-hot-loader";
 
 import ActiveActions from "./ActiveActions.js";
 import ActionList from "./ActionList.js";
@@ -20,7 +20,7 @@ function ActionArea() {
   return (
     <div className="action-area" style={style}>
       <div className="action-area__active-actions"></div>
-      <ActionListHeader />
+      { false && <ActionListHeader />}
       <ActionList />
     </div>
   );
