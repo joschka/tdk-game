@@ -1,5 +1,78 @@
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/dm-sans-v6-latin-regular.woff2') format('woff2'), 
+       url('../fonts/dm-sans-v6-latin-regular.woff') format('woff'); 
+}
+
+@font-face {
+  font-family: 'PT Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/pt-sans-v12-latin-regular.woff2') format('woff2'), 
+       url('../fonts/pt-sans-v12-latin-regular.woff') format('woff'); 
+}
+
+@font-face {
+  font-family: 'PT Sans';
+  font-style: italic;
+  font-weight: 400;
+  src: url('../fonts/pt-sans-v12-latin-italic.woff2') format('woff2'), 
+       url('../fonts/pt-sans-v12-latin-italic.woff') format('woff'); 
+}
+
+@font-face {
+  font-family: 'PT Sans';
+  font-style: italic;
+  font-weight: 700;
+  src: url('../fonts/pt-sans-v12-latin-700italic.woff2') format('woff2'), 
+       url('../fonts/pt-sans-v12-latin-700italic.woff') format('woff'); 
+}
+
+@font-face {
+  font-family: 'PT Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/pt-sans-v12-latin-700.woff2') format('woff2'), 
+       url('../fonts/pt-sans-v12-latin-700.woff') format('woff'); 
+}
+
+@font-face {
+  font-family: 'PT Serif';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/pt-serif-v12-latin-regular.woff2') format('woff2'), 
+       url('../fonts/pt-serif-v12-latin-regular.woff') format('woff'); 
+}
+
+@font-face {
+  font-family: 'PT Serif';
+  font-style: italic;
+  font-weight: 400;
+  src: url('../fonts/pt-serif-v12-latin-italic.woff2') format('woff2'), 
+       url('../fonts/pt-serif-v12-latin-italic.woff') format('woff'); 
+}
+
+@font-face {
+  font-family: 'PT Serif';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/pt-serif-v12-latin-700.woff2') format('woff2'), 
+       url('../fonts/pt-serif-v12-latin-700.woff') format('woff'); 
+}
+
+@font-face {
+  font-family: 'PT Serif';
+  font-style: italic;
+  font-weight: 700;
+  src: url('../fonts/pt-serif-v12-latin-700italic.woff2') format('woff2'), 
+       url('../fonts/pt-serif-v12-latin-700italic.woff') format('woff'); 
+}
+
 body {
   margin: 0;
+  font-family: 'DM Sans', sans-serif;
 }
 
 .fixed-screen {
@@ -15,6 +88,7 @@ body {
 
 .app *,
 .app *::after,
+
 .app *::before {
   box-sizing: border-box;
 }
@@ -22,7 +96,6 @@ body {
 
 .app {
   position: relative;
-  font-family: sans-serif;
 }
 
 .bg-gradient {

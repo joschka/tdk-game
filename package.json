@@ -4,7 +4,7 @@
   "description": "Klimakanzler:in",
   "private": true,
   "scripts": {
-    "build": "webpack --mode production",
+    "build": "webpack --mode production && cp ./src/og-image.png ./dist/",
     "start": "webpack serve"
   },
   "keywords": [],

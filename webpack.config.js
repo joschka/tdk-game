@@ -41,8 +41,9 @@ module.exports = {
         test: /^(?!.*\.inline\.svg$).*\.svg$/,
         use: ['url-loader']
       },
+
       {
-        test: /\.(png|jpg|gif|mp3)$/i,
+        test: /\.(png|jpg|gif|mp3|woff|woff2)$/i,
         type: 'asset/resource',
         //use: ['url-loader'],
       },
