@@ -73,10 +73,11 @@
 body {
   margin: 0;
   font-family: "DM Sans", sans-serif;
+  background: lightgray;
 }
 
 .fixed-screen {
-  position: fixed;
+  position: absolute;
   left: 0;
   top: 0;
   bottom: 0;
@@ -93,6 +94,11 @@ body {
 
 .app {
   position: relative;
+  min-width: 320px;
+  max-width: 600px;
+  min-height: 100vh;
+  margin: 0 auto;
+  background: #fff;
 }
 
 .bg-gradient {

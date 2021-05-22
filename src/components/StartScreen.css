@@ -27,3 +27,14 @@
   font-weight: bold;
   line-height: 1.5;
 }
+
+.start-screen__warning {
+  display: none;
+  color: orange;
+}
+
+@media (min-width: 601px) {
+  .start-screen__warning {
+    display: block;
+  }
+}

@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { hot } from "react-hot-loader";
+import React, {useState, useEffect} from "react";
+import {useSelector, useDispatch} from "react-redux";
+import {hot} from "react-hot-loader";
 
 import "./StartScreen.css";
 
@@ -15,13 +15,13 @@ function StartScreen() {
   const param = queryParams.get("intro");
   if (param && param === "0") {
     console.log("intro=0");
-    dispatch({ type: "game/start" });
-    dispatch({ type: "clock/start" });
+    dispatch({type: "game/start"});
+    dispatch({type: "clock/start"});
     return null;
   }
 
   function nextStep(e) {
-    dispatch({ type: "game/introStep", data: 1 });
+    dispatch({type: "game/introStep", data: 1});
   }
 
   useEffect(() => {
@@ -36,6 +36,7 @@ function StartScreen() {
   if (gameStarted || introStep !== 0) return null;
   return (
     <div className="start-screen fixed-screen">
+      <div className="start-screen__warning">Für das beste Spielerlebnis nutze bitte dein Smartphone.</div>
       <h1 className="start-screen__title">Ich kann Klimakanzler:in</h1>
 
       <svg
@@ -48,6 +49,16 @@ function StartScreen() {
 
       <p className="start-screen__bottom-text">
         Es ist noch nicht zu spät. Aber es braucht jetzt entschiedenes Handeln!
+      </p>
+
+      <p>
+        Ein Spiel von
+        <br />
+        <a href="https://www.germanzero.de/" target="_blank" rel="noopener">GermanZero e.V.</a>
+        <br />
+        <a href="https://www.germanzero.de/impressum" target="_blank" rel="noopener">Impressum</a>
+        |
+        <a href="https://www.germanzero.de/datenschutz" target="_blank" rel="noopener">Datenschutz</a>
       </p>
     </div>
   );

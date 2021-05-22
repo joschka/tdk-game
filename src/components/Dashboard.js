@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { hot } from "react-hot-loader";
+import React, {useState, useEffect} from "react";
+import {useSelector, useDispatch} from "react-redux";
+import {hot} from "react-hot-loader";
 
 import "./Dashboard.css";
 
@@ -37,11 +37,13 @@ function Dashboard(props) {
         <PlayFastForwardButton size={"large"} />
       </div>
       {uiState === "bottom" && (
-        <div {...optsSmall}>
-          <Thermometer size={"small"} />
-          <LoveChart size={"small"} />
-          <ProgressBar size={"small"} />
-          <PlayFastForwardButton size={"small"} />
+        <div className="dashboard-fixed">
+          <div {...optsSmall}>
+            <Thermometer size={"small"} />
+            <LoveChart size={"small"} />
+            <ProgressBar size={"small"} />
+            <PlayFastForwardButton size={"small"} />
+          </div>
         </div>
       )}
     </div>

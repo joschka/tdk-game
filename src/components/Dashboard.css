@@ -5,13 +5,17 @@
   grid-gap: 10px;
 }
 
-.dashboard--small {
+.dashboard-fixed {
   position: fixed;
   top: 0;
   left: 0;
   z-index: 90;
   width: 100%;
-  padding: 5px;
+}
+
+.dashboard-fixed > div {
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 .dashboard > * {
