@@ -18,3 +18,15 @@ You need `node` and `npm` installed.
 Go to `localhost:4444`.
 
 
+
+## Production build
+
+```
+  npm run build
+```
+
+Analyze bundle composition (will open browser window):
+
+```
+  ANALYZE_BUNDLE=true npm run build
+```

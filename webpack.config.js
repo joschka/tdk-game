@@ -1,5 +1,22 @@
 const path = require('path');
 const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+
+const plugins = [
+  new webpack.HotModuleReplacementPlugin(),
+  new HtmlWebpackPlugin({
+    minify: false
+  }),
+  new FaviconsWebpackPlugin({
+    logo: './src/favicon.png',
+  })
+];
+
+if (process.env.ANALYZE_BUNDLE) {
+  plugins.push(new BundleAnalyzerPlugin())
+}
 
 module.exports = {
   entry: './src/index.js',
@@ -10,7 +27,7 @@ module.exports = {
         test: /\.(js|jsx)$/,
         exclude: /(node_modules|bower_components)/,
         loader: 'babel-loader',
-        options: { presets: ['@babel/env'] }
+        options: {presets: ['@babel/env']}
       },
       {
         test: /\.css$/,
@@ -25,22 +42,24 @@ module.exports = {
         use: ['url-loader']
       },
       {
-        test: /\.(png|jpg|gif)$/i,
-        use: ['url-loader'],
+        test: /\.(png|jpg|gif|mp3)$/i,
+        type: 'asset/resource',
+        //use: ['url-loader'],
       },
     ],
   },
-  resolve: { extensions: ['*', '.mjs', '.js', '.jsx'] },
+  resolve: {extensions: ['*', '.mjs', '.js', '.jsx']},
   output: {
-    path: path.resolve(__dirname, 'build/js/'),
-    publicPath: '/js/',
-    filename: 'bundle.js'
+    path: path.resolve(__dirname, 'dist/'),
+    publicPath: '/',
+    filename: '[contenthash].js',
+    clean: true,
   },
   devServer: {
-    contentBase: path.join(__dirname, 'build/'),
+    contentBase: path.join(__dirname, 'dist/'),
     port: 4444,
-    publicPath: 'http://localhost:4444/js/',
+    publicPath: 'http://localhost:4444/',
     hotOnly: true
   },
-  plugins: [new webpack.HotModuleReplacementPlugin()]
+  plugins,
 };

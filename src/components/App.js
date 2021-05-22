@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { hot } from 'react-hot-loader';
+import React, {useState, useEffect} from 'react';
+import {useSelector, useDispatch} from 'react-redux';
+import {hot} from 'react-hot-loader';
 
 import './App.css';
 
@@ -15,10 +15,11 @@ import FinalScreen from './FinalScreen.js';
 import Thermometer from './Thermometer.js';
 import LoveDisplay from './LoveDisplay.js';
 import ExampleEvent from './ExampleEvent.js';
-import ProgressChart from './ProgressChart.js';
 import ActionArea from './ActionArea.js';
 import ScrollWatcher from './ScrollWatcher.js';
 import FutureExecutor from './FutureExecutor.js';
+
+import testAudio from './test.mp3';
 
 function App() {
   const gameStarted = useSelector(state => state.game.started);
@@ -27,22 +28,22 @@ function App() {
   return (
     <div>
       <div className='app'>
-        <StartScreen />        
+        <StartScreen />
         <Explainer />
-        { gameStarted &&
-        <>
-          <Dashboard />
-          <ActionArea />
-          <ExampleEvent />
-          <FinalScreen />
-          <FutureExecutor />
-        </>
+        {gameStarted &&
+          <>
+            <Dashboard />
+            <ActionArea />
+            <ExampleEvent />
+            <FinalScreen />
+            <FutureExecutor />
+          </>
         }
       </div>
       <Clock />
       <ScrollWatcher />
-      <audio  id='audio-player'>
-        <source src='./test.mp3' type='audio/mp3' />
+      <audio id='audio-player'>
+        <source src={testAudio} type='audio/mp3' />
       </audio>
 
     </div>
