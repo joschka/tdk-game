@@ -10,6 +10,7 @@ import imageKohle from "../images/kohle.jpg";
 import imageWallstreet from "../images/wallstreet.jpg";
 import imageSanierung from "../images/sanierung.jpg";
 import imageSolarWind from "../images/solar-wind.jpg";
+import imageWork from "../images/work.gif";
 
 import MiniThermometer from "./MiniThermometer";
 
@@ -54,6 +55,7 @@ function ActionDetailView(props) {
       imageSrc = imageSolarWind;
       break;
     default:
+      imageSrc = imageWork;
       break;
   }
 
