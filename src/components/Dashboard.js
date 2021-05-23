@@ -7,7 +7,7 @@ import "./Dashboard.css";
 import Thermometer from "./Thermometer.js";
 import LoveChart from "./LoveChart.js";
 import ProgressBar from "./ProgressBar.js";
-import PlayFastForwardButton from "./PlayFastForwardButton.js";
+import PauseButton from "./PauseButton";
 
 function Dashboard(props) {
   const dispatch = useDispatch();
@@ -34,7 +34,7 @@ function Dashboard(props) {
         <Thermometer size={"large"} />
         <LoveChart size={"large"} />
         <ProgressBar size={"large"} />
-        <PlayFastForwardButton size={"large"} />
+        <PauseButton size={"large"} />
       </div>
       {uiState === "bottom" && (
         <div className="dashboard-fixed">
@@ -42,7 +42,7 @@ function Dashboard(props) {
             <Thermometer size={"small"} />
             <LoveChart size={"small"} />
             <ProgressBar size={"small"} />
-            <PlayFastForwardButton size={"small"} />
+            <PauseButton size={"small"} />
           </div>
         </div>
       )}

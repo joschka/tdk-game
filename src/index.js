@@ -36,7 +36,8 @@ const store = configureStore({
       isRunning: false,
       isRunningMain: true,
       isRunningOverlay: true,
-      isFast: false,
+      isRunningButton: true,
+      isFast: true,
       duration: 159 * 4, // 159 Monate (2 ticks == 1 month)
       tick: 0,
     },

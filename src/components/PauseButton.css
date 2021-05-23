@@ -1,0 +1,10 @@
+.pause-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pause-button svg {
+  height: 50%;
+  width: 50%;
+}

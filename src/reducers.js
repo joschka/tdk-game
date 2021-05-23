@@ -39,6 +39,10 @@ export default function rootReducer(state = {}, action) {
           action.data && action.data === "overlay"
             ? true
             : state.clock.isRunningOverlay,
+        isRunningButton:
+          action.data && action.data === "button"
+            ? true
+            : state.clock.isRunningButton,
       };
 
       return {
@@ -46,14 +50,7 @@ export default function rootReducer(state = {}, action) {
         clock: {
           ...state.clock,
           ...clockStart,
-          isRunning: clockStart.isRunningMain && clockStart.isRunningOverlay,
-        },
-      };
-      return {
-        ...state,
-        clock: {
-          ...state.clock,
-          isRunning: true,
+          isRunning: clockStart.isRunningMain && clockStart.isRunningOverlay && clockStart.isRunningButton,
         },
       };
     case "clock/stop":
@@ -66,6 +63,10 @@ export default function rootReducer(state = {}, action) {
           action.data && action.data === "overlay"
             ? false
             : state.clock.isRunningOverlay,
+        isRunningButton:
+          action.data && action.data === "button"
+            ? false
+            : state.clock.isRunningButton,
       };
 
       return {
@@ -73,7 +74,7 @@ export default function rootReducer(state = {}, action) {
         clock: {
           ...state.clock,
           ...clockStop,
-          isRunning: clockStop.isRunningMain && clockStop.isRunningOverlay,
+          isRunning: clockStop.isRunningMain && clockStop.isRunningOverlay && clockStop.isRunningButton,
         },
       };
     case "clock/fast":
