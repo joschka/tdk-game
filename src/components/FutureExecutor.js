@@ -1,6 +1,8 @@
-import React, { useState, useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { hot } from "react-hot-loader";
+import React, {useState, useEffect} from "react";
+import {useSelector, useDispatch} from "react-redux";
+import {hot} from "react-hot-loader";
+
+import FollowUp from "./FollowUp";
 
 import "./FutureExecutor.css";
 
@@ -27,14 +29,14 @@ function FutureExecutor() {
 
       if (clockIsRunning) {
         setClockStoppedAtTick(currentTick);
-        dispatch({ type: "clock/stop", data: "overlay" });
+        dispatch({type: "clock/stop", data: "overlay"});
       }
     } else if (currentFutureIndex >= currentFutures.length) {
       setCurrentFutureIndex(null);
       setMinimumTick(currentTick + 1);
 
       if (!clockIsRunning && clockStoppedAtTick === currentTick) {
-        dispatch({ type: "clock/start", data: "overlay" });
+        dispatch({type: "clock/start", data: "overlay"});
       }
     }
 
@@ -48,8 +50,8 @@ function FutureExecutor() {
   const renderFuture = (future) => {
     return (
       <div className="future fixed-screen">
-        {future.type}
-        <button onClick={onFutureClose}>Close</button>
+        {future.type === 'follow-up' && <FollowUp future={future} onClose={onFutureClose} />}
+        {future.type !== 'follow-up' && <button onClick={onFutureClose}>Close</button>}
       </div>
     );
   };

@@ -1,0 +1,31 @@
+.follow-up {
+}
+
+.follow-up__checkmark {
+  display: flex;
+  justify-content: flex-end;
+  padding: 30px 0 0 0;
+  margin-right: -50px;
+}
+
+.follow-up__header {
+  margin-top: -100px;
+  padding: 0 30px;
+  margin-bottom: 50px;
+}
+
+.follow-up__header > strong {
+  font-size: 20px;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.follow-up__image {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+.follow-up__thermometer {
+  display: flex;
+  justify-content: center;
+  }

@@ -195,7 +195,7 @@ function Action(props) {
       dispatch({type: "action/end", data: {id}});
       dispatch({
         type: "futures/add",
-        data: {tick: tick + 12, future: {type: "follow-up"}},
+        data: {tick: tick + 1, future: {type: "follow-up", title, temperature, love}},
       });
     }
   });

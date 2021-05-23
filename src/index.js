@@ -96,6 +96,7 @@ const store = configureStore({
         temperature: -0.025,
         love: 2,
         state: "available",
+        successImage: 'newspaper',
         activeSinceTick: null,
       },
       {
