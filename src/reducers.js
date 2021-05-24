@@ -19,6 +19,7 @@ export default function rootReducer(state = {}, action) {
         game: {
           ...state.game,
           started: false,
+          stopped: true,
         },
       };
     case "game/introStep":
@@ -128,14 +129,10 @@ export default function rootReducer(state = {}, action) {
         },
       };
     case "love/change":
-      let multiplier = 1;
-      if (state.love > 20 && state.love < 80) {
-        multiplier = 10;
-      }
-      const newLove = state.love + action.data * multiplier;
+      const newLove = state.love + action.data;
       return {
         ...state,
-        love: newLove,
+        love: newLove > 100 ? 100 : newLove < 0 ? 0 : newLove,
       };
     case "action/activate":
       return {

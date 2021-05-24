@@ -8,12 +8,14 @@ function StartScreen() {
   const dispatch = useDispatch();
 
   const gameStarted = useSelector((state) => state.game.started);
+  const gameStopped = useSelector((state) => state.game.stopped);
   const introStep = useSelector((state) => state.game.introStep);
+
 
   // skip intro
   const queryParams = new URLSearchParams(window.location.search);
   const param = queryParams.get("intro");
-  if (param && param === "0") {
+  if (!gameStarted && !(gameStopped === true) && param && param === "0") {
     console.log("intro=0");
     dispatch({type: "game/start"});
     dispatch({type: "clock/start"});
@@ -33,7 +35,9 @@ function StartScreen() {
     return () => {};
   }, []);
 
-  if (gameStarted || introStep !== 0) return null;
+  console.log({gameStarted, gameStopped, introStep});
+  if (gameStarted || gameStopped || introStep !== 0) return null;
+
   return (
     <div className="start-screen fixed-screen">
       <div className="start-screen__warning">Für das beste Spielerlebnis nutze bitte dein Smartphone.</div>

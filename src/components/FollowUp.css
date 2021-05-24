@@ -1,4 +1,10 @@
 .follow-up {
+  overflow: hidden;
+  min-height: 100vh;
+}
+
+.follow-up > div {
+  height: 100%;
 }
 
 .follow-up__checkmark {
@@ -28,4 +34,29 @@
 .follow-up__thermometer {
   display: flex;
   justify-content: center;
-  }
+}
+
+
+.follow-up__question {
+  padding: 40px 20px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.follow-up__answer {
+  margin: 10px 20px;
+  padding: 10px;
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+.follow-up__reaction {
+  padding: 40px 20px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.follow-up__love {
+  padding: 40px 20px;
+  font-size: 20px;
+}

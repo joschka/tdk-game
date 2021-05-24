@@ -101,7 +101,7 @@ function ProgressBar(props) {
         month = "Dez";
         break;
       default:
-        month = "ERR";
+        month = "Okt";
     }
 
     year = [

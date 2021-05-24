@@ -35,6 +35,8 @@ function Action(props) {
     temperature,
     love,
     actionable,
+    questions,
+    successImage,
   } = props;
 
   function handleClick(e) {
@@ -190,12 +192,12 @@ function Action(props) {
 
   useEffect(() => {
     if (state === "active" && progressPercentage === 100) {
-      dispatch({type: "love/change", data: love});
+      //dispatch({type: "love/change", data: love});
       dispatch({type: "temperature/increase", data: temperature});
       dispatch({type: "action/end", data: {id}});
       dispatch({
         type: "futures/add",
-        data: {tick: tick + 1, future: {type: "follow-up", title, temperature, love}},
+        data: {tick: tick + 1, future: {type: "follow-up", title, temperature, love, questions, successImage}},
       });
     }
   });

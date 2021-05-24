@@ -46,6 +46,7 @@ function FinalScreen() {
   return (
     <div className={cssClasses.join(" ")}>
       <Text />
+      <button className="button button--secondary">Nochmal spielen</button>
     </div>
   );
 }

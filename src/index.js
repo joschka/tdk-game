@@ -19,6 +19,7 @@ const store = configureStore({
   preloadedState: {
     game: {
       started: false,
+      stopped: undefined,
       introStep: 0,
     },
     ui: {
@@ -53,7 +54,30 @@ const store = configureStore({
         love: 2,
         state: "available",
         image: "industry",
+        successImage: null,
         activeSinceTick: null,
+        questions: [
+          {
+            text: "Die Autolobby erklärt Sie öffentlich für nicht zurechnungsfähig. Wie reagieren Sie?",
+            answers: [
+              {
+                text: "Ich begebe mich unverzüglich in Behandlung.",
+                love: -10,
+                reaction: "Something happened.",
+              },
+              {
+                text: "Ich ignoriere die Vorwürfe, weil die Autolobby keine Rolle spielt.",
+                love: -5,
+                reaction: "Something happened.",
+              },
+              {
+                text: "Ich erkläre, dass das alles ein Missverständnis ist und zähle die Vorteile für eine vorwärtsgewandte Autoindustrie auf.",
+                love: 10,
+                reaction: "Something happened.",
+              }
+            ],
+          }
+        ]
       },
       {
         id: "3",
@@ -64,7 +88,30 @@ const store = configureStore({
         temperature: -0.1,
         love: 1,
         state: "available",
+        successImage: null,
         activeSinceTick: null,
+        questions: [
+          {
+            text: "Die Autolobby erklärt Sie öffentlich für nicht zurechnungsfähig. Wie reagieren Sie?",
+            answers: [
+              {
+                text: "Ich begebe mich unverzüglich in Behandlung.",
+                love: -10,
+                reaction: "Something happened.",
+              },
+              {
+                text: "Ich ignoriere die Vorwürfe, weil die Autolobby keine Rolle spielt.",
+                love: -5,
+                reaction: "Something happened.",
+              },
+              {
+                text: "Ich erkläre, dass das alles ein Missverständnis ist und zähle die Vorteile für eine vorwärtsgewandte Autoindustrie auf.",
+                love: 10,
+                reaction: "Something happened.",
+              }
+            ],
+          }
+        ]
       },
       {
         id: "4",
@@ -75,7 +122,30 @@ const store = configureStore({
         temperature: -0.075,
         love: -1,
         state: "available",
+        successImage: null,
         activeSinceTick: null,
+        questions: [
+          {
+            text: "Die Autolobby erklärt Sie öffentlich für nicht zurechnungsfähig. Wie reagieren Sie?",
+            answers: [
+              {
+                text: "Ich begebe mich unverzüglich in Behandlung.",
+                love: -10,
+                reaction: "Something happened.",
+              },
+              {
+                text: "Ich ignoriere die Vorwürfe, weil die Autolobby keine Rolle spielt.",
+                love: -5,
+                reaction: "Something happened.",
+              },
+              {
+                text: "Ich erkläre, dass das alles ein Missverständnis ist und zähle die Vorteile für eine vorwärtsgewandte Autoindustrie auf.",
+                love: 10,
+                reaction: "Something happened.",
+              }
+            ],
+          }
+        ]
       },
       {
         id: "5",
@@ -86,7 +156,30 @@ const store = configureStore({
         temperature: -0.075,
         love: 1,
         state: "available",
+        successImage: null,
         activeSinceTick: null,
+        questions: [
+          {
+            text: "Die Autolobby erklärt Sie öffentlich für nicht zurechnungsfähig. Wie reagieren Sie?",
+            answers: [
+              {
+                text: "Ich begebe mich unverzüglich in Behandlung.",
+                love: -10,
+                reaction: "Something happened.",
+              },
+              {
+                text: "Ich ignoriere die Vorwürfe, weil die Autolobby keine Rolle spielt.",
+                love: -5,
+                reaction: "Something happened.",
+              },
+              {
+                text: "Ich erkläre, dass das alles ein Missverständnis ist und zähle die Vorteile für eine vorwärtsgewandte Autoindustrie auf.",
+                love: 10,
+                reaction: "Something happened.",
+              }
+            ],
+          }
+        ]
       },
       {
         id: "6",
@@ -99,6 +192,28 @@ const store = configureStore({
         state: "available",
         successImage: 'newspaper',
         activeSinceTick: null,
+        questions: [
+          {
+            text: "Die Autolobby erklärt Sie öffentlich für nicht zurechnungsfähig. Wie reagieren Sie?",
+            answers: [
+              {
+                text: "Ich begebe mich unverzüglich in Behandlung.",
+                love: -10,
+                reaction: "Something happened.",
+              },
+              {
+                text: "Ich ignoriere die Vorwürfe, weil die Autolobby keine Rolle spielt.",
+                love: -5,
+                reaction: "Something happened.",
+              },
+              {
+                text: "Ich erkläre, dass das alles ein Missverständnis ist und zähle die Vorteile für eine vorwärtsgewandte Autoindustrie auf.",
+                love: 10,
+                reaction: "Something happened.",
+              }
+            ],
+          }
+        ]
       },
       {
         id: "7",
@@ -110,7 +225,30 @@ const store = configureStore({
         love: -3,
         state: "available",
         image: "tesla",
+        successImage: null,
         activeSinceTick: null,
+        questions: [
+          {
+            text: "Die Autolobby erklärt Sie öffentlich für nicht zurechnungsfähig. Wie reagieren Sie?",
+            answers: [
+              {
+                text: "Ich begebe mich unverzüglich in Behandlung.",
+                love: -10,
+                reaction: "Something happened.",
+              },
+              {
+                text: "Ich ignoriere die Vorwürfe, weil die Autolobby keine Rolle spielt.",
+                love: -5,
+                reaction: "Something happened.",
+              },
+              {
+                text: "Ich erkläre, dass das alles ein Missverständnis ist und zähle die Vorteile für eine vorwärtsgewandte Autoindustrie auf.",
+                love: 10,
+                reaction: "Something happened.",
+              }
+            ],
+          }
+        ]
       },
       {
         id: "9",
@@ -121,7 +259,30 @@ const store = configureStore({
         temperature: -0.1,
         love: -1,
         state: "available",
+        successImage: null,
         activeSinceTick: null,
+        questions: [
+          {
+            text: "Die Autolobby erklärt Sie öffentlich für nicht zurechnungsfähig. Wie reagieren Sie?",
+            answers: [
+              {
+                text: "Ich begebe mich unverzüglich in Behandlung.",
+                love: -10,
+                reaction: "Something happened.",
+              },
+              {
+                text: "Ich ignoriere die Vorwürfe, weil die Autolobby keine Rolle spielt.",
+                love: -5,
+                reaction: "Something happened.",
+              },
+              {
+                text: "Ich erkläre, dass das alles ein Missverständnis ist und zähle die Vorteile für eine vorwärtsgewandte Autoindustrie auf.",
+                love: 10,
+                reaction: "Something happened.",
+              }
+            ],
+          }
+        ]
       },
       {
         id: "10",
@@ -134,7 +295,30 @@ const store = configureStore({
         love: 2,
         state: "available",
         image: "kohle",
+        successImage: null,
         activeSinceTick: null,
+        questions: [
+          {
+            text: "Die Autolobby erklärt Sie öffentlich für nicht zurechnungsfähig. Wie reagieren Sie?",
+            answers: [
+              {
+                text: "Ich begebe mich unverzüglich in Behandlung.",
+                love: -10,
+                reaction: "Something happened.",
+              },
+              {
+                text: "Ich ignoriere die Vorwürfe, weil die Autolobby keine Rolle spielt.",
+                love: -5,
+                reaction: "Something happened.",
+              },
+              {
+                text: "Ich erkläre, dass das alles ein Missverständnis ist und zähle die Vorteile für eine vorwärtsgewandte Autoindustrie auf.",
+                love: 10,
+                reaction: "Something happened.",
+              }
+            ],
+          }
+        ]
       },
       {
         id: "11",
@@ -146,7 +330,30 @@ const store = configureStore({
         love: -1,
         state: "available",
         image: "solar-wind",
+        successImage: null,
         activeSinceTick: null,
+        questions: [
+          {
+            text: "Die Autolobby erklärt Sie öffentlich für nicht zurechnungsfähig. Wie reagieren Sie?",
+            answers: [
+              {
+                text: "Ich begebe mich unverzüglich in Behandlung.",
+                love: -10,
+                reaction: "Something happened.",
+              },
+              {
+                text: "Ich ignoriere die Vorwürfe, weil die Autolobby keine Rolle spielt.",
+                love: -5,
+                reaction: "Something happened.",
+              },
+              {
+                text: "Ich erkläre, dass das alles ein Missverständnis ist und zähle die Vorteile für eine vorwärtsgewandte Autoindustrie auf.",
+                love: 10,
+                reaction: "Something happened.",
+              }
+            ],
+          }
+        ]
       },
       {
         id: "12",
@@ -157,7 +364,30 @@ const store = configureStore({
         temperature: -0.15,
         love: 0,
         state: "available",
+        successImage: null,
         activeSinceTick: null,
+        questions: [
+          {
+            text: "Die Autolobby erklärt Sie öffentlich für nicht zurechnungsfähig. Wie reagieren Sie?",
+            answers: [
+              {
+                text: "Ich begebe mich unverzüglich in Behandlung.",
+                love: -10,
+                reaction: "Something happened.",
+              },
+              {
+                text: "Ich ignoriere die Vorwürfe, weil die Autolobby keine Rolle spielt.",
+                love: -5,
+                reaction: "Something happened.",
+              },
+              {
+                text: "Ich erkläre, dass das alles ein Missverständnis ist und zähle die Vorteile für eine vorwärtsgewandte Autoindustrie auf.",
+                love: 10,
+                reaction: "Something happened.",
+              }
+            ],
+          }
+        ]
       },
       {
         id: "13",
@@ -168,7 +398,30 @@ const store = configureStore({
         temperature: -0.15,
         love: 2,
         state: "available",
+        successImage: null,
         activeSinceTick: null,
+        questions: [
+          {
+            text: "Die Autolobby erklärt Sie öffentlich für nicht zurechnungsfähig. Wie reagieren Sie?",
+            answers: [
+              {
+                text: "Ich begebe mich unverzüglich in Behandlung.",
+                love: -10,
+                reaction: "Something happened.",
+              },
+              {
+                text: "Ich ignoriere die Vorwürfe, weil die Autolobby keine Rolle spielt.",
+                love: -5,
+                reaction: "Something happened.",
+              },
+              {
+                text: "Ich erkläre, dass das alles ein Missverständnis ist und zähle die Vorteile für eine vorwärtsgewandte Autoindustrie auf.",
+                love: 10,
+                reaction: "Something happened.",
+              }
+            ],
+          }
+        ]
       },
       {
         id: "14",
@@ -180,7 +433,30 @@ const store = configureStore({
         love: -3,
         state: "available",
         image: "sanierung",
+        successImage: null,
         activeSinceTick: null,
+        questions: [
+          {
+            text: "Die Autolobby erklärt Sie öffentlich für nicht zurechnungsfähig. Wie reagieren Sie?",
+            answers: [
+              {
+                text: "Ich begebe mich unverzüglich in Behandlung.",
+                love: -10,
+                reaction: "Something happened.",
+              },
+              {
+                text: "Ich ignoriere die Vorwürfe, weil die Autolobby keine Rolle spielt.",
+                love: -5,
+                reaction: "Something happened.",
+              },
+              {
+                text: "Ich erkläre, dass das alles ein Missverständnis ist und zähle die Vorteile für eine vorwärtsgewandte Autoindustrie auf.",
+                love: 10,
+                reaction: "Something happened.",
+              }
+            ],
+          }
+        ]
       },
       {
         id: "15",
@@ -191,7 +467,30 @@ const store = configureStore({
         temperature: -0.0875,
         love: -1,
         state: "available",
+        successImage: null,
         activeSinceTick: null,
+        questions: [
+          {
+            text: "Die Autolobby erklärt Sie öffentlich für nicht zurechnungsfähig. Wie reagieren Sie?",
+            answers: [
+              {
+                text: "Ich begebe mich unverzüglich in Behandlung.",
+                love: -10,
+                reaction: "Something happened.",
+              },
+              {
+                text: "Ich ignoriere die Vorwürfe, weil die Autolobby keine Rolle spielt.",
+                love: -5,
+                reaction: "Something happened.",
+              },
+              {
+                text: "Ich erkläre, dass das alles ein Missverständnis ist und zähle die Vorteile für eine vorwärtsgewandte Autoindustrie auf.",
+                love: 10,
+                reaction: "Something happened.",
+              }
+            ],
+          }
+        ]
       },
       {
         id: "16",
@@ -203,7 +502,30 @@ const store = configureStore({
         love: -3,
         state: "available",
         image: "wallstreet",
+        successImage: null,
         activeSinceTick: null,
+        questions: [
+          {
+            text: "Die Autolobby erklärt Sie öffentlich für nicht zurechnungsfähig. Wie reagieren Sie?",
+            answers: [
+              {
+                text: "Ich begebe mich unverzüglich in Behandlung.",
+                love: -10,
+                reaction: "Something happened.",
+              },
+              {
+                text: "Ich ignoriere die Vorwürfe, weil die Autolobby keine Rolle spielt.",
+                love: -5,
+                reaction: "Something happened.",
+              },
+              {
+                text: "Ich erkläre, dass das alles ein Missverständnis ist und zähle die Vorteile für eine vorwärtsgewandte Autoindustrie auf.",
+                love: 10,
+                reaction: "Something happened.",
+              }
+            ],
+          }
+        ]
       },
       {
         id: "17",
@@ -214,7 +536,30 @@ const store = configureStore({
         temperature: -0.125,
         love: 2,
         state: "available",
+        successImage: null,
         activeSinceTick: null,
+        questions: [
+          {
+            text: "Die Autolobby erklärt Sie öffentlich für nicht zurechnungsfähig. Wie reagieren Sie?",
+            answers: [
+              {
+                text: "Ich begebe mich unverzüglich in Behandlung.",
+                love: -10,
+                reaction: "Something happened.",
+              },
+              {
+                text: "Ich ignoriere die Vorwürfe, weil die Autolobby keine Rolle spielt.",
+                love: -5,
+                reaction: "Something happened.",
+              },
+              {
+                text: "Ich erkläre, dass das alles ein Missverständnis ist und zähle die Vorteile für eine vorwärtsgewandte Autoindustrie auf.",
+                love: 10,
+                reaction: "Something happened.",
+              }
+            ],
+          }
+        ]
       },
     ],
     actionPartitions: ["active", "available", "ended"],

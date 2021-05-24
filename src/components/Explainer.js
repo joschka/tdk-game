@@ -15,9 +15,10 @@ function Explainer() {
   const dispatch = useDispatch();
 
   const gameStarted = useSelector((state) => state.game.started);
+  const gameStopped = useSelector((state) => state.game.stopped);
   const introStep = useSelector((state) => state.game.introStep);
 
-  if (gameStarted || introStep < 1) return null;
+  if (gameStarted || gameStopped || introStep < 1) return null;
 
   const stepDuration = [18, 13, 12][introStep - 1];
 
