@@ -23,6 +23,7 @@ import testAudio from "./test.mp3";
 
 function App() {
   const gameStarted = useSelector((state) => state.game.started);
+  const gameStopped = useSelector((state) => state.game.stopped);
   const introStep = useSelector((state) => state.game.introStep);
 
   if (gameStarted) {
@@ -38,13 +39,13 @@ function App() {
       <div className="app">
         <StartScreen />
         <Explainer />
-        {gameStarted && (
+        {(gameStarted || gameStopped) && (
           <>
-            <Dashboard />
-            <ActionArea />
-            <ExampleEvent />
+            {gameStarted && <Dashboard />}
+            {gameStarted && <ActionArea />}
+            {gameStarted && <ExampleEvent />}
             <FinalScreen />
-            <FutureExecutor />
+            {gameStarted && <FutureExecutor />}
           </>
         )}
       </div>

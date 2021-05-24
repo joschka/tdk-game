@@ -11,17 +11,17 @@ function StartScreen() {
   const gameStopped = useSelector((state) => state.game.stopped);
   const introStep = useSelector((state) => state.game.introStep);
 
-
-  // skip intro
-  const queryParams = new URLSearchParams(window.location.search);
-  const param = queryParams.get("intro");
-  if (!gameStarted && !(gameStopped === true) && param && param === "0") {
-    console.log("intro=0");
-    dispatch({type: "game/start"});
-    dispatch({type: "clock/start"});
-    return null;
-  }
-
+  /*
+    // skip intro
+    const queryParams = new URLSearchParams(window.location.search);
+    const param = queryParams.get("intro");
+    if (!gameStarted && !(gameStopped === true) && param && param === "0") {
+      console.log("intro=0");
+      dispatch({type: "game/start"});
+      dispatch({type: "clock/start"});
+      return null;
+    }
+  */
   function nextStep(e) {
     dispatch({type: "game/introStep", data: 1});
   }
@@ -35,7 +35,6 @@ function StartScreen() {
     return () => {};
   }, []);
 
-  console.log({gameStarted, gameStopped, introStep});
   if (gameStarted || gameStopped || introStep !== 0) return null;
 
   return (

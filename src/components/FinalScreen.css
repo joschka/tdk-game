@@ -1,21 +1,27 @@
 .final-screen {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  color: white;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-size: 2rem;
-  z-index: 100;
+  font-size: 20px;
 }
 
 .final-screen__won {
-  background: green;
+  padding: 20px;
+  background: white;
+  color: green;
 }
 
 .final-screen__lost {
-  background: black;
+  padding: 20px;
+  background: white;
+  color: black;
+}
+
+.final-screen__again {
+  margin: 50px 0;
+}
+
+.final-screen__share {
+  margin: 50px 0 0;
 }
