@@ -79,6 +79,13 @@
     url("../fonts/pt-serif-v12-latin-700italic.woff") format("woff");
 }
 
+:root {
+  --yellow: #ffc80c;
+  --blue: #00aed8;
+  --green: #a3d869;
+  --blue-dark: #011633;
+}
+
 body {
   margin: 0;
   font-family: "DM Sans", sans-serif;

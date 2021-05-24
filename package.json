@@ -6,6 +6,7 @@
   "scripts": {
     "build": "webpack --mode production && cp ./src/og-image.png ./dist/",
     "start": "webpack serve",
+    "svgo": "svgo --config ./svgo.config.js",
     "zip": "cd dist && zip -r \"/tmp/klimakanzlerin_dist_`date -I`.zip\" *"
   },
   "keywords": [],
@@ -23,6 +24,7 @@
     "html-webpack-plugin": "^5.3.1",
     "npm-run-all": "^4.1.5",
     "style-loader": "^2.0.0",
+    "svgo": "^2.3.0",
     "webpack": "^5.37.1",
     "webpack-bundle-analyzer": "^4.4.2",
     "webpack-cli": "^4.7.0",

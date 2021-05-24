@@ -45,7 +45,19 @@ module.exports = {
       },
       {
         test: /\.inline.svg$/,
-        use: ["react-svg-loader"],
+        use: [
+          "babel-loader",
+          {
+            loader: "react-svg-loader",
+            options: {
+              svgo: {
+                plugins: [
+                  {removeViewBox: false}
+                ],
+              },
+            },
+          },
+        ],
       },
       {
         test: /^(?!.*\.inline\.svg$).*\.svg$/,

@@ -1,0 +1,26 @@
+.german-zero-logo svg {
+}
+
+.german-zero-logo--black svg > path {
+  fill: #000;
+}
+
+.german-zero-logo--blue svg > path {
+  fill: var(--blue);
+}
+
+.german-zero-logo--blue-dark svg > path {
+  fill: var(--blue-dark);
+}
+
+.german-zero-logo--yellow svg > path {
+  fill: var(--yellow);
+}
+
+.german-zero-logo--green svg > path {
+  fill: var(--green);
+}
+
+.german-zero-logo--white svg > path {
+  fill: #fff;
+}
