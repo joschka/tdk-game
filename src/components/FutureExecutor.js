@@ -3,10 +3,12 @@ import {useSelector, useDispatch} from "react-redux";
 import {hot} from "react-hot-loader";
 
 import FollowUp from "./FollowUp";
+import Overlay from "./Overlay";
 
 import "./FutureExecutor.css";
 
 function FutureExecutor() {
+  return null;
   const dispatch = useDispatch();
 
   const clockIsRunning = useSelector((state) => state.clock.isRunning);
@@ -50,8 +52,10 @@ function FutureExecutor() {
   const renderFuture = (future) => {
     return (
       <div className="future fixed-screen">
-        {future.type === 'follow-up' && <FollowUp future={future} onClose={onFutureClose} />}
-        {future.type !== 'follow-up' && <button onClick={onFutureClose}>Close</button>}
+        <Overlay>
+          {future.type === 'follow-up' && <FollowUp future={future} onClose={onFutureClose} />}
+          {future.type !== 'follow-up' && <button onClick={onFutureClose}>Close</button>}
+        </Overlay>
       </div>
     );
   };

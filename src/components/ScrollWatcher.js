@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { hot } from "react-hot-loader";
+import React, {useState, useEffect} from "react";
+import {useSelector, useDispatch} from "react-redux";
+import {hot} from "react-hot-loader";
 
 import "./ScrollWatcher.css";
 
@@ -11,11 +11,11 @@ function ScrollWatcher() {
 
   function onScroll() {
     if (window.scrollY > 264 && uiState === "top") {
-      dispatch({ type: "ui/state", data: "bottom" });
-      dispatch({ type: "clock/stop", data: "main" });
+      dispatch({type: "ui/state", data: "bottom"});
+      //dispatch({ type: "clock/stop", data: "main" });
     } else if (window.scrollY <= 264 && uiState === "bottom") {
-      dispatch({ type: "ui/state", data: "top" });
-      dispatch({ type: "clock/start", data: "main" });
+      dispatch({type: "ui/state", data: "top"});
+      //dispatch({ type: "clock/start", data: "main" });
     }
   }
 

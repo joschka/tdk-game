@@ -22,9 +22,9 @@ function PauseButton() {
   function onClick() {
     console.log("click");
     if (isRunning) {
-      dispatch({type: "clock/stop", data: 'button'});
+      dispatch({type: "clock/stop"});
     } else {
-      dispatch({type: "clock/start", data: 'button'});
+      dispatch({type: "clock/start"});
     }
   }
 

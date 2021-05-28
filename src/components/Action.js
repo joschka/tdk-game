@@ -5,6 +5,7 @@ import {hot} from "react-hot-loader";
 import MiniThermometer from "./MiniThermometer.js";
 import MiniHeart from "./MiniHeart.js";
 import ActionDetailView from "./ActionDetailView.js";
+import Overlay from "./Overlay";
 
 import IconAvailable from "../../todo-available.inline.svg";
 import IconActive from "../../todo-active.inline.svg";
@@ -23,7 +24,6 @@ function Action(props) {
   const shownAction = useSelector((state) => state.actionShown);
 
   const [startTick, setStartTick] = useState(tick);
-  const [showDetailView, setShowDetailView] = useState(false);
 
   const {
     id,
@@ -43,13 +43,9 @@ function Action(props) {
     e.stopPropagation();
     e.preventDefault();
 
-    setShowDetailView(true);
-    dispatch({type: "clock/stop", data: "overlay"});
+    dispatch({type: "action/show", data: id});
 
     return;
-    if (state === "available" && actionable) {
-      dispatch({type: "action/activate", data: {id}});
-    }
   }
 
   /*function onStripeClick() {
@@ -193,12 +189,12 @@ function Action(props) {
   useEffect(() => {
     if (state === "active" && progressPercentage === 100) {
       //dispatch({type: "love/change", data: love});
-      dispatch({type: "temperature/increase", data: temperature});
-      dispatch({type: "action/end", data: {id}});
-      dispatch({
+      //dispatch({type: "temperature/increase", data: temperature});
+      //dispatch({type: "action/end", data: {id}});
+      /*dispatch({
         type: "futures/add",
         data: {tick: tick + 1, future: {type: "follow-up", title, temperature, love, questions, successImage}},
-      });
+      });*/
     }
   });
 
@@ -207,19 +203,6 @@ function Action(props) {
     `action--${state}`,
     props.minimized && "action--minimized",
   ];
-
-  const onDetailStartClick = () => {
-    setShowDetailView(false);
-    dispatch({type: "clock/start", data: "overlay"});
-    if (state === "available" && actionable) {
-      dispatch({type: "action/activate", data: {id}});
-    }
-  };
-
-  const onDetailBackClick = () => {
-    setShowDetailView(false);
-    dispatch({type: "clock/start", data: "overlay"});
-  };
 
   return (
     <div className={cssClasses.join(" ")}>
@@ -245,14 +228,6 @@ function Action(props) {
         <div className="action__description">
           <p>{description}</p>
         </div>
-      )}
-
-      {showDetailView && (
-        <ActionDetailView
-          {...props}
-          onStartClick={onDetailStartClick}
-          onBackClick={onDetailBackClick}
-        />
       )}
     </div>
   );

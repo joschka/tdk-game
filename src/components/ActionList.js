@@ -10,6 +10,7 @@ function ActionList() {
   const dispatch = useDispatch();
 
   const actions = useSelector((state) => state.actions);
+  const visible = useSelector((state) => state.actionsVisible);
 
   const activeActions = actions.filter((a) => a.state === "active");
   const actionable = activeActions.length < 4;
@@ -23,6 +24,8 @@ function ActionList() {
     if (a.temperature > b.temperature) return 1;
     return 0;
   };
+
+  if (!visible) return null;
 
   return (
     <div {...opts}>

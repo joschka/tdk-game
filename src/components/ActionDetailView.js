@@ -14,26 +14,27 @@ import imageWork from "../images/work.gif";
 import imagePizza from "../images/pizza.jpg";
 
 import MiniThermometer from "./MiniThermometer";
+import Overlay from "./Overlay";
 
 function ActionDetailView(props) {
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
   const {
+    id,
     title,
     description,
     duration,
     temperature,
     love,
     state,
-    actionable,
-    onStartClick,
-    onBackClick,
+    //onStartClick,
+    //onBackClick,
     image,
   } = props;
+
+  const actions = useSelector((state) => state.actions);
+  const activeActions = actions.filter((a) => a.state === "active");
+  const actionable = activeActions.length < 4;
 
   let imageSrc;
   switch (image) {
@@ -85,6 +86,22 @@ function ActionDetailView(props) {
     }
 
     return stars;
+
+  };
+
+  const onStartClick = () => {
+    //setShowDetailView(false);
+    //dispatch({type: "clock/start", data: "overlay"});
+    if (state === "available" && actionable) {
+      dispatch({type: "action/activate", data: {id}});
+      dispatch({type: "action/hide", data: id});
+    }
+  };
+
+  const onBackClick = () => {
+    //setShowDetailView(false);
+    dispatch({type: "action/hide", data: id});
+    //dispatch({type: "clock/start", data: "overlay"});
   };
 
   const renderButtons = () => {
@@ -104,9 +121,10 @@ function ActionDetailView(props) {
     );
   };
 
+
   return (
-    <div className="action-detail-view fixed-screen">
-      <div className="action-detail-view__content">
+    <Overlay>
+      <div className="action-detail-view">
         <img className="action-detail-view__image" src={imageSrc} />
         <h1 className="action__title"
           dangerouslySetInnerHTML={{
@@ -122,7 +140,7 @@ function ActionDetailView(props) {
         </div>
         <div className="action-detail-view__dude"></div>
       </div>
-    </div>
+    </Overlay>
   );
 }
 

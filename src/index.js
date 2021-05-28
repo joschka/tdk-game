@@ -4,6 +4,8 @@ import {render} from "react-dom";
 import {Provider} from "react-redux";
 import {configureStore} from "@reduxjs/toolkit";
 
+export const serializeFunction = (func) => (func.toString());
+
 import rootReducer from "./reducers.js";
 
 import App from "./components/App.js";
@@ -22,6 +24,7 @@ const store = configureStore({
       stopped: undefined,
       introStep: 0,
     },
+    vars: {},
     ui: {
       state: "top",
     },
@@ -34,10 +37,10 @@ const store = configureStore({
     },
     love: 40,
     clock: {
+      // stack starts with 1, because clock is initially stopped
+      // every "stop" adds +1, every "start" substracts 1, if stack = 0 => isRunning = true
+      stack: 1,
       isRunning: false,
-      isRunningMain: true,
-      isRunningOverlay: true,
-      isRunningButton: true,
       isFast: true,
       duration: 159 * 4, // 159 Monate (2 ticks == 1 month)
       tick: 0,
@@ -565,13 +568,70 @@ const store = configureStore({
     actionPartitions: ["active", "available", "ended"],
     actionsSortBy: "temperature",
     actionsSortOrder: "desc",
-
-    actionsVisible: false,
+    actionsVisibleStack: 0,
+    actionsVisible: true,
     actionShown: null,
     activeActionsMinimized: true,
     futures: {
       10000: [{type: "foo"}, {type: "bar"}],
     },
+    /*
+     * Conditional Events
+     * shown (once) when condition is true
+     *
+     */
+    conditionalEvents: [
+      {
+        id: 1,
+        condition: serializeFunction(function ({temperature, love, tick, done, vars}) {
+          return false && (tick > 1 || temperature > 3 && temperature < 4);
+        }),
+        probability: 1,
+        slides: [
+          {
+            type: 'news',
+            title: 'Titel bla',
+            text: 'Text bla',
+          },
+          {
+            type: 'love-change',
+            love: -5,
+            text: 'Text bla',
+          },
+          {
+            type: 'multiple-choice',
+            text: "Die Autolobby erklärt Sie öffentlich für nicht zurechnungsfähig. Wie reagieren Sie?",
+            answers: [
+              {
+                text: "Ich begebe mich unverzüglich in Behandlung.",
+                slides: [
+                  {
+                    type: 'love-change',
+                    love: -5,
+                    text: 'Text bla',
+                  },
+                ]
+              },
+              {
+                text: "Ich ignoriere die Vorwürfe, weil die Autolobby keine Rolle spielt.",
+                variable: 'foobar',
+              },
+              {
+                text: "Ich erkläre, dass das alles ein Missverständnis ist und zähle die Vorteile für eine vorwärtsgewandte Autoindustrie auf.",
+                variable: "foobaz",
+                slides: [
+                  {
+                    type: 'love-change',
+                    love: 10,
+                    text: 'Text bla',
+                  },
+                ]
+              }
+            ],
+          }
+        ],
+      }
+    ],
   },
 });
 

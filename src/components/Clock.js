@@ -9,6 +9,7 @@ function Clock() {
   const isRunning = useSelector((state) => state.clock.isRunning);
   const isFast = useSelector((state) => state.clock.isFast);
   const ticks = useSelector((state) => state.clock.ticks);
+  const tick = useSelector((state) => state.clock.tick);
 
   useEffect(() => {
     if (!isRunning) return;
@@ -28,7 +29,7 @@ function Clock() {
     };
   }, [isRunning, isFast]);
 
-  return <div className="clock"></div>;
+  return <div className="clock">{tick}</div>;
 }
 
 export default hot(module)(Clock);

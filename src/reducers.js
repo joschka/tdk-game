@@ -31,51 +31,21 @@ export default function rootReducer(state = {}, action) {
         },
       };
     case "clock/start":
-      const clockStart = {
-        isRunningMain:
-          action.data && action.data === "main"
-            ? true
-            : state.clock.isRunningMain,
-        isRunningOverlay:
-          action.data && action.data === "overlay"
-            ? true
-            : state.clock.isRunningOverlay,
-        isRunningButton:
-          action.data && action.data === "button"
-            ? true
-            : state.clock.isRunningButton,
-      };
-
       return {
         ...state,
         clock: {
           ...state.clock,
-          ...clockStart,
-          isRunning: clockStart.isRunningMain && clockStart.isRunningOverlay && clockStart.isRunningButton,
+          stack: state.clock.stack - 1,
+          isRunning: state.clock.stack === 1,
         },
       };
     case "clock/stop":
-      const clockStop = {
-        isRunningMain:
-          action.data && action.data === "main"
-            ? false
-            : state.clock.isRunningMain,
-        isRunningOverlay:
-          action.data && action.data === "overlay"
-            ? false
-            : state.clock.isRunningOverlay,
-        isRunningButton:
-          action.data && action.data === "button"
-            ? false
-            : state.clock.isRunningButton,
-      };
-
       return {
         ...state,
         clock: {
           ...state.clock,
-          ...clockStop,
-          isRunning: clockStop.isRunningMain && clockStop.isRunningOverlay && clockStop.isRunningButton,
+          stack: state.clock.stack + 1,
+          isRunning: false,
         },
       };
     case "clock/fast":
@@ -110,6 +80,29 @@ export default function rootReducer(state = {}, action) {
           tick,
         },
       };
+    case "conditionalEvent/destroy":
+      return {
+        ...state,
+        conditionalEvents: state.conditionalEvents.filter(ce => ce.id !== action.data),
+      };
+    case "conditionalEvent/nextSlide":
+      return {
+        ...state,
+        conditionalEvents: state.conditionalEvents.map((ce) =>
+          ce.id === action.data.id
+            ? {...ce, slide: (ce.slide || 1) + 1}
+            : ce
+        )
+      };
+    case "conditionalEvent/addSlides":
+      return {
+        ...state,
+        conditionalEvents: state.conditionalEvents.map((ce) =>
+          ce.id === action.data.id
+            ? {...ce, slides: ce.slides.concat(action.data.slides)}
+            : ce
+        )
+      };
     case "temperature/increase":
       const currentTemp = state.temperature.current + action.data;
       return {
@@ -134,6 +127,24 @@ export default function rootReducer(state = {}, action) {
         ...state,
         love: newLove > 100 ? 100 : newLove < 0 ? 0 : newLove,
       };
+    case "action/show":
+      return {
+        ...state,
+        actions: state.actions.map((a) =>
+          a.id === action.data
+            ? {...a, detailViewActive: true}
+            : a
+        ),
+      };
+    case "action/hide":
+      return {
+        ...state,
+        actions: state.actions.map((a) =>
+          a.id === action.data
+            ? {...a, detailViewActive: false}
+            : a
+        ),
+      };
     case "action/activate":
       return {
         ...state,
@@ -150,14 +161,16 @@ export default function rootReducer(state = {}, action) {
           a.id === action.data.id ? {...a, state: "ended"} : a
         ),
       };
-    case "actions/open":
+    case "actions/show":
       return {
         ...state,
-        actionsVisible: true,
+        actionsVisibleStack: state.actionsVisibleStack - 1,
+        actionsVisible: state.actionsVisibleStack === 1,
       };
-    case "actions/close":
+    case "actions/hide":
       return {
         ...state,
+        actionsVisibleStack: state.actionsVisibleStack + 1,
         actionsVisible: false,
       };
     case "actionPartitions/change":

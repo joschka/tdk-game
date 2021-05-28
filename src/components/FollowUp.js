@@ -3,12 +3,14 @@ import {useSelector, useDispatch} from 'react-redux';
 import {hot} from 'react-hot-loader';
 
 import Thermometer from './Thermometer';
+import Overlay from "./Overlay";
 
 import IconEnded from "../images/todo-ended.inline.svg";
 import imageNewspaper from "../images/newspaper.jpg";
 import imageInterview from "../images/interview.jpg";
 
 import './FollowUp.css';
+import FollowUpTemperature from './FollowUpTemperature';
 
 function FollowUp(props) {
   const dispatch = useDispatch();
@@ -16,15 +18,13 @@ function FollowUp(props) {
   const [step, setStep] = useState(1);
   const [currentAnswer, setCurrentAnswer] = useState(null);
 
-  const future = props.future;
-
   let currentTemperature =
     "" + useSelector((state) => state.temperature.current);
 
-  const [temperature, setTemperature] = useState(currentTemperature - future.temperature);
+  const [temperature, setTemperature] = useState(currentTemperature - props.temperature);
 
   let imageSrc;
-  switch (future.successImage) {
+  switch (props.successImage) {
     case "newspaper":
       imageSrc = imageNewspaper;
       break;
@@ -43,13 +43,17 @@ function FollowUp(props) {
     return <div className="follow-up__checkmark"><IconEnded width={200} height={200} viewBox="0 0 400 400" /></div>;
   }
 
+  function onClose() {
+    dispatch({type: "action/end", data: {id: props.id}});
+  }
+
   const nextStep = () => {
-    if (step === 2 && !future.questions) {
-      return props.onClose();
-    } else if (step === 4 && future.questions.length === 1) {
-      return props.onClose();
-    } else if (step === 6 && future.questions.length === 2) {
-      return props.onClose();
+    if (step === 2 && !props.questions) {
+      return onClose();
+    } else if (step === 4 && props.questions.length === 1) {
+      return onClose();
+    } else if (step === 6 && props.questions.length === 2) {
+      return onClose();
     }
     setStep(step + 1);
   };
@@ -61,7 +65,7 @@ function FollowUp(props) {
         <div>Die Maßnahme</div>
         <strong className="follow-up__title"
           dangerouslySetInnerHTML={{
-            __html: future.title
+            __html: props.title
           }}></strong>
         <div>wurde umgesetzt.</div>
       </div>
@@ -69,30 +73,8 @@ function FollowUp(props) {
     </div>
   };
 
-  const renderStep2 = () => {
-    setTimeout(() => {
-      if (temperature === currentTemperature - future.temperature) {
-        setTemperature(temperature + future.temperature);
-      }
-    }, 500);
-    return <div onClick={nextStep}>
-      {renderCheckmark()}
-      <div className="follow-up__header">
-        <div>Die Maßnahme</div>
-        <strong className="follow-up__title"
-          dangerouslySetInnerHTML={{
-            __html: future.title
-          }}></strong>
-        <div>senkt die Temperatur um {future.temperature}°:</div>
-      </div>
-      <div className='follow-up__thermometer'>
-        <Thermometer temperature={temperature} size="large" />
-      </div>
-    </div>
-  };
-
   const renderStep3 = () => {
-    const question = future.questions[0];
+    const question = props.questions[0];
 
     const onAnswerClick = (index) => {
       return function () {
@@ -126,12 +108,14 @@ function FollowUp(props) {
   };
 
   return (
-    <div className='follow-up fixed-screen'>
-      {future.type === 'follow-up' && step === 1 && renderStep1()}
-      {future.type === 'follow-up' && step === 2 && renderStep2()}
-      {future.type === 'follow-up' && step === 3 && renderStep3()}
-      {future.type === 'follow-up' && step === 4 && renderStep4()}
-    </div>
+    <Overlay>
+      <div className='follow-up'>
+        {step === 1 && renderStep1()}
+        {step === 2 && <FollowUpTemperature onClick={nextStep} {...props} />}
+        {step === 3 && renderStep3()}
+        {step === 4 && renderStep4()}
+      </div>
+    </Overlay>
   );
 }
 
