@@ -2,8 +2,6 @@
 
 https://www.klimakanzler.in
 
-Skip Intro: https://www.klimakanzler.in/?intro=0
-
 ## Development
 
 You need `node` and `npm` installed.
