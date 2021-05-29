@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { hot } from "react-hot-loader";
+import React, {useState, useEffect} from "react";
+import {useSelector, useDispatch} from "react-redux";
+import {hot} from "react-hot-loader";
 
 import "./LoveChart.css";
 
@@ -10,7 +10,7 @@ function LoveChart(props) {
   const records = props.records || useSelector((state) => state.records);
   const currentLove = props.love || useSelector((state) => state.love);
   const duration = useSelector((state) => state.clock.duration);
-  const tick = useSelector((state) => state.clock.tick);
+  const tick = props.tick || useSelector((state) => state.clock.tick);
 
   // Wie viele Beliebtheit-Datenpunkte auf der X-Achse?
   const visibleTicks = 50;

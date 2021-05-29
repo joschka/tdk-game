@@ -11,6 +11,7 @@ import imageInterview from "../images/interview.jpg";
 
 import './FollowUp.css';
 import FollowUpTemperature from './FollowUpTemperature';
+import LoveChange from "./LoveChange";
 
 function FollowUp(props) {
   const dispatch = useDispatch();
@@ -113,7 +114,7 @@ function FollowUp(props) {
         {step === 1 && renderStep1()}
         {step === 2 && <FollowUpTemperature onClick={nextStep} {...props} />}
         {step === 3 && renderStep3()}
-        {step === 4 && renderStep4()}
+        {step === 4 && <LoveChange onClick={nextStep} love={currentAnswer.love} text={currentAnswer.reaction} />}
       </div>
     </Overlay>
   );

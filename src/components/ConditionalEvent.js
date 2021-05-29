@@ -4,12 +4,12 @@ import {hot} from 'react-hot-loader';
 
 import Overlay from './Overlay';
 import ConditionalEventNews from "./ConditionalEventNews";
-import ConditionalEventLoveChange from "./ConditionalEventLoveChange";
+import LoveChange from "./LoveChange";
 import ConditionalEventMultipleChoice from "./ConditionalEventMultipleChoice";
 
 import './ConditionalEvent.css';
 
-const deserializeFunction = (funcString) => (new Function(`return ${funcString}`)());
+const deserializeFunction = (funcString) => (new Function(`return function ({temperature, love, tick, done, vars}) {return ${funcString};}`)());
 
 function ConditionalEvent({id, condition, probability, slides}) {
   const conditionFn = deserializeFunction(condition);
@@ -19,7 +19,7 @@ function ConditionalEvent({id, condition, probability, slides}) {
   const [display, setDisplay] = useState(false);
   //const [slide, setSlide] = useState(1);
 
-  const slide = useSelector((state) => state.conditionalEvents.filter(ce => ce.id === id)[0].slide || 1);
+  const slide = useSelector((state) => state.conditionalEvents.filter(ce => ce.id === id)[0]?.slide || 1);
   const currentTick = useSelector((state) => state.clock.tick);
   const currentTemperature = useSelector((state) => state.temperature.current);
   const currentLove = useSelector((state) => state.love);
@@ -60,23 +60,14 @@ function ConditionalEvent({id, condition, probability, slides}) {
     }
   };
 
-  const pushSlides = (newSlides) => {
-    console.log({newSlides});
-    const concatenated = slides.concat(newSlides);
-    console.log({concatenated})
-    setLocalSlides(concatenated);
-    console.log({slides});
-    nextSlide();
-  };
-
   function Slide(props) {
     switch (props.type) {
       case "news":
         return <ConditionalEventNews {...props} nextSlide={nextSlide} />
       case "love-change":
-        return <ConditionalEventLoveChange {...props} nextSlide={nextSlide} />
+        return <LoveChange {...props} onClick={nextSlide} />
       case "multiple-choice":
-        return <ConditionalEventMultipleChoice {...props} id={id} nextSlide={nextSlide} pushSlides={pushSlides} />
+        return <ConditionalEventMultipleChoice {...props} id={id} nextSlide={nextSlide} />
       default:
         break;
     }
@@ -85,6 +76,9 @@ function ConditionalEvent({id, condition, probability, slides}) {
   const renderSlide = () => {
     const currentSlide = slides[slide - 1];
     console.log({currentSlide, slides, slide});
+    if (!currentSlide) {
+      return destroyEvent();
+    }
     return <Slide {...currentSlide} />;
   };
 

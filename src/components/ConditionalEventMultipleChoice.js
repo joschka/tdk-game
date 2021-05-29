@@ -4,17 +4,21 @@ import {hot} from 'react-hot-loader';
 
 import './ConditionalEventMultipleChoice.css';
 
-function ConditionalEventMultipleChoice({id, type, text, answers, nextSlide, pushSlides}) {
+function ConditionalEventMultipleChoice({id, type, text, answers, nextSlide}) {
   const dispatch = useDispatch();
 
   const onAnswerClick = (index) => {
     return function () {
       const answer = answers[index];
       console.log({answer})
+      if (answer.variable) {
+        dispatch({type: "conditionalEvent/setVariable", data: {id, variable: answer.variable}});
+
+      }
       if (answer.slides) {
         dispatch({type: "conditionalEvent/addSlides", data: {id, slides: answer.slides}});
-        dispatch({type: "conditionalEvent/nextSlide", data: {id}});
       }
+      dispatch({type: "conditionalEvent/nextSlide", data: {id}});
     };
   }
 

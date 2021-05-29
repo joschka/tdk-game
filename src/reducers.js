@@ -103,6 +103,13 @@ export default function rootReducer(state = {}, action) {
             : ce
         )
       };
+    case "conditionalEvent/setVariable":
+      const vars = {...state.vars};
+      vars[action.data.variable] = true;
+      return {
+        ...state,
+        vars,
+      };
     case "temperature/increase":
       const currentTemp = state.temperature.current + action.data;
       return {

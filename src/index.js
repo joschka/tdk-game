@@ -4,8 +4,6 @@ import {render} from "react-dom";
 import {Provider} from "react-redux";
 import {configureStore} from "@reduxjs/toolkit";
 
-export const serializeFunction = (func) => (func.toString());
-
 import rootReducer from "./reducers.js";
 
 import App from "./components/App.js";
@@ -577,16 +575,39 @@ const store = configureStore({
     },
     /*
      * Conditional Events
-     * shown (once) when condition is true
+     * shown once(!) when condition is true
      *
      */
     conditionalEvents: [
       {
+        // "id" must be unique (important)
+        // you can also use strings, e.g. "xy-event"
         id: 1,
-        condition: serializeFunction(function ({temperature, love, tick, done, vars}) {
-          return false && (tick > 1 || temperature > 3 && temperature < 4);
-        }),
+        // "condition"
+        // available variables:
+        // - "tick": integer, 1 tick = 1/4 month
+        // - "temperature": float
+        // - "love": integer (0-100) (Beliebtheit)
+        // - "vars": access some variable you set before in another event (boolean, it's set or not)
+        // - "done": array of ids of ended actions (Maßnahmen), e.g. ["1", "13"]
+        // Examples:
+        // condition: "temperature >= 3",
+        // condition: "temperature >= 2 && temperature < 4",
+        // condition: "tick > 100 || love < 30",
+        // condition: "vars.foobar && tick > 400",
+        // condition: "done.includes("1") && tick > 400",
+        // condition: "temperature >= 3 || (done.includes("1") && tick > 400) || vars.lala",
+        condition: "tick > 1 || temperature > 3 && temperature < 4",
+        // "probability"
+        // additional to condition
+        // when condition evaluates to true and probability = 1 then the event is always triggered (probability = 100%)
+        // when e.g. probability = 0.7 (70%), then there is 30% chance that the event is not triggered (the event is still discarded and won't be tried again)
         probability: 1,
+        // "slides"
+        // available types:
+        // - news
+        // - love-change
+        // - multiple-choice
         slides: [
           {
             type: 'news',
@@ -601,6 +622,12 @@ const store = configureStore({
           {
             type: 'multiple-choice',
             text: "Die Autolobby erklärt Sie öffentlich für nicht zurechnungsfähig. Wie reagieren Sie?",
+            // "answers"
+            // text is mandatory
+            // available outcomes:
+            // - "slides": add more slides
+            // - "variable": set a variable (provide the name)
+            // both outcomes can be combined
             answers: [
               {
                 text: "Ich begebe mich unverzüglich in Behandlung.",
