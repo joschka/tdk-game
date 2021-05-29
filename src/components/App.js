@@ -72,7 +72,7 @@ function App() {
             {gameStarted && <Dashboard />}
             {gameStarted && <ActionArea />}
             {gameStarted && <ExampleEvent />}
-            <FinalScreen />
+            {false && <FinalScreen />}
             {gameStarted && false && <FutureExecutor />}
             {renderActionDetailViews()}
             {false && renderFollowUps()}

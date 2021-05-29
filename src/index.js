@@ -52,33 +52,9 @@ const store = configureStore({
           "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
         duration: duration.medium,
         temperature: -0.25,
-        love: 2,
         state: "available",
         image: "industry",
-        successImage: null,
         activeSinceTick: null,
-        questions: [
-          {
-            text: "Die Autolobby erklärt Sie öffentlich für nicht zurechnungsfähig. Wie reagieren Sie?",
-            answers: [
-              {
-                text: "Ich begebe mich unverzüglich in Behandlung.",
-                love: -10,
-                reaction: "Something happened.",
-              },
-              {
-                text: "Ich ignoriere die Vorwürfe, weil die Autolobby keine Rolle spielt.",
-                love: -5,
-                reaction: "Something happened.",
-              },
-              {
-                text: "Ich erkläre, dass das alles ein Missverständnis ist und zähle die Vorteile für eine vorwärtsgewandte Autoindustrie auf.",
-                love: 10,
-                reaction: "Something happened.",
-              }
-            ],
-          }
-        ]
       },
       {
         id: "3",
@@ -87,32 +63,8 @@ const store = configureStore({
           "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
         duration: duration.long,
         temperature: -0.1,
-        love: 1,
         state: "available",
-        successImage: null,
         activeSinceTick: null,
-        questions: [
-          {
-            text: "Die Autolobby erklärt Sie öffentlich für nicht zurechnungsfähig. Wie reagieren Sie?",
-            answers: [
-              {
-                text: "Ich begebe mich unverzüglich in Behandlung.",
-                love: -10,
-                reaction: "Something happened.",
-              },
-              {
-                text: "Ich ignoriere die Vorwürfe, weil die Autolobby keine Rolle spielt.",
-                love: -5,
-                reaction: "Something happened.",
-              },
-              {
-                text: "Ich erkläre, dass das alles ein Missverständnis ist und zähle die Vorteile für eine vorwärtsgewandte Autoindustrie auf.",
-                love: 10,
-                reaction: "Something happened.",
-              }
-            ],
-          }
-        ]
       },
       {
         id: "4",
@@ -121,32 +73,8 @@ const store = configureStore({
           "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
         duration: duration.long,
         temperature: -0.075,
-        love: -1,
         state: "available",
-        successImage: null,
         activeSinceTick: null,
-        questions: [
-          {
-            text: "Die Autolobby erklärt Sie öffentlich für nicht zurechnungsfähig. Wie reagieren Sie?",
-            answers: [
-              {
-                text: "Ich begebe mich unverzüglich in Behandlung.",
-                love: -10,
-                reaction: "Something happened.",
-              },
-              {
-                text: "Ich ignoriere die Vorwürfe, weil die Autolobby keine Rolle spielt.",
-                love: -5,
-                reaction: "Something happened.",
-              },
-              {
-                text: "Ich erkläre, dass das alles ein Missverständnis ist und zähle die Vorteile für eine vorwärtsgewandte Autoindustrie auf.",
-                love: 10,
-                reaction: "Something happened.",
-              }
-            ],
-          }
-        ]
       },
       {
         id: "5",
@@ -155,32 +83,8 @@ const store = configureStore({
           "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
         duration: duration.medium,
         temperature: -0.075,
-        love: 1,
         state: "available",
-        successImage: null,
         activeSinceTick: null,
-        questions: [
-          {
-            text: "Die Autolobby erklärt Sie öffentlich für nicht zurechnungsfähig. Wie reagieren Sie?",
-            answers: [
-              {
-                text: "Ich begebe mich unverzüglich in Behandlung.",
-                love: -10,
-                reaction: "Something happened.",
-              },
-              {
-                text: "Ich ignoriere die Vorwürfe, weil die Autolobby keine Rolle spielt.",
-                love: -5,
-                reaction: "Something happened.",
-              },
-              {
-                text: "Ich erkläre, dass das alles ein Missverständnis ist und zähle die Vorteile für eine vorwärtsgewandte Autoindustrie auf.",
-                love: 10,
-                reaction: "Something happened.",
-              }
-            ],
-          }
-        ]
       },
       {
         id: "6",
@@ -189,32 +93,8 @@ const store = configureStore({
           "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
         duration: duration.short,
         temperature: -0.025,
-        love: 2,
         state: "available",
-        successImage: 'newspaper',
         activeSinceTick: null,
-        questions: [
-          {
-            text: "Die Autolobby erklärt Sie öffentlich für nicht zurechnungsfähig. Wie reagieren Sie?",
-            answers: [
-              {
-                text: "Ich begebe mich unverzüglich in Behandlung.",
-                love: -10,
-                reaction: "Something happened.",
-              },
-              {
-                text: "Ich ignoriere die Vorwürfe, weil die Autolobby keine Rolle spielt.",
-                love: -5,
-                reaction: "Something happened.",
-              },
-              {
-                text: "Ich erkläre, dass das alles ein Missverständnis ist und zähle die Vorteile für eine vorwärtsgewandte Autoindustrie auf.",
-                love: 10,
-                reaction: "Something happened.",
-              }
-            ],
-          }
-        ]
       },
       {
         id: "7",
@@ -223,33 +103,8 @@ const store = configureStore({
           "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
         duration: duration.medium,
         temperature: -0.175,
-        love: -3,
         state: "available",
-        image: "tesla",
-        successImage: null,
         activeSinceTick: null,
-        questions: [
-          {
-            text: "Die Autolobby erklärt Sie öffentlich für nicht zurechnungsfähig. Wie reagieren Sie?",
-            answers: [
-              {
-                text: "Ich begebe mich unverzüglich in Behandlung.",
-                love: -10,
-                reaction: "Something happened.",
-              },
-              {
-                text: "Ich ignoriere die Vorwürfe, weil die Autolobby keine Rolle spielt.",
-                love: -5,
-                reaction: "Something happened.",
-              },
-              {
-                text: "Ich erkläre, dass das alles ein Missverständnis ist und zähle die Vorteile für eine vorwärtsgewandte Autoindustrie auf.",
-                love: 10,
-                reaction: "Something happened.",
-              }
-            ],
-          }
-        ]
       },
       {
         id: "9",
@@ -258,32 +113,8 @@ const store = configureStore({
           "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
         duration: duration.short,
         temperature: -0.1,
-        love: -1,
         state: "available",
-        successImage: null,
         activeSinceTick: null,
-        questions: [
-          {
-            text: "Die Autolobby erklärt Sie öffentlich für nicht zurechnungsfähig. Wie reagieren Sie?",
-            answers: [
-              {
-                text: "Ich begebe mich unverzüglich in Behandlung.",
-                love: -10,
-                reaction: "Something happened.",
-              },
-              {
-                text: "Ich ignoriere die Vorwürfe, weil die Autolobby keine Rolle spielt.",
-                love: -5,
-                reaction: "Something happened.",
-              },
-              {
-                text: "Ich erkläre, dass das alles ein Missverständnis ist und zähle die Vorteile für eine vorwärtsgewandte Autoindustrie auf.",
-                love: 10,
-                reaction: "Something happened.",
-              }
-            ],
-          }
-        ]
       },
       {
         id: "10",
@@ -291,36 +122,10 @@ const store = configureStore({
         description:
           "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
         link: "https://assets.website-files.com/5e663c02af4002dcdcab78dc/5ece7812eb97a0be582bad67_Der%201%2C5-Grad-Klimaplan%20f%C3%BCr%20Deutschland.pdf#page=22",
-        duration: 60,
         duration: duration.short,
         temperature: -0.15,
-        love: 2,
         state: "available",
-        image: "kohle",
-        successImage: null,
         activeSinceTick: null,
-        questions: [
-          {
-            text: "Die Autolobby erklärt Sie öffentlich für nicht zurechnungsfähig. Wie reagieren Sie?",
-            answers: [
-              {
-                text: "Ich begebe mich unverzüglich in Behandlung.",
-                love: -10,
-                reaction: "Something happened.",
-              },
-              {
-                text: "Ich ignoriere die Vorwürfe, weil die Autolobby keine Rolle spielt.",
-                love: -5,
-                reaction: "Something happened.",
-              },
-              {
-                text: "Ich erkläre, dass das alles ein Missverständnis ist und zähle die Vorteile für eine vorwärtsgewandte Autoindustrie auf.",
-                love: 10,
-                reaction: "Something happened.",
-              }
-            ],
-          }
-        ]
       },
       {
         id: "11",
@@ -329,33 +134,8 @@ const store = configureStore({
           "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
         duration: duration.medium,
         temperature: -0.15,
-        love: -1,
         state: "available",
-        image: "solar-wind",
-        successImage: null,
         activeSinceTick: null,
-        questions: [
-          {
-            text: "Die Autolobby erklärt Sie öffentlich für nicht zurechnungsfähig. Wie reagieren Sie?",
-            answers: [
-              {
-                text: "Ich begebe mich unverzüglich in Behandlung.",
-                love: -10,
-                reaction: "Something happened.",
-              },
-              {
-                text: "Ich ignoriere die Vorwürfe, weil die Autolobby keine Rolle spielt.",
-                love: -5,
-                reaction: "Something happened.",
-              },
-              {
-                text: "Ich erkläre, dass das alles ein Missverständnis ist und zähle die Vorteile für eine vorwärtsgewandte Autoindustrie auf.",
-                love: 10,
-                reaction: "Something happened.",
-              }
-            ],
-          }
-        ]
       },
       {
         id: "12",
@@ -364,32 +144,8 @@ const store = configureStore({
           "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
         duration: duration.medium,
         temperature: -0.15,
-        love: 0,
         state: "available",
-        successImage: null,
         activeSinceTick: null,
-        questions: [
-          {
-            text: "Die Autolobby erklärt Sie öffentlich für nicht zurechnungsfähig. Wie reagieren Sie?",
-            answers: [
-              {
-                text: "Ich begebe mich unverzüglich in Behandlung.",
-                love: -10,
-                reaction: "Something happened.",
-              },
-              {
-                text: "Ich ignoriere die Vorwürfe, weil die Autolobby keine Rolle spielt.",
-                love: -5,
-                reaction: "Something happened.",
-              },
-              {
-                text: "Ich erkläre, dass das alles ein Missverständnis ist und zähle die Vorteile für eine vorwärtsgewandte Autoindustrie auf.",
-                love: 10,
-                reaction: "Something happened.",
-              }
-            ],
-          }
-        ]
       },
       {
         id: "13",
@@ -398,32 +154,8 @@ const store = configureStore({
           "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
         duration: duration.short,
         temperature: -0.15,
-        love: 2,
         state: "available",
-        successImage: null,
         activeSinceTick: null,
-        questions: [
-          {
-            text: "Die Autolobby erklärt Sie öffentlich für nicht zurechnungsfähig. Wie reagieren Sie?",
-            answers: [
-              {
-                text: "Ich begebe mich unverzüglich in Behandlung.",
-                love: -10,
-                reaction: "Something happened.",
-              },
-              {
-                text: "Ich ignoriere die Vorwürfe, weil die Autolobby keine Rolle spielt.",
-                love: -5,
-                reaction: "Something happened.",
-              },
-              {
-                text: "Ich erkläre, dass das alles ein Missverständnis ist und zähle die Vorteile für eine vorwärtsgewandte Autoindustrie auf.",
-                love: 10,
-                reaction: "Something happened.",
-              }
-            ],
-          }
-        ]
       },
       {
         id: "14",
@@ -432,33 +164,8 @@ const store = configureStore({
           "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
         duration: duration.long,
         temperature: -0.175,
-        love: -3,
         state: "available",
-        image: "sanierung",
-        successImage: null,
         activeSinceTick: null,
-        questions: [
-          {
-            text: "Die Autolobby erklärt Sie öffentlich für nicht zurechnungsfähig. Wie reagieren Sie?",
-            answers: [
-              {
-                text: "Ich begebe mich unverzüglich in Behandlung.",
-                love: -10,
-                reaction: "Something happened.",
-              },
-              {
-                text: "Ich ignoriere die Vorwürfe, weil die Autolobby keine Rolle spielt.",
-                love: -5,
-                reaction: "Something happened.",
-              },
-              {
-                text: "Ich erkläre, dass das alles ein Missverständnis ist und zähle die Vorteile für eine vorwärtsgewandte Autoindustrie auf.",
-                love: 10,
-                reaction: "Something happened.",
-              }
-            ],
-          }
-        ]
       },
       {
         id: "15",
@@ -467,32 +174,8 @@ const store = configureStore({
           "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
         duration: duration.short,
         temperature: -0.0875,
-        love: -1,
         state: "available",
-        successImage: null,
         activeSinceTick: null,
-        questions: [
-          {
-            text: "Die Autolobby erklärt Sie öffentlich für nicht zurechnungsfähig. Wie reagieren Sie?",
-            answers: [
-              {
-                text: "Ich begebe mich unverzüglich in Behandlung.",
-                love: -10,
-                reaction: "Something happened.",
-              },
-              {
-                text: "Ich ignoriere die Vorwürfe, weil die Autolobby keine Rolle spielt.",
-                love: -5,
-                reaction: "Something happened.",
-              },
-              {
-                text: "Ich erkläre, dass das alles ein Missverständnis ist und zähle die Vorteile für eine vorwärtsgewandte Autoindustrie auf.",
-                love: 10,
-                reaction: "Something happened.",
-              }
-            ],
-          }
-        ]
       },
       {
         id: "16",
@@ -501,33 +184,8 @@ const store = configureStore({
           "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
         duration: duration.short,
         temperature: -0.725,
-        love: -3,
         state: "available",
-        image: "wallstreet",
-        successImage: null,
         activeSinceTick: null,
-        questions: [
-          {
-            text: "Die Autolobby erklärt Sie öffentlich für nicht zurechnungsfähig. Wie reagieren Sie?",
-            answers: [
-              {
-                text: "Ich begebe mich unverzüglich in Behandlung.",
-                love: -10,
-                reaction: "Something happened.",
-              },
-              {
-                text: "Ich ignoriere die Vorwürfe, weil die Autolobby keine Rolle spielt.",
-                love: -5,
-                reaction: "Something happened.",
-              },
-              {
-                text: "Ich erkläre, dass das alles ein Missverständnis ist und zähle die Vorteile für eine vorwärtsgewandte Autoindustrie auf.",
-                love: 10,
-                reaction: "Something happened.",
-              }
-            ],
-          }
-        ]
       },
       {
         id: "17",
@@ -536,7 +194,6 @@ const store = configureStore({
           "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
         duration: duration.short,
         temperature: -0.125,
-        love: 2,
         state: "available",
         activeSinceTick: null,
       },
@@ -548,9 +205,6 @@ const store = configureStore({
     actionsVisible: true,
     actionShown: null,
     activeActionsMinimized: true,
-    futures: {
-      10000: [{type: "foo"}, {type: "bar"}],
-    },
     /*
      * Conditional Events
      * shown once(!) when condition is true
@@ -558,6 +212,7 @@ const store = configureStore({
      */
     conditionalEvents: [
       {
+        // BEISPIEL
         // "id" must be unique (important)
         // you can also use strings, e.g. "xy-event"
         id: 1,
@@ -641,9 +296,23 @@ const store = configureStore({
       },
 
       {
-        // Wahl
+        // Gewonnen
+        id: 'win',
+        condition: "temperature <= 1.5",
+        slides: [
+          {
+            type: 'game-over',
+            text: "GEWONNEN!!!",
+            background: "biertisch",
+          }
+        ]
+      },
+
+
+      {
+        // Wahl 2025
         id: 'vote-1',
-        condition: "tick > 10",
+        condition: "tick > 194 && love < 30",
         slides: [
           {
             type: 'vote',
@@ -662,7 +331,7 @@ const store = configureStore({
       },
 
       {
-        // follow up zu Schlachthöfe
+        // follow up zu Schlachthöfe (ohne Interaktion)
         id: 'follow-up-5',
         condition: "done.includes('5')",
         slides: [

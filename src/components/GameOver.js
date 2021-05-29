@@ -6,10 +6,10 @@ import './GameOver.css';
 
 function GameOver({text}) {
   const dispatch = useDispatch();
+  console.log("mount gameOver");
 
   useEffect(() => {
-    dispatch({type: "clock/stop"});
-    dispatch({type: "game/stop"});
+    window.onbeforeunload = null;
   }, []);
 
   function Share() {
