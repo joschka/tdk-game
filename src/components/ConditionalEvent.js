@@ -26,11 +26,8 @@ function ConditionalEvent({id, condition, probability, slides}) {
   const currentTick = useSelector((state) => state.clock.tick);
   const currentTemperature = useSelector((state) => state.temperature.current);
   const currentLove = useSelector((state) => state.love);
-  const actions = useSelector((state) => state.actions);
+  const doneActionIds = useSelector((state) => state.actions.filter(a => a.state === 'ended').map(a => a.id));
   const vars = useSelector((state) => state.vars);
-
-  const doneActions = actions.filter(a => a.state === 'ended');
-  const doneActionIds = doneActions.map(a => a.id);
 
   const conditionResult = conditionFn({
     tick: currentTick,
@@ -40,10 +37,11 @@ function ConditionalEvent({id, condition, probability, slides}) {
     vars,
   });
 
-  console.log({conditionResult, currentTick, currentTemperature, currentLove, doneActionIds, vars});
+  console.log({id, condition, conditionResult, currentTick, currentTemperature, currentLove, doneActionIds, vars});
 
   const destroyEvent = () => {
     dispatch({type: "conditionalEvent/destroy", data: id});
+    setDisplay(false);
   }
 
   if (conditionResult && !display) {

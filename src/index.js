@@ -640,6 +640,18 @@ const store = configureStore({
         ],
       },
 
+      {
+        // follow up zu Schlachthöfe
+        id: 'follow-up-5',
+        condition: "done.includes('5')",
+        slides: [
+          {
+            type: 'temperature-change',
+            temperature: -1,
+            silent: true,
+          },
+        ]
+      },
 
       {
         // follow up zu Kohleausstieg

@@ -83,7 +83,7 @@ export default function rootReducer(state = {}, action) {
     case "conditionalEvent/destroy":
       return {
         ...state,
-        conditionalEvents: state.conditionalEvents.filter(ce => ce.id !== action.data),
+        conditionalEvents: [...state.conditionalEvents.filter(ce => ce.id !== action.data)],
       };
     case "conditionalEvent/nextSlide":
       return {

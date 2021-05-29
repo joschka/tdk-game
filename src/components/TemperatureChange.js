@@ -6,10 +6,12 @@ import Thermometer from "./Thermometer";
 
 import './TemperatureChange.css';
 
-function TemperatureChange({onClick, text, temperature}) {
+function TemperatureChange({onClick, text, silent, temperature}) {
   const dispatch = useDispatch();
 
   const currentTemperature = useSelector((state) => state.temperature.current);
+
+  const [finished, setFinished] = useState(false);
 
   const initialThermometerProps = {
     temperature: currentTemperature,
@@ -29,6 +31,15 @@ function TemperatureChange({onClick, text, temperature}) {
       dispatch({type: "temperature/increase", data: temperature});
     }
   }, []);
+
+  if (silent && !finished) {
+    setFinished(true);
+    onClick();
+  }
+
+  if (silent) {
+    return null;
+  }
 
   return (
     <div className='temperature-change' onClick={onClick}>
