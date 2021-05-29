@@ -29,7 +29,7 @@ function Clock() {
     };
   }, [isRunning, isFast]);
 
-  return <div className="clock">{tick}</div>;
+  return <div className="clock">tick: {tick}</div>;
 }
 
 export default hot(module)(Clock);

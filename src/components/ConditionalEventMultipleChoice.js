@@ -4,7 +4,7 @@ import {hot} from 'react-hot-loader';
 
 import './ConditionalEventMultipleChoice.css';
 
-function ConditionalEventMultipleChoice({id, type, text, answers, nextSlide}) {
+function ConditionalEventMultipleChoice({id, text, answers}) {
   const dispatch = useDispatch();
 
   const onAnswerClick = (index) => {
@@ -24,19 +24,18 @@ function ConditionalEventMultipleChoice({id, type, text, answers, nextSlide}) {
 
   const renderAnswers = () => {
     return answers.map((a, index) => {
-      return <div className="follow-up__answer" onClick={onAnswerClick(index)} key={index}>{a.text}</div>
+      return <div className="conditional-event-multiple-choice__answer" onClick={onAnswerClick(index)} key={index}>{a.text}</div>
     });
   };
 
   return (
     <div className='conditional-event-multiple-choice'>
-      { type}
-      <br />
-      { text}
-      <br />
-      {renderAnswers()}
-      <br />
-      <button onClick={nextSlide}>NEXT</button>
+      <div className='conditional-event-multiple-choice__question'>
+        {text}
+      </div>
+      <div className='conditional-event-multiple-choice__answers'>
+        {renderAnswers()}
+      </div>
     </div>
   );
 }

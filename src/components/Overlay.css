@@ -17,5 +17,6 @@
 }
 
 .overlay__content {
+  min-height: 100%;
   animation: overlayFadeIn 0.7s;
 }

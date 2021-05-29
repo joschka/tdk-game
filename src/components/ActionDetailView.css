@@ -32,6 +32,10 @@
   margin-right: 10px;
 }
 
+.action-detail-view__link {
+  margin-bottom: 20px;
+}
+
 .action-detail-view__dude {
   background-image: url("./dude.png");
   background-size: cover;

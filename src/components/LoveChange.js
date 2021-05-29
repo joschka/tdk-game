@@ -38,13 +38,12 @@ function LoveChange({text, love, onClick}) {
 
   return (
     <div className='love-change' onClick={onClick}>
-      {text}
-      <br />
-      Ihre Beliebheit verändert sich um {love}%.
-      <br />
-      {currentLove}
-      <br />
-      <LoveChart {...chartProps} />
+      <div className='love-change__text'>
+        {text}
+      </div>
+      <div className='love-change__chart'>
+        <LoveChart {...chartProps} />
+      </div>
     </div>
   );
 }

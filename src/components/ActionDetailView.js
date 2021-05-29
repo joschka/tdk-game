@@ -25,6 +25,7 @@ function ActionDetailView(props) {
     description,
     duration,
     temperature,
+    link,
     love,
     state,
     //onStartClick,
@@ -135,6 +136,11 @@ function ActionDetailView(props) {
           {true && renderStars()}
         </div>
         {renderButtons()}
+        {link && <div className="action-detail-view__link">
+          Mehr Informationen im Klimaplan von GermanZero e.V.
+          <br />
+          <a href={link} rel="noopener" target="_blank">Klimaplan in neuem Tab öffnen</a>
+        </div>}
         <div className="speech-bubble">
           <p>{description}</p>
         </div>

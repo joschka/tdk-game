@@ -21,7 +21,7 @@ function LoveChart(props) {
   // Bei wie viel Prozent Beliebtheit die horizontale Linie?
   const thresholdPercentage = 35;
 
-  const positiveColor = "#2cbd9e";
+  const positiveColor = "#a3d869";
   const negativeColor = "#f3241c";
 
   const thresholdY = (100 - thresholdPercentage) * height * 0.01;

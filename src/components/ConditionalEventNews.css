@@ -1,2 +1,19 @@
 .conditional-event-news {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+}
+
+.conditional-event-news__content {
+  background: #eee;
+  padding: 10px;
+  font-size: 18px;
+}
+
+.conditional-event-news__title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
 }

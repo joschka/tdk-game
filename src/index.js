@@ -290,6 +290,7 @@ const store = configureStore({
         title: "Kohleausstieg jetzt",
         description:
           "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
+        link: "https://assets.website-files.com/5e663c02af4002dcdcab78dc/5ece7812eb97a0be582bad67_Der%201%2C5-Grad-Klimaplan%20f%C3%BCr%20Deutschland.pdf#page=22",
         duration: 60,
         duration: duration.short,
         temperature: -0.15,
@@ -537,30 +538,7 @@ const store = configureStore({
         temperature: -0.125,
         love: 2,
         state: "available",
-        successImage: null,
         activeSinceTick: null,
-        questions: [
-          {
-            text: "Die Autolobby erklärt Sie öffentlich für nicht zurechnungsfähig. Wie reagieren Sie?",
-            answers: [
-              {
-                text: "Ich begebe mich unverzüglich in Behandlung.",
-                love: -10,
-                reaction: "Something happened.",
-              },
-              {
-                text: "Ich ignoriere die Vorwürfe, weil die Autolobby keine Rolle spielt.",
-                love: -5,
-                reaction: "Something happened.",
-              },
-              {
-                text: "Ich erkläre, dass das alles ein Missverständnis ist und zähle die Vorteile für eine vorwärtsgewandte Autoindustrie auf.",
-                love: 10,
-                reaction: "Something happened.",
-              }
-            ],
-          }
-        ]
       },
     ],
     actionPartitions: ["active", "available", "ended"],
@@ -597,21 +575,24 @@ const store = configureStore({
         // condition: "vars.foobar && tick > 400",
         // condition: "done.includes("1") && tick > 400",
         // condition: "temperature >= 3 || (done.includes("1") && tick > 400) || vars.lala",
-        condition: "tick > 1 || temperature > 3 && temperature < 4",
+        condition: "false && (tick > 1 || temperature > 3 && temperature < 4)",
         // "probability"
         // additional to condition
+        // optional: if not set, probability is 100%
         // when condition evaluates to true and probability = 1 then the event is always triggered (probability = 100%)
         // when e.g. probability = 0.7 (70%), then there is 30% chance that the event is not triggered (the event is still discarded and won't be tried again)
-        probability: 1,
+        probability: 0.99,
         // "slides"
         // available types:
         // - news
+        // - text
         // - love-change
+        // - temperature-change
         // - multiple-choice
         slides: [
           {
             type: 'news',
-            title: 'Titel bla',
+            title: 'Titel bla 1111111',
             text: 'Text bla',
           },
           {
@@ -651,6 +632,80 @@ const store = configureStore({
                     type: 'love-change',
                     love: 10,
                     text: 'Text bla',
+                  },
+                ]
+              }
+            ],
+          }
+        ],
+      },
+
+
+      {
+        // follow up zu Kohleausstieg
+        id: 'follow-up-10',
+        condition: "done.includes('10')",
+        slides: [
+          {
+            type: 'news',
+            title: 'Kohleausstieg umgesetzt',
+            text: 'You made it. Nach dem Austieg aus der Kernkraft, folgt nun der Ausstieg aus der Kohle. Deutschland ist Ausstiegsweltmeister.',
+            background: 'yellow',
+            newspaper: 'zeit',
+          },
+          {
+            type: 'text',
+            text: '<p>Einfacher Text-Slide</p><p><strong>Lorem ipsum</strong></p>',
+            background: 'biertisch',
+            position: 'bottom',
+          },
+          {
+            type: 'temperature-change',
+            temperature: -0.15,
+            background: 'jubel',
+            text: 'Juhu, Temperatur sinkt.',
+          },
+          {
+            type: 'multiple-choice',
+            text: "Australien bestellt Ihre Botschafterin ein. Man fürchtet durch den Kohleaustritt Rufschädigung.",
+            answers: [
+              {
+                text: "Ich beschimpfe Australien als Hinterwäldler-Gefängnis-Kontinent.",
+                slides: [
+                  {
+                    type: 'love-change',
+                    love: 8,
+                    text: 'Ihr Schimpftirade kommt gut an. Die Deutschen erfreuen sich immer daran, mit dem Finger auf andere zu zeigen. Ihre Beliebheit steigt!',
+                    background: 'jubel',
+                  },
+                ]
+              },
+              {
+                text: "Ich behandle die Sache diskret hinter verschlossenen Türen. Ist doch alles nur eine PR-Maßnahme für die FFF-Generation.",
+                slides: [
+                  {
+                    type: 'news',
+                    title: 'LEAK! Kohleausstieg nur PR',
+                    text: 'Ein Mitschnitt Ihrer Hinterzimmerdiplomatie ist aufgetaucht und sorgt für Empörung.',
+                    background: 'blue',
+                    newspaper: 'faz',
+                  },
+                  {
+                    type: 'love-change',
+                    love: -14,
+                    text: 'Die Empörung ist groß. Ihre Umfragwerte gehen nach unten.',
+                    background: 'yellow',
+                  },
+                ]
+              },
+              {
+                text: "Ich gründe eine Arbeitsgruppe.",
+                slides: [
+                  {
+                    type: 'love-change',
+                    love: 5,
+                    text: 'Arbeitsgruppe ist okay. Ihnen wird Wohlwollen, aber kein Beifall entgegengebracht.',
+                    background: 'green',
                   },
                 ]
               }

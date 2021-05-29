@@ -62,6 +62,7 @@ function App() {
   return (
     <div>
       <div className="app">
+        <Clock />
         <StartScreen />
         <Explainer />
         {(gameStarted || gameStopped) && (
@@ -72,12 +73,11 @@ function App() {
             <FinalScreen />
             {gameStarted && false && <FutureExecutor />}
             {renderActionDetailViews()}
-            {renderFollowUps()}
+            {false && renderFollowUps()}
             {renderConditionalEvents()}
           </>
         )}
       </div>
-      <Clock />
       <ScrollWatcher />
       <audio id="audio-player">
         <source src={testAudio} type="audio/mp3" />

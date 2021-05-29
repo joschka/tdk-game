@@ -27,7 +27,8 @@
   padding: 5px 5px 5px 8px;
   border-radius: 8px;
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
-  transition: top 2s linear;
+  transition: top 1s linear;
+  background: #fff;
 }
 
 .thermometer--medium .thermometer__current-temperature {
@@ -56,6 +57,7 @@
   padding: 5px 5px 5px 8px;
   border-radius: 8px;
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+  background: #fff;
 }
 
 .thermometer__container {

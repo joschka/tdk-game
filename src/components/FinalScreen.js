@@ -32,7 +32,7 @@ function FinalScreen() {
     }
   }, [show]);
 
-  console.log({duration, tick, currentTemperature, threshold, show, won})
+  //console.log({duration, tick, currentTemperature, threshold, show, won})
 
   if (!show) return "";
 

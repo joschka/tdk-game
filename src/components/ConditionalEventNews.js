@@ -4,18 +4,21 @@ import {hot} from 'react-hot-loader';
 
 import './ConditionalEventNews.css';
 
-function ConditionalEventNews({type, title, text, nextSlide}) {
-  const dispatch = useDispatch();
-
+function ConditionalEventNews({title, text, newspaper, onClick}) {
 
   return (
-    <div className='conditional-event-news'>
-      { type}
-      <br />
-      { title}
-      <br />
-      { text}
-      <button onClick={nextSlide}>NEXT</button>
+    <div className='conditional-event-news' onClick={onClick}>
+      <div className='conditional-event-news__content'>
+        <div className='conditional-event-news__title'
+          dangerouslySetInnerHTML={{
+            __html: title
+          }}></div>
+        <div className='conditional-event-news__text'
+          dangerouslySetInnerHTML={{
+            __html: text
+          }}></div>
+        (newspaper: {newspaper})
+      </div>
     </div>
   );
 }

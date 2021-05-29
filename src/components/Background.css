@@ -1,0 +1,42 @@
+.background {
+  min-height: 100vh;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: 100% auto;
+}
+
+.background--yellow {
+  background-color: var(--yellow);
+}
+
+.background--blue {
+  background-color: var(--blue);
+}
+
+.background--green {
+  background-color: var(--green);
+}
+
+.background--blue-dark {
+  background-color: var(--blue-dark);
+}
+
+.background--black {
+  background-color: #000;
+}
+
+.background--white {
+  background-color: #fff;
+}
+
+.background--jubel {
+  background-image: url('../images/backgrounds/jubel.png');
+}
+
+.background--parlament {
+  background-image: url('../images/backgrounds/parlament.png');
+}
+
+.background--biertisch {
+  background-image: url('../images/backgrounds/biertisch.png');
+}

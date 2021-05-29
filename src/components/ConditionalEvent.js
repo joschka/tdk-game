@@ -3,8 +3,11 @@ import {useSelector, useDispatch} from 'react-redux';
 import {hot} from 'react-hot-loader';
 
 import Overlay from './Overlay';
+import Background from './Background';
 import ConditionalEventNews from "./ConditionalEventNews";
 import LoveChange from "./LoveChange";
+import TemperatureChange from "./TemperatureChange";
+import Text from "./Text";
 import ConditionalEventMultipleChoice from "./ConditionalEventMultipleChoice";
 
 import './ConditionalEvent.css';
@@ -44,7 +47,9 @@ function ConditionalEvent({id, condition, probability, slides}) {
   }
 
   if (conditionResult && !display) {
-    if (Math.random() <= probability) {
+    if (!probability) {
+      setDisplay(true);
+    } else if (Math.random() <= probability) {
       setDisplay(true);
     } else {
       destroyEvent();
@@ -63,9 +68,13 @@ function ConditionalEvent({id, condition, probability, slides}) {
   function Slide(props) {
     switch (props.type) {
       case "news":
-        return <ConditionalEventNews {...props} nextSlide={nextSlide} />
+        return <ConditionalEventNews {...props} onClick={nextSlide} />
+      case "text":
+        return <Text {...props} onClick={nextSlide} />
       case "love-change":
         return <LoveChange {...props} onClick={nextSlide} />
+      case "temperature-change":
+        return <TemperatureChange {...props} onClick={nextSlide} />
       case "multiple-choice":
         return <ConditionalEventMultipleChoice {...props} id={id} nextSlide={nextSlide} />
       default:
@@ -86,11 +95,9 @@ function ConditionalEvent({id, condition, probability, slides}) {
 
   return (
     <Overlay>
-      <div className='conditional-event'>
-        Conditional Event
+      <Background name={slides[slide - 1].background}>
         {renderSlide()}
-        <button onClick={destroyEvent}>Close</button>
-      </div>
+      </Background>
     </Overlay>
   );
 }

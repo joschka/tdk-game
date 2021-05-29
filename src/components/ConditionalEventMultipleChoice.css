@@ -1,2 +1,17 @@
 .conditional-event-multiple-choice {
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.conditional-event-multiple-choice__question {
+  padding: 40px 20px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.conditional-event-multiple-choice__answer {
+  margin: 10px 20px;
+  padding: 10px;
+  border: 1px solid black;
+  cursor: pointer;
 }
