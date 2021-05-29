@@ -1,6 +1,6 @@
-import React, {useState, useEffect} from "react";
-import {useSelector, useDispatch} from "react-redux";
-import {hot} from "react-hot-loader";
+import React, { useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { hot } from "react-hot-loader";
 
 import "./ActionDetailView.css";
 
@@ -87,21 +87,20 @@ function ActionDetailView(props) {
     }
 
     return stars;
-
   };
 
   const onStartClick = () => {
     //setShowDetailView(false);
     //dispatch({type: "clock/start", data: "overlay"});
     if (state === "available" && actionable) {
-      dispatch({type: "action/activate", data: {id}});
-      dispatch({type: "action/hide", data: id});
+      dispatch({ type: "action/activate", data: { id } });
+      dispatch({ type: "action/hide", data: id });
     }
   };
 
   const onBackClick = () => {
     //setShowDetailView(false);
-    dispatch({type: "action/hide", data: id});
+    dispatch({ type: "action/hide", data: id });
     //dispatch({type: "clock/start", data: "overlay"});
   };
 
@@ -109,38 +108,49 @@ function ActionDetailView(props) {
     if (state === "available" && actionable) {
       return (
         <div className="action-detail-view__buttons">
-          <button className="button button--secondary" onClick={onBackClick}>Zurück</button>
-          <button className="button" onClick={onStartClick}>Jetzt starten!</button>
+          <button className="button button--secondary" onClick={onBackClick}>
+            Zurück
+          </button>
+          <button className="button" onClick={onStartClick}>
+            Jetzt starten!
+          </button>
         </div>
       );
     }
 
     return (
       <div className="action-detail-view__buttons">
-        <button className="button button--secondary" onClick={onBackClick}>Zurück</button>
+        <button className="button button--secondary" onClick={onBackClick}>
+          Zurück
+        </button>
       </div>
     );
   };
-
 
   return (
     <Overlay>
       <div className="action-detail-view">
         <img className="action-detail-view__image" src={imageSrc} />
-        <h1 className="action__title"
+        <h1
+          className="action__title"
           dangerouslySetInnerHTML={{
-            __html: title
-          }}></h1>
+            __html: title,
+          }}
+        ></h1>
         <div className="action-detail-view__stars">
           <p>Klimawirkung:</p>
           {true && renderStars()}
         </div>
         {renderButtons()}
-        {link && <div className="action-detail-view__link">
-          Mehr Informationen im Klimaplan von GermanZero e.V.
-          <br />
-          <a href={link} rel="noopener" target="_blank">Klimaplan in neuem Tab öffnen</a>
-        </div>}
+        {link && (
+          <div className="action-detail-view__link">
+            Mehr Informationen im Klimaplan von GermanZero e.V.
+            <br />
+            <a href={link} rel="noopener" target="_blank">
+              Klimaplan in neuem Tab öffnen
+            </a>
+          </div>
+        )}
         <div className="speech-bubble">
           <p>{description}</p>
         </div>

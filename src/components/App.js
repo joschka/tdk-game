@@ -1,6 +1,6 @@
-import React, {useState, useEffect} from "react";
-import {useSelector, useDispatch} from "react-redux";
-import {hot} from "react-hot-loader";
+import React, { useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { hot } from "react-hot-loader";
 
 import "./App.css";
 
@@ -43,15 +43,22 @@ function App() {
   }
 
   const renderActionDetailViews = () => {
-    return actions.filter(a => a.detailViewActive).map((a, i) => {
-      return <ActionDetailView {...a} key={i} />;
-    });
+    return actions
+      .filter((a) => a.detailViewActive)
+      .map((a, i) => {
+        return <ActionDetailView {...a} key={i} />;
+      });
   };
 
   const renderFollowUps = () => {
-    return actions.filter(a => (a.state === 'active' && ((a.activeSinceTick + a.duration) <= currentTick))).map((a, i) => {
-      return <FollowUp {...a} key={i} />;
-    });
+    return actions
+      .filter(
+        (a) =>
+          a.state === "active" && a.activeSinceTick + a.duration <= currentTick
+      )
+      .map((a, i) => {
+        return <FollowUp {...a} key={i} />;
+      });
   };
 
   const renderConditionalEvents = () => {

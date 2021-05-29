@@ -1,8 +1,8 @@
-import React, {useState, useEffect} from 'react';
-import {useSelector, useDispatch} from 'react-redux';
-import {hot} from 'react-hot-loader';
+import React, { useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { hot } from "react-hot-loader";
 
-import './GermanZeroLogo.css';
+import "./GermanZeroLogo.css";
 
 import LogoOneline from "../images/germanZero/logo-oneline.inline.svg";
 import LogoTwoline from "../images/germanZero/logo-twoline.inline.svg";
@@ -15,10 +15,10 @@ function GermanZeroLogo(props) {
   const type = props.type || "oneline";
 
   function Logo() {
-    if (type === 'twoline') {
+    if (type === "twoline") {
       return <LogoTwoline width={width} height={height} />;
     }
-    if (type === 'vertical') {
+    if (type === "vertical") {
       return <LogoVertical width={width} height={height} />;
     }
 
@@ -27,14 +27,16 @@ function GermanZeroLogo(props) {
 
   const cssClasses = [
     "german-zero-logo",
-    `german-zero-logo--${props.color || "yellow"}`
+    `german-zero-logo--${props.color || "yellow"}`,
   ].join(" ");
 
   return (
     <div className={cssClasses}>
-      {props.linked && <a href="https://www.germanzero.de/" target="_blank" rel="noopener">
-        <Logo />
-      </a>}
+      {props.linked && (
+        <a href="https://www.germanzero.de/" target="_blank" rel="noopener">
+          <Logo />
+        </a>
+      )}
       {!props.linked && <Logo />}
     </div>
   );

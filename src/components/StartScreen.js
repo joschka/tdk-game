@@ -1,6 +1,6 @@
-import React, {useState, useEffect} from "react";
-import {useSelector, useDispatch} from "react-redux";
-import {hot} from "react-hot-loader";
+import React, { useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { hot } from "react-hot-loader";
 
 import GermanZeroLogo from "./GermanZeroLogo";
 
@@ -25,7 +25,7 @@ function StartScreen() {
     }
   */
   function nextStep(e) {
-    dispatch({type: "game/introStep", data: 1});
+    dispatch({ type: "game/introStep", data: 1 });
   }
 
   useEffect(() => {
@@ -41,7 +41,9 @@ function StartScreen() {
 
   return (
     <div className="start-screen fixed-screen">
-      <div className="start-screen__warning">Für das beste Spielerlebnis nutze bitte dein Smartphone.</div>
+      <div className="start-screen__warning">
+        Für das beste Spielerlebnis nutze bitte dein Smartphone.
+      </div>
       <div className="start-screen__content">
         <h1 className="start-screen__title">Ich kann Klimakanzler:in</h1>
 
@@ -62,10 +64,30 @@ function StartScreen() {
 
       <div className="start-screen__footer">
         <p>Ein Spiel von</p>
-        <GermanZeroLogo width={200} type="twoline" color="black" linked={true} />
-        <p><a href="https://www.germanzero.de/impressum" target="_blank" rel="noopener" className="start-screen__footer-link">Impressum</a>
-        &nbsp;|&nbsp;
-        <a href="https://www.germanzero.de/datenschutz" target="_blank" rel="noopener" className="start-screen__footer-link">Datenschutz</a>
+        <GermanZeroLogo
+          width={200}
+          type="twoline"
+          color="black"
+          linked={true}
+        />
+        <p>
+          <a
+            href="https://www.germanzero.de/impressum"
+            target="_blank"
+            rel="noopener"
+            className="start-screen__footer-link"
+          >
+            Impressum
+          </a>
+          &nbsp;|&nbsp;
+          <a
+            href="https://www.germanzero.de/datenschutz"
+            target="_blank"
+            rel="noopener"
+            className="start-screen__footer-link"
+          >
+            Datenschutz
+          </a>
         </p>
       </div>
     </div>

@@ -30,13 +30,13 @@
 }
 
 .background--jubel {
-  background-image: url('../images/backgrounds/jubel.png');
+  background-image: url("../images/backgrounds/jubel.png");
 }
 
 .background--parlament {
-  background-image: url('../images/backgrounds/parlament.png');
+  background-image: url("../images/backgrounds/parlament.png");
 }
 
 .background--biertisch {
-  background-image: url('../images/backgrounds/biertisch.png');
+  background-image: url("../images/backgrounds/biertisch.png");
 }

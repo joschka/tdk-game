@@ -1,6 +1,6 @@
-import React, {useState, useEffect} from "react";
-import {useSelector, useDispatch} from "react-redux";
-import {hot} from "react-hot-loader";
+import React, { useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { hot } from "react-hot-loader";
 
 import "./Clock.css";
 
@@ -19,7 +19,7 @@ function Clock() {
     const intervalId = setInterval(
       () => {
         _ticks++;
-        dispatch({type: "clock/tick", data: _ticks});
+        dispatch({ type: "clock/tick", data: _ticks });
       },
       isFast ? 200 : 500
     );

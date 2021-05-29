@@ -83,28 +83,28 @@ export default function rootReducer(state = {}, action) {
     case "conditionalEvent/destroy":
       return {
         ...state,
-        conditionalEvents: [...state.conditionalEvents.filter(ce => ce.id !== action.data)],
+        conditionalEvents: [
+          ...state.conditionalEvents.filter((ce) => ce.id !== action.data),
+        ],
       };
     case "conditionalEvent/nextSlide":
       return {
         ...state,
         conditionalEvents: state.conditionalEvents.map((ce) =>
-          ce.id === action.data.id
-            ? {...ce, slide: (ce.slide || 1) + 1}
-            : ce
-        )
+          ce.id === action.data.id ? { ...ce, slide: (ce.slide || 1) + 1 } : ce
+        ),
       };
     case "conditionalEvent/addSlides":
       return {
         ...state,
         conditionalEvents: state.conditionalEvents.map((ce) =>
           ce.id === action.data.id
-            ? {...ce, slides: ce.slides.concat(action.data.slides)}
+            ? { ...ce, slides: ce.slides.concat(action.data.slides) }
             : ce
-        )
+        ),
       };
     case "conditionalEvent/setVariable":
-      const vars = {...state.vars};
+      const vars = { ...state.vars };
       vars[action.data.variable] = true;
       return {
         ...state,
@@ -138,18 +138,14 @@ export default function rootReducer(state = {}, action) {
       return {
         ...state,
         actions: state.actions.map((a) =>
-          a.id === action.data
-            ? {...a, detailViewActive: true}
-            : a
+          a.id === action.data ? { ...a, detailViewActive: true } : a
         ),
       };
     case "action/hide":
       return {
         ...state,
         actions: state.actions.map((a) =>
-          a.id === action.data
-            ? {...a, detailViewActive: false}
-            : a
+          a.id === action.data ? { ...a, detailViewActive: false } : a
         ),
       };
     case "action/activate":
@@ -157,7 +153,7 @@ export default function rootReducer(state = {}, action) {
         ...state,
         actions: state.actions.map((a) =>
           a.id === action.data.id
-            ? {...a, state: "active", activeSinceTick: state.clock.tick}
+            ? { ...a, state: "active", activeSinceTick: state.clock.tick }
             : a
         ),
       };
@@ -165,7 +161,7 @@ export default function rootReducer(state = {}, action) {
       return {
         ...state,
         actions: state.actions.map((a) =>
-          a.id === action.data.id ? {...a, state: "ended"} : a
+          a.id === action.data.id ? { ...a, state: "ended" } : a
         ),
       };
     case "actions/show":

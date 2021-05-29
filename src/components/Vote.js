@@ -1,17 +1,16 @@
-import React, {useState, useEffect} from 'react';
-import {useSelector, useDispatch} from 'react-redux';
-import {hot} from 'react-hot-loader';
+import React, { useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { hot } from "react-hot-loader";
 
-import './Vote.css';
+import "./Vote.css";
 
-function Vote({onClick, others, text}) {
+function Vote({ onClick, others, text }) {
   const dispatch = useDispatch();
 
   const currentLove = useSelector((state) => state.love);
 
-
-  const sumOthers = others.reduce((acc, val) => (acc + val), 0);
-  console.log({sumOthers});
+  const sumOthers = others.reduce((acc, val) => acc + val, 0);
+  console.log({ sumOthers });
   const remainder = 100 - currentLove * 1.0;
   const remainderPart = remainder / sumOthers;
 
@@ -23,10 +22,15 @@ function Vote({onClick, others, text}) {
     remainderPart * others[3],
   ];
 
-  console.log({values});
+  console.log({ values });
 
   function Bar(props) {
-    return <div className='vote__bar' style={{height: `${props.percentage}%`}}></div>;
+    return (
+      <div
+        className="vote__bar"
+        style={{ height: `${props.percentage}%` }}
+      ></div>
+    );
   }
 
   const renderBars = () => {
@@ -36,12 +40,10 @@ function Vote({onClick, others, text}) {
   };
 
   return (
-    <div className='vote' onClick={onClick}>
-      <div className='vote__text'>{text}</div>
+    <div className="vote" onClick={onClick}>
+      <div className="vote__text">{text}</div>
 
-      <div className='vote__chart'>
-        {renderBars()}
-      </div>
+      <div className="vote__chart">{renderBars()}</div>
     </div>
   );
 }

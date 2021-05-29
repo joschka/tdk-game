@@ -1,8 +1,8 @@
 import React from "react";
-import {render} from "react-dom";
+import { render } from "react-dom";
 
-import {Provider} from "react-redux";
-import {configureStore} from "@reduxjs/toolkit";
+import { Provider } from "react-redux";
+import { configureStore } from "@reduxjs/toolkit";
 
 import rootReducer from "./reducers.js";
 
@@ -121,7 +121,8 @@ const store = configureStore({
         title: "Kohleausstieg jetzt",
         description:
           "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
-        link: "https://assets.website-files.com/5e663c02af4002dcdcab78dc/5ece7812eb97a0be582bad67_Der%201%2C5-Grad-Klimaplan%20f%C3%BCr%20Deutschland.pdf#page=22",
+        link:
+          "https://assets.website-files.com/5e663c02af4002dcdcab78dc/5ece7812eb97a0be582bad67_Der%201%2C5-Grad-Klimaplan%20f%C3%BCr%20Deutschland.pdf#page=22",
         duration: duration.short,
         temperature: -0.15,
         state: "available",
@@ -246,18 +247,19 @@ const store = configureStore({
         // - multiple-choice
         slides: [
           {
-            type: 'news',
-            title: 'Titel bla 1111111',
-            text: 'Text bla',
+            type: "news",
+            title: "Titel bla 1111111",
+            text: "Text bla",
           },
           {
-            type: 'love-change',
+            type: "love-change",
             love: -5,
-            text: 'Text bla',
+            text: "Text bla",
           },
           {
-            type: 'multiple-choice',
-            text: "Die Autolobby erklärt Sie öffentlich für nicht zurechnungsfähig. Wie reagieren Sie?",
+            type: "multiple-choice",
+            text:
+              "Die Autolobby erklärt Sie öffentlich für nicht zurechnungsfähig. Wie reagieren Sie?",
             // "answers"
             // text is mandatory
             // available outcomes:
@@ -269,152 +271,160 @@ const store = configureStore({
                 text: "Ich begebe mich unverzüglich in Behandlung.",
                 slides: [
                   {
-                    type: 'love-change',
+                    type: "love-change",
                     love: -5,
-                    text: 'Text bla',
+                    text: "Text bla",
                   },
-                ]
+                ],
               },
               {
-                text: "Ich ignoriere die Vorwürfe, weil die Autolobby keine Rolle spielt.",
-                variable: 'foobar',
+                text:
+                  "Ich ignoriere die Vorwürfe, weil die Autolobby keine Rolle spielt.",
+                variable: "foobar",
               },
               {
-                text: "Ich erkläre, dass das alles ein Missverständnis ist und zähle die Vorteile für eine vorwärtsgewandte Autoindustrie auf.",
+                text:
+                  "Ich erkläre, dass das alles ein Missverständnis ist und zähle die Vorteile für eine vorwärtsgewandte Autoindustrie auf.",
                 variable: "foobaz",
                 slides: [
                   {
-                    type: 'love-change',
+                    type: "love-change",
                     love: 10,
-                    text: 'Text bla',
+                    text: "Text bla",
                   },
-                ]
-              }
+                ],
+              },
             ],
-          }
+          },
         ],
       },
 
       {
         // Gewonnen
-        id: 'win',
+        id: "win",
         condition: "temperature <= 1.5",
         slides: [
           {
-            type: 'game-over',
+            type: "game-over",
             text: "GEWONNEN!!!",
             background: "biertisch",
-          }
-        ]
+          },
+        ],
       },
-
 
       {
         // Wahl 2025
-        id: 'vote-1',
+        id: "vote-1",
         condition: "tick > 194 && love < 30",
         slides: [
           {
-            type: 'vote',
+            type: "vote",
             text: "Jörg Schönenborn präsentiert die Wahlergebnisse:",
             // Gewichtung der anderen Balken
-            others: [
-              1, 1.5, 2, 0.2
-            ]
+            others: [1, 1.5, 2, 0.2],
           },
           {
-            type: 'game-over',
+            type: "game-over",
             text: "Leider verloren",
             background: "biertisch",
-          }
-        ]
+          },
+        ],
       },
 
       {
         // follow up zu Schlachthöfe (ohne Interaktion)
-        id: 'follow-up-5',
+        id: "follow-up-5",
         condition: "done.includes('5')",
         slides: [
           {
-            type: 'temperature-change',
+            type: "temperature-change",
             temperature: -1,
             silent: true,
           },
-        ]
+        ],
       },
 
       {
         // follow up zu Kohleausstieg
-        id: 'follow-up-10',
+        id: "follow-up-10",
         condition: "done.includes('10')",
         slides: [
           {
-            type: 'news',
-            title: 'Kohleausstieg umgesetzt',
-            text: 'You made it. Nach dem Austieg aus der Kernkraft, folgt nun der Ausstieg aus der Kohle. Deutschland ist Ausstiegsweltmeister.',
-            background: 'yellow',
-            newspaper: 'zeit',
+            type: "news",
+            title: "Kohleausstieg umgesetzt",
+            text:
+              "You made it. Nach dem Austieg aus der Kernkraft, folgt nun der Ausstieg aus der Kohle. Deutschland ist Ausstiegsweltmeister.",
+            background: "yellow",
+            newspaper: "zeit",
           },
           {
-            type: 'text',
-            text: '<p>Einfacher Text-Slide</p><p><strong>Lorem ipsum</strong></p>',
-            background: 'biertisch',
-            position: 'bottom',
+            type: "text",
+            text:
+              "<p>Einfacher Text-Slide</p><p><strong>Lorem ipsum</strong></p>",
+            background: "biertisch",
+            position: "bottom",
           },
           {
-            type: 'temperature-change',
+            type: "temperature-change",
             temperature: -0.15,
-            background: 'jubel',
-            text: 'Juhu, Temperatur sinkt.',
+            background: "jubel",
+            text: "Juhu, Temperatur sinkt.",
           },
           {
-            type: 'multiple-choice',
-            text: "Australien bestellt Ihre Botschafterin ein. Man fürchtet durch den Kohleaustritt Rufschädigung.",
+            type: "multiple-choice",
+            text:
+              "Australien bestellt Ihre Botschafterin ein. Man fürchtet durch den Kohleaustritt Rufschädigung.",
             answers: [
               {
-                text: "Ich beschimpfe Australien als Hinterwäldler-Gefängnis-Kontinent.",
+                text:
+                  "Ich beschimpfe Australien als Hinterwäldler-Gefängnis-Kontinent.",
                 slides: [
                   {
-                    type: 'love-change',
+                    type: "love-change",
                     love: 8,
-                    text: 'Ihr Schimpftirade kommt gut an. Die Deutschen erfreuen sich immer daran, mit dem Finger auf andere zu zeigen. Ihre Beliebheit steigt!',
-                    background: 'jubel',
+                    text:
+                      "Ihr Schimpftirade kommt gut an. Die Deutschen erfreuen sich immer daran, mit dem Finger auf andere zu zeigen. Ihre Beliebheit steigt!",
+                    background: "jubel",
                   },
-                ]
+                ],
               },
               {
-                text: "Ich behandle die Sache diskret hinter verschlossenen Türen. Ist doch alles nur eine PR-Maßnahme für die FFF-Generation.",
+                text:
+                  "Ich behandle die Sache diskret hinter verschlossenen Türen. Ist doch alles nur eine PR-Maßnahme für die FFF-Generation.",
                 slides: [
                   {
-                    type: 'news',
-                    title: 'LEAK! Kohleausstieg nur PR',
-                    text: 'Ein Mitschnitt Ihrer Hinterzimmerdiplomatie ist aufgetaucht und sorgt für Empörung.',
-                    background: 'blue',
-                    newspaper: 'faz',
+                    type: "news",
+                    title: "LEAK! Kohleausstieg nur PR",
+                    text:
+                      "Ein Mitschnitt Ihrer Hinterzimmerdiplomatie ist aufgetaucht und sorgt für Empörung.",
+                    background: "blue",
+                    newspaper: "faz",
                   },
                   {
-                    type: 'love-change',
+                    type: "love-change",
                     love: -14,
-                    text: 'Die Empörung ist groß. Ihre Umfragwerte gehen nach unten.',
-                    background: 'yellow',
+                    text:
+                      "Die Empörung ist groß. Ihre Umfragwerte gehen nach unten.",
+                    background: "yellow",
                   },
-                ]
+                ],
               },
               {
                 text: "Ich gründe eine Arbeitsgruppe.",
                 slides: [
                   {
-                    type: 'love-change',
+                    type: "love-change",
                     love: 5,
-                    text: 'Arbeitsgruppe ist okay. Ihnen wird Wohlwollen, aber kein Beifall entgegengebracht.',
-                    background: 'green',
+                    text:
+                      "Arbeitsgruppe ist okay. Ihnen wird Wohlwollen, aber kein Beifall entgegengebracht.",
+                    background: "green",
                   },
-                ]
-              }
+                ],
+              },
             ],
-          }
+          },
         ],
-      }
+      },
     ],
   },
 });
