@@ -21,6 +21,7 @@ import FutureExecutor from "./FutureExecutor.js";
 import ConditionalEvent from "./ConditionalEvent";
 import ActionDetailView from "./ActionDetailView";
 import FollowUp from "./FollowUp";
+import Unlover from "./Unlover";
 
 import testAudio from "./test.mp3";
 
@@ -63,6 +64,7 @@ function App() {
     <div>
       <div className="app">
         <Clock />
+        <Unlover />
         <StartScreen />
         <Explainer />
         {(gameStarted || gameStopped) && (

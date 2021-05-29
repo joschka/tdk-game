@@ -49,7 +49,7 @@ function LoveChart(props) {
     transform: `translateX(-${tick * slideStep}%)`,
   };
 
-  const formattedLabel = `${currentLove}%`;
+  const formattedLabel = `${Math.round(currentLove)}%`;
 
   function renderChart() {
     return (
