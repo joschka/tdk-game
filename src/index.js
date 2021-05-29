@@ -641,6 +641,27 @@ const store = configureStore({
       },
 
       {
+        // Wahl
+        id: 'vote-1',
+        condition: "tick > 10",
+        slides: [
+          {
+            type: 'vote',
+            text: "Jörg Schönenborn präsentiert die Wahlergebnisse:",
+            // Gewichtung der anderen Balken
+            others: [
+              1, 1.5, 2, 0.2
+            ]
+          },
+          {
+            type: 'game-over',
+            text: "Leider verloren",
+            background: "biertisch",
+          }
+        ]
+      },
+
+      {
         // follow up zu Schlachthöfe
         id: 'follow-up-5',
         condition: "done.includes('5')",

@@ -8,6 +8,8 @@ import ConditionalEventNews from "./ConditionalEventNews";
 import LoveChange from "./LoveChange";
 import TemperatureChange from "./TemperatureChange";
 import Text from "./Text";
+import Vote from "./Vote";
+import GameOver from "./GameOver";
 import ConditionalEventMultipleChoice from "./ConditionalEventMultipleChoice";
 
 import './ConditionalEvent.css';
@@ -69,6 +71,10 @@ function ConditionalEvent({id, condition, probability, slides}) {
         return <ConditionalEventNews {...props} onClick={nextSlide} />
       case "text":
         return <Text {...props} onClick={nextSlide} />
+      case "vote":
+        return <Vote {...props} onClick={nextSlide} />
+      case "game-over":
+        return <GameOver {...props} />
       case "love-change":
         return <LoveChange {...props} onClick={nextSlide} />
       case "temperature-change":

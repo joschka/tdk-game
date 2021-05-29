@@ -1,0 +1,26 @@
+.vote {
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.vote__text {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.vote__chart {
+  border-bottom: 3px solid black;
+  height: 50vh;
+  display: flex;
+  align-items: flex-end;
+}
+
+.vote__bar {
+  background-color: var(--blue);
+  width: 20%;
+  margin: 0 4%;
+}
+
+.vote__bar:nth-child(3) {
+  background-color: var(--green);
+}
