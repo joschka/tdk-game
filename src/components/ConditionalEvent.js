@@ -24,7 +24,7 @@ function ConditionalEvent({ id, condition, probability, slides }) {
 
   const dispatch = useDispatch();
 
-  const [display, setDisplay] = useState(false);
+  //const [display, setDisplay] = useState(false);
   //const [slide, setSlide] = useState(1);
 
   const slide = useSelector(
@@ -60,18 +60,7 @@ function ConditionalEvent({ id, condition, probability, slides }) {
 
   const destroyEvent = () => {
     dispatch({ type: "conditionalEvent/destroy", data: id });
-    setDisplay(false);
   };
-
-  if (conditionResult && !display) {
-    if (!probability) {
-      setDisplay(true);
-    } else if (Math.random() <= probability) {
-      setDisplay(true);
-    } else {
-      destroyEvent();
-    }
-  }
 
   const nextSlide = () => {
     if (slide < slides.length) {
@@ -118,7 +107,11 @@ function ConditionalEvent({ id, condition, probability, slides }) {
     return <Slide {...currentSlide} />;
   };
 
-  if (!display) return null;
+  if (!conditionResult) return null;
+  if (conditionResult && probability && Math.random() > probability) {
+    destroyEvent();
+    return null;
+  }
 
   return (
     <Overlay>

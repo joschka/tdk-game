@@ -1,8 +1,8 @@
 import React from "react";
-import {render} from "react-dom";
+import { render } from "react-dom";
 
-import {Provider} from "react-redux";
-import {configureStore} from "@reduxjs/toolkit";
+import { Provider } from "react-redux";
+import { configureStore } from "@reduxjs/toolkit";
 
 import rootReducer from "./reducers.js";
 
@@ -231,13 +231,13 @@ const store = configureStore({
         // condition: "vars.foobar && tick > 400",
         // condition: "done.includes("1") && tick > 400",
         // condition: "temperature >= 3 || (done.includes("1") && tick > 400) || vars.lala",
-        condition: "(tick > 1 || temperature > 3 && temperature < 4)",
+        condition: "false && (tick > 1 || temperature > 3 && temperature < 4)",
         // "probability"
         // additional to condition
         // optional: if not set, probability is 100%
         // when condition evaluates to true and probability = 1 then the event is always triggered (probability = 100%)
         // when e.g. probability = 0.7 (70%), then there is 30% chance that the event is not triggered (the event is still discarded and won't be tried again)
-        probability: 0.1,
+        // probability: 0.1, DONT USE!!! (buggy)
         // "slides"
         // available types:
         // - news (Zeitung)

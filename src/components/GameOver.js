@@ -13,6 +13,7 @@ function GameOver({ text }) {
   }, []);
 
   function Share() {
+    return "";
     const twitterText = encodeURIComponent(
       "Kannst du Klimakanzler:in?\nFinde es heraus!\nhttps://www.klimakanzler.in"
     );
