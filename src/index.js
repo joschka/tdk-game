@@ -528,10 +528,9 @@ const store = configureStore({
                 text:
                   "1500 € – der reale Preis einschl. aller Umweltfolgekosten",
                 variable: "tonnenpreis1500"
-              },
-
-            ],
-          },
+              }
+            ]
+          }
         ],
       },
 
@@ -563,7 +562,6 @@ const store = configureStore({
                     text: "Industrie-Präsident: Wenn Sie den CO2-Preis von 1.500 wirklich umsetzen wollen, verlieren wir Millionen von Jobs. Und dann verlieren Sie Ihren. Dafür sorgen wir."
                   },
                   {
-
                     type: "multiple-choice",
                     background: "kaminzimmer",
                     text: "Ich will Ihnen ein Angebot unterbreiten: Sie heben den CO2-Preis auf nur 50 Euro und dafür investiert die gesamte deutsche Industrie in den nächsten 10 Jahren 500 Milliarden Euro in neue Technologie, die CO2 aus der Luft saugt. Sie erreichen Ihr Klimaziel und wir erhalten die Jobs.",
