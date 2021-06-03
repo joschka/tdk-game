@@ -559,7 +559,7 @@ const store = configureStore({
                   {
                     type: "text",
                     background: "kaminzimmer",
-                    text: "Industrie-Präsident: Wenn Sie den CO2-Preis von 1.500 wirklich umsetzen wollen, verlieren wir Millionen von Jobs. Und dann verlieren Sie Ihren. Dafür sorgen wir."
+                    text: "Industrie-Präsident:<br> \"Wenn Sie den CO2-Preis von 1.500 wirklich umsetzen wollen, verlieren wir Millionen von Jobs. Bevor das passiert, verlieren Sie Ihren. Dafür sorgen wir.\""
                   },
                   {
                     type: "multiple-choice",

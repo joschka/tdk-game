@@ -4,8 +4,12 @@ import { hot } from "react-hot-loader";
 
 import "./ConditionalEventLoveChange.css";
 
-function ConditionalEventLoveChange({ type, text, love, nextSlide }) {
+function ConditionalEventLoveChange({ type, text, silent, love, nextSlide }) {
   const dispatch = useDispatch();
+
+  if (silent) {
+    return null;
+  }
 
   return (
     <div className="conditional-event-love-change">
