@@ -118,9 +118,11 @@ function ConditionalEvent({ id, condition, probability, slides }) {
     return null;
   }
 
+  const background = slides[slide - 1] ? slides[slide - 1].background : null;
+
   return (
     <Overlay>
-      <Background name={slides[slide - 1].background}>
+      <Background name={background}>
         {renderSlide()}
       </Background>
     </Overlay>
