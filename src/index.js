@@ -319,7 +319,7 @@ const store = configureStore({
       {
         // kurz vor der 1. Wahl
         id: "talkshow-vor-wahl1",
-        condition: "tick == 193",
+        condition: "tick == 194",
         slides: [
           {
             type: "multiple-choice",

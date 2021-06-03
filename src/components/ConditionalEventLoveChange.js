@@ -8,6 +8,7 @@ function ConditionalEventLoveChange({ type, text, silent, love, nextSlide }) {
   const dispatch = useDispatch();
 
   if (silent) {
+    nextSlide;
     return null;
   }
 
