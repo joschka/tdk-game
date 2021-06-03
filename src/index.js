@@ -501,7 +501,7 @@ const store = configureStore({
       {
         // co2 bepreisung
         id: "co2bepreisung-gestartet",
-        condition: "started.includes('16')",
+        condition: "done.includes('16')",
         slides: [          
           {
             type: "multiple-choice",
