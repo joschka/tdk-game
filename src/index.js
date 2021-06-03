@@ -498,6 +498,114 @@ const store = configureStore({
 
 
 
+      {
+        // co2 bepreisung
+        id: "co2bepreisung-gestartet",
+        condition: "started.includes('16')",
+        slides: [          
+          {
+            type: "multiple-choice",
+            background: "buero",
+            text:
+              "Wieviel Steuer soll auf eine Tonne CO2 zukünftig erhoben werden?",
+            answers: [
+              {
+                text:
+                  "50 € – etws mehr als bisher",
+                variable: "tonnenpreis50"
+              },
+              {
+                text:
+                  "200 €",
+                variable: "tonnenpreis200"
+              },
+              {
+                text:
+                  "500 €",
+                variable: "tonnenpreis500"
+              },
+              {
+                text:
+                  "1500 € – der reale Preis einschl. aller Umweltfolgekosten",
+                variable: "tonnenpreis1500"
+              },
+
+            ],
+          },
+        ],
+      },
+
+
+      {
+        // co2 zu teuer für lobby
+        id: "co2bepreisung-zuteuer-fuer-lobby",
+        condition: "vars.tonnenpreis1500",
+        slides: [          
+          {
+            type: "multiple-choice",
+            background: "buero",
+            text:
+              "Der Präsident des obersten Industrieverbandes steht plötzlich in Ihrem Büro",
+            answers: [
+              {
+                text:
+                  "Ihn wegschicken",
+                variable: "lobbyhasstmich"
+              },
+              {
+                text:
+                  "Seiner Einladung folgen",
+                slides: 
+
+
+                  {
+                    type: "text",
+                    background: "kaminzimmer",
+                    text:
+                      "Industrie-Präsident: Wenn Sie den CO2-Preis von 1.500 wirklich umsetzen wollen, verlieren wir Millionen von Jobs. Und dann verlieren Sie Ihren. Dafür sorgen wir."
+                  },
+                  {
+
+                    type: "multiple-choice",
+                    background: "kaminzimmer",
+                    text: "Ich will Ihnen ein Angebot unterbreiten: Sie heben den CO2-Preis auf nur 50 Euro und dafür investiert die gesamte deutsche Industrie in den nächsten 10 Jahren 500 Milliarden Euro in neue Technologie, die CO2 aus der Luft saugt. Sie erreichen Ihr Klimaziel und wir erhalten die Jobs."
+                  }
+
+                    answers: [
+                      {
+                        text:
+                          "Ok, machen wir!",
+                        variables: "tonnenpreis50",
+                      },
+                      {
+                        text:
+                          "Nein, danke.",
+                        variables: "lobbyhasstmich",
+                      }
+                    ],
+                  }
+
+
+              },
+              {
+                text:
+                  "500 €",
+                variable: "tonnenpreis500"
+              },
+              {
+                text:
+                  "1500 € – der reale Preis einschl. aller Umweltfolgekosten",
+                variable: "tonnenpreis1500"
+              },
+
+            ],
+          },
+        ],
+      },
+
+
+
+
 
       {
         // testscreens

@@ -16,7 +16,7 @@ import "./ConditionalEvent.css";
 
 const deserializeFunction = (funcString) =>
   new Function(
-    `return function ({temperature, love, tick, done, vars}) {return ${funcString};}`
+    `return function ({temperature, love, tick, done, started, vars}) {return ${funcString};}`
   )();
 
 function ConditionalEvent({ id, condition, probability, slides }) {
@@ -37,6 +37,9 @@ function ConditionalEvent({ id, condition, probability, slides }) {
   const doneActionIds = useSelector((state) =>
     state.actions.filter((a) => a.state === "ended").map((a) => a.id)
   );
+  const startedActionIds = useSelector((state) =>
+    state.actions.filter((a) => a.state === "active").map((a) => a.id)
+  );
   const vars = useSelector((state) => state.vars);
 
   const conditionResult = conditionFn({
@@ -44,6 +47,7 @@ function ConditionalEvent({ id, condition, probability, slides }) {
     love: currentLove,
     temperature: currentTemperature,
     done: doneActionIds,
+    started: startedActionIds,
     vars,
   });
 
@@ -55,6 +59,7 @@ function ConditionalEvent({ id, condition, probability, slides }) {
     currentTemperature,
     currentLove,
     doneActionIds,
+    startedActionIds,
     vars,
   });
 
