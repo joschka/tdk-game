@@ -314,14 +314,59 @@ const store = configureStore({
         ],
       },
 
+
+
       {
-        // Wahl 2025
-        id: "vote-1",
-        condition: "tick > 194 && love < 30",
+        // kurz vor der 1. Wahl
+        id: "talkshow-vor-wahl1",
+        condition: "tick == 193",
+        slides: [
+          {
+            type: "multiple-choice",
+            background: "talkshow",
+            title: "Morgen wird in Deutschland gewählt",
+            text:
+              "Ihre Bilanz nach 4 Jahren Kanzlerschaft: Alles wurde teurer und das Klima ist trotzdem nicht gerettet. Wie erklären Sie das?",
+            answers: [
+              {
+                text:
+                  "Umbau braucht Zeit. Nach der Wahl geht es weiter.",
+                slides: [
+                  {
+                    type: "love-change",
+                    love: -5,
+                    silent: true
+                  }
+                ],
+              },
+              {
+                text:
+                  "Nur wenn Sie mich wiederwählen, kann ich unser Klima retten. Ich bitte Sie im Namen des Überlebens: Machen Sie ihr Kreuz bei mir.",
+                slides: [
+                  {
+                    type: "love-change",
+                    love: 3,
+                    silent: true
+                  }
+                ],
+              }
+            ],
+          }
+        ]
+      },
+
+
+
+
+      {
+        // Wahl verloren
+        id: "vote-lost",
+        condition: "(tick == 194 || tick == 388 || tick == 582) && love < 30",
         slides: [
           {
             type: "vote",
-            text: "Jörg Schönenborn präsentiert die Wahlergebnisse:",
+            text: "Wahlabend 18 Uhr: Jörg Schönenborn präsentiert die Hochrechnung:",
+            background: "wahl",
             // Gewichtung der anderen Balken
             others: [1, 1.5, 2, 0.2],
           },
@@ -329,6 +374,26 @@ const store = configureStore({
             type: "game-over",
             text: "Leider verloren",
             background: "biertisch",
+          },
+        ],
+      },
+
+      {
+        // Wahl gewonnen
+        id: "vote-won",
+        condition: "(tick == 194 || tick == 388 || tick == 582) && love >= 30",
+        slides: [
+          {
+            type: "vote",
+            text: "Wahlabend 18 Uhr: Jörg Schönenborn präsentiert die Hochrechnung:",
+            background: "wahl",
+            // Gewichtung der anderen Balken
+            others: [1, 1.5, 2, 0.2],
+          },
+          {
+            type: "text",
+            text: "Wahlsieg! Sie bleiben 4 weitere Jahre im Amt!",
+            background: "jubel",
           },
         ],
       },
@@ -427,6 +492,84 @@ const store = configureStore({
           },
         ],
       },
+
+
+      //Playground
+
+
+
+
+      {
+        // testscreens
+        id: "michastest",
+        condition: "tick == 10",
+        slides: [
+          {
+            type: "text",
+            text:
+              "<p>Willkommen an Ihrem neuen Arbeitsplatz</p>",
+            background: "buero",
+            position: "top",
+          },
+          {
+            type: "news",
+            title: "Folgen den Versprechen nun auch Taten?",
+            text:
+              "Der Druck in der Presse steigt. Fangen Sie an, erste Maßnahmen umzusetzen.",
+            background: "zeitung",
+            newspaper: "zeit",
+          },          
+          {
+            type: "multiple-choice",
+            background: "interview",
+            text:
+              "Warum gibt es noch immer keinen Gesetzesentwurf von Ihnen?",
+            answers: [
+              {
+                text:
+                  "Ich musste mich erst ins Amt einfinden",
+                slides: [
+                  {
+                    type: "love-change",
+                    love: -8,
+                    text:
+                      "Glauben Sie, die Klimakrise wartet auf Sie? Die Bürger lachen über Sie.",
+                    background: "biertisch",
+                  },
+                ],
+              },
+              {
+                text:
+                  "Große Änderungen brauchen Vorlauf. Sie werden bald großes von mir hören!",
+                slides: [
+                  {
+                    type: "news",
+                    title: "Kann Bohmeyer noch Klima?",
+                    text:
+                      "Große Änderungen wurden angekündigt? Ist da was dran oder nur heiße Luft? Das Kanzleramt hält sich bedeckt.",
+                    background: "zeitung",
+                    newspaper: "faz",
+                  },
+                  {
+                    type: "love-change",
+                    love: -1,
+                    text:
+                      "Fangen Sie am besten mit dem Kohleausstieg an, das haben Sie immerhin in der Wahl versprochen.",
+                    background: "zeitung",
+                  },
+                ],
+              }
+            ],
+          },
+        ],
+      },
+
+
+
+
+
+
+
     ],
   },
 });
