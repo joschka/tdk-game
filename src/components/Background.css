@@ -40,3 +40,27 @@
 .background--biertisch {
   background-image: url("../images/backgrounds/biertisch.png");
 }
+
+.background--buero {
+  background-image: url("../images/backgrounds/buero.png");
+}
+
+.background--interview {
+  background-image: url("../images/backgrounds/interview.png");
+}
+
+.background--kaminzimmer {
+  background-image: url("../images/backgrounds/kaminzimmer.png");
+}
+
+.background--talkshow {
+  background-image: url("../images/backgrounds/talkshow.png");
+}
+
+.background--wahl {
+  background-image: url("../images/backgrounds/wahl.png");
+}
+
+.background--zeitung {
+  background-image: url("../images/backgrounds/zeitung.png");
+}

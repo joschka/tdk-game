@@ -345,7 +345,7 @@ const store = configureStore({
                 slides: [
                   {
                     type: "love-change",
-                    love: 3,
+                    love: 10,
                     silent: true
                   }
                 ],
