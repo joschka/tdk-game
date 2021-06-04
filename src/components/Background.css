@@ -1,5 +1,5 @@
 .background {
-  min-height: calc(var(--vh, 1vh) * 100);
+  min-height: 100vh;
   background-repeat: no-repeat;
   background-position: center bottom;
   background-size: 100% auto;
