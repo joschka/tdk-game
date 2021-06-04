@@ -6,7 +6,7 @@ import LoveChart from "./LoveChart";
 
 import "./LoveChange.css";
 
-function LoveChange({ text, love, onClick }) {
+function LoveChange({ text, love, silent, onClick }) {
   const dispatch = useDispatch();
 
   const currentLove = useSelector((state) => state.love);
@@ -20,6 +20,7 @@ function LoveChange({ text, love, onClick }) {
   };
 
   const [chartProps, setChartProps] = useState(initialChartProps);
+  const [finished, setFinished] = useState(false);
 
   useEffect(() => {
     let timer = setTimeout(() => {
@@ -35,6 +36,15 @@ function LoveChange({ text, love, onClick }) {
       dispatch({ type: "love/change", data: love });
     };
   }, []);
+
+  if (silent && !finished) {
+    setFinished(true);
+    onClick();
+  }
+
+  if (silent) {
+    return null;
+  }
 
   return (
     <div className="love-change" onClick={onClick}>
