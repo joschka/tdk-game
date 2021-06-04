@@ -578,20 +578,8 @@ const store = configureStore({
                         variables: "lobbyhasstmich",
                       }
                     ],
-                  }
-
-                ]
-
-              },
-              {
-                text:
-                  "500 €",
-                variable: "tonnenpreis500"
-              },
-              {
-                text:
-                  "1500 € – der reale Preis einschl. aller Umweltfolgekosten",
-                variable: "tonnenpreis1500"
+                  },
+                ],
               },
 
             ],
