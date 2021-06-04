@@ -63,9 +63,8 @@ module.exports = {
       },
 
       {
-        test: /\.(png|jpg|gif|mp3|woff|woff2)$/i,
+        test: /\.(png|jpg|gif|woff|woff2)$/i,
         type: "asset/resource",
-        //use: ['url-loader'],
       },
     ],
   },

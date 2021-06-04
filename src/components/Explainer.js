@@ -29,11 +29,8 @@ function Explainer() {
     if (introStep === 3) {
       dispatch({ type: "game/start" });
       dispatch({ type: "clock/start" });
-      document.querySelector("#audio-player").pause();
     } else {
       dispatch({ type: "game/introStep", data: introStep + 1 });
-      const time = [0, 19, 32][introStep];
-      document.querySelector("#audio-player").currentTime = time;
     }
   }
 

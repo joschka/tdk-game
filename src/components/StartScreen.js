@@ -28,15 +28,6 @@ function StartScreen() {
     dispatch({ type: "game/introStep", data: 1 });
   }
 
-  useEffect(() => {
-    document
-      .querySelector(".start-screen svg")
-      .addEventListener("click", () => {
-        document.querySelector("#audio-player").play();
-      });
-    return () => {};
-  }, []);
-
   if (gameStarted || gameStopped || introStep !== 0) return null;
 
   return (

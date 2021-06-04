@@ -23,8 +23,6 @@ import ActionDetailView from "./ActionDetailView";
 import FollowUp from "./FollowUp";
 import Unlover from "./Unlover";
 
-import testAudio from "./test.mp3";
-
 function App() {
   const gameStarted = useSelector((state) => state.game.started);
   const gameStopped = useSelector((state) => state.game.stopped);
@@ -88,9 +86,6 @@ function App() {
         )}
       </div>
       <ScrollWatcher />
-      <audio id="audio-player">
-        <source src={testAudio} type="audio/mp3" />
-      </audio>
     </div>
   );
 }
