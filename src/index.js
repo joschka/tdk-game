@@ -669,18 +669,32 @@ const store = configureStore({
       },
 
 
+// For debugging conditional events:
 
+window.store = store;
 
+window.tick = (value) => {
+  return window.store.dispatch({ type: "clock/tick", data: value });
+};
 
+window.love = (value) => {
+  return window.store.dispatch({ type: "love/set", data: value });
+};
 
+window.temp = (value) => {
+  return window.store.dispatch({ type: "temperature/set", data: value });
+};
 
-    ],
-  },
-});
+window.action = (value) => {
+  return window.store.dispatch({
+    type: "action/end",
+    data: { id: "" + value },
+  });
+};
 
-if (process.env.NODE_ENV !== "production" && module.hot) {
-  module.hot.accept("./reducers.js", () => store.replaceReducer(rootReducer));
-}
+window.vars = () => {
+  return Object.keys(window.store.getState().vars);
+};
 
 render(
   <Provider store={store}>

@@ -8,18 +8,14 @@ function Clock() {
   const dispatch = useDispatch();
   const isRunning = useSelector((state) => state.clock.isRunning);
   const isFast = useSelector((state) => state.clock.isFast);
-  const ticks = useSelector((state) => state.clock.ticks);
   const tick = useSelector((state) => state.clock.tick);
 
   useEffect(() => {
     if (!isRunning) return;
 
-    let _ticks = ticks;
-
     const intervalId = setInterval(
       () => {
-        _ticks = ticks + 1;
-        dispatch({ type: "clock/tick", data: _ticks });
+        dispatch({ type: "clock/tick" });
       },
       isFast ? 200 : 500
     );

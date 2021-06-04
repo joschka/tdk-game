@@ -65,7 +65,7 @@ export default function rootReducer(state = {}, action) {
         },
       };
     case "clock/tick":
-      const tick = state.clock.tick + 1;
+      const tick = action.data ? action.data : state.clock.tick + 1;
       return {
         ...state,
         records: [
@@ -128,11 +128,24 @@ export default function rootReducer(state = {}, action) {
           current,
         },
       };
+    case "temperature/set":
+      return {
+        ...state,
+        temperature: {
+          ...state.temperature,
+          current: action.data,
+        },
+      };
     case "love/change":
       const newLove = state.love + action.data;
       return {
         ...state,
         love: newLove > 100 ? 100 : newLove < 0 ? 0 : newLove,
+      };
+    case "love/set":
+      return {
+        ...state,
+        love: action.data,
       };
     case "action/show":
       return {
