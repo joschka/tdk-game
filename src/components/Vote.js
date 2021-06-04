@@ -10,7 +10,6 @@ function Vote({ onClick, others, text }) {
   const currentLove = useSelector((state) => state.love);
 
   const sumOthers = others.reduce((acc, val) => acc + val, 0);
-  console.log({ sumOthers });
   const remainder = 100 - currentLove * 1.0;
   const remainderPart = remainder / sumOthers;
 
@@ -21,8 +20,6 @@ function Vote({ onClick, others, text }) {
     remainderPart * others[2],
     remainderPart * others[3],
   ];
-
-  console.log({ values });
 
   function Bar(props) {
     return (

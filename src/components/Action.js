@@ -73,7 +73,6 @@ function Action(props) {
   }
 
   function renderProgressIcon(props) {
-    console.log(isRunning);
     const scale = isFast ? 0.2 : 1;
     const minute = `${isRunning ? scale * 2 : 999999}s`;
     const hour = `${isRunning ? scale * 24 : 999999}s`;

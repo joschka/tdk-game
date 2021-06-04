@@ -10,7 +10,6 @@ function ConditionalEventMultipleChoice({ id, text, answers }) {
   const onAnswerClick = (index) => {
     return function () {
       const answer = answers[index];
-      console.log({ answer });
       if (answer.variable) {
         dispatch({
           type: "conditionalEvent/setVariable",

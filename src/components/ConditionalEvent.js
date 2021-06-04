@@ -51,17 +51,12 @@ function ConditionalEvent({ id, condition, probability, slides }) {
     vars,
   });
 
-  console.log({
-    id,
-    condition,
-    conditionResult,
-    currentTick,
-    currentTemperature,
-    currentLove,
-    doneActionIds,
-    startedActionIds,
-    vars,
-  });
+  useEffect(() => {
+    console.log(
+      `%c[CE] ${id} (${condition})`,
+      conditionResult ? "color:green; font-weight: bold" : "color:gray"
+    );
+  }, [conditionResult]);
 
   const destroyEvent = () => {
     dispatch({ type: "conditionalEvent/destroy", data: id });
@@ -105,7 +100,6 @@ function ConditionalEvent({ id, condition, probability, slides }) {
 
   const renderSlide = () => {
     const currentSlide = slides[slide - 1];
-    console.log({ currentSlide, slides, slide });
     if (!currentSlide) {
       return destroyEvent();
     }
@@ -122,9 +116,7 @@ function ConditionalEvent({ id, condition, probability, slides }) {
 
   return (
     <Overlay>
-      <Background name={background}>
-        {renderSlide()}
-      </Background>
+      <Background name={background}>{renderSlide()}</Background>
     </Overlay>
   );
 }

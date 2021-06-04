@@ -18,7 +18,7 @@ function Clock() {
 
     const intervalId = setInterval(
       () => {
-        _ticks++;
+        _ticks = ticks + 1;
         dispatch({ type: "clock/tick", data: _ticks });
       },
       isFast ? 200 : 500
