@@ -7,7 +7,22 @@ import "./Background.css";
 function Background(props) {
   const dispatch = useDispatch();
 
-  const cssClasses = ["background", `background--${props.name}`].join(" ");
+  const [fading, setFading] = useState(true);
+
+  let cssClasses = "";
+
+  cssClasses = [
+    "background",
+    `background--${props.name}`,
+    fading ? "-active" : "",
+  ].join(" ");
+
+  useEffect(() => {
+    setFading(true);
+    setTimeout(() => {
+      setFading(false);
+    }, 500);
+  }, [props.name]);
 
   return <div className={cssClasses}>{props.children}</div>;
 }

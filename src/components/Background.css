@@ -1,8 +1,24 @@
+@keyframes backgroundFadeIn {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 .background {
   min-height: 100vh;
   background-repeat: no-repeat;
   background-position: center bottom;
   background-size: 100% auto;
+}
+
+.background.-active {
+  animation: backgroundFadeIn 0.5s;
 }
 
 .background--yellow {
