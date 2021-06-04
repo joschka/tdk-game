@@ -667,7 +667,13 @@ const store = configureStore({
           },
         ],
       },
+    ],
+  },
+});
 
+if (process.env.NODE_ENV !== "production" && module.hot) {
+  module.hot.accept("./reducers.js", () => store.replaceReducer(rootReducer));
+}
 
 // For debugging conditional events:
 
