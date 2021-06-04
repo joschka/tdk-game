@@ -14,19 +14,34 @@ function Vote({ onClick, others, text }) {
   const remainderPart = remainder / sumOthers;
 
   const values = [
+    currentLove,
     remainderPart * others[0],
     remainderPart * others[1],
-    currentLove,
     remainderPart * others[2],
     remainderPart * others[3],
   ];
 
   function Bar(props) {
+    const [fadeIn, setFadeIn] = useState(false);
+
+    let timerId;
+
+    useEffect(() => {
+      timerId = setTimeout(() => {
+        setFadeIn(true);
+      }, 1000);
+
+      return function () {
+        clearTimeout(timerId);
+      };
+    }, []);
+
+    const cssClasses = ["vote__bar", fadeIn ? "-active" : ""].join(" ");
+
     return (
-      <div
-        className="vote__bar"
-        style={{ height: `${props.percentage}%` }}
-      ></div>
+      <div className={cssClasses} style={{ height: `${props.percentage}%` }}>
+        <div className="vote__bar__inner"></div>
+      </div>
     );
   }
 

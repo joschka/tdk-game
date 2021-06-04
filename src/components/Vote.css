@@ -16,11 +16,23 @@
 }
 
 .vote__bar {
-  background-color: var(--blue);
   width: 20%;
   margin: 0 4%;
+  display: flex;
+  align-items: flex-end;
 }
 
-.vote__bar:nth-child(3) {
+.vote__bar__inner {
+  background-color: var(--blue);
+  transition: height 1s;
+  height: 0;
+  width: 100%;
+}
+
+.vote__bar:nth-child(1) .vote__bar__inner {
   background-color: var(--green);
+}
+
+.vote__bar.-active .vote__bar__inner {
+  height: 100%;
 }
