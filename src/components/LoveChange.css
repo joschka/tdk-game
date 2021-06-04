@@ -1,5 +1,5 @@
 .love-change {
-  min-height: 100vh;
+  min-height: calc(var(--vh, 1vh) * 100);
   padding: 20px;
   display: flex;
   flex-direction: column;

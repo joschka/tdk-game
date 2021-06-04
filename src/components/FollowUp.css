@@ -1,6 +1,6 @@
 .follow-up {
   overflow: hidden;
-  min-height: 100vh;
+  min-height: calc(var(--vh, 1vh) * 100);
 }
 
 .follow-up > div {

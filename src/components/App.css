@@ -112,7 +112,7 @@ body {
   position: relative;
   min-width: 320px;
   max-width: 600px;
-  min-height: 100vh;
+  min-height: calc(var(--vh, 1vh) * 100);
   margin: 0 auto;
   background: #fff;
 }
