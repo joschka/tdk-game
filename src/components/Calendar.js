@@ -2,15 +2,10 @@ import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { hot } from "react-hot-loader";
 
-import "./ProgressBar.css";
+import "./Calendar.css";
 
-function ProgressBar(props) {
-  const dispatch = useDispatch();
-
+function Calendar() {
   const currentTick = useSelector((state) => state.clock.tick);
-  const duration = useSelector((state) => state.clock.duration);
-
-  const months = duration / 4;
 
   let month;
   let year;
@@ -32,13 +27,13 @@ function ProgressBar(props) {
       case 2:
       case 3:
       case 4:
-        month = "Jan";
+        month = "Januar";
         break;
       case 5:
       case 6:
       case 7:
       case 8:
-        month = "Feb";
+        month = "Februar";
         break;
       case 9:
       case 10:
@@ -74,34 +69,34 @@ function ProgressBar(props) {
       case 30:
       case 31:
       case 32:
-        month = "Aug";
+        month = "August";
         break;
       case 33:
       case 34:
       case 35:
       case 36:
-        month = "Sep";
+        month = "September";
         break;
       case 37:
       case 38:
       case 39:
       case 40:
-        month = "Okt";
+        month = "Oktober";
         break;
       case 41:
       case 42:
       case 43:
       case 44:
-        month = "Nov";
+        month = "November";
         break;
       case 45:
       case 46:
       case 47:
       case 0:
-        month = "Dez";
+        month = "Dezember";
         break;
       default:
-        month = "Okt";
+        month = "Oktober";
     }
 
     year = [
@@ -121,45 +116,12 @@ function ProgressBar(props) {
     ][parseInt((currentTick - 12) / 48)];
   }
 
-  const percentage = (currentTick / duration) * 100;
-
-  const label = (duration - currentTick) / 52; // years
-  const formattedLabel = `noch ${Math.round(label * 10) / 10} Jahre bis 2035`;
-
-  const opts = {
-    className: ["progress-bar", `progress-bar--${props.size}`].join(" "),
-  };
-
   return (
-    <>
-      {props.newDashboard && (
-        <div className="progress-bar-new">
-          <div className="progress-bar-new__outer">
-            <div
-              className="progress-bar-new__inner"
-              style={{ width: `${percentage}%` }}
-            ></div>
-          </div>
-        </div>
-      )}
-      {!props.newDashboard && (
-        <div {...opts}>
-          <div className="progress-bar__calendar">
-            <div className="progress-bar__year">{year}</div>
-            <div className="progress-bar__month">{month}</div>
-          </div>
-          {props.size !== "small" && (
-            <div className="progress-bar__outer">
-              <div
-                className="progress-bar__inner"
-                style={{ width: `${percentage}%` }}
-              ></div>
-            </div>
-          )}
-        </div>
-      )}
-    </>
+    <div className="calendar">
+      <div className="calendar__year">{year}</div>
+      <div className="calendar__month">{month}</div>
+    </div>
   );
 }
 
-export default hot(module)(ProgressBar);
+export default hot(module)(Calendar);

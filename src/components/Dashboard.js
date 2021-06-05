@@ -7,13 +7,19 @@ import "./Dashboard.css";
 import Thermometer from "./Thermometer.js";
 import LoveChart from "./LoveChart.js";
 import ProgressBar from "./ProgressBar.js";
+import Calendar from "./Calendar";
 import PauseButton from "./PauseButton";
+
+import DashboardImage from "../images/dashboard.inline.svg";
 
 function Dashboard(props) {
   const dispatch = useDispatch();
 
   // large, medium, small
   const uiState = useSelector((state) => state.ui.state);
+  const vote1 = useSelector((state) => state.clock.tick >= 194);
+  const vote2 = useSelector((state) => state.clock.tick >= 388);
+  const vote3 = useSelector((state) => state.clock.tick >= 582);
 
   const size =
     props.size ||
@@ -28,8 +34,29 @@ function Dashboard(props) {
     className: ["dashboard", `dashboard--small`, "bg-gradient"].join(" "),
   };
 
+  const opts = {
+    className: [
+      "dashboard-new",
+      vote1 ? "dashboard-new--vote1" : "",
+      vote2 ? "dashboard-new--vote2" : "",
+      vote3 ? "dashboard-new--vote3" : "",
+    ].join(" "),
+  };
+
   return (
     <div>
+      <div {...opts}>
+        <div className="dashboard-new__container">
+          <div className="dashboard-new__progress">
+            <ProgressBar newDashboard={true} />
+          </div>
+          <DashboardImage />
+          <div className="dashboard-new__year">2035</div>
+          <div className="dashboard-new__calendar">
+            <Calendar />
+          </div>
+        </div>
+      </div>
       <div {...optsLarge}>
         <Thermometer size={"large"} />
         <LoveChart size={"large"} />
