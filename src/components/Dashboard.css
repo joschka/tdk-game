@@ -1,6 +1,6 @@
 .dashboard-new {
   background: var(--yellow);
-  border: 1px solid green;
+  border-bottom: 1px solid green;
   padding: 26px 0;
   display: flex;
   align-items: center;
@@ -17,6 +17,14 @@
 
 .dashboard-new--vote3 svg .vote3 {
   fill: #00aed8;
+}
+
+.dashboard-new--negative-heart svg .heart {
+  fill: #f3241c;
+}
+
+.dashboard-new--negative-heart .dashboard-new__love {
+  color: #f3241c;
 }
 
 .dashboard-new__container {
@@ -58,6 +66,15 @@
   z-index: 2;
   color: #fff;
   font-size: 10px;
+}
+
+.dashboard-new__love {
+  position: absolute;
+  top: 47%;
+  right: 77%;
+  color: #a3d869;
+  z-index: 2;
+  font-size: 22px;
 }
 
 .dashboard {

@@ -20,6 +20,7 @@ function Dashboard(props) {
   const vote1 = useSelector((state) => state.clock.tick >= 194);
   const vote2 = useSelector((state) => state.clock.tick >= 388);
   const vote3 = useSelector((state) => state.clock.tick >= 582);
+  const love = useSelector((state) => parseInt(state.love, 10));
 
   const size =
     props.size ||
@@ -34,12 +35,15 @@ function Dashboard(props) {
     className: ["dashboard", `dashboard--small`, "bg-gradient"].join(" "),
   };
 
+  const loveThresholdPercentage = 35;
+
   const opts = {
     className: [
       "dashboard-new",
       vote1 ? "dashboard-new--vote1" : "",
       vote2 ? "dashboard-new--vote2" : "",
       vote3 ? "dashboard-new--vote3" : "",
+      love < loveThresholdPercentage ? "dashboard-new--negative-heart" : "",
     ].join(" "),
   };
 
@@ -52,6 +56,7 @@ function Dashboard(props) {
           </div>
           <DashboardImage />
           <div className="dashboard-new__year">2035</div>
+          <div className="dashboard-new__love">{love}%</div>
           <div className="dashboard-new__calendar">
             <Calendar />
           </div>
