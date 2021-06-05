@@ -48,6 +48,7 @@ const store = configureStore({
       {
         id: "2",
         title: "Klimaneutrale Industriegebiete",
+        sector: "industry",
         description:
           "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
         duration: duration.medium,
@@ -59,6 +60,7 @@ const store = configureStore({
       {
         id: "3",
         title: "Pfandsystem für Elektroaltgeräte (Kreislaufwirtschaft)",
+        sector: "industry",
         description:
           "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
         duration: duration.long,
@@ -69,6 +71,7 @@ const store = configureStore({
       {
         id: "4",
         title: "Wiedervernässung von Mooren",
+        sector: "industry",
         description:
           "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
         duration: duration.long,
@@ -79,6 +82,7 @@ const store = configureStore({
       {
         id: "5",
         title: "Schlachtbegrenzung für Schlachthöfe",
+        sector: "agriculture",
         description:
           "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
         duration: duration.medium,
@@ -89,6 +93,7 @@ const store = configureStore({
       {
         id: "6",
         title: "Stopp von klimaschädlichen Subventionen",
+        sector: "agriculture",
         description:
           "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
         duration: duration.short,
@@ -99,6 +104,7 @@ const store = configureStore({
       {
         id: "7",
         title: "E-Autos statt Verbrennungsmotor",
+        sector: "agriculture",
         description:
           "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
         duration: duration.medium,
@@ -109,6 +115,7 @@ const store = configureStore({
       {
         id: "9",
         title: "Elektrifizierung von LKWs",
+        sector: "mobility",
         description:
           "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
         duration: duration.short,
@@ -119,6 +126,7 @@ const store = configureStore({
       {
         id: "10",
         title: "Kohleausstieg jetzt",
+        sector: "mobility",
         description:
           "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
         link:
@@ -131,6 +139,7 @@ const store = configureStore({
       {
         id: "11",
         title: "Photovoltaik und Windkraft Ausbau",
+        sector: "mobility",
         description:
           "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
         duration: duration.medium,
@@ -141,6 +150,7 @@ const store = configureStore({
       {
         id: "12",
         title: "Energiespeicher Ausbau",
+        sector: "energy",
         description:
           "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
         duration: duration.medium,
@@ -151,6 +161,7 @@ const store = configureStore({
       {
         id: "13",
         title: "Förderung lokaler / kommunaler Stromanlagen",
+        sector: "energy",
         description:
           "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
         duration: duration.short,
@@ -161,6 +172,7 @@ const store = configureStore({
       {
         id: "14",
         title: "Sanierungsverpflichtung für Gebäude",
+        sector: "energy",
         description:
           "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
         duration: duration.long,
@@ -171,6 +183,7 @@ const store = configureStore({
       {
         id: "15",
         title: "Einbaustopp Öl- und Gasheizungen",
+        sector: "energy",
         description:
           "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
         duration: duration.short,
@@ -181,6 +194,7 @@ const store = configureStore({
       {
         id: "16",
         title: "CO<sub>2</sub> Bepreisung",
+        sector: "buildings",
         description:
           "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
         duration: duration.short,
@@ -191,6 +205,7 @@ const store = configureStore({
       {
         id: "17",
         title: "Klimaneutrale Staatsausgaben",
+        sector: "buildings",
         description:
           "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
         duration: duration.short,
@@ -691,11 +706,11 @@ window.vars = () => {
 };
 
 window.play = () => {
-  return window.store.dispatch({type: "clock/start"});
+  return window.store.dispatch({ type: "clock/start" });
 };
 
 window.pause = () => {
-  return window.store.dispatch({type: "clock/stop"});
+  return window.store.dispatch({ type: "clock/stop" });
 };
 
 render(

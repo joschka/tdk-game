@@ -1,2 +1,32 @@
 .action-list {
 }
+
+.action-list__sector {
+  padding: 25px 10px;
+  color: #fff;
+}
+
+.action-list__sector-title {
+  color: #00aed8;
+  font-size: 28px;
+}
+
+.action-list__sector--industry {
+  background: #011168;
+}
+
+.action-list__sector--agriculture {
+  background: #011a9c;
+}
+
+.action-list__sector--mobility {
+  background: #0223d0;
+}
+
+.action-list__sector--energy {
+  background: #344fd9;
+}
+
+.action-list__sector--buildings {
+  background: #677be3;
+}

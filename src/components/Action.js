@@ -35,8 +35,7 @@ function Action(props) {
     temperature,
     love,
     actionable,
-    questions,
-    successImage,
+    sector,
   } = props;
 
   function handleClick(e) {
@@ -93,7 +92,7 @@ function Action(props) {
       <svg xmlns="http://www.w3.org/2000/svg" {...props}>
         <circle
           fill="none"
-          stroke="#ccc"
+          stroke="#fff"
           strokeWidth="30"
           cx="200"
           cy="200"
@@ -109,7 +108,7 @@ function Action(props) {
           style={progressStyle}
         />
         <rect
-          fill="#ccc"
+          fill="#fff"
           width="30"
           height="120"
           x="185"
@@ -129,7 +128,7 @@ function Action(props) {
           />
         </rect>
         <rect
-          fill="#ccc"
+          fill="#fff"
           width="30"
           height="120"
           x="185"
@@ -148,9 +147,9 @@ function Action(props) {
             repeatCount="indefinite"
           />
         </rect>
-        <circle fill="#ccc" cx="200" cy="200" r="15" style={clockStyle} />
+        <circle fill="#fff" cx="200" cy="200" r="15" style={clockStyle} />
         <rect
-          fill="#ccc"
+          fill="#fff"
           width="60"
           height="200"
           x="120"
@@ -158,7 +157,7 @@ function Action(props) {
           style={pauseStyle}
         />
         <rect
-          fill="#ccc"
+          fill="#fff"
           width="60"
           height="200"
           x="220"
@@ -171,8 +170,8 @@ function Action(props) {
 
   function renderIcon() {
     const props = {
-      width: 40,
-      height: 40,
+      width: 20,
+      height: 20,
       viewBox: "0 0 400 400",
       className: "action__icon",
     };
@@ -218,13 +217,15 @@ function Action(props) {
         <div
           className="action__title"
           dangerouslySetInnerHTML={{
-            __html: title,
+            __html: `${title}`,
           }}
         ></div>
-        <div className="action__tools">
-          {<MiniThermometer percentage={temperature * -300} />}
-          {false && <MiniHeart love={love} />}
-        </div>
+        {false && (
+          <div className="action__tools">
+            {<MiniThermometer percentage={temperature * -300} />}
+            {false && <MiniHeart love={love} />}
+          </div>
+        )}
       </div>
       {state === "available" && shownAction === id && (
         <div className="action__description">
