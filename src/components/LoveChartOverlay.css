@@ -1,0 +1,30 @@
+.love-chart-overlay {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.love-chart-overlay__svg-container {
+  width: 100%;
+  overflow: hidden;
+}
+
+.love-chart-overlay__slide {
+  transition: transform 1s linear;
+}
+
+.love-chart-overlay > svg {
+  border: 1px solid black;
+}
+
+@keyframes lovechartoverlay {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-5%);
+  }
+}

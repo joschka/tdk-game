@@ -1,5 +1,31 @@
 .action-area {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  padding: 15px;
+  background: var(--yellow);
+  height: 100%;
 }
 
-.action-area__active-actions {
+.action-area__list {
+  border-radius: 20px 0 0 20px;
+  background: white;
+  overflow: auto;
+  margin-right: 100px;
+  height: 100%;
+}
+
+.action-area__thermometer {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  bottom: 15px;
+  width: 100px;
+  background: white;
+  border-radius: 0 20px 20px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }

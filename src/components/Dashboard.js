@@ -8,6 +8,7 @@ import Thermometer from "./Thermometer.js";
 import LoveChart from "./LoveChart.js";
 import ProgressBar from "./ProgressBar.js";
 import Calendar from "./Calendar";
+import LoveChartOverlay from "./LoveChartOverlay";
 import PauseButton from "./PauseButton";
 
 import DashboardImage from "../images/dashboard.inline.svg";
@@ -60,14 +61,19 @@ function Dashboard(props) {
           <div className="dashboard-new__calendar">
             <Calendar />
           </div>
+          <div className="dashboard-new__chart">
+            <LoveChartOverlay />
+          </div>
         </div>
       </div>
-      <div {...optsLarge}>
-        <Thermometer size={"large"} />
-        <LoveChart size={"large"} />
-        <ProgressBar size={"large"} />
-        <PauseButton size={"large"} />
-      </div>
+      {false && (
+        <div {...optsLarge}>
+          <Thermometer size={"large"} />
+          <LoveChart size={"large"} />
+          <ProgressBar size={"large"} />
+          <PauseButton size={"large"} />
+        </div>
+      )}
       {uiState === "bottom" && (
         <div className="dashboard-fixed">
           <div {...optsSmall}>

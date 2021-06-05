@@ -690,6 +690,14 @@ window.vars = () => {
   return Object.keys(window.store.getState().vars);
 };
 
+window.play = () => {
+  return window.store.dispatch({type: "clock/start"});
+};
+
+window.pause = () => {
+  return window.store.dispatch({type: "clock/stop"});
+};
+
 render(
   <Provider store={store}>
     <App />

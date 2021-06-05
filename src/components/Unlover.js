@@ -17,7 +17,7 @@ function Unlover() {
   useEffect(() => {
     const random = Math.random();
     const extra = random < 0.5 ? -1 * random : random - 0.5;
-    const loveChange = idleSlotsCount * -0.025 + extra;
+    const loveChange = idleSlotsCount * -0.025 + 1.5 * extra;
     dispatch({ type: "love/change", data: loveChange });
   }, [tick]);
 

@@ -74,8 +74,12 @@ function App() {
         <Explainer />
         {(gameStarted || gameStopped) && (
           <>
-            {gameStarted && <Dashboard />}
-            {gameStarted && <ActionArea />}
+            {gameStarted && (
+              <div className="main-screen">
+                <Dashboard />
+                <ActionArea />
+              </div>
+            )}
             {gameStarted && <ExampleEvent />}
             {false && <FinalScreen />}
             {gameStarted && false && <FutureExecutor />}
