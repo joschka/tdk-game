@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { hot } from "react-hot-loader";
 
 import ActionList from "./ActionList.js";
-import Thermometer from "./Thermometer";
+import SectorThermometer from "./SectorThermometer";
 
 import "./ActionArea.css";
 
@@ -16,7 +16,7 @@ function ActionArea() {
         <ActionList />
       </div>
       <div className="action-area__thermometer">
-        <Thermometer size="large" />
+        <SectorThermometer />
       </div>
     </div>
   );

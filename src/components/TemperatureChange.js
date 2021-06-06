@@ -30,7 +30,7 @@ function TemperatureChange({ onClick, text, silent, temperature }) {
 
     return function () {
       clearTimeout(timer);
-      dispatch({ type: "temperature/increase", data: temperature });
+      //dispatch({ type: "temperature/increase", data: temperature });
     };
   }, []);
 
@@ -52,7 +52,7 @@ function TemperatureChange({ onClick, text, silent, temperature }) {
         }}
       ></div>
       <div className="temperature-change__thermometer">
-        <Thermometer {...thermometerProps} size="large" />
+        {false && <Thermometer {...thermometerProps} size="large" />}
       </div>
     </div>
   );

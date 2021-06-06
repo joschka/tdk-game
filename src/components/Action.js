@@ -188,7 +188,7 @@ function Action(props) {
   useEffect(() => {
     if (state === "active" && progressPercentage === 100) {
       //dispatch({type: "love/change", data: love});
-      //dispatch({type: "temperature/increase", data: temperature});
+      dispatch({ type: "temperature/increase", data: temperature });
       dispatch({ type: "action/end", data: { id } });
       /*dispatch({
         type: "futures/add",

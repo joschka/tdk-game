@@ -11,13 +11,13 @@ function Calendar() {
   let year;
 
   if (currentTick >= 1 && currentTick <= 4) {
-    month = "Okt"; // 2021
+    month = "Oktober"; // 2021
     year = "2021";
   } else if (currentTick >= 5 && currentTick <= 8) {
-    month = "Nov"; // 2021
+    month = "November"; // 2021
     year = "2021";
   } else if (currentTick >= 9 && currentTick <= 12) {
-    month = "Dez"; // 2021
+    month = "Dezember"; // 2021
     year = "2021";
   } else {
     // 2022 - 2035
