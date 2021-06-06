@@ -10,9 +10,20 @@
 }
 
 .conditional-event-multiple-choice__answer {
-  margin: 10px 20px;
-  padding: 10px;
+  margin: 30px 20px;
+  padding: 30px 40px;
   border: 1px solid black;
-  background: var(--yellow);
+  box-shadow: 1px 1px 0 1px #000;
+  background: white;
   cursor: pointer;
+  border-radius: 50px;
+  font-size: 20px;
+  color: var(--blue-dark);
+  font-weight:bold;
+}
+
+.conditional-event-multiple-choice__answer:focus,
+.conditional-event-multiple-choice__answer:hover,
+.conditional-event-multiple-choice__answer:active {
+  background: var(--green);
 }
