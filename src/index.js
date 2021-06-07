@@ -46,170 +46,101 @@ const store = configureStore({
     records: [],
     actions: [
       {
-        id: "2",
-        title: "Klimaneutrale Industriegebiete",
-        sector: "industry",
-        description:
-          "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
-        duration: duration.medium,
-        temperature: -0.25,
-        state: "available",
-        image: "industry",
-        activeSinceTick: null,
-      },
-      {
-        id: "3",
-        title: "Pfandsystem für Elektroaltgeräte (Kreislaufwirtschaft)",
-        sector: "industry",
-        description:
-          "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
-        duration: duration.long,
-        temperature: -0.1,
-        state: "available",
-        activeSinceTick: null,
-      },
-      {
-        id: "4",
-        title: "Wiedervernässung von Mooren",
-        sector: "industry",
-        description:
-          "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
-        duration: duration.long,
-        temperature: -0.075,
-        state: "available",
-        activeSinceTick: null,
-      },
-      {
-        id: "5",
-        title: "Schlachtbegrenzung für Schlachthöfe",
-        sector: "agriculture",
-        description:
-          "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
-        duration: duration.medium,
-        temperature: -0.075,
-        state: "available",
-        activeSinceTick: null,
-      },
-      {
-        id: "6",
-        title: "Stopp von klimaschädlichen Subventionen",
-        sector: "agriculture",
-        description:
-          "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
-        duration: duration.short,
-        temperature: -0.025,
-        state: "available",
-        activeSinceTick: null,
-      },
-      {
-        id: "7",
-        title: "E-Autos statt Verbrennungsmotor",
-        sector: "agriculture",
-        description:
-          "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
-        duration: duration.medium,
-        temperature: -0.175,
-        state: "available",
-        activeSinceTick: null,
-      },
-      {
-        id: "9",
-        title: "Elektrifizierung von LKWs",
-        sector: "mobility",
-        description:
-          "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
-        duration: duration.short,
-        temperature: -0.1,
-        state: "available",
-        activeSinceTick: null,
-      },
-      {
-        id: "10",
-        title: "Kohleausstieg jetzt",
-        sector: "mobility",
-        description:
-          "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
-        link:
-          "https://assets.website-files.com/5e663c02af4002dcdcab78dc/5ece7812eb97a0be582bad67_Der%201%2C5-Grad-Klimaplan%20f%C3%BCr%20Deutschland.pdf#page=22",
-        duration: duration.short,
-        temperature: -0.15,
-        state: "available",
-        activeSinceTick: null,
-      },
-      {
-        id: "11",
-        title: "Photovoltaik und Windkraft Ausbau",
-        sector: "mobility",
-        description:
-          "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
-        duration: duration.medium,
-        temperature: -0.15,
-        state: "available",
-        activeSinceTick: null,
-      },
-      {
-        id: "12",
-        title: "Energiespeicher Ausbau",
-        sector: "energy",
-        description:
-          "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
-        duration: duration.medium,
-        temperature: -0.15,
-        state: "available",
-        activeSinceTick: null,
-      },
-      {
-        id: "13",
-        title: "Förderung lokaler / kommunaler Stromanlagen",
-        sector: "energy",
-        description:
-          "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
-        duration: duration.short,
-        temperature: -0.15,
-        state: "available",
-        activeSinceTick: null,
-      },
-      {
-        id: "14",
-        title: "Sanierungsverpflichtung für Gebäude",
-        sector: "energy",
-        description:
-          "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
-        duration: duration.long,
-        temperature: -0.175,
-        state: "available",
-        activeSinceTick: null,
-      },
-      {
-        id: "15",
-        title: "Einbaustopp Öl- und Gasheizungen",
-        sector: "energy",
-        description:
-          "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
-        duration: duration.short,
-        temperature: -0.0875,
-        state: "available",
-        activeSinceTick: null,
-      },
-      {
-        id: "16",
+        id: "co2bepreisung",
         title: "CO2 Bepreisung",
-        sector: "buildings",
+        sector: "industry",
         description:
-          "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
-        duration: duration.short,
-        temperature: -0.725,
+          "Beim Zertifikatehandel muss für jede ausgestoßene Emission ein Zertifikat ersteigert werden, Verschmutzungsrechte sozusagen.<br/><br />Aus Klimaschutzperspektive ist der CO2 Preis eigentlich ein geniales Instrument, weil fast alle Emissionsquellen – vom Industriekraftwerk bis zum Lkw - erfasst werden könnten und mit der Anzahl der ausgegebenen Zertifikate die Emissionsmenge begrenzt werden kann, die jährlich ausgestoßen werden darf. Wie beim Spiel „Reise nach Jerusalem“ können schrittweise die Zertifikate so aus dem Verkehr gezogen werden, dass wir klimaneutral werden, ohne unser Restbudget zur Erreichung des 1,5-Grad-Ziels zu überschreiten. Durch die Knappheit erhöht sich der Zertifikatspreis – und damit der Anreiz auf klimaneutrale Technologien umzusteigen - automatisch.",
+        duration: duration.medium, //?
+        temperature: -0.78125,
         state: "available",
         activeSinceTick: null,
       },
       {
-        id: "17",
-        title: "Klimaneutrale Staatsausgaben",
+        id: "mehrwege",
+        title: "MehrwegE",
+        sector: "industry",
+        description:
+          "Kreislaufwirtschaft: Durch den Aufbau einer Kreislaufwirtschaft werden bestehende Materialien und Produkte so lange wie möglich in Benutzung gehalten. Das geschieht im Wesentlichen durch Wiederverwendung, Reparatur und Recycling. Dadurch werden Emissionen eingespart, die ansonsten für die energieaufwändige Produktion von Primärmaterialien anfallen würden.",
+        duration: duration.long,
+        temperature: -0.4375,
+        state: "available",
+        activeSinceTick: null,
+      },
+      {
+        id: "moore",
+        title: "Moore nass machen",
+        sector: "agriculture",
+        description:
+          "95% der Moore in Deutschland wurden trockengelegt, aber nur nasse Moore speichern CO2 – also: Moore nass machen!",
+        duration: duration.long,
+        temperature: -0.09375,
+        state: "available",
+        activeSinceTick: null,
+      },
+      {
+        id: "tiere",
+        title: "1 Heuballen = 1 Tier",
+        sector: "agriculture",
+        description:
+          "Es werden nur noch so viele Tiere gehalten, wie das Land ernähren kann und ein Emissionshandel für tierische Produkte eingeführt: Etwa zwei Drittel der Emissionen des Landwirtschaftsbereichs stammen direkt aus der Tierhaltung. Durch einen Emissionshandel für tierische Produkte könnten diese Emissionen durch eine schrittweise Reduktion der Zertifikatsmenge zielgenau und kosteneffizient gesenkt werden.",
+        duration: duration.medium,
+        temperature: -0.09375,
+        state: "available",
+        activeSinceTick: null,
+      },
+      {
+        id: "eautos",
+        title: "Elektrofahrzeuge",
+        sector: "mobility",
+        description:
+          "Elektro statt Verbrennungsmotoren ab 2025: Uff ein schwieriges Thema in Deutschland: Das einzige EU-Land ohne Tempolimit. Die Emissionen dieses Bereichs lagen 2019 exakt genauso hoch wie 1990 – es tut weh, aber wir müssen hier ran.",
+        duration: duration.medium,
+        temperature: -0.21875,
+        state: "available",
+        activeSinceTick: null,
+      },
+      {
+        id: "zuege",
+        title: "Zuverlässige Züge",
+        sector: "mobility",
+        description:
+          "Noch ist der Zug nicht abgefahren(höhöhö) – aber der Deutschlandtakt ist nur dann flächendeckend realisierbar, wenn verbindlich festgelegt wird, dass Fernverkehr auch dort stattfindet, wo wir ihn brauchen und nicht nur dort, wo er betriebswirtschaftlich rentabel ist.",
+        duration: duration.medium,
+        temperature: -0.171875,
+        state: "available",
+        activeSinceTick: null,
+      },
+      {
+        id: "kohleausstieg",
+        title: "Kohleausstieg",
+        sector: "energy",
+        description:
+          "Erneuerbar erzeugter Strom ersetzt die fossilen Energieträger Gas, Kohle und Benzin in den Sektoren Wärme, Industrie und Verkehr vollständig. Wir fahren zukünftig mit Wind- und Solarenergie Elektroautos, erzeugen Wärme mit Wärmepumpen und stellen Industrieprozesse um. Dazu muss die elektrische Energie teilweise in andere Energieträger gewandelt - u.a. Wasserstoff, Power-to-X, - und Energiespeicher ausgebaut werden.",
+        duration: duration.short,
+        temperature: -0.1875,
+        state: "available",
+        activeSinceTick: null,
+      },
+      {
+        id: "solarwind",
+        title: "Sonne- und Windkraft",
+        sector: "energy",
+        description:
+          "Strom als Energieträger der Zukunft wird in zwei komplementären Bereichen erzeugt:<br /><br />Lokale Energiegemeinschaften: Eine dezentrale Energieerzeugung bietet gegenüber einer zentralen die Vorteile, dass sie für eine Stabilität des Netzes sorgt, lange Transportwege vermeidet sowie die Teilhabe und damit auch Akzeptanz unter Bürger:innen erhöht.<br /><br />Regionale EE-Kraftwerke: Der erforderliche Zubau von erneuerbaren Energien kann nicht von Bürger- und Industriequartieren allein bewältigt werden. Insbesondere für den hohen Energiebedarf der Industrie werden regionale „Kraftwerke“ großer Solar- und Windenergieanlagen benötigt, die große Mengen Strom erzeugen und die unabhängig agierenden und sich entfaltenden Energiegemeinschaften ergänzen.",
+        duration: duration.medium,
+        temperature: -0.1875,
+        state: "available",
+        activeSinceTick: null,
+      },
+      {
+        id: "reparieren",
+        title: "Reparieren statt Abreißen",
         sector: "buildings",
         description:
-          "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
-        duration: duration.short,
-        temperature: -0.125,
+          "Gebäude sanieren statt abreißen, Umbau vereinfachen statt neubauen. Hürden für Nutzungsänderungen und Umbauten im Bauordnungsrecht werden abgebaut. Für den Abriss von Gebäuden gilt künftig eine Genehmigungspflicht.<br /><br />Um bis 2035 im Gebäudesektor klimaneutral zu werden, müssen wir den hohen Energieverbrauch durch die Gebäude (30% des Gesamtenergieverbrauchs in Deutschland) reduzieren, indem wir sie besser dämmen. Gleichzeitig geht es darum, von fossilen Energieträgern auf strombasierte Wärmepumpen umzusteigen.<br /><br />Das jetzige Gebäude-Energiegesetz regelt einzig und allein den Betrieb unserer Gebäude.Wir betrachten den ganzen Lebenszyklus von Gebäuden. Vom Rohstoff zum Bau, vom Betrieb zum Rückbau. Häuser sollten schon so geplant werden, dass ihre Bestandteile kreislauffähig sind und kein Abfall entsteht.",
+        duration: duration.medium,
+        temperature: -0.328125,
         state: "available",
         activeSinceTick: null,
       },
@@ -329,8 +260,6 @@ const store = configureStore({
         ],
       },
 
-
-
       {
         // kurz vor der 1. Wahl
         id: "talkshow-vor-wahl1",
@@ -416,7 +345,7 @@ const store = configureStore({
       {
         // follow up zu Schlachthöfe (ohne Interaktion)
         id: "follow-up-5",
-        condition: "done.includes('5')",
+        condition: "done.includes('tiere')",
         slides: [
           {
             type: "temperature-change",
@@ -429,7 +358,7 @@ const store = configureStore({
       {
         // follow up zu Kohleausstieg
         id: "follow-up-10",
-        condition: "done.includes('10')",
+        condition: "done.includes('kohleausstieg')",
         slides: [
           {
             type: "news",
@@ -508,16 +437,13 @@ const store = configureStore({
         ],
       },
 
-
       //Playground
-
-
 
       {
         // co2 bepreisung
         id: "co2bepreisung-gestartet",
-        condition: "started.includes('16')",
-        slides: [          
+        condition: "started.includes('co2bepreisung')",
+        slides: [
           {
             type: "multiple-choice",
             background: "buero",

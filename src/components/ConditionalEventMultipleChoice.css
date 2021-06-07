@@ -19,7 +19,7 @@
   border-radius: 50px;
   font-size: 20px;
   color: var(--blue-dark);
-  font-weight:bold;
+  font-weight: bold;
 }
 
 .conditional-event-multiple-choice__answer:focus,

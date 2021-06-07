@@ -7,7 +7,7 @@
 }
 
 .conditional-event-news__content {
-  background-image: url('../images/newspaper-background.jpg');
+  background-image: url("../images/newspaper-background.jpg");
   background-repeat: no-repeat;
   background-size: contain;
   width: 320px;
@@ -35,7 +35,7 @@
 }
 
 .conditional-event-news__title:after {
-  content: '';
+  content: "";
   position: absolute;
   height: 2px;
   top: 110%;

@@ -1,10 +1,10 @@
-import React, {useState, useEffect} from "react";
-import {useSelector, useDispatch} from "react-redux";
-import {hot} from "react-hot-loader";
+import React, { useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { hot } from "react-hot-loader";
 
 import "./ConditionalEventNews.css";
 
-function ConditionalEventNews({title, text, newspaper, onClick}) {
+function ConditionalEventNews({ title, text, newspaper, onClick }) {
   return (
     <div className="conditional-event-news" onClick={onClick}>
       <div className="conditional-event-news__content">

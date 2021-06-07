@@ -4,14 +4,15 @@ import { hot } from "react-hot-loader";
 
 import "./ActionDetailView.css";
 
-import imageIndustry from "../images/industry.gif";
-import imageTesla from "../images/tesla.gif";
-import imageKohle from "../images/kohle.jpg";
-import imageWallstreet from "../images/wallstreet.jpg";
-import imageSanierung from "../images/sanierung.jpg";
-import imageSolarWind from "../images/solar-wind.jpg";
-import imageWork from "../images/work.gif";
-import imagePizza from "../images/pizza.jpg";
+import imageCO2Bepreisung from "../images/actions/co2bepreisung.gif";
+import imageMehrwege from "../images/actions/mehrwege.gif";
+import imageMoore from "../images/actions/moore.gif";
+import imageTiere from "../images/actions/tiere.jpg";
+import imageEAutos from "../images/actions/eautos.gif";
+import imageZuege from "../images/actions/zuege.gif";
+import imageKohleausstieg from "../images/actions/kohleausstieg.gif";
+import imageSolarWind from "../images/actions/solarwind.gif";
+import imageReparieren from "../images/actions/reparieren.gif";
 
 import MiniThermometer from "./MiniThermometer";
 import Overlay from "./Overlay";
@@ -30,7 +31,6 @@ function ActionDetailView(props) {
     state,
     //onStartClick,
     //onBackClick,
-    image,
   } = props;
 
   const actions = useSelector((state) => state.actions);
@@ -38,27 +38,36 @@ function ActionDetailView(props) {
   const actionable = activeActions.length < 4;
 
   let imageSrc;
-  switch (image) {
-    case "industry":
-      imageSrc = imageIndustry;
+  switch (id) {
+    case "co2bepreisung":
+      imageSrc = imageCO2Bepreisung;
       break;
-    case "tesla":
-      imageSrc = imageTesla;
+    case "mehrwege":
+      imageSrc = imageMehrwege;
       break;
-    case "kohle":
-      imageSrc = imageKohle;
+    case "moore":
+      imageSrc = imageMoore;
       break;
-    case "wallstreet":
-      imageSrc = imageWallstreet;
+    case "tiere":
+      imageSrc = imageTiere;
       break;
-    case "sanierung":
-      imageSrc = imageSanierung;
+    case "eautos":
+      imageSrc = imageEAutos;
       break;
-    case "solar-wind":
+    case "zuege":
+      imageSrc = imageZuege;
+      break;
+    case "kohleausstieg":
+      imageSrc = imageKohleausstieg;
+      break;
+    case "solarwind":
       imageSrc = imageSolarWind;
       break;
+    case "reparieren":
+      imageSrc = imageReparieren;
+      break;
     default:
-      imageSrc = imagePizza;
+      imageSrc = "";
       break;
   }
 
@@ -152,7 +161,11 @@ function ActionDetailView(props) {
           </div>
         )}
         <div className="speech-bubble">
-          <p>{description}</p>
+          <p
+            dangerouslySetInnerHTML={{
+              __html: description,
+            }}
+          ></p>
         </div>
         <div className="action-detail-view__dude"></div>
       </div>
