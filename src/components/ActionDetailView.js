@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { hot } from "react-hot-loader";
+import React, {useState, useEffect} from "react";
+import {useSelector, useDispatch} from "react-redux";
+import {hot} from "react-hot-loader";
 
 import "./ActionDetailView.css";
 
@@ -14,8 +14,11 @@ import imageKohleausstieg from "../images/actions/kohleausstieg.gif";
 import imageSolarWind from "../images/actions/solarwind.gif";
 import imageReparieren from "../images/actions/reparieren.gif";
 
-import MiniThermometer from "./MiniThermometer";
+import SpeechBubble from "./SpeechBubble";
 import Overlay from "./Overlay";
+
+import MiniThermometerEmpty from "../images/mini-thermometer-empty.inline.svg";
+import MiniThermometerFilled from "../images/mini-thermometer-filled.inline.svg";
 
 function ActionDetailView(props) {
   const dispatch = useDispatch();
@@ -88,11 +91,11 @@ function ActionDetailView(props) {
   const renderStars = () => {
     const stars = [];
     for (let i = 0; i < starCount; i++) {
-      stars.push(<MiniThermometer percentage={100} key={i} />);
+      stars.push(<MiniThermometerFilled />);
     }
 
     for (let i = starCount; i < 5; i++) {
-      stars.push(<MiniThermometer percentage={0} key={i} />);
+      stars.push(<MiniThermometerEmpty />);
     }
 
     return stars;
@@ -102,14 +105,14 @@ function ActionDetailView(props) {
     //setShowDetailView(false);
     //dispatch({type: "clock/start", data: "overlay"});
     if (state === "available" && actionable) {
-      dispatch({ type: "action/activate", data: { id } });
-      dispatch({ type: "action/hide", data: id });
+      dispatch({type: "action/activate", data: {id}});
+      dispatch({type: "action/hide", data: id});
     }
   };
 
   const onBackClick = () => {
     //setShowDetailView(false);
-    dispatch({ type: "action/hide", data: id });
+    dispatch({type: "action/hide", data: id});
     //dispatch({type: "clock/start", data: "overlay"});
   };
 
@@ -139,18 +142,23 @@ function ActionDetailView(props) {
   return (
     <Overlay>
       <div className="action-detail-view">
-        <img className="action-detail-view__image" src={imageSrc} />
-        <h1
-          className="action__title"
-          dangerouslySetInnerHTML={{
-            __html: title,
-          }}
-        ></h1>
-        <div className="action-detail-view__stars">
-          <p>Klimawirkung:</p>
-          {true && renderStars()}
+        <div className="action-detail-view__upper">
+          <img className="action-detail-view__image" src={imageSrc} />
+          <div
+            className="action-detail-view__title"
+            dangerouslySetInnerHTML={{
+              __html: title,
+            }}
+          ></div>
+          <div className="action-detail-view__stars">
+            <p>Klimawirkung:</p>
+            {true && renderStars()}
+          </div>
         </div>
         {renderButtons()}
+        <div className="action-detail-view__speech-bubble">
+          <SpeechBubble text={description} head={true} />
+        </div>
         {link && (
           <div className="action-detail-view__link">
             Mehr Informationen im Klimaplan von GermanZero e.V.
@@ -160,14 +168,6 @@ function ActionDetailView(props) {
             </a>
           </div>
         )}
-        <div className="speech-bubble">
-          <p
-            dangerouslySetInnerHTML={{
-              __html: description,
-            }}
-          ></p>
-        </div>
-        <div className="action-detail-view__dude"></div>
       </div>
     </Overlay>
   );

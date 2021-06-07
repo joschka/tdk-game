@@ -84,6 +84,7 @@
   --blue: #00aed8;
   --green: #a3d869;
   --blue-dark: #011633;
+  --radius: 40px;
 }
 
 body {
@@ -153,38 +154,8 @@ body {
 }
 
 .button--secondary {
-  background-color: transparent;
+  background-color: white;
   box-shadow: inset 0 0 0 2px #a3d869;
   color: #a3d869;
 }
 
-.speech-bubble {
-  position: relative;
-  padding: 1rem;
-  border: 2px solid #333;
-  margin: 0 auto;
-  border-radius: 20px;
-  background: #fff;
-}
-
-.speech-bubble:before {
-  content: " ";
-  position: absolute;
-  width: 0;
-  height: 0;
-  right: 60px;
-  top: 100%;
-  border: 18px solid;
-  border-color: #333 transparent transparent #333;
-}
-
-.speech-bubble:after {
-  content: " ";
-  position: absolute;
-  width: 0;
-  height: 0;
-  right: 62px;
-  top: 100%;
-  border: 15px solid;
-  border-color: #ffffff transparent transparent #ffffff;
-}

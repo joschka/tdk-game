@@ -1,23 +1,60 @@
 .action-detail-view {
-  padding: 10px 10px 0;
+  background-color: var(--yellow);
+  padding: 15px;
+  min-height: 100vh;
+}
+
+.action-detail-view__upper {
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 1px 1px 0 1px rgba(0,0,0,0.75);
+  position: relative;
+  padding-bottom: 90px;
+  margin-bottom: 30px;
+
 }
 
 .action-detail-view__image {
-  width: calc(100% + 20px);
-  margin: -10px -10px 0;
+  width: 100%;
   object-fit: cover;
   min-height: 150px;
+  max-height: 340px;
   background: lightgray;
 }
 
-.action-detail-view__stars {
-  display: flex;
-  align-items: center;
-  margin-bottom: 30px;
+
+.action-detail-view__title {
+  background-color: #011683;
+  color: #fff;
+  border-radius: var(--radius) var(--radius) 0 0;
+  padding: 10px 30px;
+  position: absolute;
+  width: 100%;
+  bottom: 35px;
+  min-height: 100px;
+  font-size: 20px;
+
+font-weight: bold;
 }
 
-.action-detail-view__stars > * {
-  margin: 0 3px;
+.action-detail-view__stars {
+  background-color: #00aed8;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  border-radius: var(--radius);
+  padding: 10px 30px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  min-height: 90px;
+  font-size: 20px;
+}
+
+.action-detail-view__stars > svg {
+  margin: 0 5px;
+  width: 20px;
+  height: 52px;
 }
 
 .action-detail-view__stars > :first-child {
