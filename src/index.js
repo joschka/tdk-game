@@ -511,6 +511,29 @@ const store = configureStore({
 },
 
 
+
+
+{
+  id: "co2-lobbyreaktion",
+  condition: "started.includes('co2bepreisung')",
+  slides: [
+    {
+      type: "text", // text, multiple-choice, love-change, temperature-change
+      background: "buero", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
+      title: "",
+      text: "Leider bezahlen wir sofort den Preis für den CO2-Preis: Die Industrielobby hat uns das übelgenommen und macht Stimmung gegen uns.",
+      position: "top",
+    },
+    {
+      type: "love-change",
+      love: -12,
+      background: "buero",
+      text: "Angst vor Arbeitsplatzverlusten. Angst vor höheren Preisen. Angst vor Inflation. Angst vor der Angst. Die Thinktanks der Lobbys schießen aus allen Rohren. Die Stimmung im Land ist angespannt."
+    }
+  ]
+},
+
+
 {
   id: "follow-up-co2",
   condition: "done.includes('co2bepreisung')",
@@ -564,26 +587,6 @@ const store = configureStore({
 
 
 {
-  id: "co2-lobbyreaktion",
-  condition: "started.includes('co2bepreisung')",
-  slides: [
-    {
-      type: "text", // text, multiple-choice, love-change, temperature-change
-      background: "buero", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
-      title: "",
-      text: "Leider bezahlen wir jetzt den Preis für den CO2-Preis: Die Industrielobby hat uns das übelgenommen und macht Stimmung gegen uns.",
-      position: "top",
-    },
-    {
-      type: "love-change",
-      love: -12,
-      background: "buero",
-      text: "Angst vor Arbeitsplatzverlusten. Angst vor höheren Preisen. Angst vor Inflation. Angst vor der Angst. Die Thinktanks der Lobbys schießen aus allen Rohren. Die Stimmung im Land ist angespannt."
-    }
-  ]
-},
-
-{
   id: "eautos-gestartet",
   condition: "started.includes('eautos')",
   slides: [
@@ -602,9 +605,138 @@ const store = configureStore({
   ]
 },
 
+{
+  id: "eautos-follow-up",
+  condition: "done.includes('eautos')",
+  slides: [
+    {
+      type: "news", // text, multiple-choice, love-change, temperature-change
+      background: "zeitung", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
+      title: "ES ROLLT NICHT NUR, ES LÄUFT SOGAR",
+      text: "3,2 Millionen Jobs dank Elektroautos",
+    },
+    {
+      type: "love-change",
+      love: 12,
+      background: "zeitung",
+      text: "Das Autoland ist stolz seine E-Revolution"
+    }
+  ]
+},
 
 
 
+{
+  id: "techn-loesung1",
+  condition: "tick == 228",
+  slides: [
+    {
+      type: "text", // text, multiple-choice, love-change, temperature-change
+      background: "kaminzimmer", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
+      title: "",
+      text: "Bei einem Kaminzimmer-Gespräch kommt ein Lobbyvertreter der Industrie auf Sie zu...",
+      position: "top",
+    },
+    {
+      type: "multiple-choice", // text, multiple-choice, love-change, temperature-change
+      background: "kaminzimmer", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
+      title: "",
+      text: "„Wenn Sie wollen, retten wir das Klima mit der Innovationskraft deutscher Ingenieurskunst – wenn Sie über die nächsten 5 Jahre 300 Milliarden investieren.“",
+      position: "top",
+      answers: [
+        {
+          text: "machen",
+          variable: "techdealgemacht"
+        },
+        {
+          text: "nicht machen"
+        }
+      ]
+    },
+  ]
+},
+
+
+{
+  id: "techn-loesung2",
+  condition: "tick == 252 && !techdealgemacht",
+  slides: [
+    {
+      type: "text", // text, multiple-choice, love-change, temperature-change
+      background: "berater", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
+      title: "",
+      text: "Ich bin mir sicher: Die Lösung für's Klima wird eine technologische sein. Wir sollten jetzt wirklich 300 Milliarden in CO2-Staubsauger und Co investieren.",
+      position: "bottom",
+    },
+    {
+      type: "multiple-choice", // text, multiple-choice, love-change, temperature-change
+      background: "berater", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
+      title: "",
+      text: "300 Milliarden für CO2-Staubsauger ausgeben?",
+      position: "top",
+      answers: [
+        {
+          text: "Ja, Berater vertrauen",
+          variable: "techdealgemacht",
+          slides: [
+            {
+              type: "news",
+              background: "zeitung",
+              title: "DER HANDSCHLAG FÜRS KLIMA",
+              text: "Alles auf eine Karte: Bundesregierung setzt beim Klimawandel auf die Innovationskraft deutscher Unternehmen."
+            },
+            {
+              type: "temperature-change",
+              background: "biertisch",
+              temperature: 0.1,
+              text: "Die Bevölkerung verlässt sich in Sachen Klimawandel jetzt – genau wie sie – auf die technischen Lösungen der Industrie... und achtet noch weniger auf's Klima. Die Erwärmung steigt."
+            }
+
+          ]
+        },
+        {
+          text: "Nein, nicht auf ihn hören"
+        }
+      ]
+    },
+  ]
+},
+
+
+{
+  id: "techdeal-opposition",
+  condition: "techdealgemacht && tick == 528",
+  slides: [
+    {
+      type: "text", // text, multiple-choice, love-change, temperature-change
+      background: "parlament", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
+      title: "",
+      text: "Bei der Regierungsbefragung im Bundestag richtet die Opposition eine Frage direkt an Sie.",
+      position: "top",
+    },
+    {
+      type: "text", // text, multiple-choice, love-change, temperature-change
+      background: "parlament", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
+      title: "",
+      text: "„Vor 5 Jahren haben Sie 300 Milliarden Euro in s.g. CO2-Staubsauger investiert. Bis heute läuft davon kein einziger...“",
+      position: "bottom",
+    },
+    {
+      type: "text", // text, multiple-choice, love-change, temperature-change
+      background: "parlament", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
+      title: "",
+      text: "„Liebe Bundesregierung, Sie haben Sich von der Industrie veräppeln lassen!“",
+      position: "bottom",
+    },
+    {
+      type: "love-change", // text, multiple-choice, love-change, temperature-change
+      background: "parlament", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
+      title: "",
+      text: "Wer das Klima retten will, sollte wohl lieber die Klimasünder besteuern anstatt ihnen Geldgeschenke zu machen...",
+      position: "bottom",
+    },
+  ]
+},
 
 
 /*
