@@ -1,6 +1,6 @@
 # Spiel Klimakanzler:in
 
-https://www.klimakanzler.in
+https://gesetzesspiel.germanzero.de
 
 ## Development
 

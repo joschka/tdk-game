@@ -46,37 +46,41 @@
 }
 
 .background--jubel {
-  background-image: url("../images/backgrounds/jubel.jpg");
+  background-image: url("../images/backgrounds/jubel_neu.jpg");
 }
 
 .background--parlament {
-  background-image: url("../images/backgrounds/parlament.jpg");
+  background-image: url("../images/backgrounds/parlament_neu.jpg");
 }
 
 .background--biertisch {
-  background-image: url("../images/backgrounds/biertisch.jpg");
+  background-image: url("../images/backgrounds/biertisch_neu.jpg");
 }
 
 .background--buero {
-  background-image: url("../images/backgrounds/buero.jpg");
+  background-image: url("../images/backgrounds/buero_neu.jpg");
 }
 
 .background--interview {
-  background-image: url("../images/backgrounds/interview.jpg");
+  background-image: url("../images/backgrounds/interview_neu.jpg");
 }
 
 .background--kaminzimmer {
-  background-image: url("../images/backgrounds/kaminzimmer.jpg");
+  background-image: url("../images/backgrounds/kaminzimmer_neu.jpg");
 }
 
 .background--talkshow {
-  background-image: url("../images/backgrounds/talkshow.jpg");
+  background-image: url("../images/backgrounds/talkshow_neu.jpg");
 }
 
 .background--wahl {
-  background-image: url("../images/backgrounds/wahl.jpg");
+  background-image: url("../images/backgrounds/wahl_neu.jpg");
 }
 
 .background--zeitung {
   background-image: url("../images/backgrounds/zeitung.jpg");
+}
+
+.background--berater {
+  background-image: url("../images/backgrounds/berater_neu.jpg");
 }

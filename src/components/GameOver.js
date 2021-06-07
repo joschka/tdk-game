@@ -13,7 +13,7 @@ function GameOver({ text }) {
 
   function Share() {
     const twitterText = encodeURIComponent(
-      "Kannst du Klimakanzler:in?\nFinde es heraus!\nhttps://www.klimakanzler.in"
+      "Kannst du Klimakanzler:in?\nFinde es heraus!\nhttps://gesetzesspiel.germanzero.de"
     );
     return (
       <a

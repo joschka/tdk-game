@@ -198,16 +198,83 @@ const store = configureStore({
             type: "news",
             title: "Titel bla 1111111",
             text: "Text bla",
+            background: "zeitung",
+          },
+          {
+            type: "text",
+            text: "Text berater",
+            background: "berater",
+            position: "bottom",
+          },
+          {
+            type: "text",
+            text: "Text kaminzimmer",
+            background: "kaminzimmer",
+            position: "bottom",
+          },
+          {
+            type: "text",
+            text: "Text parlament",
+            background: "parlament",
+            position: "bottom",
+          },
+          {
+            type: "text",
+            text: "Text interview",
+            background: "interview",
+            position: "top",
+          },
+          {
+            type: "text",
+            text: "Text biertisch",
+            background: "biertisch",
+            position: "top",
+          },
+          {
+            type: "text",
+            text: "Text buero",
+            background: "buero",
+            position: "top",
+          },
+          {
+            type: "text",
+            text: "Text talkshow",
+            background: "talkshow",
+            position: "top",
+          },
+          {
+            type: "text",
+            text: "Text jubel",
+            background: "jubel",
+            position: "top",
+          },
+          {
+            type: "text",
+            text: "Text yellow",
+            background: "yellow",
           },
           {
             type: "love-change",
             love: -5,
-            text: "Text bla",
+            text: "love-change",
+          },
+          {
+            type: "temperature-change",
+            temperature: -0.5,
+            text: "temperature-change",
+          },
+          {
+            type: "vote",
+            text:
+              "Wahlabend 18 Uhr: Jörg Schönenborn präsentiert die Hochrechnung:",
+            background: "wahl",
+            // Gewichtung der anderen Balken
+            others: [1, 1.5, 2, 0.2],
           },
           {
             type: "multiple-choice",
-            text:
-              "Die Autolobby erklärt Sie öffentlich für nicht zurechnungsfähig. Wie reagieren Sie?",
+            text: "what do you want?",
+            background: "interview",
             // "answers"
             // text is mandatory
             // available outcomes:
@@ -216,29 +283,22 @@ const store = configureStore({
             // both outcomes can be combined
             answers: [
               {
-                text: "Ich begebe mich unverzüglich in Behandlung.",
+                text: "verlieren",
                 slides: [
                   {
-                    type: "love-change",
-                    love: -5,
-                    text: "Text bla",
+                    type: "game-over",
+                    text: "Leider verloren",
+                    background: "biertisch",
                   },
                 ],
               },
               {
-                text:
-                  "Ich ignoriere die Vorwürfe, weil die Autolobby keine Rolle spielt.",
-                variable: "foobar",
-              },
-              {
-                text:
-                  "Ich erkläre, dass das alles ein Missverständnis ist und zähle die Vorteile für eine vorwärtsgewandte Autoindustrie auf.",
-                variable: "foobaz",
+                text: "gewinnen",
                 slides: [
                   {
-                    type: "love-change",
-                    love: 10,
-                    text: "Text bla",
+                    type: "game-over",
+                    text: "Gewonnen",
+                    background: "jubel",
                   },
                 ],
               },
@@ -273,14 +333,13 @@ const store = configureStore({
               "Ihre Bilanz nach 4 Jahren Kanzlerschaft: Alles wurde teurer und das Klima ist trotzdem nicht gerettet. Wie erklären Sie das?",
             answers: [
               {
-                text:
-                  "Umbau braucht Zeit. Nach der Wahl geht es weiter.",
+                text: "Umbau braucht Zeit. Nach der Wahl geht es weiter.",
                 slides: [
                   {
                     type: "love-change",
                     love: -5,
-                    silent: true
-                  }
+                    silent: true,
+                  },
                 ],
               },
               {
@@ -290,17 +349,14 @@ const store = configureStore({
                   {
                     type: "love-change",
                     love: 10,
-                    silent: true
-                  }
+                    silent: true,
+                  },
                 ],
-              }
+              },
             ],
-          }
-        ]
+          },
+        ],
       },
-
-
-
 
       {
         // Wahl verloren
@@ -309,7 +365,8 @@ const store = configureStore({
         slides: [
           {
             type: "vote",
-            text: "Wahlabend 18 Uhr: Jörg Schönenborn präsentiert die Hochrechnung:",
+            text:
+              "Wahlabend 18 Uhr: Jörg Schönenborn präsentiert die Hochrechnung:",
             background: "wahl",
             // Gewichtung der anderen Balken
             others: [1, 1.5, 2, 0.2],
@@ -329,7 +386,8 @@ const store = configureStore({
         slides: [
           {
             type: "vote",
-            text: "Wahlabend 18 Uhr: Jörg Schönenborn präsentiert die Hochrechnung:",
+            text:
+              "Wahlabend 18 Uhr: Jörg Schönenborn präsentiert die Hochrechnung:",
             background: "wahl",
             // Gewichtung der anderen Balken
             others: [1, 1.5, 2, 0.2],
@@ -451,36 +509,32 @@ const store = configureStore({
               "Wieviel Steuer soll auf eine Tonne CO2 zukünftig erhoben werden?",
             answers: [
               {
-                text:
-                  "50 € – etws mehr als bisher",
-                variable: "tonnenpreis50"
+                text: "50 € – etws mehr als bisher",
+                variable: "tonnenpreis50",
               },
               {
-                text:
-                  "200 €",
-                variable: "tonnenpreis200"
+                text: "200 €",
+                variable: "tonnenpreis200",
               },
               {
-                text:
-                  "500 €",
-                variable: "tonnenpreis500"
+                text: "500 €",
+                variable: "tonnenpreis500",
               },
               {
                 text:
                   "1500 € – der reale Preis einschl. aller Umweltfolgekosten",
-                variable: "tonnenpreis1500"
-              }
-            ]
-          }
+                variable: "tonnenpreis1500",
+              },
+            ],
+          },
         ],
       },
-
 
       {
         // co2 zu teuer für lobby
         id: "co2bepreisung-zuteuer-fuer-lobby",
         condition: "vars.tonnenpreis1500",
-        slides: [          
+        slides: [
           {
             type: "multiple-choice",
             background: "buero",
@@ -488,49 +542,41 @@ const store = configureStore({
               "Der Präsident des obersten Industrieverbandes steht plötzlich in Ihrem Büro",
             answers: [
               {
-                text:
-                  "Ihn wegschicken",
-                variable: "lobbyhasstmich"
+                text: "Ihn wegschicken",
+                variable: "lobbyhasstmich",
               },
               {
-                text:
-                  "Seiner Einladung folgen",
+                text: "Seiner Einladung folgen",
                 slides: [
-
                   {
                     type: "text",
                     background: "kaminzimmer",
-                    text: "Industrie-Präsident:<br> \"Wenn Sie den CO2-Preis von 1.500 wirklich umsetzen wollen, verlieren wir Millionen von Jobs. Bevor das passiert, verlieren Sie Ihren. Dafür sorgen wir.\""
+                    text:
+                      'Industrie-Präsident:<br> "Wenn Sie den CO2-Preis von 1.500 wirklich umsetzen wollen, verlieren wir Millionen von Jobs. Bevor das passiert, verlieren Sie Ihren. Dafür sorgen wir."',
                   },
                   {
                     type: "multiple-choice",
                     background: "kaminzimmer",
-                    text: "Ich will Ihnen ein Angebot unterbreiten: Sie heben den CO2-Preis auf nur 50 Euro und dafür investiert die gesamte deutsche Industrie in den nächsten 10 Jahren 500 Milliarden Euro in neue Technologie, die CO2 aus der Luft saugt. Sie erreichen Ihr Klimaziel und wir erhalten die Jobs.",
+                    text:
+                      "Ich will Ihnen ein Angebot unterbreiten: Sie heben den CO2-Preis auf nur 50 Euro und dafür investiert die gesamte deutsche Industrie in den nächsten 10 Jahren 500 Milliarden Euro in neue Technologie, die CO2 aus der Luft saugt. Sie erreichen Ihr Klimaziel und wir erhalten die Jobs.",
 
                     answers: [
                       {
-                        text:
-                          "Ok, machen wir!",
+                        text: "Ok, machen wir!",
                         variables: "tonnenpreis50",
                       },
                       {
-                        text:
-                          "Nein, danke.",
+                        text: "Nein, danke.",
                         variables: "lobbyhasstmich",
-                      }
+                      },
                     ],
                   },
                 ],
               },
-
             ],
           },
         ],
       },
-
-
-
-
 
       {
         // testscreens
@@ -539,8 +585,7 @@ const store = configureStore({
         slides: [
           {
             type: "text",
-            text:
-              "<p>Willkommen an Ihrem neuen Arbeitsplatz</p>",
+            text: "<p>Willkommen an Ihrem neuen Arbeitsplatz</p>",
             background: "buero",
             position: "top",
           },
@@ -551,16 +596,14 @@ const store = configureStore({
               "Der Druck in der Presse steigt. Fangen Sie an, erste Maßnahmen umzusetzen.",
             background: "zeitung",
             newspaper: "zeit",
-          },          
+          },
           {
             type: "multiple-choice",
             background: "interview",
-            text:
-              "Warum gibt es noch immer keinen Gesetzesentwurf von Ihnen?",
+            text: "Warum gibt es noch immer keinen Gesetzesentwurf von Ihnen?",
             answers: [
               {
-                text:
-                  "Ich musste mich erst ins Amt einfinden",
+                text: "Ich musste mich erst ins Amt einfinden",
                 slides: [
                   {
                     type: "love-change",
@@ -591,7 +634,7 @@ const store = configureStore({
                     background: "zeitung",
                   },
                 ],
-              }
+              },
             ],
           },
         ],
