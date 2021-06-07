@@ -659,7 +659,7 @@ const store = configureStore({
 
 {
   id: "techn-loesung2",
-  condition: "tick == 252 && !techdealgemacht",
+  condition: "tick == 252 && !vars.techdealgemacht",
   slides: [
     {
       type: "text", // text, multiple-choice, love-change, temperature-change
@@ -705,7 +705,7 @@ const store = configureStore({
 
 {
   id: "techdeal-opposition",
-  condition: "techdealgemacht && tick == 528",
+  condition: "vars.techdealgemacht && tick == 528",
   slides: [
     {
       type: "text", // text, multiple-choice, love-change, temperature-change
