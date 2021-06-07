@@ -703,7 +703,7 @@ const store = configureStore({
       type: "temperature-change",
       background: "biertisch",
       temperature: 0.1,
-      text: "Die Bevölkerung verlässt sich in Sachen Klimawandel jetzt – genau wie sie – auf die technischen Lösungen der Industrie... und achtet noch weniger auf's Klima. Die Erwärmung steigt."
+      text: "Die Bevölkerung verlässt sich in Sachen Klimawandel jetzt – genau wie Sie – auf die technischen Lösungen der Industrie... und achtet noch weniger selbst auf's Klima. Die Erwärmung steigt."
     }
 
   ]
@@ -745,6 +745,49 @@ const store = configureStore({
   ]
 },
 
+
+{
+  id: "umfragewerte-im-keller",
+  condition: "love < 35",
+  slides: [
+    {
+      type: "text", // text, multiple-choice, love-change, temperature-change
+      background: "berater", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
+      title: "",
+      text: "Ihre Umfragewerte sind irgendwie im Keller...",
+      position: "bottom",
+    },
+    {
+      type: "multiple-choice", // text, multiple-choice, love-change, temperature-change
+      background: "berater", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
+      title: "",
+      text: "Was wollen Sie tun?",
+      position: "bottom",
+      answers: [
+        {
+          text: "Ab zu Anne Will",
+          slides: [
+            {
+              type: "love-change",
+              love: 1,
+              silent: true
+            }
+          ]
+        },
+        {
+          text: "Die Flotte der Bundesregierung endlich auf E-Autos umstellen",
+          slides: [
+            {
+              type: "love-change",
+              love: 3,
+              silent: true
+            }
+          ]
+        }
+      ]
+    },
+  ]
+},
 
 /*
 {
