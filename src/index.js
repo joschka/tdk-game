@@ -565,7 +565,7 @@ const store = configureStore({
 
 {
   id: "co2-lobbyreaktion",
-  condition: "done.started('co2bepreisung')",
+  condition: "started.includes('co2bepreisung')",
   slides: [
     {
       type: "text", // text, multiple-choice, love-change, temperature-change
