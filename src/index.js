@@ -47,7 +47,7 @@ const store = configureStore({
     actions: [
       {
         id: "co2bepreisung",
-        title: "CO2 Bepreisung",
+        title: "CO2-Bepreisung",
         sector: "industry",
         description:
           "Beim Zertifikatehandel muss für jede ausgestoßene Emission ein Zertifikat ersteigert werden, Verschmutzungsrechte sozusagen.<br/><br />Aus Klimaschutzperspektive ist der CO2 Preis eigentlich ein geniales Instrument, weil fast alle Emissionsquellen – vom Industriekraftwerk bis zum Lkw - erfasst werden könnten und mit der Anzahl der ausgegebenen Zertifikate die Emissionsmenge begrenzt werden kann, die jährlich ausgestoßen werden darf. Wie beim Spiel „Reise nach Jerusalem“ können schrittweise die Zertifikate so aus dem Verkehr gezogen werden, dass wir klimaneutral werden, ohne unser Restbudget zur Erreichung des 1,5-Grad-Ziels zu überschreiten. Durch die Knappheit erhöht sich der Zertifikatspreis – und damit der Anreiz auf klimaneutrale Technologien umzusteigen - automatisch.",
@@ -58,10 +58,10 @@ const store = configureStore({
       },
       {
         id: "mehrwege",
-        title: "MehrwegE",
+        title: "Kreislaufwirtschaft",
         sector: "industry",
         description:
-          "Kreislaufwirtschaft: Durch den Aufbau einer Kreislaufwirtschaft werden bestehende Materialien und Produkte so lange wie möglich in Benutzung gehalten. Das geschieht im Wesentlichen durch Wiederverwendung, Reparatur und Recycling. Dadurch werden Emissionen eingespart, die ansonsten für die energieaufwändige Produktion von Primärmaterialien anfallen würden.",
+          "Durch den Aufbau einer Kreislaufwirtschaft werden bestehende Materialien und Produkte so lange wie möglich in Benutzung gehalten. Das geschieht im Wesentlichen durch Wiederverwendung, Reparatur und Recycling. Dadurch werden Emissionen eingespart, die ansonsten für die energieaufwändige Produktion von Primärmaterialien anfallen würden.",
         duration: duration.long,
         temperature: -0.4375,
         state: "available",
@@ -80,7 +80,7 @@ const store = configureStore({
       },
       {
         id: "tiere",
-        title: "1 Heuballen = 1 Tier",
+        title: "Massentierhaltung beenden",
         sector: "agriculture",
         description:
           "Es werden nur noch so viele Tiere gehalten, wie das Land ernähren kann und ein Emissionshandel für tierische Produkte eingeführt: Etwa zwei Drittel der Emissionen des Landwirtschaftsbereichs stammen direkt aus der Tierhaltung. Durch einen Emissionshandel für tierische Produkte könnten diese Emissionen durch eine schrittweise Reduktion der Zertifikatsmenge zielgenau und kosteneffizient gesenkt werden.",
@@ -91,7 +91,7 @@ const store = configureStore({
       },
       {
         id: "eautos",
-        title: "Elektrofahrzeuge",
+        title: "E-Autos statt Verbrenner",
         sector: "mobility",
         description:
           "Elektro statt Verbrennungsmotoren ab 2025: Uff ein schwieriges Thema in Deutschland: Das einzige EU-Land ohne Tempolimit. Die Emissionen dieses Bereichs lagen 2019 exakt genauso hoch wie 1990 – es tut weh, aber wir müssen hier ran.",
@@ -124,7 +124,7 @@ const store = configureStore({
       },
       {
         id: "solarwind",
-        title: "Sonne- und Windkraft",
+        title: "Sonnen- und Windkraft",
         sector: "energy",
         description:
           "Strom als Energieträger der Zukunft wird in zwei komplementären Bereichen erzeugt:<br /><br />Lokale Energiegemeinschaften: Eine dezentrale Energieerzeugung bietet gegenüber einer zentralen die Vorteile, dass sie für eine Stabilität des Netzes sorgt, lange Transportwege vermeidet sowie die Teilhabe und damit auch Akzeptanz unter Bürger:innen erhöht.<br /><br />Regionale EE-Kraftwerke: Der erforderliche Zubau von erneuerbaren Energien kann nicht von Bürger- und Industriequartieren allein bewältigt werden. Insbesondere für den hohen Energiebedarf der Industrie werden regionale „Kraftwerke“ großer Solar- und Windenergieanlagen benötigt, die große Mengen Strom erzeugen und die unabhängig agierenden und sich entfaltenden Energiegemeinschaften ergänzen.",
@@ -306,339 +306,122 @@ const store = configureStore({
           },
         ],
       },
+      
 
-      {
-        // Gewonnen
-        id: "win",
-        condition: "temperature <= 1.5",
-        slides: [
-          {
-            type: "game-over",
-            text: "GEWONNEN!!!",
-            background: "biertisch",
-          },
-        ],
-      },
 
-      {
-        // kurz vor der 1. Wahl
-        id: "talkshow-vor-wahl1",
-        condition: "tick == 194",
-        slides: [
-          {
-            type: "multiple-choice",
-            background: "talkshow",
-            title: "Morgen wird in Deutschland gewählt",
-            text:
-              "Ihre Bilanz nach 4 Jahren Kanzlerschaft: Alles wurde teurer und das Klima ist trotzdem nicht gerettet. Wie erklären Sie das?",
-            answers: [
-              {
-                text: "Umbau braucht Zeit. Nach der Wahl geht es weiter.",
-                slides: [
-                  {
-                    type: "love-change",
-                    love: -5,
-                    silent: true,
-                  },
-                ],
-              },
-              {
-                text:
-                  "Nur wenn Sie mich wiederwählen, kann ich unser Klima retten. Ich bitte Sie im Namen des Überlebens: Machen Sie ihr Kreuz bei mir.",
-                slides: [
-                  {
-                    type: "love-change",
-                    love: 10,
-                    silent: true,
-                  },
-                ],
-              },
-            ],
-          },
-        ],
-      },
 
-      {
-        // Wahl verloren
-        id: "vote-lost",
-        condition: "(tick == 194 || tick == 388 || tick == 582) && love < 30",
-        slides: [
-          {
-            type: "vote",
-            text:
-              "Wahlabend 18 Uhr: Jörg Schönenborn präsentiert die Hochrechnung:",
-            background: "wahl",
-            // Gewichtung der anderen Balken
-            others: [1, 1.5, 2, 0.2],
-          },
-          {
-            type: "game-over",
-            text: "Leider verloren",
-            background: "biertisch",
-          },
-        ],
-      },
 
-      {
-        // Wahl gewonnen
-        id: "vote-won",
-        condition: "(tick == 194 || tick == 388 || tick == 582) && love >= 30",
-        slides: [
-          {
-            type: "vote",
-            text:
-              "Wahlabend 18 Uhr: Jörg Schönenborn präsentiert die Hochrechnung:",
-            background: "wahl",
-            // Gewichtung der anderen Balken
-            others: [1, 1.5, 2, 0.2],
-          },
-          {
-            type: "text",
-            text: "Wahlsieg! Sie bleiben 4 weitere Jahre im Amt!",
-            background: "jubel",
-          },
-        ],
-      },
 
-      {
-        // follow up zu Schlachthöfe (ohne Interaktion)
-        id: "follow-up-5",
-        condition: "done.includes('tiere')",
-        slides: [
-          {
-            type: "temperature-change",
-            temperature: -1,
-            silent: true,
-          },
-        ],
-      },
+{
+  // Gewonnen
+  id: "win",
+  condition: "temperature <= 1.5",
+  slides: [
+    {
+      type: "game-over",
+      text: "GEWONNEN!!!",
+      background: "biertisch",
+    },
+  ],
+},
 
-      {
-        // follow up zu Kohleausstieg
-        id: "follow-up-10",
-        condition: "done.includes('kohleausstieg')",
-        slides: [
-          {
-            type: "news",
-            title: "Kohleausstieg umgesetzt",
-            text:
-              "You made it. Nach dem Austieg aus der Kernkraft, folgt nun der Ausstieg aus der Kohle. Deutschland ist Ausstiegsweltmeister.",
-            background: "yellow",
-            newspaper: "zeit",
-          },
-          {
-            type: "text",
-            text:
-              "<p>Einfacher Text-Slide</p><p><strong>Lorem ipsum</strong></p>",
-            background: "biertisch",
-            position: "bottom",
-          },
-          {
-            type: "temperature-change",
-            temperature: -0.15,
-            background: "jubel",
-            text: "Juhu, Temperatur sinkt.",
-          },
-          {
-            type: "multiple-choice",
-            text:
-              "Australien bestellt Ihre Botschafterin ein. Man fürchtet durch den Kohleaustritt Rufschädigung.",
-            answers: [
-              {
-                text:
-                  "Ich beschimpfe Australien als Hinterwäldler-Gefängnis-Kontinent.",
-                slides: [
-                  {
-                    type: "love-change",
-                    love: 8,
-                    text:
-                      "Ihr Schimpftirade kommt gut an. Die Deutschen erfreuen sich immer daran, mit dem Finger auf andere zu zeigen. Ihre Beliebheit steigt!",
-                    background: "jubel",
-                  },
-                ],
-              },
-              {
-                text:
-                  "Ich behandle die Sache diskret hinter verschlossenen Türen. Ist doch alles nur eine PR-Maßnahme für die FFF-Generation.",
-                slides: [
-                  {
-                    type: "news",
-                    title: "LEAK! Kohleausstieg nur PR",
-                    text:
-                      "Ein Mitschnitt Ihrer Hinterzimmerdiplomatie ist aufgetaucht und sorgt für Empörung.",
-                    background: "blue",
-                    newspaper: "faz",
-                  },
-                  {
-                    type: "love-change",
-                    love: -14,
-                    text:
-                      "Die Empörung ist groß. Ihre Umfragwerte gehen nach unten.",
-                    background: "yellow",
-                  },
-                ],
-              },
-              {
-                text: "Ich gründe eine Arbeitsgruppe.",
-                slides: [
-                  {
-                    type: "love-change",
-                    love: 5,
-                    text:
-                      "Arbeitsgruppe ist okay. Ihnen wird Wohlwollen, aber kein Beifall entgegengebracht.",
-                    background: "green",
-                  },
-                ],
-              },
-            ],
-          },
-        ],
-      },
+{
+  // Wahl verloren
+  id: "vote-lost",
+  condition: "(tick == 194 || tick == 388 || tick == 582) && love < 10",
+  slides: [
+    {
+      type: "vote",
+      text:
+        "Wahlabend 18 Uhr: Jörg Schönenborn präsentiert die Hochrechnung:",
+      background: "wahl",
+      // Gewichtung der anderen Balken
+      others: [1, 1.5, 2, 0.2],
+    },
+    {
+      type: "game-over",
+      text: "Leider verloren",
+      background: "biertisch",
+    },
+  ],
+},
 
-      //Playground
+{
+  // Wahl gewonnen
+  id: "vote-won",
+  condition: "(tick == 194 || tick == 388 || tick == 582) && love >= 10",
+  slides: [
+    {
+      type: "vote",
+      text:
+        "Wahlabend 18 Uhr: Jörg Schönenborn präsentiert die Hochrechnung:",
+      background: "wahl",
+      // Gewichtung der anderen Balken
+      others: [1, 1.5, 2, 0.2],
+    },
+    {
+      type: "text",
+      text: "Wahlsieg! Sie bleiben 4 weitere Jahre im Amt!",
+      background: "jubel",
+    },
+  ],
+},
 
-      {
-        // co2 bepreisung
-        id: "co2bepreisung-gestartet",
-        condition: "started.includes('co2bepreisung')",
-        slides: [
-          {
-            type: "multiple-choice",
-            background: "buero",
-            text:
-              "Wieviel Steuer soll auf eine Tonne CO2 zukünftig erhoben werden?",
-            answers: [
-              {
-                text: "50 € – etws mehr als bisher",
-                variable: "tonnenpreis50",
-              },
-              {
-                text: "200 €",
-                variable: "tonnenpreis200",
-              },
-              {
-                text: "500 €",
-                variable: "tonnenpreis500",
-              },
-              {
-                text:
-                  "1500 € – der reale Preis einschl. aller Umweltfolgekosten",
-                variable: "tonnenpreis1500",
-              },
-            ],
-          },
-        ],
-      },
 
-      {
-        // co2 zu teuer für lobby
-        id: "co2bepreisung-zuteuer-fuer-lobby",
-        condition: "vars.tonnenpreis1500",
-        slides: [
-          {
-            type: "multiple-choice",
-            background: "buero",
-            text:
-              "Der Präsident des obersten Industrieverbandes steht plötzlich in Ihrem Büro",
-            answers: [
-              {
-                text: "Ihn wegschicken",
-                variable: "lobbyhasstmich",
-              },
-              {
-                text: "Seiner Einladung folgen",
-                slides: [
-                  {
-                    type: "text",
-                    background: "kaminzimmer",
-                    text:
-                      'Industrie-Präsident:<br> "Wenn Sie den CO2-Preis von 1.500 wirklich umsetzen wollen, verlieren wir Millionen von Jobs. Bevor das passiert, verlieren Sie Ihren. Dafür sorgen wir."',
-                  },
-                  {
-                    type: "multiple-choice",
-                    background: "kaminzimmer",
-                    text:
-                      "Ich will Ihnen ein Angebot unterbreiten: Sie heben den CO2-Preis auf nur 50 Euro und dafür investiert die gesamte deutsche Industrie in den nächsten 10 Jahren 500 Milliarden Euro in neue Technologie, die CO2 aus der Luft saugt. Sie erreichen Ihr Klimaziel und wir erhalten die Jobs.",
+{
+  // Erinnerung: Wenn Kohlausstieg bis 2028 noch nicht gemacht
+  id: "kohle-reminder",
+  condition: "tick > 304 && !started.includes('kohleausstieg')",
+  slides: [
+    {
+      type: "text",
+      text: "„Ähem. Es wäre an der Zeit, in den Kohleausstieg einzusteigen – meinen Sie nicht?“",
+      background: "berater",
+      position: "bottom",
+    },
+    {
+      type: "multiple-choice",
+      text: "",
+      background: "berater",
+      answers: [
+        {
+          text: "Völlig richtig. Los geht’s.",
+          slides: [
+            {
+              type: "news",
+              title: "KEINE KOHLE.",
+              text: "Wird Strom jetzt noch teurer?",
+              background: "zeitung"
+            }
+          ]
+        },
+        {
+          text: "Bei so viel Widerstand bleibe ich lieber bei der Kohle.",
+          slides: [
+            {
+              type: "news",
+              title: "VERPSPROCHEN: GEBROCHEN.",
+              text: "Regierung schiebt Zukunft auf die lange Bank.",
+              background: "zeitung"
+            } 
 
-                    answers: [
-                      {
-                        text: "Ok, machen wir!",
-                        variables: "tonnenpreis50",
-                      },
-                      {
-                        text: "Nein, danke.",
-                        variables: "lobbyhasstmich",
-                      },
-                    ],
-                  },
-                ],
-              },
-            ],
-          },
-        ],
-      },
+          ]
+        }
+      ]
+    }
 
-      {
-        // testscreens
-        id: "michastest",
-        condition: "tick == 10",
-        slides: [
-          {
-            type: "text",
-            text: "<p>Willkommen an Ihrem neuen Arbeitsplatz</p>",
-            background: "buero",
-            position: "top",
-          },
-          {
-            type: "news",
-            title: "Folgen den Versprechen nun auch Taten?",
-            text:
-              "Der Druck in der Presse steigt. Fangen Sie an, erste Maßnahmen umzusetzen.",
-            background: "zeitung",
-            newspaper: "zeit",
-          },
-          {
-            type: "multiple-choice",
-            background: "interview",
-            text: "Warum gibt es noch immer keinen Gesetzesentwurf von Ihnen?",
-            answers: [
-              {
-                text: "Ich musste mich erst ins Amt einfinden",
-                slides: [
-                  {
-                    type: "love-change",
-                    love: -8,
-                    text:
-                      "Glauben Sie, die Klimakrise wartet auf Sie? Die Bürger lachen über Sie.",
-                    background: "biertisch",
-                  },
-                ],
-              },
-              {
-                text:
-                  "Große Änderungen brauchen Vorlauf. Sie werden bald großes von mir hören!",
-                slides: [
-                  {
-                    type: "news",
-                    title: "Kann Bohmeyer noch Klima?",
-                    text:
-                      "Große Änderungen wurden angekündigt? Ist da was dran oder nur heiße Luft? Das Kanzleramt hält sich bedeckt.",
-                    background: "zeitung",
-                    newspaper: "faz",
-                  },
-                  {
-                    type: "love-change",
-                    love: -1,
-                    text:
-                      "Fangen Sie am besten mit dem Kohleausstieg an, das haben Sie immerhin in der Wahl versprochen.",
-                    background: "zeitung",
-                  },
-                ],
-              },
-            ],
-          },
-        ],
-      },
+  ]
+
+
+}
+
+
+
+
+
+
+
+
     ],
   },
 });
