@@ -384,7 +384,7 @@ const store = configureStore({
 {
   // Erinnerung: Wenn Kohlausstieg bis 2028 noch nicht gemacht
   id: "kohle-reminder",
-  condition: "tick > 304 && !started.includes('kohleausstieg')",
+  condition: "tick > 304 && !(started.includes('kohleausstieg') || done.includes('kohleausstieg'))",
   slides: [
     {
       type: "text",
