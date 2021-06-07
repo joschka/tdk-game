@@ -13,7 +13,7 @@ function StartScreen() {
   const gameStopped = useSelector((state) => state.game.stopped);
   const introStep = useSelector((state) => state.game.introStep);
 
-  /*
+  
     // skip intro
     const queryParams = new URLSearchParams(window.location.search);
     const param = queryParams.get("intro");
@@ -23,7 +23,7 @@ function StartScreen() {
       dispatch({type: "clock/start"});
       return null;
     }
-  */
+  
   function nextStep(e) {
     dispatch({ type: "game/introStep", data: 1 });
   }
