@@ -421,9 +421,10 @@ const store = configureStore({
   condition: "done.includes('tiere')",
   slides: [
     {
-      type: "berater", // text, multiple-choice
+      type: "text", // text, multiple-choice
       background: "berater", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
       text: "Die Abschaffung der Massentierhaltung ist seit Wochen DAS Thema...",      
+      position: "bottom",
     },
     {
       type: "news", // text, multiple-choice
@@ -449,7 +450,7 @@ const store = configureStore({
       background: "zeitung", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
       title: "",
       text: "",
-
+      position: "bottom",
     },
   ]
 },
