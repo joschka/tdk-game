@@ -605,9 +605,32 @@ const store = configureStore({
   ]
 },
 
+
+
 {
-  id: "eautos-follow-up",
-  condition: "done.includes('eautos')",
+  id: "eautos-follow-up-ohne-zug",
+  condition: "done.includes('eautos') && !done.includes('zuege')",
+  slides: [
+    {
+      type: "text", // text, multiple-choice, love-change, temperature-change
+      background: "buero", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
+      title: "",
+      text: "Sie haben den Verbrennungsmotor abgeschafft, aber nicht in Züge investiert!",
+      position: "bottom",
+    },
+    {
+      type: "news",
+      background: "zeitung",
+      title: "WIE DIE BUNDESREGIERUNG DEUTSCHLAND IN DEN STILLSTAND FÜHRT"
+      text: "Keine Autos, keine Züge, kein Fortkommen"
+    }
+  ]
+},
+
+
+{
+  id: "eautos-follow-up-erfolg",
+  condition: "done.includes('eautos') && done.includes('zuege')",
   slides: [
     {
       type: "news", // text, multiple-choice, love-change, temperature-change
@@ -797,10 +820,8 @@ const store = configureStore({
     {
       type: "love-change", // text, multiple-choice, love-change, temperature-change
       background: "biertisch", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
-      title: "",
       love: 5,
-      text: "Sie haben Glück: Deutschland wird Weltmeister und die gute Laune wirkt sich positiv auf ihre Umfragewerte aus.",
-      position: "top",
+      text: "Sie haben Glück: Deutschland wird Weltmeister und die gute Laune wirkt sich positiv auf ihre Umfragewerte aus."      
     },
   ]
 },
