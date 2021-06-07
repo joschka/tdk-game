@@ -413,8 +413,48 @@ const store = configureStore({
   ]
 
 
-}
+},
 
+
+{
+  id: "follow-up-tiere",
+  condition: "done.includes('tiere')",
+  slides: [
+    {
+      type: "berater", // text, multiple-choice
+      background: "berater", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
+      title: "Die Abschaffung der Massentierhaltung ist seit Wochen DAS Thema...",
+      text: "",      
+    },
+    {
+      type: "news", // text, multiple-choice
+      background: "zeitung", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
+      title: "WARUM DER PREIS NICHT WURST IST!",
+      text: "Deutschlands neue Armuts-Vegetarier",      
+    },
+  ]
+},
+
+
+
+
+
+
+/*
+{
+  id: "",
+  condition: "",
+  slides: [
+    {
+      type: "news", // text, multiple-choice
+      background: "zeitung", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
+      title: "",
+      text: "",
+
+    },
+  ]
+},
+*/
 
 
 
