@@ -577,7 +577,7 @@ const store = configureStore({
     {
       type: "love-change",
       love: -12,
-      background: "buero"
+      background: "buero",
       text: "Angst vor Arbeitsplatzverlusten. Angst vor höheren Preisen. Angst vor Inflation. Angst vor der Angst. Die Thinktanks der Lobbys schießen aus allen Rohren. Die Stimmung im Land ist angespannt."
     }
   ]
@@ -596,7 +596,7 @@ const store = configureStore({
     {
       type: "love-change",
       love: -7,
-      background: "zeitung"
+      background: "zeitung",
       text: "Droht ohne Verbrenner-Autos der wirtschaftliche Kollaps? Es kursieren wilde Mythen und Ängste. Ihre Beliebtheit leidete."
     }
   ]
