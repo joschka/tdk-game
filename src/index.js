@@ -315,7 +315,7 @@ const store = configureStore({
 {
   // Gewonnen
   id: "win",
-  condition: "tick = 636 && temperature <= 1.5",
+  condition: "tick == 636 && temperature <= 1.5",
   slides: [
     {
       type: "game-over",
@@ -328,7 +328,7 @@ const store = configureStore({
 {
   // Verloren
   id: "lost",
-  condition: "tick = 636 && temperature > 1.5",
+  condition: "tick == 636 && temperature > 1.5",
   slides: [
     {
       type: "game-over",
