@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { hot } from "react-hot-loader";
+import React, {useState, useEffect} from "react";
+import {useSelector, useDispatch} from "react-redux";
+import {hot} from "react-hot-loader";
 
 import "./Dashboard.css";
 
@@ -51,7 +51,7 @@ function Dashboard(props) {
   return (
     <div>
       <div {...opts}>
-        <div className="dashboard-new__container">
+        {false && <div className="dashboard-new__container">
           <div className="dashboard-new__progress">
             <ProgressBar newDashboard={true} />
           </div>
@@ -64,7 +64,10 @@ function Dashboard(props) {
           <div className="dashboard-new__chart">
             <LoveChartOverlay />
           </div>
-        </div>
+        </div>}
+      </div>
+      <div>
+        <ProgressBar size={"large"} />
       </div>
       {false && (
         <div {...optsLarge}>
