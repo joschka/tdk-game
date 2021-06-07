@@ -432,6 +432,68 @@ const store = configureStore({
       title: "WARUM DER PREIS NICHT WURST IST!",
       text: "Deutschlands neue Armuts-Vegetarier",      
     },
+    {
+      type: "news", // text, multiple-choice
+      background: "zeitung", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
+      title: "WARUM DER PREIS NICHT WURST IST!",
+      text: "Deutschlands neue Armuts-Vegetarier",      
+    },
+    {
+      type: "love-change", // text, multiple-choice
+      background: "biertisch", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
+      love: -7,
+      text: "Wenn es um die Wurst geht, verstehen die Deutschen keinen Spaß!",      
+    },
+  ]
+},
+
+
+{
+  id: "tiere-nicht-umgesetzt",
+  condition: "tick > 500 && !done.includes('tiere')",
+  slides: [
+    {
+      type: "text", // text, multiple-choice
+      background: "buero", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
+      text: "Ihr Koalitionspartner hat in einem Interview Massentierhaltung thematisiert.",      
+      position: "bottom",
+    },
+    {
+      type: "text", // text, multiple-choice
+      background: "talkshow", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
+      text: "Bei Anne Will werden Sie darauf angesprochen",      
+      position: "bottom",
+    },
+    {
+      type: "multiple-choice", // text, multiple-choice
+      background: "talkshow", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
+      text: "KÖNNEN WIR UNS BILLIGFLEISCH NOCH LEISTEN?",      
+      answers: [
+        {
+          text: "Keine Sorge. Das Kotelett ist ein Menschenrecht!",
+          slides: [
+            {
+              type: "love-change",
+              love: 10,
+              background: "talkshow",
+              text: "Lecker, Kotelett!"
+            }
+          ]
+        },
+        {
+          text: "Nein, denn den Preis bezahlen am Ende wir alle.",
+          slides: [
+            {
+              type: "love-change",
+              love: -10,
+              background: "talkshow",
+              text: "Wir lassen uns doch nicht von euch Gutmenschen nicht die Wurst vom Grill nehmen!"
+            }
+          ]
+        }
+      ]
+    },
+  
   ]
 },
 
@@ -446,7 +508,7 @@ const store = configureStore({
   condition: "",
   slides: [
     {
-      type: "news", // text, multiple-choice
+      type: "news", // text, multiple-choice, love-change, temperature-change
       background: "zeitung", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
       title: "",
       text: "",
