@@ -789,6 +789,24 @@ const store = configureStore({
   ]
 },
 
+
+{
+  id: "sosehensiegeraus",
+  condition: "tick == 40",
+  slides: [
+    {
+      type: "love-change", // text, multiple-choice, love-change, temperature-change
+      background: "biertisch", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
+      title: "",
+      love: 5,
+      text: "Sie haben Glück: Deutschland wird Weltmeister und die gute Laune wirkt sich positiv auf ihre Umfragewerte aus.",
+      position: "top",
+    },
+  ]
+},
+
+
+
 /*
 {
   id: "",
