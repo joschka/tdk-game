@@ -621,7 +621,7 @@ const store = configureStore({
     {
       type: "news",
       background: "zeitung",
-      title: "WIE DIE BUNDESREGIERUNG DEUTSCHLAND IN DEN STILLSTAND FÜHRT"
+      title: "WIE DIE BUNDESREGIERUNG DEUTSCHLAND IN DEN STILLSTAND FÜHRT",
       text: "Keine Autos, keine Züge, kein Fortkommen"
     }
   ]
