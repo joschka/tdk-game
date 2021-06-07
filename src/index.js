@@ -456,13 +456,13 @@ const store = configureStore({
       type: "text", // text, multiple-choice
       background: "buero", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
       text: "Ihr Koalitionspartner hat in einem Interview Massentierhaltung thematisiert.",      
-      position: "bottom",
+      position: "top",
     },
     {
       type: "text", // text, multiple-choice
       background: "talkshow", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
       text: "Bei Anne Will werden Sie darauf angesprochen",      
-      position: "bottom",
+      position: "top",
     },
     {
       type: "multiple-choice", // text, multiple-choice
@@ -497,6 +497,56 @@ const store = configureStore({
   ]
 },
 
+
+{
+  id: "follow-up-co2",
+  condition: "done.includes('co2bepreisung')",
+  slides: [
+    {
+      type: "text", // text, multiple-choice, love-change, temperature-change
+      background: "parlament", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
+      title: "",
+      text: "Glückwunsch! Die CO2-Bepreisung wurde mit einer knappen Mehrheit im Bundestag beschlossen.",
+      position: "top",
+    },
+    {
+      type: "news", // text, multiple-choice, love-change, temperature-change
+      background: "zeitung", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
+      title: "CO2 KOSTET JETZT. ABER NICHT MEHR DIE WELT.",
+      text: "Warum sich die neue CO2-Bepreisung auch für Unternehmen rechnen wird.",
+      position: "top",
+    },
+    {
+      type: "multiple-choice", // text, multiple-choice, love-change, temperature-change
+      background: "interview", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
+      title: "",
+      text: "„Eine Frage: Was habven Sie mit den Milliarden-Einnahmen aus der CO2-Besteuerung vor?“",
+      position: "top",
+      answers: [
+        {
+          text: "Blühende Landschaften",
+          slides: [
+            {
+              type: "love-change",
+              love: 5,
+              background: "interview"
+            }
+          ]
+        },
+        {
+          text: "Blühende Seilschaften",
+          slides: [
+            {
+              type: "love-change",
+              love: -5,
+              background: "interview"
+            }
+          ]
+        }
+      ]
+    },
+  ]
+},
 
 
 
