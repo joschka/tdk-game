@@ -563,6 +563,27 @@ const store = configureStore({
 
 
 
+{
+  id: "co2-lobbyreaktion",
+  condition: "done.started('co2bepreisung')",
+  slides: [
+    {
+      type: "text", // text, multiple-choice, love-change, temperature-change
+      background: "buero", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
+      title: "",
+      text: "Leider bezahlen wir jetzt den Preis für den CO2-Preis: Die Industrielobby hat uns das übelgenommen und macht Stimmung gegen uns.",
+      position: "top",
+    },
+    {
+      type: "love-change",
+      love: -12,
+      background: "buero"
+      text: "Angst vor Arbeitsplatzverlusten. Angst vor höheren Preisen. Angst vor Inflation. Angst vor der Angst. Die Thinktanks der Lobbys schießen aus allen Rohren. Die Stimmung im Land ist angespannt."
+    }
+  ]
+},
+
+
 
 
 /*
