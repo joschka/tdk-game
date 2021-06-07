@@ -583,6 +583,27 @@ const store = configureStore({
   ]
 },
 
+{
+  id: "eautos-gestartet",
+  condition: "started.includes('eautos')",
+  slides: [
+    {
+      type: "news", // text, multiple-choice, love-change, temperature-change
+      background: "zeitung", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
+      title: "SCHAFFEN WIR E?",
+      text: "Warum der Motor der Deutschen Wirtschaft ein Verbrennungsmotor ist.",
+    },
+    {
+      type: "love-change",
+      love: -7,
+      background: "zeitung"
+      text: "Droht ohne Verbrenner-Autos der wirtschaftliche Kollaps? Es kursieren wilde Mythen und Ängste. Ihre Beliebtheit leidete."
+    }
+  ]
+},
+
+
+
 
 
 
