@@ -423,8 +423,7 @@ const store = configureStore({
     {
       type: "berater", // text, multiple-choice
       background: "berater", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
-      title: "Die Abschaffung der Massentierhaltung ist seit Wochen DAS Thema...",
-      text: "",      
+      text: "Die Abschaffung der Massentierhaltung ist seit Wochen DAS Thema...",      
     },
     {
       type: "news", // text, multiple-choice
