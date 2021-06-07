@@ -678,21 +678,6 @@ const store = configureStore({
         {
           text: "Ja, Berater vertrauen",
           variable: "techdealgemacht",
-          slides: [
-            {
-              type: "news",
-              background: "zeitung",
-              title: "DER HANDSCHLAG FÜRS KLIMA",
-              text: "Alles auf eine Karte: Bundesregierung setzt beim Klimawandel auf die Innovationskraft deutscher Unternehmen."
-            },
-            {
-              type: "temperature-change",
-              background: "biertisch",
-              temperature: 0.1,
-              text: "Die Bevölkerung verlässt sich in Sachen Klimawandel jetzt – genau wie sie – auf die technischen Lösungen der Industrie... und achtet noch weniger auf's Klima. Die Erwärmung steigt."
-            }
-
-          ]
         },
         {
           text: "Nein, nicht auf ihn hören"
@@ -700,6 +685,29 @@ const store = configureStore({
       ]
     },
   ]
+},
+
+
+{
+
+  id: "techdeal-gemacht",
+  condition: "vars.techdealgemacht",
+  slides: [
+    {
+      type: "news",
+      background: "zeitung",
+      title: "DER HANDSCHLAG FÜRS KLIMA",
+      text: "Alles auf eine Karte: Bundesregierung setzt beim Klimawandel auf die Innovationskraft deutscher Unternehmen."
+    },
+    {
+      type: "temperature-change",
+      background: "biertisch",
+      temperature: 0.1,
+      text: "Die Bevölkerung verlässt sich in Sachen Klimawandel jetzt – genau wie sie – auf die technischen Lösungen der Industrie... und achtet noch weniger auf's Klima. Die Erwärmung steigt."
+    }
+
+  ]
+
 },
 
 
@@ -731,9 +739,8 @@ const store = configureStore({
     {
       type: "love-change", // text, multiple-choice, love-change, temperature-change
       background: "parlament", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
-      title: "",
+      love: -6,
       text: "Wer das Klima retten will, sollte wohl lieber die Klimasünder besteuern anstatt ihnen Geldgeschenke zu machen...",
-      position: "bottom",
     },
   ]
 },
