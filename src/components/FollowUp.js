@@ -6,7 +6,6 @@ import Thermometer from "./Thermometer";
 import Overlay from "./Overlay";
 
 import IconEnded from "../images/todo-ended.inline.svg";
-import imageNewspaper from "../images/newspaper.jpg";
 import imageInterview from "../images/interview.jpg";
 
 import "./FollowUp.css";
@@ -29,10 +28,8 @@ function FollowUp(props) {
   let imageSrc;
   switch (props.successImage) {
     case "newspaper":
-      imageSrc = imageNewspaper;
       break;
     default:
-      imageSrc = imageNewspaper;
       break;
   }
 
