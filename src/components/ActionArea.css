@@ -10,7 +10,7 @@
 }
 
 .action-area__list {
-  border-radius: 20px 0 0 20px;
+  border-radius: 20px;
   background: white;
   overflow: auto;
   margin-left: 90px;
@@ -23,8 +23,7 @@
   left: 15px;
   bottom: 15px;
   width: 90px;
-  background: white;
-  border-radius: 0 20px 20px 0;
+  background: transparent;
   display: flex;
   flex-direction: column;
   align-items: center;

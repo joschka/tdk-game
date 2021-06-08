@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { hot } from "react-hot-loader";
+import React, {useState, useEffect} from "react";
+import {useSelector, useDispatch} from "react-redux";
+import {hot} from "react-hot-loader";
 
 import "./LoveChart.css";
 
@@ -127,6 +127,16 @@ function LoveChart(props) {
   const opts = {
     className: ["love-chart", `love-chart--${props.size}`].join(" "),
   };
+
+  if (props.newDashboard) {
+    return <div className="love-chart-new">
+      {renderHeart()}
+      <div className="love-chart-new__label">
+        {formattedLabel}
+      </div>
+
+    </div>
+  }
 
   return (
     <div {...opts}>

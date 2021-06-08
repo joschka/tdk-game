@@ -1,0 +1,37 @@
+.level {
+}
+
+.level__label {
+  text-align: center;
+  color: var(--blue);
+  margin-bottom: 1px;
+  font-size: 13px;
+}
+
+.level__label--inactive {
+  opacity: 0.2;
+}
+
+.level__bar-outer {
+  overflow: hidden;
+  position: relative;
+  height: 10px;
+  width: 100%;
+  background-color: #fff;
+}
+
+.level__bar-outer--first {
+  border-radius: 5px 0 0 5px;
+}
+
+.level__bar-outer--last {
+  border-radius: 0 5px 5px 0;
+}
+
+.level__bar-inner {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  background-color: var(--blue);
+}

@@ -14,7 +14,7 @@ function ActionArea() {
   return (
     <div className="action-area">
       <div className="action-area__thermometer">
-        <LoveChart size="small" />
+        <LoveChart newDashboard={true} />
         <Thermometer size="large" />
       </div>
       <div className="action-area__list">

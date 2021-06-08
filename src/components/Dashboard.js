@@ -10,6 +10,7 @@ import ProgressBar from "./ProgressBar.js";
 import Calendar from "./Calendar";
 import LoveChartOverlay from "./LoveChartOverlay";
 import PauseButton from "./PauseButton";
+import Progress from "./Progress";
 
 import DashboardImage from "../images/dashboard.inline.svg";
 
@@ -50,7 +51,7 @@ function Dashboard(props) {
 
   return (
     <div>
-      <div {...opts}>
+      { false && <div {...opts}>
         {false && <div className="dashboard-new__container">
           <div className="dashboard-new__progress">
             <ProgressBar newDashboard={true} />
@@ -65,9 +66,10 @@ function Dashboard(props) {
             <LoveChartOverlay />
           </div>
         </div>}
-      </div>
-      <div>
+      </div>}
+      <div className="dashboard-new">
         <ProgressBar size={"large"} />
+        <Progress />
       </div>
       {false && (
         <div {...optsLarge}>
