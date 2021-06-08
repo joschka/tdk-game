@@ -99,7 +99,7 @@ function Action(props) {
         />
         <circle
           fill="none"
-          stroke="#a3d869"
+          stroke="#f3241c"
           strokeWidth="30"
           cx="200"
           cy="200"
