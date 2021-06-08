@@ -4,8 +4,12 @@ import {hot} from 'react-hot-loader';
 
 import './SpeechBubble.css';
 
-function SpeechBubble({text, head, noHead}) {
+function SpeechBubble(props) {
   const dispatch = useDispatch();
+
+  const {
+    text, head, noHead
+  } = props;
 
   const cssClasses = [
     "speech-bubble",
@@ -15,12 +19,15 @@ function SpeechBubble({text, head, noHead}) {
   return (
     <div className={cssClasses}>
       {!noHead && <div className='speech-bubble__head' />}
-      <p
+      {text && <p
         className='speech-bubble__content'
         dangerouslySetInnerHTML={{
           __html: text,
         }}
-      ></p>
+      ></p>}
+      {props.children && <div className='speech-bubble__content'>
+        {props.children}
+      </div>}
     </div>
   );
 }
