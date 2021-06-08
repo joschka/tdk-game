@@ -2,13 +2,13 @@
 }
 
 .action-list__sector {
-  padding: 15px 10px;
+  padding: 3px 10px;
   color: #fff;
 }
 
 .action-list__sector-title {
   color: #00aed8;
-  font-size: 16px;
+  font-size: 12px;
   padding-left: 15px;
   padding-bottom: 5px;
 }
