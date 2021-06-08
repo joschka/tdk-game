@@ -50,7 +50,7 @@ const store = configureStore({
         title: "CO2-Bepreisung",
         sector: "industry",
         description:
-          "Beim Zertifikatehandel muss für jede ausgestoßene Emission ein Zertifikat ersteigert werden, Verschmutzungsrechte sozusagen.<br/><br />Aus Klimaschutzperspektive ist der CO2 Preis eigentlich ein geniales Instrument, weil fast alle Emissionsquellen – vom Industriekraftwerk bis zum Lkw - erfasst werden könnten und mit der Anzahl der ausgegebenen Zertifikate die Emissionsmenge begrenzt werden kann, die jährlich ausgestoßen werden darf. Wie beim Spiel „Reise nach Jerusalem“ können schrittweise die Zertifikate so aus dem Verkehr gezogen werden, dass wir klimaneutral werden, ohne unser Restbudget zur Erreichung des 1,5-Grad-Ziels zu überschreiten. Durch die Knappheit erhöht sich der Zertifikatspreis – und damit der Anreiz auf klimaneutrale Technologien umzusteigen - automatisch.",
+          "Beim Zertifikatehandel muss für jede ausgestoßene Emission ein Zertifikat ersteigert werden, Verschmutzungsrechte sozusagen. <br /><br /> Aus Klimaschutzperspektive ist der CO2 Preis eigentlich ein geniales Instrument, weil fast alle Emissionsquellen – vom Industriekraftwerk bis zum Lkw - erfasst werden könnten und mit der Anzahl der ausgegebenen Zertifikate die Emissionsmenge begrenzt werden kann, die jährlich ausgestoßen werden darf. Wie beim Spiel „Reise nach Jerusalem“ können schrittweise die Zertifikate so aus dem Verkehr gezogen werden, dass wir klimaneutral werden, ohne unser Restbudget zur Erreichung des 1,5-Grad-Ziels zu überschreiten. Durch die Knappheit erhöht sich der Zertifikatspreis – und damit der Anreiz auf klimaneutrale Technologien umzusteigen - automatisch.  ",
         duration: duration.medium, //?
         temperature: -0.78125,
         state: "available",
@@ -116,7 +116,7 @@ const store = configureStore({
         title: "Kohleausstieg",
         sector: "energy",
         description:
-          "Erneuerbar erzeugter Strom ersetzt die fossilen Energieträger Gas, Kohle und Benzin in den Sektoren Wärme, Industrie und Verkehr vollständig. Wir fahren zukünftig mit Wind- und Solarenergie Elektroautos, erzeugen Wärme mit Wärmepumpen und stellen Industrieprozesse um. Dazu muss die elektrische Energie teilweise in andere Energieträger gewandelt - u.a. Wasserstoff, Power-to-X, - und Energiespeicher ausgebaut werden.",
+          "Ohne Kohleausstieg keine Klimawende. Wir müssen unsere Energieerzeugung grundlegend transformieren. ",
         duration: duration.short,
         temperature: -0.1875,
         state: "available",
