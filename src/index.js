@@ -72,7 +72,7 @@ const store = configureStore({
         title: "Moore nass machen",
         sector: "agriculture",
         description:
-          "95% der Moore in Deutschland wurden trockengelegt, aber nur nasse Moore speichern CO2 – also: Moore nass machen!",
+          "95 % der Moore in Deutschland wurden trockegelegt, aber nur nasse Moore speichern CO2 - also: Moore nass machen!",
         duration: duration.long,
         temperature: -0.09375,
         state: "available",
@@ -94,7 +94,7 @@ const store = configureStore({
         title: "E-Autos statt Verbrenner",
         sector: "mobility",
         description:
-          "Elektro statt Verbrennungsmotoren ab 2025: Uff ein schwieriges Thema in Deutschland: Das einzige EU-Land ohne Tempolimit. Die Emissionen dieses Bereichs lagen 2019 exakt genauso hoch wie 1990 – es tut weh, aber wir müssen hier ran.",
+          "Elektro statt Verbrennungsmotoren ab 2025:  Die Emissionen dieses Bereichs lagen 2019 exakt genauso hoch wie 1990!",
         duration: duration.medium,
         temperature: -0.21875,
         state: "available",
@@ -105,7 +105,7 @@ const store = configureStore({
         title: "Zuverlässige Züge",
         sector: "mobility",
         description:
-          "Noch ist der Zug nicht abgefahren(höhöhö) – aber der Deutschlandtakt ist nur dann flächendeckend realisierbar, wenn verbindlich festgelegt wird, dass Fernverkehr auch dort stattfindet, wo wir ihn brauchen und nicht nur dort, wo er betriebswirtschaftlich rentabel ist.",
+          "Noch ist der Zug nicht abgefahren – aber der Deutschlandtakt ist nur dann flächendeckend realisierbar, wenn verbindlich festgelegt wird, dass Fernverkehr auch dort stattfindet, wo wir ihn brauchen und nicht nur dort, wo er betriebswirtschaftlich rentabel ist.",
         duration: duration.medium,
         temperature: -0.171875,
         state: "available",
@@ -127,7 +127,7 @@ const store = configureStore({
         title: "Sonnen- und Windkraft",
         sector: "energy",
         description:
-          "Strom als Energieträger der Zukunft wird in zwei komplementären Bereichen erzeugt:<br /><br />Lokale Energiegemeinschaften: Eine dezentrale Energieerzeugung bietet gegenüber einer zentralen die Vorteile, dass sie für eine Stabilität des Netzes sorgt, lange Transportwege vermeidet sowie die Teilhabe und damit auch Akzeptanz unter Bürger:innen erhöht.<br /><br />Regionale EE-Kraftwerke: Der erforderliche Zubau von erneuerbaren Energien kann nicht von Bürger- und Industriequartieren allein bewältigt werden. Insbesondere für den hohen Energiebedarf der Industrie werden regionale „Kraftwerke“ großer Solar- und Windenergieanlagen benötigt, die große Mengen Strom erzeugen und die unabhängig agierenden und sich entfaltenden Energiegemeinschaften ergänzen.",
+          "Strom als Energieträger der Zukunft wird in zwei komplementären Bereichen erzeugt.<br /><br />Lokale Energiegemeinschaften: <br />Eine dezentrale Energieerzeugung bietet gegenüber einer zentralen die Vorteile, dass sie für eine Stabilität des Netzes sorgt, lange Transportwege vermeidet sowie die Teilhabe und damit auch Akzeptanz unter Bürger:innnen erhöht<br /><br />Regionale  EE-Kraftwerke:<br />Der erforderliche Zubau von erneuerbaren Energien kann nicht von Bürger- und Industriequartieren allein bewältigt werden. Insbesondere für den hohen Energiebedarf der Industrie werden regionale „Kraftwerke“ großer Solar- und Windenergieanlagen benötigt, die große Mengen Strom erzeugen und die unabhängig agierenden und sich entfaltenden Energiegemeinschaften ergänzen.",
         duration: duration.medium,
         temperature: -0.1875,
         state: "available",
@@ -138,7 +138,7 @@ const store = configureStore({
         title: "Reparieren statt Abreißen",
         sector: "buildings",
         description:
-          "Gebäude sanieren statt abreißen, Umbau vereinfachen statt neubauen. Hürden für Nutzungsänderungen und Umbauten im Bauordnungsrecht werden abgebaut. Für den Abriss von Gebäuden gilt künftig eine Genehmigungspflicht.<br /><br />Um bis 2035 im Gebäudesektor klimaneutral zu werden, müssen wir den hohen Energieverbrauch durch die Gebäude (30% des Gesamtenergieverbrauchs in Deutschland) reduzieren, indem wir sie besser dämmen. Gleichzeitig geht es darum, von fossilen Energieträgern auf strombasierte Wärmepumpen umzusteigen.<br /><br />Das jetzige Gebäude-Energiegesetz regelt einzig und allein den Betrieb unserer Gebäude.Wir betrachten den ganzen Lebenszyklus von Gebäuden. Vom Rohstoff zum Bau, vom Betrieb zum Rückbau. Häuser sollten schon so geplant werden, dass ihre Bestandteile kreislauffähig sind und kein Abfall entsteht.",
+          "Gebäude sanieren statt abreißen, Umbau vereinfachen statt neubauen. Hürden für Nutzungsänderungen und Umbauten im Bauordnungsrecht werden abgebaut. Um bis 2035 im Gebäudesektor klimaneutral zu werden, müssen wir den hohen Energieverbrauch durch die Gebäude (30% des Gesamtenergieverbrauchs in Deutschland) reduzieren, indem wir sie besser dämmen.",
         duration: duration.medium,
         temperature: -0.328125,
         state: "available",
