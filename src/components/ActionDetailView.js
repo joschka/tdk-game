@@ -124,7 +124,7 @@ function ActionDetailView(props) {
             Zurück
           </button>
           <button className="button" onClick={onStartClick}>
-            Jetzt starten!
+            Starten
           </button>
         </div>
       );
@@ -159,15 +159,13 @@ function ActionDetailView(props) {
         <div className="action-detail-view__speech-bubble">
           <SpeechBubble text={description} head={true} />
         </div>
-        {link && (
-          <div className="action-detail-view__link">
-            Mehr Informationen im Klimaplan von GermanZero e.V.
+        <div className="action-detail-view__link">
+          Mehr Informationen im Klimaplan von GermanZero e.V.
             <br />
-            <a href={link} rel="noopener" target="_blank">
-              Klimaplan in neuem Tab öffnen
+          <a href="https://germanzero.de/Erreichen/1-5-grad-massnahmen" rel="noopener" target="_blank">
+            Klimaplan in neuem Tab öffnen
             </a>
-          </div>
-        )}
+        </div>
       </div>
     </Overlay>
   );
