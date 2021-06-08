@@ -94,7 +94,7 @@ const store = configureStore({
         title: "E-Autos statt Verbrenner",
         sector: "mobility",
         description:
-          "Elektro statt Verbrennungsmotoren ab 2025:  Die Emissionen dieses Bereichs lagen 2019 exakt genauso hoch wie 1990!",
+          "Elektro- statt Verbrennungsmotoren: Deutlich weniger Emissionen und Wirtschaftsfaktor E-Mobilität",
         duration: duration.medium,
         temperature: -0.21875,
         state: "available",
@@ -1030,7 +1030,7 @@ const store = configureStore({
             type: "text", // text, multiple-choice, love-change, temperature-change
             background: "parlament", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
             title: "",
-            text: "„Vor 5 Jahren haben Sie 300 Milliarden Euro in diese. CO2-Staubsauger investiert. Bis heute läuft davon kein einziger ...“",
+            text: "„Vor 5 Jahren haben Sie 300 Milliarden Euro in diese CO2-Staubsauger investiert. Bis heute läuft davon kein einziger ...“",
             position: "bottom",
           },
           {
@@ -1108,7 +1108,7 @@ const store = configureStore({
             type: "love-change", // text, multiple-choice, love-change, temperature-change
             background: "biertisch", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
             love: 5,
-            text: "Sie haben Glück: Deutschland wird Weltmeister und die gute Laune wirkt sich positiv auf ihre Umfragewerte aus."
+            text: "Sie haben Glück: Deutschland wird Fußball-Weltmeister 2030 und die gute Laune wirkt sich positiv auf ihre Umfragewerte aus."
           }
         ]
       },

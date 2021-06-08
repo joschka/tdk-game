@@ -71,7 +71,7 @@ function GameOver({text}) {
           <TwitterShare />
         </div>
         <div style={{textAlign: 'center', fontSize: '16px', marginBottom: '10px'}}>
-          Wir haben die Gesetze geschrieben, die das Klima retten:
+          Wir haben die Gesetze geschrieben, die das Klima wirklich retten:
         </div>
         <a href="https://www.germanzero.de" className="button">
           Gesetze ansehen
