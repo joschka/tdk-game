@@ -1,8 +1,8 @@
 import React from "react";
-import { render } from "react-dom";
+import {render} from "react-dom";
 
-import { Provider } from "react-redux";
-import { configureStore } from "@reduxjs/toolkit";
+import {Provider} from "react-redux";
+import {configureStore} from "@reduxjs/toolkit";
 
 import rootReducer from "./reducers.js";
 
@@ -306,884 +306,892 @@ const store = configureStore({
           },
         ],
       },
-      
-
-
-
-{
-  // Gewonnen
-  id: "win",
-  condition: "tick == 636 && temperature <= 1.5",
-  slides: [
-    {
-      type: "game-over",
-      text: "Glückwunsch! Was für eine Klima-Kanzlerschaft!",
-      background: "jubel",
-    },
-  ],
-},
-
-{
-  // Verloren
-  id: "lost",
-  condition: "tick == 636 && temperature > 1.5",
-  slides: [
-    {
-      type: "game-over",
-      text: "Das war wohl nichts. Nochmal spielen?",
-      background: "buero",
-    },
-  ],
-},
-
-
-{
-  // Wahl 2025 verloren
-  id: "vote-lost-2025",
-  condition: "tick == 194 && love < 35",
-  slides: [
-    {
-      type: "vote",
-      text:
-        "Bundestagswahl 2025: Reicht es für Ihre zweite Amtszeit?",
-      background: "wahl",
-      // Gewichtung der anderen Balken
-      others: [1, 1.5, 2, 0.2],
-    },
-    {
-      type: "game-over",
-      text: "Für eine Wiederwahl hat Ihre Beliebheit leider nicht gereicht! Nochmal spielen?",
-      background: "interview",
-    },
-  ],
-},
-
-
-{
-  // Wahl 2025 gewonnen
-  id: "vote-won-2025",
-  condition: "tick == 194 && love >= 35",
-  slides: [
-    {
-      type: "vote",
-      text:
-        "Bundestagswahl 2025: Reicht es für Ihre zweite Amtszeit?",
-      background: "wahl",
-      // Gewichtung der anderen Balken
-      others: [1, 1.5, 2, 0.2],
-    },
-    {
-      type: "text",
-      text: "Wahlsieg! Sie bleiben 4 weitere Jahre im Amt.",
-      background: "jubel",
-    },
-  ],
-},
-
-
-
-{
-  // Wahl 2029 verloren
-  id: "vote-lost-2029",
-  condition: "tick == 388 && love < 35",
-  slides: [
-    {
-      type: "vote",
-      text:
-        "Bundestagswahl 2029: Wird das was mit der dritten Amtszeit?",
-      background: "wahl",
-      // Gewichtung der anderen Balken
-      others: [1, 1.5, 2, 0.2],
-    },
-    {
-      type: "game-over",
-      text: "Diesmal hat es für eine Wiederwahl nicht gereicht. Nochmal spielen?",
-      background: "interview",
-    },
-  ],
-},
-
-
-{
-  // Wahl 2029 gewonnen
-  id: "vote-won-2029",
-  condition: "tick == 388 && love >= 35",
-  slides: [
-    {
-      type: "vote",
-      text:
-        "Bundestagswahl 2029: Wird das was mit der dritten Amtszeit?",
-      background: "wahl",
-      // Gewichtung der anderen Balken
-      others: [1, 1.5, 2, 0.2],
-    },
-    {
-      type: "text",
-      text: "Glückwunsch! Sie können mit dem 3. Kabinett weiter regieren.",
-      background: "jubel",
-    },
-  ],
-},
-
-{
-  // Wahl 2033 verloren
-  id: "vote-lost-2033",
-  condition: "tick == 582 && love < 35",
-  slides: [
-    {
-      type: "vote",
-      text:
-        "Bundestagswahl 2033: Schaffen Sie es zum vierten Mal?",
-      background: "wahl",
-      // Gewichtung der anderen Balken
-      others: [1, 1.5, 2, 0.2],
-    },
-    {
-      type: "game-over",
-      text: "Diesmal macht Ihnen das Wahlergebnis einen Strich durch die Rechnung. Nochmal spielen?",
-      background: "interview",
-    },
-  ],
-},
-
-
-{
-  // Wahl 2033 gewonnen
-  id: "vote-won-2033",
-  condition: "tick == 582 && love >= 35",
-  slides: [
-    {
-      type: "vote",
-      text:
-        "Bundestagswahl 2033: Schaffen Sie es zum vierten Mal?",
-      background: "wahl",
-      // Gewichtung der anderen Balken
-      others: [1, 1.5, 2, 0.2],
-    },
-    {
-      type: "text",
-      text: "Schon wieder gewonnen! Ab auf die Zielgerade für 2035.",
-      background: "jubel",
-    },
-  ],
-},
-
-
-
-// KLIMAFOLGEN ONLY
-
-
-{
-  id: "folge-mehrwege",
-  condition: "done.includes('mehrwege')",
-  slides: [
-    {
-      type: "temperature-change", 
-      temperature: -0.4375,
-      silent: true
-    },
-  ]
-},
-
-{
-  id: "folge-moore",
-  condition: "done.includes('moore')",
-  slides: [
-    {
-      type: "temperature-change", 
-      temperature: -0.09375,
-      silent: true
-    },
-  ]
-},
-
-
-{
-  id: "folge-eautos",
-  condition: "done.includes('eautos')",
-  slides: [
-    {
-      type: "temperature-change", 
-      temperature: -0.21875,
-      silent: true
-    },
-  ]
-},
-
-{
-  id: "folge-zuege",
-  condition: "done.includes('zuege')",
-  slides: [
-    {
-      type: "temperature-change", 
-      temperature: -0.171875,
-      silent: true
-    },
-    {
-      type: "love-change", 
-      love: 8,
-      background: "buero",
-      text: "Die Züge fahren jetzt im ganzen Land zuverlässig und in hohem Takt – und im gleichen Zug steigt ihre Beliebtheit!"
-    }
-  ]
-},
-
-{
-  id: "folge-solarwind",
-  condition: "done.includes('solarwind')",
-  slides: [
-    {
-      type: "temperature-change", 
-      temperature: -0.1875,
-      silent: true
-    },
-  ]
-},
-
-{
-  id: "folge-reparieren",
-  condition: "done.includes('reparieren')",
-  slides: [
-    {
-      type: "temperature-change", 
-      temperature: -0.328125,
-      silent: true
-    },
-  ]
-},
-
-
-
-
-
-
-
-//////// STORIES ///////////
-
-
-
-
-{
-  // Erinnerung: Wenn Kohlausstieg bis 2028 noch nicht gemacht
-  id: "kohle-reminder",
-  condition: "tick > 304 && !(started.includes('kohleausstieg') || done.includes('kohleausstieg'))",
-  slides: [
-    {
-      type: "text",
-      text: "„Ähem. Es wäre an der Zeit, in den Kohleausstieg einzusteigen – meinen Sie nicht?“",
-      background: "berater",
-      position: "bottom",
-    },
-    {
-      type: "multiple-choice",
-      text: "",
-      background: "berater",
-      answers: [
-        {
-          text: "Völlig richtig. Los geht’s.",
-          slides: [
-            {
-              type: "news",
-              title: "KEINE KOHLE.",
-              text: "Können wir uns Strom bald nicht mehr leisten?",
-              background: "zeitung"
-            },
-            {
-              type: "love-change",
-              love: -3,
-              background: "zeitung"
-            }
-          ]
-        },
-        {
-          text: "Der Kohleausstieg ist ein so heißes Thema. Da warte ich lieber noch.",
-          slides: [
-            {
-              type: "news",
-              title: "VERPSPROCHEN: GEBROCHEN.",
-              text: "Regierung schiebt Zukunft auf die lange Bank.",
-              background: "zeitung"
-            },
-            {
-              type: "love-change",
-              love: -2,
-              background: "zeitung"
-            }
-
-          ]
-        }
-      ]
-    }
-
-  ]
-
-
-},
-
-
-
-{
-  id: "follow-up-kohle",
-  condition: "done.includes('kohleausstieg')",
-  slides: [
-    {
-      type: "temperature-change",
-      temperature: -0.1875,
-      background: "buero",
-      text: "Mit dem Kohleausstieg haben Sie den Klimakiller Nummer 1 gekillt!"
-    },
-    {
-      type: "text",
-      background: "parlament",
-      text: "Die Opposition fabuliert von Stromausfällen. Stimmt zwar nicht..."
-    },
-    {
-      type: "love-change",
-      love: -2,
-      background: "parlament",
-      text: "...kostet uns aber trotzdem Beliebtheit."
-    }
-
-  ]
-},
-
-
-{
-  id: "follow-up-tiere",
-  condition: "done.includes('tiere')",
-  slides: [
-    {
-      type: "text", // text, multiple-choice
-      background: "berater", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
-      text: "In der Debatte zur Abschaffung der Massentierhaltung geht es heiß her.",      
-      position: "bottom",
-    },
-    {
-      type: "news", // text, multiple-choice
-      background: "zeitung", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
-      title: "WARUM DER PREIS NICHT WURST IST!",
-      text: "Deutschlands neue Armuts-Vegetarier.",      
-    },
-    {
-      type: "love-change", // text, multiple-choice
-      background: "biertisch", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
-      love: -4,
-      text: "Null Bockwurst: Beim Fleischpreis verstehen die Deutschen keinen Spaß.",      
-    },
-    {
-      type: "temperature-change", // text, multiple-choice
-      background: "buero", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
-      temperature: -0.09375,
-      text: "Trotzdem gut fürs Klima: Die Temperatur sinkt.",      
-    }
-  ]
-},
-
-
-{
-  id: "tiere-nicht-umgesetzt",
-  condition: "tick > 500 && !done.includes('tiere')",
-  slides: [
-    {
-      type: "text", // text, multiple-choice
-      background: "buero", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
-      text: "Ihr treuloser Koalitionspartner hat in einem Interview Massentierhaltung thematisiert.",      
-      position: "top",
-    },
-    {
-      type: "text", // text, multiple-choice
-      background: "talkshow", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
-      text: "Bei Anne Will kommt das Thema zur Sprache.",      
-      position: "top",
-    },
-    {
-      type: "multiple-choice", // text, multiple-choice
-      background: "talkshow", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
-      text: "KÖNNEN WIR UNS BILLIGFLEISCH NOCH LEISTEN?",      
-      answers: [
-        {
-          text: "Keine Sorge. Das Kotelett ist ein Menschenrecht!",
-          slides: [
-            {
-              type: "love-change",
-              love: 5,
-              background: "talkshow",
-              text: "Richtig so! Ab auf den Grill mit dem Klimageschwätz!"
-            }
-          ]
-        },
-        {
-          text: "Nein, denn den Preis bezahlen am Ende wir alle.",
-          slides: [
-            {
-              type: "love-change",
-              love: -5,
-              background: "talkshow",
-              text: "„Ich verspreche Ihnen: Mit Ihrer Tofu-Politik kommen Sie in unserer Bratwurst-Nation nicht weit!“"
-            }
-          ]
-        }
-      ]
-    },
-  
-  ]
-},
-
-
-
-
-{
-  id: "co2-lobbyreaktion",
-  condition: "started.includes('co2bepreisung')",
-  slides: [
-    {
-      type: "text", // text, multiple-choice, love-change, temperature-change
-      background: "buero", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
-      title: "",
-      text: "Leider bezahlen wir sofort den Preis für den CO2-Preis.",
-      position: "top",
-    },
-    {
-      type: "love-change",
-      love: -8,
-      background: "buero",
-      text: "Arbeitsplatzverluste, Preisanstiege, Inflation: Unsere politischen Gegner lassen nichts unversucht, um uns zu schaden. Die Stimmung im Land ist angespannt."
-    }
-  ]
-},
-
-
-{
-  id: "follow-up-co2",
-  condition: "done.includes('co2bepreisung')",
-  slides: [
-    {
-      type: "text", // text, multiple-choice, love-change, temperature-change
-      background: "parlament", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
-      title: "",
-      text: "Glückwunsch! Die CO2-Bepreisung wurde mit einer knappen Mehrheit im Bundestag beschlossen.",
-      position: "top",
-    },
-    {
-      type: "temperature-change",
-      background: "parlament",
-      temperature: -0.78125,
-      text: "Ein großer Schritt! Keine Maßnahme senkt den CO2-Ausstoß so stark, wie ein vernünftiger Emissionshandel."
-    },
-    {
-      type: "news", // text, multiple-choice, love-change, temperature-change
-      background: "zeitung", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
-      title: "ENDLICH BEZAHLT FÜRS CO2 NICHT MEHR DIE UMWELT.",
-      text: "Warum die neue CO2-Bepreisung gut für Klima und Unternehmen ist.",
-      position: "top",
-    },
-    {
-      type: "multiple-choice", // text, multiple-choice, love-change, temperature-change
-      background: "interview", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
-      title: "",
-      text: "„Eine Frage: Was haben Sie mit den Milliarden-Einnahmen aus der CO2-Besteuerung vor?“",
-      position: "top",
-      answers: [
-        {
-          text: "Schwarze Null",
-          slides: [
-            {
-              type: "love-change",
-              love: -5,
-              background: "interview"
-            }
-          ]
-        },
-        {
-          text: "Stromsteuer senken",
-          slides: [
-            {
-              type: "love-change",
-              love: -3,
-              background: "interview"
-            }
-          ]
-        }
-      ]
-    },
-  ]
-},
-
-
-
-{
-  id: "eautos-gestartet",
-  condition: "started.includes('eautos')",
-  slides: [
-    {
-      type: "news", // text, multiple-choice, love-change, temperature-change
-      background: "zeitung", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
-      title: "SCHAFFEN WIR E?",
-      text: "Warum der Motor der Deutschen Wirtschaft  ein Benziner ist.",
-    },
-    {
-      type: "love-change",
-      love: -7,
-      background: "zeitung",
-      text: "Droht ohne Verbrenner-Autos der wirtschaftliche Kollaps? Es kursieren wilde Mythen und Ängste. Ihre Beliebtheit leidet."
-    }
-  ]
-},
-
-
-
-{
-  id: "eautos-follow-up-ohne-zug",
-  condition: "done.includes('eautos') && !done.includes('zuege')",
-  slides: [
-    {
-      type: "text", // text, multiple-choice, love-change, temperature-change
-      background: "buero", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
-      title: "",
-      text: "Sie haben den Verbrennungsmotor abgeschafft, aber nicht in Züge investiert!",
-      position: "bottom",
-    },
-    {
-      type: "news",
-      background: "zeitung",
-      title: "WIE DIE BUNDESREGIERUNG DEUTSCHLAND IN DEN STILLSTAND FÜHRT",
-      text: "Keine Autos, keine Züge, kein Fortkommen."
-    },
-    {
-      type: "love-change",
-      background: "buero",
-      love: -10,
-      text: "Sie sollten schnell die Moblitätfrage lösen!"
-    }
-  ]
-},
-
-
-{
-  id: "eautos-follow-up-erfolg",
-  condition: "done.includes('eautos') && done.includes('zuege')",
-  slides: [
-    {
-      type: "news", // text, multiple-choice, love-change, temperature-change
-      background: "zeitung", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
-      title: "ES ROLLT NICHT NUR, ES LÄUFT SOGAR.",
-      text: "3,2 Millionen Jobs dank Elektroautos.",
-    },
-    {
-      type: "love-change",
-      love: 12,
-      background: "zeitung",
-      text: "Das Autoland ist stolz auf seine E-Revolution"
-    }
-  ]
-},
-
-
-{
-  id: "eautos-follow-up-synth",
-  condition: "done.includes('eautos')",
-  slides: [
-    {
-      type: "multiple-choice", // text, multiple-choice, love-change, temperature-change
-      background: "kaminzimmer", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
-      text: "Der Wirtschaftsflügel ihrer Partei drängt darauf, synthetische Kraftstoffe auf die Agenda setzen.",
-      answers: [
-        {
-          text: "machen",
-          slides: [
-            {
-              type: "love-change",
-              love: 3,
-              background: "kaminzimmer",
-              text: "Das kommt gut an"
-            },
-            {
-              type: "temperature-change",
-              temperature: 0.2,
-              background: "kaminzimmer",
-              text: "Ist aber aus Klimasicht totaler Quatsch. Die Herstellung der Brennstoffe kostet viel zu viel Energie."
-            }
-          ]
-        },
-        {
-          text: "nicht machen",
-          slides: [
-            {
-              type: "text",
-              background: "berater",
-              text: "Gut, dass Sie das abgeleht haben. Die Herstellung der synthetischen Brennstoffe kostet viel zu viel Energie."
-            }
-          ]
-        }
-      ]
-    }
-  ]
-},
-
-
-
-{
-  id: "techn-loesung1",
-  condition: "tick == 228",
-  slides: [
-    {
-      type: "text", // text, multiple-choice, love-change, temperature-change
-      background: "kaminzimmer", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
-      title: "",
-      text: "Bei einem Kaminzimmer-Gespräch kommt ein Lobbyvertreter der Industrie auf Sie zu ...",
-      position: "top",
-    },
-    {
-      type: "multiple-choice", // text, multiple-choice, love-change, temperature-change
-      background: "kaminzimmer", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
-      title: "",
-      text: "„Das Mittel gegen den Klimawandel ist die Innovationskraft der deutschen Ingenieurskunst. Alles, was es dazu braucht: ein 300-Milliarden-Investitionspaket über die nächsten 5 Jahre.“",
-      position: "top",
-      answers: [
-        {
-          text: "machen",
-          variable: "techdealgemacht"
-        },
-        {
-          text: "nicht machen"
-        }
-      ]
-    },
-  ]
-},
-
-
-{
-  id: "techn-loesung2",
-  condition: "tick == 252 && !vars.techdealgemacht",
-  slides: [
-    {
-      type: "text", // text, multiple-choice, love-change, temperature-change
-      background: "berater", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
-      title: "",
-      text: "Ich bin mir sicher: Die Lösung fürs Klima wird eine technologische sein. Wir sollten jetzt wirklich 300 Milliarden in CO2-Staubsauger und Co investieren.",
-      position: "bottom",
-    },
-    {
-      type: "multiple-choice", // text, multiple-choice, love-change, temperature-change
-      background: "berater", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
-      title: "",
-      text: "300 Milliarden für CO2-Staubsauger ausgeben?",
-      position: "top",
-      answers: [
-        {
-          text: "Ja, Berater vertrauen",
-          variable: "techdealgemacht",
-        },
-        {
-          text: "Nein, nicht auf ihn hören"
-        }
-      ]
-    },
-  ]
-},
-
-
-{
-
-  id: "techdeal-gemacht",
-  condition: "vars.techdealgemacht",
-  slides: [
-    {
-      type: "news",
-      background: "zeitung",
-      title: "DER HANDSCHLAG FÜRS KLIMA",
-      text: "Alles auf eine Karte: Bundesregierung setzt beim Klimawandel auf die Innovationskraft deutscher Unternehmen."
-    },
-    {
-      type: "temperature-change",
-      background: "biertisch",
-      temperature: 0.1,
-      text: "Die Bevölkerung macht es Ihnen nach: Statt selbst aufs Klima zu achten, wartet sie auf die Klimarettung durch Technologie. Die Erwärmung steigt."
-    }
-
-  ]
-
-},
-
-
-{
-  id: "techdeal-opposition",
-  condition: "vars.techdealgemacht && tick == 528",
-  slides: [
-    {
-      type: "text", // text, multiple-choice, love-change, temperature-change
-      background: "parlament", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
-      title: "",
-      text: "Bei der Regierungsbefragung im Bundestag richtet die Opposition eine Frage direkt an Sie.",
-      position: "top",
-    },
-    {
-      type: "text", // text, multiple-choice, love-change, temperature-change
-      background: "parlament", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
-      title: "",
-      text: "„Vor 5 Jahren haben Sie 300 Milliarden Euro in diese. CO2-Staubsauger investiert. Bis heute läuft davon kein einziger ...“",
-      position: "bottom",
-    },
-    {
-      type: "text", // text, multiple-choice, love-change, temperature-change
-      background: "parlament", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
-      title: "",
-      text: "„Liebe Bundesregierung, Sie haben sich von der Industrie veräppeln lassen!“",
-      position: "bottom",
-    },
-    {
-      type: "love-change", // text, multiple-choice, love-change, temperature-change
-      background: "parlament", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
-      love: -6,
-      text: "Wer das Klima retten will, sollte wohl lieber die Klimasünder besteuern anstatt ihnen Geldgeschenke zu machen ...",
-    },
-    {
-      type: "temperature-change", // text, multiple-choice, love-change, temperature-change
-      background: "berater", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
-      temperature: -0.1,
-      text: "Die Opposition hat etwas übertrieben. Mit technischen Lösungen werden wir zwar nie unser Ziel erreichen, aber immerhin haben sie 0,1° Verbesserung gebracht.",
-    },
-  ]
-},
-
-
-{
-  id: "umfragewerte-im-keller",
-  condition: "love < 35 && ( (tick > 150 && tick < 192) || (tick > 334 && tick < 384) || (tick > 526 && tick < 576) )",
-  slides: [
-    {
-      type: "text", // text, multiple-choice, love-change, temperature-change
-      background: "berater", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
-      title: "",
-      text: "Ihre Umfragewerte sind irgendwie im Keller ...",
-      position: "bottom",
-    },
-    {
-      type: "multiple-choice", // text, multiple-choice, love-change, temperature-change
-      background: "berater", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
-      title: "",
-      text: "Was wollen Sie tun?",
-      position: "bottom",
-      answers: [
-        {
-          text: "Ab zu Anne Will",
-          slides: [
-            {
-              type: "love-change",
-              love: 2,
-              silent: true
-            }
-          ]
-        },
-        {
-          text: "Die Flotte der Bundesregierung endlich auf E-Autos umstellen.",
-          slides: [
-            {
-              type: "love-change",
-              love: 4,
-              silent: true
-            }
-          ]
-        }
-      ]
-    },
-  ]
-},
-
-
-{
-  id: "sosehensiegeraus",
-  condition: "tick == 424",
-  slides: [
-    {
-      type: "love-change", // text, multiple-choice, love-change, temperature-change
-      background: "biertisch", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
-      love: 5,
-      text: "Sie haben Glück: Deutschland wird Weltmeister und die gute Laune wirkt sich positiv auf ihre Umfragewerte aus."
-    }
-  ]
-},
-
-
-{
-  id: "populisten",
-  condition: "love < 40 && tick > 400 && temperature < 3",
-  slides: [
-    {
-      type: "temperature-change", // text, multiple-choice, love-change, temperature-change
-      background: "berater", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
-      temperature: 0,
-      text: "Nur noch wenige Grad Celsius bis zum Ziel: Sie haben dieses Land schon sehr verändert!"
-    },
-    {
-      type: "text", // text, multiple-choice, love-change, temperature-change
-      background: "parlament", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
-      text: "Leider haben bei so viel Veränderung die Populisten Aufwind."
-    },
-    {
-      type: "multiple-choice", // text, multiple-choice, love-change, temperature-change
-      background: "buero", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
-      text: "Was wollen Sie gegen die Populisten tun?",
-      answers: [
-        {
-          text: "Bedingungsloses Grundeinkommen auf den Weg bringen",
-          slides: [
-            {
-              type: "love-change",
-              background: "biertisch",
-              love: 15,
-              text: "Grundeinkommen stiftet Vertrauen – auch in Ihre Politik",
-              position: "top"
-            }
-          ]
-          
-        },
-        {
-          text: "Mit Populisten zusammenarbeiten",
-          slides: [
-            {
-              type: "love-change",
-              background: "talkshow",
-              love: -15,
-              text: "Zu ihren politischen Freunden zählen Sie auch Demokratiefeinde. Wie erklären Sie das Ihren Wähler*innen?",
-              position: "top"
-            }
-          ]
-        }
-      ]
-    },
-  ]
-},
-
-{
-  id: "erneuerbare-reminder",
-  condition: "tick == 176 && !(done.includes('solarwind') || started.includes('solarwind'))",
-  slides: [
-    {
-      type: "text", // text, multiple-choice, love-change, temperature-change
-      background: "berater", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
-      title: "",
-      text: "Also die Erneuerbaren sollten wir jetzt bald mal volle Power ausbauen.",
-      position: "bottom",
-    },
-    {
-      type: "multiple-choice", // text, multiple-choice, love-change, temperature-change
-      background: "berater", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
-      title: "",
-      text: "Wollen Sie Sonne und Windkraft?",
-      position: "bottom",
-      answers: [
-        {
-          text: "Ich schau mir das mal an."
-        },
-        {
-          text: "Ich steh schon genug unter Strom."
-        }
-      ]
-    }
-  ]
-},
+
+
+
+
+      {
+        // Gewonnen
+        id: "win",
+        condition: "tick == 636 && temperature <= 1.5",
+        slides: [
+          {
+            type: "game-over",
+            text: "Glückwunsch! Was für eine Klima-Kanzlerschaft!",
+            background: "jubel",
+          },
+        ],
+      },
+
+      {
+        // Verloren
+        id: "lost",
+        condition: "tick == 636 && temperature > 1.5",
+        slides: [
+          {
+            type: "game-over",
+            text: "Das war wohl nichts. Nochmal spielen?",
+            background: "buero",
+          },
+        ],
+      },
+
+
+      {
+        // Wahl 2025 verloren
+        id: "vote-lost-2025",
+        condition: "tick == 194 && love < 35",
+        slides: [
+          {
+            type: "vote",
+            text:
+              "Bundestagswahl 2025: Reicht es für Ihre zweite Amtszeit?",
+            background: "wahl",
+            // Gewichtung der anderen Balken
+            others: [1, 1.5, 2, 0.2],
+          },
+          {
+            type: "game-over",
+            text: "Für eine Wiederwahl hat Ihre Beliebheit leider nicht gereicht! Nochmal spielen?",
+            background: "interview",
+          },
+        ],
+      },
+
+
+      {
+        // Wahl 2025 gewonnen
+        id: "vote-won-2025",
+        condition: "tick == 194 && love >= 35",
+        slides: [
+          {
+            type: "vote",
+            text:
+              "Bundestagswahl 2025: Reicht es für Ihre zweite Amtszeit?",
+            background: "wahl",
+            // Gewichtung der anderen Balken
+            others: [1, 1.5, 2, 0.2],
+          },
+          {
+            type: "text",
+            text: "Wahlsieg! Sie bleiben 4 weitere Jahre im Amt.",
+            background: "jubel",
+          },
+        ],
+      },
+
+
+
+      {
+        // Wahl 2029 verloren
+        id: "vote-lost-2029",
+        condition: "tick == 388 && love < 35",
+        slides: [
+          {
+            type: "vote",
+            text:
+              "Bundestagswahl 2029: Wird das was mit der dritten Amtszeit?",
+            background: "wahl",
+            // Gewichtung der anderen Balken
+            others: [1, 1.5, 2, 0.2],
+          },
+          {
+            type: "game-over",
+            text: "Diesmal hat es für eine Wiederwahl nicht gereicht. Nochmal spielen?",
+            background: "interview",
+          },
+        ],
+      },
+
+
+      {
+        // Wahl 2029 gewonnen
+        id: "vote-won-2029",
+        condition: "tick == 388 && love >= 35",
+        slides: [
+          {
+            type: "vote",
+            text:
+              "Bundestagswahl 2029: Wird das was mit der dritten Amtszeit?",
+            background: "wahl",
+            // Gewichtung der anderen Balken
+            others: [1, 1.5, 2, 0.2],
+          },
+          {
+            type: "text",
+            text: "Glückwunsch! Sie können mit dem 3. Kabinett weiter regieren.",
+            background: "jubel",
+          },
+        ],
+      },
+
+      {
+        // Wahl 2033 verloren
+        id: "vote-lost-2033",
+        condition: "tick == 582 && love < 35",
+        slides: [
+          {
+            type: "vote",
+            text:
+              "Bundestagswahl 2033: Schaffen Sie es zum vierten Mal?",
+            background: "wahl",
+            // Gewichtung der anderen Balken
+            others: [1, 1.5, 2, 0.2],
+          },
+          {
+            type: "game-over",
+            text: "Diesmal macht Ihnen das Wahlergebnis einen Strich durch die Rechnung. Nochmal spielen?",
+            background: "interview",
+          },
+        ],
+      },
+
+
+      {
+        // Wahl 2033 gewonnen
+        id: "vote-won-2033",
+        condition: "tick == 582 && love >= 35",
+        slides: [
+          {
+            type: "vote",
+            text:
+              "Bundestagswahl 2033: Schaffen Sie es zum vierten Mal?",
+            background: "wahl",
+            // Gewichtung der anderen Balken
+            others: [1, 1.5, 2, 0.2],
+          },
+          {
+            type: "text",
+            text: "Schon wieder gewonnen! Ab auf die Zielgerade für 2035.",
+            background: "jubel",
+          },
+        ],
+      },
+
+
+
+      // KLIMAFOLGEN ONLY
+
+
+      {
+        id: "folge-mehrwege",
+        condition: "done.includes('mehrwege')",
+        slides: [
+          {
+            type: "temperature-change",
+            temperature: -0.4375,
+            silent: true
+          },
+        ]
+      },
+
+      {
+        id: "folge-moore",
+        condition: "done.includes('moore')",
+        slides: [
+          {
+            type: "temperature-change",
+            temperature: -0.09375,
+            silent: true
+          },
+        ]
+      },
+
+
+      {
+        id: "folge-eautos",
+        condition: "done.includes('eautos')",
+        slides: [
+          {
+            type: "temperature-change",
+            temperature: -0.21875,
+            silent: true
+          },
+        ]
+      },
+
+      {
+        id: "folge-zuege",
+        condition: "done.includes('zuege')",
+        slides: [
+          {
+            type: "temperature-change",
+            temperature: -0.171875,
+            silent: true
+          },
+          {
+            type: "love-change",
+            love: 8,
+            background: "buero",
+            text: "Die Züge fahren jetzt im ganzen Land zuverlässig und in hohem Takt – und im gleichen Zug steigt ihre Beliebtheit!"
+          }
+        ]
+      },
+
+      {
+        id: "folge-solarwind",
+        condition: "done.includes('solarwind')",
+        slides: [
+          {
+            type: "temperature-change",
+            temperature: -0.1875,
+            silent: true
+          },
+        ]
+      },
+
+      {
+        id: "folge-reparieren",
+        condition: "done.includes('reparieren')",
+        slides: [
+          {
+            type: "temperature-change",
+            temperature: -0.328125,
+            silent: true
+          },
+        ]
+      },
+
+
+
+
+
+
+
+      //////// STORIES ///////////
+
+
+
+
+      {
+        // Erinnerung: Wenn Kohlausstieg bis 2028 noch nicht gemacht
+        id: "kohle-reminder",
+        condition: "tick > 304 && !(started.includes('kohleausstieg') || done.includes('kohleausstieg'))",
+        slides: [
+          {
+            type: "text",
+            text: "„Ähem. Es wäre an der Zeit, in den Kohleausstieg einzusteigen – meinen Sie nicht?“",
+            background: "berater",
+            position: "bottom",
+          },
+          {
+            type: "multiple-choice",
+            text: "",
+            background: "berater",
+            answers: [
+              {
+                text: "Völlig richtig. Los geht’s.",
+                slides: [
+                  {
+                    type: "news",
+                    newsId: 8,
+                    title: "KEINE KOHLE.",
+                    text: "Können wir uns Strom bald nicht mehr leisten?",
+                    background: "zeitung"
+                  },
+                  {
+                    type: "love-change",
+                    love: -3,
+                    background: "zeitung"
+                  }
+                ]
+              },
+              {
+                text: "Der Kohleausstieg ist ein so heißes Thema. Da warte ich lieber noch.",
+                slides: [
+                  {
+                    type: "news",
+                    newsId: 7,
+                    title: "VERPSPROCHEN: GEBROCHEN.",
+                    text: "Regierung schiebt Zukunft auf die lange Bank.",
+                    background: "zeitung"
+                  },
+                  {
+                    type: "love-change",
+                    love: -2,
+                    background: "zeitung"
+                  }
+
+                ]
+              }
+            ]
+          }
+
+        ]
+
+
+      },
+
+
+
+      {
+        id: "follow-up-kohle",
+        condition: "done.includes('kohleausstieg')",
+        slides: [
+          {
+            type: "temperature-change",
+            temperature: -0.1875,
+            background: "buero",
+            text: "Mit dem Kohleausstieg haben Sie den Klimakiller Nummer 1 gekillt!"
+          },
+          {
+            type: "text",
+            background: "parlament",
+            text: "Die Opposition fabuliert von Stromausfällen. Stimmt zwar nicht..."
+          },
+          {
+            type: "love-change",
+            love: -2,
+            background: "parlament",
+            text: "...kostet uns aber trotzdem Beliebtheit."
+          }
+
+        ]
+      },
+
+
+      {
+        id: "follow-up-tiere",
+        condition: "done.includes('tiere')",
+        slides: [
+          {
+            type: "text", // text, multiple-choice
+            background: "berater", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
+            text: "In der Debatte zur Abschaffung der Massentierhaltung geht es heiß her.",
+            position: "bottom",
+          },
+          {
+            type: "news", // text, multiple-choice
+            newsId: 6,
+            background: "zeitung", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
+            title: "WARUM DER PREIS NICHT WURST IST!",
+            text: "Deutschlands neue Armuts-Vegetarier.",
+          },
+          {
+            type: "love-change", // text, multiple-choice
+            background: "biertisch", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
+            love: -4,
+            text: "Null Bockwurst: Beim Fleischpreis verstehen die Deutschen keinen Spaß.",
+          },
+          {
+            type: "temperature-change", // text, multiple-choice
+            background: "buero", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
+            temperature: -0.09375,
+            text: "Trotzdem gut fürs Klima: Die Temperatur sinkt.",
+          }
+        ]
+      },
+
+
+      {
+        id: "tiere-nicht-umgesetzt",
+        condition: "tick > 500 && !done.includes('tiere')",
+        slides: [
+          {
+            type: "text", // text, multiple-choice
+            background: "buero", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
+            text: "Ihr treuloser Koalitionspartner hat in einem Interview Massentierhaltung thematisiert.",
+            position: "top",
+          },
+          {
+            type: "text", // text, multiple-choice
+            background: "talkshow", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
+            text: "Bei Anne Will kommt das Thema zur Sprache.",
+            position: "top",
+          },
+          {
+            type: "multiple-choice", // text, multiple-choice
+            background: "talkshow", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
+            text: "KÖNNEN WIR UNS BILLIGFLEISCH NOCH LEISTEN?",
+            answers: [
+              {
+                text: "Keine Sorge. Das Kotelett ist ein Menschenrecht!",
+                slides: [
+                  {
+                    type: "love-change",
+                    love: 5,
+                    background: "talkshow",
+                    text: "Richtig so! Ab auf den Grill mit dem Klimageschwätz!"
+                  }
+                ]
+              },
+              {
+                text: "Nein, denn den Preis bezahlen am Ende wir alle.",
+                slides: [
+                  {
+                    type: "love-change",
+                    love: -5,
+                    background: "talkshow",
+                    text: "„Ich verspreche Ihnen: Mit Ihrer Tofu-Politik kommen Sie in unserer Bratwurst-Nation nicht weit!“"
+                  }
+                ]
+              }
+            ]
+          },
+
+        ]
+      },
+
+
+
+
+      {
+        id: "co2-lobbyreaktion",
+        condition: "started.includes('co2bepreisung')",
+        slides: [
+          {
+            type: "text", // text, multiple-choice, love-change, temperature-change
+            background: "buero", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
+            title: "",
+            text: "Leider bezahlen wir sofort den Preis für den CO2-Preis.",
+            position: "top",
+          },
+          {
+            type: "love-change",
+            love: -8,
+            background: "buero",
+            text: "Arbeitsplatzverluste, Preisanstiege, Inflation: Unsere politischen Gegner lassen nichts unversucht, um uns zu schaden. Die Stimmung im Land ist angespannt."
+          }
+        ]
+      },
+
+
+      {
+        id: "follow-up-co2",
+        condition: "done.includes('co2bepreisung')",
+        slides: [
+          {
+            type: "text", // text, multiple-choice, love-change, temperature-change
+            background: "parlament", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
+            title: "",
+            text: "Glückwunsch! Die CO2-Bepreisung wurde mit einer knappen Mehrheit im Bundestag beschlossen.",
+            position: "top",
+          },
+          {
+            type: "temperature-change",
+            background: "parlament",
+            temperature: -0.78125,
+            text: "Ein großer Schritt! Keine Maßnahme senkt den CO2-Ausstoß so stark, wie ein vernünftiger Emissionshandel."
+          },
+          {
+            type: "news", // text, multiple-choice, love-change, temperature-change
+            newsId: 5,
+            background: "zeitung", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
+            title: "ENDLICH BEZAHLT FÜRS CO2 NICHT MEHR DIE UMWELT.",
+            text: "Warum die neue CO2-Bepreisung gut für Klima und Unternehmen ist.",
+            position: "top",
+          },
+          {
+            type: "multiple-choice", // text, multiple-choice, love-change, temperature-change
+            background: "interview", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
+            title: "",
+            text: "„Eine Frage: Was haben Sie mit den Milliarden-Einnahmen aus der CO2-Besteuerung vor?“",
+            position: "top",
+            answers: [
+              {
+                text: "Schwarze Null",
+                slides: [
+                  {
+                    type: "love-change",
+                    love: -5,
+                    background: "interview"
+                  }
+                ]
+              },
+              {
+                text: "Stromsteuer senken",
+                slides: [
+                  {
+                    type: "love-change",
+                    love: -3,
+                    background: "interview"
+                  }
+                ]
+              }
+            ]
+          },
+        ]
+      },
+
+
+
+      {
+        id: "eautos-gestartet",
+        condition: "started.includes('eautos')",
+        slides: [
+          {
+            type: "news", // text, multiple-choice, love-change, temperature-change
+            newsId: 4,
+            background: "zeitung", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
+            title: "SCHAFFEN WIR E?",
+            text: "Warum der Motor der Deutschen Wirtschaft  ein Benziner ist.",
+          },
+          {
+            type: "love-change",
+            love: -7,
+            background: "zeitung",
+            text: "Droht ohne Verbrenner-Autos der wirtschaftliche Kollaps? Es kursieren wilde Mythen und Ängste. Ihre Beliebtheit leidet."
+          }
+        ]
+      },
+
+
+
+      {
+        id: "eautos-follow-up-ohne-zug",
+        condition: "done.includes('eautos') && !done.includes('zuege')",
+        slides: [
+          {
+            type: "text", // text, multiple-choice, love-change, temperature-change
+            background: "buero", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
+            title: "",
+            text: "Sie haben den Verbrennungsmotor abgeschafft, aber nicht in Züge investiert!",
+            position: "bottom",
+          },
+          {
+            type: "news",
+            newsId: 3,
+            background: "zeitung",
+            title: "WIE DIE BUNDESREGIERUNG DEUTSCHLAND IN DEN STILLSTAND FÜHRT",
+            text: "Keine Autos, keine Züge, kein Fortkommen."
+          },
+          {
+            type: "love-change",
+            background: "buero",
+            love: -10,
+            text: "Sie sollten schnell die Moblitätfrage lösen!"
+          }
+        ]
+      },
+
+
+      {
+        id: "eautos-follow-up-erfolg",
+        condition: "done.includes('eautos') && done.includes('zuege')",
+        slides: [
+          {
+            type: "news", // text, multiple-choice, love-change, temperature-change
+            newsId: 2,
+            background: "zeitung", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
+            title: "ES ROLLT NICHT NUR, ES LÄUFT SOGAR.",
+            text: "3,2 Millionen Jobs dank Elektroautos.",
+          },
+          {
+            type: "love-change",
+            love: 12,
+            background: "zeitung",
+            text: "Das Autoland ist stolz auf seine E-Revolution"
+          }
+        ]
+      },
+
+
+      {
+        id: "eautos-follow-up-synth",
+        condition: "done.includes('eautos')",
+        slides: [
+          {
+            type: "multiple-choice", // text, multiple-choice, love-change, temperature-change
+            background: "kaminzimmer", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
+            text: "Der Wirtschaftsflügel ihrer Partei drängt darauf, synthetische Kraftstoffe auf die Agenda setzen.",
+            answers: [
+              {
+                text: "machen",
+                slides: [
+                  {
+                    type: "love-change",
+                    love: 3,
+                    background: "kaminzimmer",
+                    text: "Das kommt gut an"
+                  },
+                  {
+                    type: "temperature-change",
+                    temperature: 0.2,
+                    background: "kaminzimmer",
+                    text: "Ist aber aus Klimasicht totaler Quatsch. Die Herstellung der Brennstoffe kostet viel zu viel Energie."
+                  }
+                ]
+              },
+              {
+                text: "nicht machen",
+                slides: [
+                  {
+                    type: "text",
+                    background: "berater",
+                    text: "Gut, dass Sie das abgeleht haben. Die Herstellung der synthetischen Brennstoffe kostet viel zu viel Energie."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+
+
+
+      {
+        id: "techn-loesung1",
+        condition: "tick == 228",
+        slides: [
+          {
+            type: "text", // text, multiple-choice, love-change, temperature-change
+            background: "kaminzimmer", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
+            title: "",
+            text: "Bei einem Kaminzimmer-Gespräch kommt ein Lobbyvertreter der Industrie auf Sie zu ...",
+            position: "top",
+          },
+          {
+            type: "multiple-choice", // text, multiple-choice, love-change, temperature-change
+            background: "kaminzimmer", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
+            title: "",
+            text: "„Das Mittel gegen den Klimawandel ist die Innovationskraft der deutschen Ingenieurskunst. Alles, was es dazu braucht: ein 300-Milliarden-Investitionspaket über die nächsten 5 Jahre.“",
+            position: "top",
+            answers: [
+              {
+                text: "machen",
+                variable: "techdealgemacht"
+              },
+              {
+                text: "nicht machen"
+              }
+            ]
+          },
+        ]
+      },
+
+
+      {
+        id: "techn-loesung2",
+        condition: "tick == 252 && !vars.techdealgemacht",
+        slides: [
+          {
+            type: "text", // text, multiple-choice, love-change, temperature-change
+            background: "berater", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
+            title: "",
+            text: "Ich bin mir sicher: Die Lösung fürs Klima wird eine technologische sein. Wir sollten jetzt wirklich 300 Milliarden in CO2-Staubsauger und Co investieren.",
+            position: "bottom",
+          },
+          {
+            type: "multiple-choice", // text, multiple-choice, love-change, temperature-change
+            background: "berater", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
+            title: "",
+            text: "300 Milliarden für CO2-Staubsauger ausgeben?",
+            position: "top",
+            answers: [
+              {
+                text: "Ja, Berater vertrauen",
+                variable: "techdealgemacht",
+              },
+              {
+                text: "Nein, nicht auf ihn hören"
+              }
+            ]
+          },
+        ]
+      },
+
+
+      {
+
+        id: "techdeal-gemacht",
+        condition: "vars.techdealgemacht",
+        slides: [
+          {
+            type: "news",
+            background: "zeitung",
+            newsId: 1,
+            title: "DER HANDSCHLAG FÜRS KLIMA",
+            text: "Alles auf eine Karte: Bundesregierung setzt beim Klimawandel auf die Innovationskraft deutscher Unternehmen."
+          },
+          {
+            type: "temperature-change",
+            background: "biertisch",
+            temperature: 0.1,
+            text: "Die Bevölkerung macht es Ihnen nach: Statt selbst aufs Klima zu achten, wartet sie auf die Klimarettung durch Technologie. Die Erwärmung steigt."
+          }
+
+        ]
+
+      },
+
+
+      {
+        id: "techdeal-opposition",
+        condition: "vars.techdealgemacht && tick == 528",
+        slides: [
+          {
+            type: "text", // text, multiple-choice, love-change, temperature-change
+            background: "parlament", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
+            title: "",
+            text: "Bei der Regierungsbefragung im Bundestag richtet die Opposition eine Frage direkt an Sie.",
+            position: "top",
+          },
+          {
+            type: "text", // text, multiple-choice, love-change, temperature-change
+            background: "parlament", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
+            title: "",
+            text: "„Vor 5 Jahren haben Sie 300 Milliarden Euro in diese. CO2-Staubsauger investiert. Bis heute läuft davon kein einziger ...“",
+            position: "bottom",
+          },
+          {
+            type: "text", // text, multiple-choice, love-change, temperature-change
+            background: "parlament", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
+            title: "",
+            text: "„Liebe Bundesregierung, Sie haben sich von der Industrie veräppeln lassen!“",
+            position: "bottom",
+          },
+          {
+            type: "love-change", // text, multiple-choice, love-change, temperature-change
+            background: "parlament", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
+            love: -6,
+            text: "Wer das Klima retten will, sollte wohl lieber die Klimasünder besteuern anstatt ihnen Geldgeschenke zu machen ...",
+          },
+          {
+            type: "temperature-change", // text, multiple-choice, love-change, temperature-change
+            background: "berater", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
+            temperature: -0.1,
+            text: "Die Opposition hat etwas übertrieben. Mit technischen Lösungen werden wir zwar nie unser Ziel erreichen, aber immerhin haben sie 0,1° Verbesserung gebracht.",
+          },
+        ]
+      },
+
+
+      {
+        id: "umfragewerte-im-keller",
+        condition: "love < 35 && ( (tick > 150 && tick < 192) || (tick > 334 && tick < 384) || (tick > 526 && tick < 576) )",
+        slides: [
+          {
+            type: "text", // text, multiple-choice, love-change, temperature-change
+            background: "berater", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
+            title: "",
+            text: "Ihre Umfragewerte sind irgendwie im Keller ...",
+            position: "bottom",
+          },
+          {
+            type: "multiple-choice", // text, multiple-choice, love-change, temperature-change
+            background: "berater", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
+            title: "",
+            text: "Was wollen Sie tun?",
+            position: "bottom",
+            answers: [
+              {
+                text: "Ab zu Anne Will",
+                slides: [
+                  {
+                    type: "love-change",
+                    love: 2,
+                    silent: true
+                  }
+                ]
+              },
+              {
+                text: "Die Flotte der Bundesregierung endlich auf E-Autos umstellen.",
+                slides: [
+                  {
+                    type: "love-change",
+                    love: 4,
+                    silent: true
+                  }
+                ]
+              }
+            ]
+          },
+        ]
+      },
+
+
+      {
+        id: "sosehensiegeraus",
+        condition: "tick == 424",
+        slides: [
+          {
+            type: "love-change", // text, multiple-choice, love-change, temperature-change
+            background: "biertisch", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
+            love: 5,
+            text: "Sie haben Glück: Deutschland wird Weltmeister und die gute Laune wirkt sich positiv auf ihre Umfragewerte aus."
+          }
+        ]
+      },
+
+
+      {
+        id: "populisten",
+        condition: "love < 40 && tick > 400 && temperature < 3",
+        slides: [
+          {
+            type: "temperature-change", // text, multiple-choice, love-change, temperature-change
+            background: "berater", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
+            temperature: 0,
+            text: "Nur noch wenige Grad Celsius bis zum Ziel: Sie haben dieses Land schon sehr verändert!"
+          },
+          {
+            type: "text", // text, multiple-choice, love-change, temperature-change
+            background: "parlament", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
+            text: "Leider haben bei so viel Veränderung die Populisten Aufwind."
+          },
+          {
+            type: "multiple-choice", // text, multiple-choice, love-change, temperature-change
+            background: "buero", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
+            text: "Was wollen Sie gegen die Populisten tun?",
+            answers: [
+              {
+                text: "Bedingungsloses Grundeinkommen auf den Weg bringen",
+                slides: [
+                  {
+                    type: "love-change",
+                    background: "biertisch",
+                    love: 15,
+                    text: "Grundeinkommen stiftet Vertrauen – auch in Ihre Politik",
+                    position: "top"
+                  }
+                ]
+
+              },
+              {
+                text: "Mit Populisten zusammenarbeiten",
+                slides: [
+                  {
+                    type: "love-change",
+                    background: "talkshow",
+                    love: -15,
+                    text: "Zu ihren politischen Freunden zählen Sie auch Demokratiefeinde. Wie erklären Sie das Ihren Wähler*innen?",
+                    position: "top"
+                  }
+                ]
+              }
+            ]
+          },
+        ]
+      },
+
+      {
+        id: "erneuerbare-reminder",
+        condition: "tick == 176 && !(done.includes('solarwind') || started.includes('solarwind'))",
+        slides: [
+          {
+            type: "text", // text, multiple-choice, love-change, temperature-change
+            background: "berater", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
+            title: "",
+            text: "Also die Erneuerbaren sollten wir jetzt bald mal volle Power ausbauen.",
+            position: "bottom",
+          },
+          {
+            type: "multiple-choice", // text, multiple-choice, love-change, temperature-change
+            background: "berater", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
+            title: "",
+            text: "Wollen Sie Sonne und Windkraft?",
+            position: "bottom",
+            answers: [
+              {
+                text: "Ich schau mir das mal an."
+              },
+              {
+                text: "Ich steh schon genug unter Strom."
+              }
+            ]
+          }
+        ]
+      },
 
 
     ],
@@ -1199,21 +1207,21 @@ if (process.env.NODE_ENV !== "production" && module.hot) {
 window.store = store;
 
 window.tick = (value) => {
-  return window.store.dispatch({ type: "clock/tick", data: value });
+  return window.store.dispatch({type: "clock/tick", data: value});
 };
 
 window.love = (value) => {
-  return window.store.dispatch({ type: "love/set", data: value });
+  return window.store.dispatch({type: "love/set", data: value});
 };
 
 window.temp = (value) => {
-  return window.store.dispatch({ type: "temperature/set", data: value });
+  return window.store.dispatch({type: "temperature/set", data: value});
 };
 
 window.action = (value) => {
   return window.store.dispatch({
     type: "action/end",
-    data: { id: "" + value },
+    data: {id: "" + value},
   });
 };
 
@@ -1222,11 +1230,11 @@ window.vars = () => {
 };
 
 window.play = () => {
-  return window.store.dispatch({ type: "clock/start" });
+  return window.store.dispatch({type: "clock/start"});
 };
 
 window.pause = () => {
-  return window.store.dispatch({ type: "clock/stop" });
+  return window.store.dispatch({type: "clock/stop"});
 };
 
 render(
