@@ -194,7 +194,7 @@ function Action(props) {
         data: {tick: tick + 1, future: {type: "follow-up", title, temperature, love, questions, successImage}},
       });*/
     }
-  });
+  }, [state, progressPercentage]);
 
   const cssClasses = [
     "action",

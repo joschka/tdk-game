@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { hot } from "react-hot-loader";
+import React, {useState, useEffect} from "react";
+import {useSelector, useDispatch} from "react-redux";
+import {hot} from "react-hot-loader";
 
 import "./Clock.css";
 
@@ -15,7 +15,21 @@ function Clock() {
 
     const intervalId = setInterval(
       () => {
-        dispatch({ type: "clock/tick" });
+        dispatch({type: "clock/tick"});
+        if (window.tempChange) {
+          console.log("window.tempChange", window.tempChange);
+          Object.values(window.tempChange).forEach(v => {
+            dispatch({type: "temperature/increase", data: v});
+          });
+          window.tempChange = null;
+        }
+        if (window.loveChange) {
+          console.log("window.loveChange", window.loveChange);
+          Object.values(window.loveChange).forEach(v => {
+            dispatch({type: "love/change", data: v});
+          });
+          window.loveChange = null;
+        }
       },
       isFast ? 200 : 500
     );

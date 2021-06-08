@@ -91,11 +91,11 @@ function ActionDetailView(props) {
   const renderStars = () => {
     const stars = [];
     for (let i = 0; i < starCount; i++) {
-      stars.push(<MiniThermometerFilled />);
+      stars.push(<MiniThermometerFilled key={i} />);
     }
 
     for (let i = starCount; i < 5; i++) {
-      stars.push(<MiniThermometerEmpty />);
+      stars.push(<MiniThermometerEmpty key={i} />);
     }
 
     return stars;

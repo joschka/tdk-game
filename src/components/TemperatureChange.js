@@ -6,7 +6,7 @@ import Thermometer from "./Thermometer";
 
 import "./TemperatureChange.css";
 
-function TemperatureChange({onClick, text, silent, temperature}) {
+function TemperatureChange({id, onClick, text, silent, temperature, delayedDispatch}) {
   const dispatch = useDispatch();
 
   const currentTemperature = useSelector((state) => state.temperature.current);
@@ -22,22 +22,31 @@ function TemperatureChange({onClick, text, silent, temperature}) {
   );
 
   useEffect(() => {
-    let timer = setTimeout(() => {
-      setThermometerProps({
-        temperature: currentTemperature + temperature,
-      });
-    }, 500);
+    console.log("tc");
+    window.tempChange = window.tempChange || {};
+    window.tempChange[id] = temperature;
+    // let timer = setTimeout(() => {
+    //   setThermometerProps({
+    //     temperature: currentTemperature + temperature,
+    //   });
+    // }, 500);
 
-    return function () {
-      clearTimeout(timer);
-      dispatch({type: "temperature/increase", data: temperature});
-    };
+    if (silent) {
+      onClick();
+    }
+
+    //return function () {
+    //  //dispatch({type: "temperature/increase", data: temperature});
+    //  !finished && delayedDispatch({type: "temperature/increase", data: temperature});
+    //  // clearTimeout(timer);
+    //  setFinished(true);
+    //};
   }, []);
 
-  if (silent && !finished) {
-    setFinished(true);
-    onClick();
-  }
+  // if (silent && !finished) {
+  //   setFinished(true);
+  //   onClick();
+  // }
 
   if (silent) {
     return null;
