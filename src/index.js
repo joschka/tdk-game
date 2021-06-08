@@ -310,8 +310,6 @@ const store = configureStore({
 
 
 
-
-
 {
   // Gewonnen
   id: "win",
@@ -332,7 +330,7 @@ const store = configureStore({
   slides: [
     {
       type: "game-over",
-      text: "Das war wohl nichts. <br>Nochmal spielen?",
+      text: "Das war wohl nichts. Nochmal spielen?",
       background: "buero",
     },
   ],
@@ -354,7 +352,7 @@ const store = configureStore({
     },
     {
       type: "game-over",
-      text: "Für eine Wiederwahl hat es leider nicht gereicht! Nochmal spielen?",
+      text: "Für eine Wiederwahl hat Ihre Beliebheit leider nicht gereicht! Nochmal spielen?",
       background: "interview",
     },
   ],
@@ -376,7 +374,7 @@ const store = configureStore({
     },
     {
       type: "text",
-      text: "Wahlsieg! Sie bleiben 4 weitere Jahre im Amt!",
+      text: "Wahlsieg! Sie bleiben 4 weitere Jahre im Amt.",
       background: "jubel",
     },
   ],
@@ -392,14 +390,14 @@ const store = configureStore({
     {
       type: "vote",
       text:
-        "Bundestagswahl 2029: Bleiben Sie im Amt?",
+        "Bundestagswahl 2029: Wird das was mit der dritten Amtszeit?",
       background: "wahl",
       // Gewichtung der anderen Balken
       others: [1, 1.5, 2, 0.2],
     },
     {
       type: "game-over",
-      text: "Für eine Wiederwahl hat es leider nicht gereicht! Nochmal spielen?",
+      text: "Diesmal hat es für eine Wiederwahl nicht gereicht. Nochmal spielen?",
       background: "interview",
     },
   ],
@@ -414,14 +412,14 @@ const store = configureStore({
     {
       type: "vote",
       text:
-        "Bundestagswahl 2029: Bleiben Sie im Amt?",
+        "Bundestagswahl 2029: Wird das was mit der dritten Amtszeit?",
       background: "wahl",
       // Gewichtung der anderen Balken
       others: [1, 1.5, 2, 0.2],
     },
     {
       type: "text",
-      text: "Wahlsieg! Sie bleiben 4 weitere Jahre im Amt!",
+      text: "Glückwunsch! Sie können mit dem 3. Kabinett weiter regieren.",
       background: "jubel",
     },
   ],
@@ -442,7 +440,7 @@ const store = configureStore({
     },
     {
       type: "game-over",
-      text: "Für eine Wiederwahl hat es leider nicht gereicht! Nochmal spielen?",
+      text: "Diesmal macht Ihnen das Wahlergebnis einen Strich durch die Rechnung. Nochmal spielen?",
       background: "interview",
     },
   ],
@@ -464,7 +462,7 @@ const store = configureStore({
     },
     {
       type: "text",
-      text: "Wahlsieg! Sie bleiben noch einmal. Endspurt!",
+      text: "Schon wieder gewonnen! Ab auf die Zielgerade für 2035.",
       background: "jubel",
     },
   ],
@@ -525,7 +523,7 @@ const store = configureStore({
       type: "love-change", 
       love: 8,
       background: "buero",
-      text: "Die Züge fahren jetzt im ganzen Land zuverlässig und in hohem Takt. Die Menschen lieben es!"
+      text: "Die Züge fahren jetzt im ganzen Land zuverlässig und in hohem Takt – und im gleichen Zug steigt ihre Beliebtheit!"
     }
   ]
 },
@@ -587,7 +585,7 @@ const store = configureStore({
             {
               type: "news",
               title: "KEINE KOHLE.",
-              text: "Wird Strom jetzt noch teurer?",
+              text: "Können wir uns Strom bald nicht mehr leisten?",
               background: "zeitung"
             },
             {
@@ -598,7 +596,7 @@ const store = configureStore({
           ]
         },
         {
-          text: "Bei so viel Widerstand bleibe ich lieber bei der Kohle.",
+          text: "Der Kohleausstieg ist ein so heißes Thema. Da warte ich lieber noch.",
           slides: [
             {
               type: "news",
@@ -632,8 +630,20 @@ const store = configureStore({
       type: "temperature-change",
       temperature: -0.1875,
       background: "buero",
-      text: "Sie haben den Klimakiller Nummer 1 gekillt! Kohleausstieg – endlich!"
+      text: "Mit dem Kohleausstieg haben Sie den Klimakiller Nummer 1 gekillt!"
+    },
+    {
+      type: "text",
+      background: "parlament",
+      text: "Die Opposition fabuliert von Stromausfällen. Stimmt zwar nicht..."
+    },
+    {
+      type: "love-change",
+      love: -2,
+      background: "parlament",
+      text: "...kostet uns aber trotzdem Beliebtheit."
     }
+
   ]
 },
 
@@ -645,32 +655,26 @@ const store = configureStore({
     {
       type: "text", // text, multiple-choice
       background: "berater", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
-      text: "Die Abschaffung der Massentierhaltung ist seit Wochen DAS Thema...",      
+      text: "In der Debatte zur Abschaffung der Massentierhaltung geht es heiß her.",      
       position: "bottom",
     },
     {
       type: "news", // text, multiple-choice
       background: "zeitung", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
       title: "WARUM DER PREIS NICHT WURST IST!",
-      text: "Deutschlands neue Armuts-Vegetarier",      
-    },
-    {
-      type: "news", // text, multiple-choice
-      background: "zeitung", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
-      title: "WARUM DER PREIS NICHT WURST IST!",
-      text: "Deutschlands neue Armuts-Vegetarier",      
+      text: "Deutschlands neue Armuts-Vegetarier.",      
     },
     {
       type: "love-change", // text, multiple-choice
       background: "biertisch", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
       love: -4,
-      text: "Wenn es um die Wurst geht, verstehen die Deutschen keinen Spaß!",      
+      text: "Null Bockwurst: Beim Fleischpreis verstehen die Deutschen keinen Spaß.",      
     },
     {
       type: "temperature-change", // text, multiple-choice
       background: "buero", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
       temperature: -0.09375,
-      text: "Für's Klima ist's allerdings super: Die Temperatur sinkt.",      
+      text: "Trotzdem gut fürs Klima: Die Temperatur sinkt.",      
     }
   ]
 },
@@ -683,13 +687,13 @@ const store = configureStore({
     {
       type: "text", // text, multiple-choice
       background: "buero", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
-      text: "Ihr Koalitionspartner hat in einem Interview Massentierhaltung thematisiert.",      
+      text: "Ihr treuloser Koalitionspartner hat in einem Interview Massentierhaltung thematisiert.",      
       position: "top",
     },
     {
       type: "text", // text, multiple-choice
       background: "talkshow", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
-      text: "Bei Anne Will werden Sie darauf angesprochen",      
+      text: "Bei Anne Will kommt das Thema zur Sprache.",      
       position: "top",
     },
     {
@@ -704,7 +708,7 @@ const store = configureStore({
               type: "love-change",
               love: 5,
               background: "talkshow",
-              text: "Lecker, Kotelett!"
+              text: "Richtig so! Ab auf den Grill mit dem Klimageschwätz!"
             }
           ]
         },
@@ -715,7 +719,7 @@ const store = configureStore({
               type: "love-change",
               love: -5,
               background: "talkshow",
-              text: "Wir lassen uns doch nicht von euch Gutmenschen nicht die Wurst vom Grill nehmen!"
+              text: "„Ich verspreche Ihnen: Mit Ihrer Tofu-Politik kommen Sie in unserer Bratwurst-Nation nicht weit!“"
             }
           ]
         }
@@ -736,14 +740,14 @@ const store = configureStore({
       type: "text", // text, multiple-choice, love-change, temperature-change
       background: "buero", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
       title: "",
-      text: "Leider bezahlen wir sofort den Preis für den CO2-Preis: Die Industrielobby hat uns das übelgenommen und macht Stimmung gegen uns.",
+      text: "Leider bezahlen wir sofort den Preis für den CO2-Preis.",
       position: "top",
     },
     {
       type: "love-change",
       love: -8,
       background: "buero",
-      text: "Angst vor Arbeitsplatzverlusten. Angst vor höheren Preisen. Angst vor Inflation. Angst vor der Angst. Die Thinktanks der Lobbys schießen aus allen Rohren. Die Stimmung im Land ist angespannt."
+      text: "Arbeitsplatzverluste, Preisanstiege, Inflation: Unsere politischen Gegner lassen nichts unversucht, um uns zu schaden. Die Stimmung im Land ist angespannt."
     }
   ]
 },
@@ -769,19 +773,19 @@ const store = configureStore({
     {
       type: "news", // text, multiple-choice, love-change, temperature-change
       background: "zeitung", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
-      title: "CO2 KOSTET JETZT. ABER NICHT MEHR DIE WELT.",
-      text: "Warum sich die neue CO2-Bepreisung auch für Unternehmen rechnen wird.",
+      title: "ENDLICH BEZAHLT FÜRS CO2 NICHT MEHR DIE UMWELT.",
+      text: "Warum die neue CO2-Bepreisung gut für Klima und Unternehmen ist.",
       position: "top",
     },
     {
       type: "multiple-choice", // text, multiple-choice, love-change, temperature-change
       background: "interview", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
       title: "",
-      text: "„Eine Frage: Was habven Sie mit den Milliarden-Einnahmen aus der CO2-Besteuerung vor?“",
+      text: "„Eine Frage: Was haben Sie mit den Milliarden-Einnahmen aus der CO2-Besteuerung vor?“",
       position: "top",
       answers: [
         {
-          text: "Blühende Landschaften",
+          text: "Schwarze Null",
           slides: [
             {
               type: "love-change",
@@ -791,7 +795,7 @@ const store = configureStore({
           ]
         },
         {
-          text: "Blühende Seilschaften",
+          text: "Stromsteuer senken",
           slides: [
             {
               type: "love-change",
@@ -815,13 +819,13 @@ const store = configureStore({
       type: "news", // text, multiple-choice, love-change, temperature-change
       background: "zeitung", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
       title: "SCHAFFEN WIR E?",
-      text: "Warum der Motor der Deutschen Wirtschaft ein Verbrennungsmotor ist.",
+      text: "Warum der Motor der Deutschen Wirtschaft  ein Benziner ist.",
     },
     {
       type: "love-change",
       love: -7,
       background: "zeitung",
-      text: "Droht ohne Verbrenner-Autos der wirtschaftliche Kollaps? Es kursieren wilde Mythen und Ängste. Ihre Beliebtheit leidete."
+      text: "Droht ohne Verbrenner-Autos der wirtschaftliche Kollaps? Es kursieren wilde Mythen und Ängste. Ihre Beliebtheit leidet."
     }
   ]
 },
@@ -843,13 +847,13 @@ const store = configureStore({
       type: "news",
       background: "zeitung",
       title: "WIE DIE BUNDESREGIERUNG DEUTSCHLAND IN DEN STILLSTAND FÜHRT",
-      text: "Keine Autos, keine Züge, kein Fortkommen"
+      text: "Keine Autos, keine Züge, kein Fortkommen."
     },
     {
       type: "love-change",
       background: "buero",
       love: -10,
-      text: "Sie sollten schnell in Züge investieren!"
+      text: "Sie sollten schnell die Moblitätfrage lösen!"
     }
   ]
 },
@@ -862,14 +866,56 @@ const store = configureStore({
     {
       type: "news", // text, multiple-choice, love-change, temperature-change
       background: "zeitung", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
-      title: "ES ROLLT NICHT NUR, ES LÄUFT SOGAR",
-      text: "3,2 Millionen Jobs dank Elektroautos",
+      title: "ES ROLLT NICHT NUR, ES LÄUFT SOGAR.",
+      text: "3,2 Millionen Jobs dank Elektroautos.",
     },
     {
       type: "love-change",
       love: 12,
       background: "zeitung",
-      text: "Das Autoland ist stolz seine E-Revolution"
+      text: "Das Autoland ist stolz auf seine E-Revolution"
+    }
+  ]
+},
+
+
+{
+  id: "eautos-follow-up-synth",
+  condition: "done.includes('eautos')",
+  slides: [
+    {
+      type: "multiple-choice", // text, multiple-choice, love-change, temperature-change
+      background: "kaminzimmer", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
+      text: "Der Wirtschaftsflügel ihrer Partei drängt darauf, synthetische Kraftstoffe auf die Agenda setzen.",
+      answers: [
+        {
+          text: "machen",
+          slides: [
+            {
+              type: "love-change",
+              love: 3,
+              background: "kaminzimmer"
+              text: "Das kommt gut an"
+            },
+            {
+              type: "temperature-change",
+              temperature: 0.2,
+              background: "kaminzimmer"
+              text: "Ist aber aus Klimasicht totaler Quatsch. Die Herstellung der Brennstoffe kostet viel zu viel Energie."
+            }
+          ]
+        },
+        {
+          text: "nicht machen",
+          slides: [
+            {
+              type: "text",
+              background: "berater"
+              text: "Gut, dass Sie das abgeleht haben. Die Herstellung der synthetischen Brennstoffe kostet viel zu viel Energie."
+            }
+          ]
+        }
+      ]
     }
   ]
 },
@@ -884,14 +930,14 @@ const store = configureStore({
       type: "text", // text, multiple-choice, love-change, temperature-change
       background: "kaminzimmer", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
       title: "",
-      text: "Bei einem Kaminzimmer-Gespräch kommt ein Lobbyvertreter der Industrie auf Sie zu...",
+      text: "Bei einem Kaminzimmer-Gespräch kommt ein Lobbyvertreter der Industrie auf Sie zu ...",
       position: "top",
     },
     {
       type: "multiple-choice", // text, multiple-choice, love-change, temperature-change
       background: "kaminzimmer", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
       title: "",
-      text: "„Wenn Sie wollen, retten wir das Klima mit der Innovationskraft deutscher Ingenieurskunst – wenn Sie über die nächsten 5 Jahre 300 Milliarden investieren.“",
+      text: "„Das Mittel gegen den Klimawandel ist die Innovationskraft der deutschen Ingenieurskunst. Alles, was es dazu braucht: ein 300-Milliarden-Investitionspaket über die nächsten 5 Jahre.“",
       position: "top",
       answers: [
         {
@@ -915,7 +961,7 @@ const store = configureStore({
       type: "text", // text, multiple-choice, love-change, temperature-change
       background: "berater", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
       title: "",
-      text: "Ich bin mir sicher: Die Lösung für's Klima wird eine technologische sein. Wir sollten jetzt wirklich 300 Milliarden in CO2-Staubsauger und Co investieren.",
+      text: "Ich bin mir sicher: Die Lösung fürs Klima wird eine technologische sein. Wir sollten jetzt wirklich 300 Milliarden in CO2-Staubsauger und Co investieren.",
       position: "bottom",
     },
     {
@@ -953,7 +999,7 @@ const store = configureStore({
       type: "temperature-change",
       background: "biertisch",
       temperature: 0.1,
-      text: "Die Bevölkerung verlässt sich in Sachen Klimawandel jetzt – genau wie Sie – auf die technischen Lösungen der Industrie... und achtet noch weniger selbst auf's Klima. Die Erwärmung steigt."
+      text: "Die Bevölkerung macht es Ihnen nach: Statt selbst aufs Klima zu achten, wartet sie auf die Klimarettung durch Technologie. Die Erwärmung steigt."
     }
 
   ]
@@ -976,21 +1022,21 @@ const store = configureStore({
       type: "text", // text, multiple-choice, love-change, temperature-change
       background: "parlament", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
       title: "",
-      text: "„Vor 5 Jahren haben Sie 300 Milliarden Euro in s.g. CO2-Staubsauger investiert. Bis heute läuft davon kein einziger...“",
+      text: "„Vor 5 Jahren haben Sie 300 Milliarden Euro in diese. CO2-Staubsauger investiert. Bis heute läuft davon kein einziger ...“",
       position: "bottom",
     },
     {
       type: "text", // text, multiple-choice, love-change, temperature-change
       background: "parlament", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
       title: "",
-      text: "„Liebe Bundesregierung, Sie haben Sich von der Industrie veräppeln lassen!“",
+      text: "„Liebe Bundesregierung, Sie haben sich von der Industrie veräppeln lassen!“",
       position: "bottom",
     },
     {
       type: "love-change", // text, multiple-choice, love-change, temperature-change
       background: "parlament", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
       love: -6,
-      text: "Wer das Klima retten will, sollte wohl lieber die Klimasünder besteuern anstatt ihnen Geldgeschenke zu machen...",
+      text: "Wer das Klima retten will, sollte wohl lieber die Klimasünder besteuern anstatt ihnen Geldgeschenke zu machen ...",
     },
     {
       type: "temperature-change", // text, multiple-choice, love-change, temperature-change
@@ -1010,7 +1056,7 @@ const store = configureStore({
       type: "text", // text, multiple-choice, love-change, temperature-change
       background: "berater", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
       title: "",
-      text: "Ihre Umfragewerte sind irgendwie im Keller...",
+      text: "Ihre Umfragewerte sind irgendwie im Keller ...",
       position: "bottom",
     },
     {
@@ -1031,7 +1077,7 @@ const store = configureStore({
           ]
         },
         {
-          text: "Die Flotte der Bundesregierung endlich auf E-Autos umstellen",
+          text: "Die Flotte der Bundesregierung endlich auf E-Autos umstellen.",
           slides: [
             {
               type: "love-change",
@@ -1048,7 +1094,7 @@ const store = configureStore({
 
 {
   id: "sosehensiegeraus",
-  condition: "tick == 40",
+  condition: "tick == 424",
   slides: [
     {
       type: "love-change", // text, multiple-choice, love-change, temperature-change
@@ -1062,18 +1108,18 @@ const store = configureStore({
 
 {
   id: "populisten",
-  condition: "love < 30 && tick > 400 && temperature < 2.5",
+  condition: "love < 40 && tick > 400 && temperature < 3",
   slides: [
     {
       type: "temperature-change", // text, multiple-choice, love-change, temperature-change
       background: "berater", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
       temperature: 0,
-      text: "Nur noch 1° bis zum Ziel: Sie haben dieses Land schon sehr verändert!"
+      text: "Nur noch wenige Grad Celsius bis zum Ziel: Sie haben dieses Land schon sehr verändert!"
     },
     {
       type: "text", // text, multiple-choice, love-change, temperature-change
       background: "parlament", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
-      text: "Leider haben bei so viel Veränderung haben die Populisten Aufwind."
+      text: "Leider haben bei so viel Veränderung die Populisten Aufwind."
     },
     {
       type: "multiple-choice", // text, multiple-choice, love-change, temperature-change
@@ -1082,11 +1128,28 @@ const store = configureStore({
       answers: [
         {
           text: "Bedingungsloses Grundeinkommen auf den Weg bringen",
-          variable: "bge"
+          slides: [
+            {
+              type: "love-change",
+              background: "biertisch",
+              love: 15,
+              text: "Grundeinkommen stiftet Vertrauen – auch in Ihre Politik",
+              position: "top"
+            }
+          ]
+          
         },
         {
           text: "Mit Populisten zusammenarbeiten",
-          variable: "populisten"
+          slides: [
+            {
+              type: "love-change",
+              background: "talkshow",
+              love: -15,
+              text: "Zu ihren politischen Freunden zählen Sie auch Demokratiefeinde. Wie erklären Sie das Ihren Wähler*innen?",
+              position: "top"
+            }
+          ]
         }
       ]
     },
@@ -1121,29 +1184,6 @@ const store = configureStore({
     }
   ]
 },
-
-
-
-/*
-{
-  id: "",
-  condition: "",
-  slides: [
-    {
-      type: "news", // text, multiple-choice, love-change, temperature-change
-      background: "zeitung", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
-      title: "",
-      text: "",
-      position: "bottom",
-    },
-  ]
-},
-*/
-
-
-
-
-
 
 
     ],
