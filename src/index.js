@@ -340,7 +340,7 @@ const store = configureStore({
 {
   // Wahl 2025 verloren
   id: "vote-lost-2025",
-  condition: "tick == 194 && love < 15",
+  condition: "tick == 194 && love < 35",
   slides: [
     {
       type: "vote",
@@ -362,7 +362,7 @@ const store = configureStore({
 {
   // Wahl 2025 gewonnen
   id: "vote-won-2025",
-  condition: "tick == 194 && love >= 15",
+  condition: "tick == 194 && love >= 35",
   slides: [
     {
       type: "vote",
@@ -385,7 +385,7 @@ const store = configureStore({
 {
   // Wahl 2029 verloren
   id: "vote-lost-2029",
-  condition: "tick == 388 && love < 15",
+  condition: "tick == 388 && love < 35",
   slides: [
     {
       type: "vote",
@@ -407,7 +407,7 @@ const store = configureStore({
 {
   // Wahl 2029 gewonnen
   id: "vote-won-2029",
-  condition: "tick == 388 && love >= 15",
+  condition: "tick == 388 && love >= 35",
   slides: [
     {
       type: "vote",
@@ -428,7 +428,7 @@ const store = configureStore({
 {
   // Wahl 2033 verloren
   id: "vote-lost-2033",
-  condition: "tick == 582 && love < 15",
+  condition: "tick == 582 && love < 35",
   slides: [
     {
       type: "vote",
@@ -450,7 +450,7 @@ const store = configureStore({
 {
   // Wahl 2033 gewonnen
   id: "vote-won-2033",
-  condition: "tick == 582 && love >= 15",
+  condition: "tick == 582 && love >= 35",
   slides: [
     {
       type: "vote",
@@ -789,7 +789,7 @@ const store = configureStore({
           slides: [
             {
               type: "love-change",
-              love: 5,
+              love: -5,
               background: "interview"
             }
           ]
@@ -799,7 +799,7 @@ const store = configureStore({
           slides: [
             {
               type: "love-change",
-              love: -5,
+              love: -3,
               background: "interview"
             }
           ]
