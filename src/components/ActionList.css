@@ -2,17 +2,17 @@
 }
 
 .action-list__sector {
-  padding: 25px 10px;
+  padding: 15px 10px;
   color: #fff;
 }
 
 .action-list__sector-title {
   color: #00aed8;
-  font-size: 24px;
+  font-size: 16px;
   padding-left: 15px;
   padding-bottom: 5px;
 }
-
+/*
 .action-list__sector--industry {
   background: #011168;
 }
@@ -32,3 +32,4 @@
 .action-list__sector--buildings {
   background: #677be3;
 }
+*/
