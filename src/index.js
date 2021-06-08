@@ -777,7 +777,7 @@ const store = configureStore({
 
 {
   id: "umfragewerte-im-keller",
-  condition: "love < 35",
+  condition: "love < 35 && ( (tick > 150 && tick < 192) || (tick > 334 && tick < 384) || (tick > 526 && tick < 576) )",
   slides: [
     {
       type: "text", // text, multiple-choice, love-change, temperature-change
@@ -858,7 +858,7 @@ const store = configureStore({
           variable: "bge"
         },
         {
-          text: "Mit Populisten zusammenarbeiten"
+          text: "Mit Populisten zusammenarbeiten",
           variable: "populisten"
         }
       ]
