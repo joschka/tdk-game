@@ -381,6 +381,95 @@ const store = configureStore({
 },
 
 
+
+
+// KLIMAFOLGEN ONLY
+
+
+{
+  id: "folge-mehrwege",
+  condition: "done.includes('mehrwege')",
+  slides: [
+    {
+      type: "temperature-change", 
+      temperature: -0.4375,
+      silent: true
+    },
+  ]
+},
+
+{
+  id: "folge-moore",
+  condition: "done.includes('moore')",
+  slides: [
+    {
+      type: "temperature-change", 
+      temperature: -0.09375,
+      silent: true
+    },
+  ]
+},
+
+
+{
+  id: "folge-eautos",
+  condition: "done.includes('eautos')",
+  slides: [
+    {
+      type: "temperature-change", 
+      temperature: -0.21875,
+      silent: true
+    },
+  ]
+},
+
+{
+  id: "folge-zuege",
+  condition: "done.includes('zuege')",
+  slides: [
+    {
+      type: "temperature-change", 
+      temperature: -0.171875,
+      silent: true
+    },
+  ]
+},
+
+{
+  id: "folge-solarwind",
+  condition: "done.includes('solarwind')",
+  slides: [
+    {
+      type: "temperature-change", 
+      temperature: -0.1875,
+      silent: true
+    },
+  ]
+},
+
+{
+  id: "folge-reparieren",
+  condition: "done.includes('reparieren')",
+  slides: [
+    {
+      type: "temperature-change", 
+      temperature: -0.1875,
+      silent: true
+    },
+  ]
+},
+
+
+
+
+
+
+
+//////// STORIES ///////////
+
+
+
+
 {
   // Erinnerung: Wenn Kohlausstieg bis 2028 noch nicht gemacht
   id: "kohle-reminder",
@@ -439,6 +528,21 @@ const store = configureStore({
 },
 
 
+
+{
+  id: "follow-up-kohle",
+  condition: "done.includes('kohleausstieg')",
+  slides: [
+    {
+      type: "temperature-change",
+      temperature: -0.1875,
+      background: "buero",
+      text: "Sie haben den Klimakiller Nummer 1 gekillt! Kohleausstieg – endlich!"
+    }
+  ]
+},
+
+
 {
   id: "follow-up-tiere",
   condition: "done.includes('tiere')",
@@ -467,6 +571,12 @@ const store = configureStore({
       love: -4,
       text: "Wenn es um die Wurst geht, verstehen die Deutschen keinen Spaß!",      
     },
+    {
+      type: "temperature-change", // text, multiple-choice
+      background: "buero", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
+      temperature: -0.09375,
+      text: "Für's Klima ist's allerdings super: Die Temperatur sinkt.",      
+    }
   ]
 },
 
@@ -554,6 +664,12 @@ const store = configureStore({
       title: "",
       text: "Glückwunsch! Die CO2-Bepreisung wurde mit einer knappen Mehrheit im Bundestag beschlossen.",
       position: "top",
+    },
+    {
+      type: "temperature-change",
+      background: "parlament",
+      temperature: -0.78125,
+      text: "Ein großer Schritt! Keine Maßnahme senkt den CO2-Ausstoß so stark, wie ein vernünftiger Emissionshandel."
     },
     {
       type: "news", // text, multiple-choice, love-change, temperature-change
@@ -780,6 +896,12 @@ const store = configureStore({
       background: "parlament", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
       love: -6,
       text: "Wer das Klima retten will, sollte wohl lieber die Klimasünder besteuern anstatt ihnen Geldgeschenke zu machen...",
+    },
+    {
+      type: "temperature-change", // text, multiple-choice, love-change, temperature-change
+      background: "berater", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
+      temperature: -0.1,
+      text: "Die Opposition hat etwas übertrieben. Mit technischen Lösungen werden wir zwar nie unser Ziel erreichen, aber immerhin haben sie 0,1° Verbesserung gebracht.",
     },
   ]
 },
