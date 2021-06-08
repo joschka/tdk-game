@@ -338,36 +338,38 @@ const store = configureStore({
   ],
 },
 
+
 {
-  // Wahl verloren
-  id: "vote-lost",
-  condition: "(tick == 194 || tick == 388 || tick == 582) && love < 10",
+  // Wahl 2025 verloren
+  id: "vote-lost-2025",
+  condition: "tick == 194 && love < 15",
   slides: [
     {
       type: "vote",
       text:
-        "Wahlabend 18 Uhr: Jörg Schönenborn präsentiert die Hochrechnung:",
+        "Bundestagswahl 2025: Reicht es für Ihre zweite Amtszeit?",
       background: "wahl",
       // Gewichtung der anderen Balken
       others: [1, 1.5, 2, 0.2],
     },
     {
       type: "game-over",
-      text: "Für eine Wiederwahl hat es leider nicht gereicht!<br>Nochmal spielen?",
+      text: "Für eine Wiederwahl hat es leider nicht gereicht! Nochmal spielen?",
       background: "interview",
     },
   ],
 },
 
+
 {
-  // Wahl gewonnen
-  id: "vote-won",
-  condition: "(tick == 194 || tick == 388 || tick == 582) && love >= 10",
+  // Wahl 2025 gewonnen
+  id: "vote-won-2025",
+  condition: "tick == 194 && love >= 15",
   slides: [
     {
       type: "vote",
       text:
-        "Wahlabend 18 Uhr: Jörg Schönenborn präsentiert die Hochrechnung:",
+        "Bundestagswahl 2025: Reicht es für Ihre zweite Amtszeit?",
       background: "wahl",
       // Gewichtung der anderen Balken
       others: [1, 1.5, 2, 0.2],
@@ -380,6 +382,93 @@ const store = configureStore({
   ],
 },
 
+
+
+{
+  // Wahl 2029 verloren
+  id: "vote-lost-2029",
+  condition: "tick == 388 && love < 15",
+  slides: [
+    {
+      type: "vote",
+      text:
+        "Bundestagswahl 2029: Bleiben Sie im Amt?",
+      background: "wahl",
+      // Gewichtung der anderen Balken
+      others: [1, 1.5, 2, 0.2],
+    },
+    {
+      type: "game-over",
+      text: "Für eine Wiederwahl hat es leider nicht gereicht! Nochmal spielen?",
+      background: "interview",
+    },
+  ],
+},
+
+
+{
+  // Wahl 2029 gewonnen
+  id: "vote-won-2029",
+  condition: "tick == 388 && love >= 15",
+  slides: [
+    {
+      type: "vote",
+      text:
+        "Bundestagswahl 2029: Bleiben Sie im Amt?",
+      background: "wahl",
+      // Gewichtung der anderen Balken
+      others: [1, 1.5, 2, 0.2],
+    },
+    {
+      type: "text",
+      text: "Wahlsieg! Sie bleiben 4 weitere Jahre im Amt!",
+      background: "jubel",
+    },
+  ],
+},
+
+{
+  // Wahl 2033 verloren
+  id: "vote-lost-2033",
+  condition: "tick == 582 && love < 15",
+  slides: [
+    {
+      type: "vote",
+      text:
+        "Bundestagswahl 2033: Schaffen Sie es zum vierten Mal?",
+      background: "wahl",
+      // Gewichtung der anderen Balken
+      others: [1, 1.5, 2, 0.2],
+    },
+    {
+      type: "game-over",
+      text: "Für eine Wiederwahl hat es leider nicht gereicht! Nochmal spielen?",
+      background: "interview",
+    },
+  ],
+},
+
+
+{
+  // Wahl 2033 gewonnen
+  id: "vote-won-2033",
+  condition: "tick == 582 && love >= 15",
+  slides: [
+    {
+      type: "vote",
+      text:
+        "Bundestagswahl 2033: Schaffen Sie es zum vierten Mal?",
+      background: "wahl",
+      // Gewichtung der anderen Balken
+      others: [1, 1.5, 2, 0.2],
+    },
+    {
+      type: "text",
+      text: "Wahlsieg! Sie bleiben noch einmal. Endspurt!",
+      background: "jubel",
+    },
+  ],
+},
 
 
 
@@ -432,6 +521,12 @@ const store = configureStore({
       temperature: -0.171875,
       silent: true
     },
+    {
+      type: "love-change", 
+      love: 8,
+      background: "buero",
+      text: "Die Züge fahren jetzt im ganzen Land zuverlässig und in hohem Takt. Die Menschen lieben es!"
+    }
   ]
 },
 
@@ -984,7 +1079,7 @@ const store = configureStore({
       type: "multiple-choice", // text, multiple-choice, love-change, temperature-change
       background: "buero", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
       text: "Was wollen Sie gegen die Populisten tun?",
-      ansers: [
+      answers: [
         {
           text: "Bedingungsloses Grundeinkommen auf den Weg bringen",
           variable: "bge"
