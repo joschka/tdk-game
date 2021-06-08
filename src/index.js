@@ -883,7 +883,7 @@ const store = configureStore({
       title: "",
       text: "Wollen Sie Sonne und Windkraft?",
       position: "bottom",
-      anserws: [
+      answers: [
         {
           text: "Ich schau mir das mal an."
         },
