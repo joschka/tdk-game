@@ -623,6 +623,12 @@ const store = configureStore({
       background: "zeitung",
       title: "WIE DIE BUNDESREGIERUNG DEUTSCHLAND IN DEN STILLSTAND FÜHRT",
       text: "Keine Autos, keine Züge, kein Fortkommen"
+    },
+    {
+      type: "love-change",
+      background: "buero",
+      love: -10,
+      text: "Sie sollten schnell in Züge investieren!"
     }
   ]
 },
@@ -825,6 +831,10 @@ const store = configureStore({
 //     }
 //   ]
 // },
+
+
+
+
 
 
 
