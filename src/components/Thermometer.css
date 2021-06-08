@@ -1,7 +1,7 @@
 .thermometer {
   position: relative;
   padding: 15px;
-  margin-right: 20px;
+  margin-left: 22px;
 }
 
 .thermometer--medium {
@@ -24,7 +24,7 @@
 .thermometer--large .thermometer__current-temperature {
   position: absolute;
   top: 30px;
-  left: 70px;
+  right: 70px;
   padding: 5px 5px 5px 8px;
   border-radius: 8px;
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
@@ -36,6 +36,11 @@
   margin-left: 8px;
 }
 
+.thermometer--large .thermometer__current-temperature,
+.thermometer--large .thermometer__target-temperature{
+font-weight: bold;
+}
+
 .thermometer--large .thermometer__current-temperature::after,
 .thermometer--large .thermometer__target-temperature::after {
   content: "";
@@ -43,7 +48,7 @@
   height: 2px;
   width: 12px;
   background-color: #999;
-  left: -12px;
+  right: -12px;
   top: 16px;
 }
 
@@ -54,7 +59,7 @@
 .thermometer__target-temperature {
   position: absolute;
   top: 140px;
-  left: 70px;
+  right: 70px;
   padding: 5px 5px 5px 8px;
   border-radius: 8px;
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
