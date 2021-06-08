@@ -432,6 +432,12 @@ const store = configureStore({
       temperature: -0.171875,
       silent: true
     },
+    {
+      type: "love-change", 
+      love: 8,
+      background: "buero",
+      text: "Die Züge fahren jetzt im ganzen Land zuverlässig und in hohem Takt. Die Menschen lieben es!"
+    }
   ]
 },
 
@@ -984,7 +990,7 @@ const store = configureStore({
       type: "multiple-choice", // text, multiple-choice, love-change, temperature-change
       background: "buero", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
       text: "Was wollen Sie gegen die Populisten tun?",
-      ansers: [
+      answers: [
         {
           text: "Bedingungsloses Grundeinkommen auf den Weg bringen",
           variable: "bge"
