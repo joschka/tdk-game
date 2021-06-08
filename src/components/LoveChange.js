@@ -60,7 +60,7 @@ function LoveChange({id, text, love, silent, onClick}) {
     <div className="love-change" onClick={onClick}>
       <div className="love-change__text">{text}</div>
       <div className="love-change__chart">
-        {true && <LoveChart {...chartProps} />}
+        {true && <LoveChart {...chartProps} changeDisplay={true} />}
       </div>
     </div>
   );

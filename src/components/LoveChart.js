@@ -51,7 +51,7 @@ function LoveChart(props) {
     transform: `translateX(-${tick * slideStep}%)`,
   };
 
-  const formattedLabel = `${Math.round(currentLove)}%`;
+  const formattedLabel = `${props.changeDisplay ? (currentLove >= 0 ? '+' : '') : ''}${Math.round(currentLove)}%`;
 
   function renderChart() {
     return (
@@ -109,7 +109,7 @@ function LoveChart(props) {
 
   function renderHeart() {
     const color =
-      currentLove >= thresholdPercentage ? positiveColor : negativeColor;
+      currentLove > 0 ? positiveColor : negativeColor;
     return (
       <svg
         xmlns="http://www.w3.org/2000/svg"

@@ -10,8 +10,9 @@
   font-weight: bold;
   margin-bottom: 40px;
   background: var(--yellow);
+  padding: 20px;
 }
 
 .love-change__chart {
-  padding: 20px;
+  margin: 0 auto;
 }

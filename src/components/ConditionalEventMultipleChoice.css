@@ -7,6 +7,7 @@
   padding: 40px 20px;
   font-size: 20px;
   font-weight: bold;
+  background: var(--yellow);
 }
 
 .conditional-event-multiple-choice__answer {
