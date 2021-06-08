@@ -2,6 +2,7 @@
   background-color: var(--yellow);
   padding: 15px;
   min-height: 100vh;
+  padding-bottom: 80px;
 }
 
 .action-detail-view__upper {
@@ -63,6 +64,8 @@ font-weight: bold;
 
 .action-detail-view__buttons {
   margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
 }
 
 .action-detail-view__buttons > :first-child {
@@ -71,6 +74,11 @@ font-weight: bold;
 
 .action-detail-view__link {
   margin-bottom: 20px;
+  padding: 10px 20px;
+}
+
+.action-detail-view__link a {
+  color: #000;
 }
 
 .action-detail-view__dude {

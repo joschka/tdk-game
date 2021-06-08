@@ -16,6 +16,9 @@
   background-position: center bottom;
   background-size: 100% auto;
 }
+.background > * {
+  padding-bottom: 60px !important;
+}
 
 .background.-active {
   animation: backgroundFadeIn 0.5s;
@@ -83,4 +86,24 @@
 
 .background--berater {
   background-image: url("../images/backgrounds/berater_neu.jpg");
+}
+
+.background--buero-berater {
+  background-image: url("../images/backgrounds/buero-berater.jpg");
+}
+
+.background--blurry-actions {
+  background-image: url("../images/backgrounds/blurry-actions.jpg");
+}
+
+.background--blurry-love {
+  background-image: url("../images/backgrounds/blurry-love.jpg");
+}
+
+.background--blurry-temperature {
+  background-image: url("../images/backgrounds/blurry-temperature.jpg");
+}
+
+.background--blurry-progress {
+  background-image: url("../images/backgrounds/blurry-progress.jpg");
 }

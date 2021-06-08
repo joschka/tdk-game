@@ -1,4 +1,18 @@
 .explainer {
+  padding: 15px;
+  padding-bottom: 100px !important;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.explainer--top {
+  justify-content: flex-start;
+}
+
+.explainer--bottom {
+  justify-content: flex-end;
+
 }
 
 .explainer__smoke-screen {
