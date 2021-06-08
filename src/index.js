@@ -405,6 +405,11 @@ const store = configureStore({
               title: "KEINE KOHLE.",
               text: "Wird Strom jetzt noch teurer?",
               background: "zeitung"
+            },
+            {
+              type: "love-change",
+              love: -3,
+              background: "zeitung"
             }
           ]
         },
@@ -416,7 +421,12 @@ const store = configureStore({
               title: "VERPSPROCHEN: GEBROCHEN.",
               text: "Regierung schiebt Zukunft auf die lange Bank.",
               background: "zeitung"
-            } 
+            },
+            {
+              type: "love-change",
+              love: -2,
+              background: "zeitung"
+            }
 
           ]
         }
@@ -454,7 +464,7 @@ const store = configureStore({
     {
       type: "love-change", // text, multiple-choice
       background: "biertisch", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
-      love: -7,
+      love: -4,
       text: "Wenn es um die Wurst geht, verstehen die Deutschen keinen Spaß!",      
     },
   ]
@@ -487,7 +497,7 @@ const store = configureStore({
           slides: [
             {
               type: "love-change",
-              love: 10,
+              love: 5,
               background: "talkshow",
               text: "Lecker, Kotelett!"
             }
@@ -498,7 +508,7 @@ const store = configureStore({
           slides: [
             {
               type: "love-change",
-              love: -10,
+              love: -5,
               background: "talkshow",
               text: "Wir lassen uns doch nicht von euch Gutmenschen nicht die Wurst vom Grill nehmen!"
             }
@@ -526,7 +536,7 @@ const store = configureStore({
     },
     {
       type: "love-change",
-      love: -12,
+      love: -8,
       background: "buero",
       text: "Angst vor Arbeitsplatzverlusten. Angst vor höheren Preisen. Angst vor Inflation. Angst vor der Angst. Die Thinktanks der Lobbys schießen aus allen Rohren. Die Stimmung im Land ist angespannt."
     }
@@ -798,7 +808,7 @@ const store = configureStore({
           slides: [
             {
               type: "love-change",
-              love: 1,
+              love: 2,
               silent: true
             }
           ]
@@ -808,7 +818,7 @@ const store = configureStore({
           slides: [
             {
               type: "love-change",
-              love: 3,
+              love: 4,
               silent: true
             }
           ]

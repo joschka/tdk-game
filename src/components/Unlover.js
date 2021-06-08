@@ -12,7 +12,7 @@ function Unlover() {
   );
   const tick = useSelector((state) => state.clock.tick);
 
-  const idleSlotsCount = 1 //4 - activeActionsCount;
+  const idleSlotsCount = 2 //4 - activeActionsCount;
 
   useEffect(() => {
     const random = Math.random();
