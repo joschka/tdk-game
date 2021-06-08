@@ -546,7 +546,7 @@ const store = configureStore({
   slides: [
     {
       type: "temperature-change", 
-      temperature: -0.1875,
+      temperature: -0.328125,
       silent: true
     },
   ]
