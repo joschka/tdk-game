@@ -118,7 +118,7 @@ const store = configureStore({
         description:
           "Ohne Kohleausstieg keine Klimawende. Wir müssen unsere Energieerzeugung grundlegend transformieren. ",
         duration: duration.short,
-        temperature: -0.2,
+        temperature: -0.1875,
         state: "available",
         activeSinceTick: null,
       },
@@ -546,7 +546,7 @@ const store = configureStore({
   slides: [
     {
       type: "temperature-change", 
-      temperature: -0.1875,
+      temperature: -0.328125,
       silent: true
     },
   ]
