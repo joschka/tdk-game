@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { hot } from "react-hot-loader";
+import React, {useState, useEffect} from "react";
+import {useSelector, useDispatch} from "react-redux";
+import {hot} from "react-hot-loader";
 
 import "./Thermometer.css";
 
@@ -26,7 +26,7 @@ function Thermometer(props) {
       <div className="thermometer__container">
         <div className="thermometer__mask"></div>
         <div className="thermometer__mask-background"></div>
-        <div className="thermometer__bar" style={{ height: barHeight }}>
+        <div className="thermometer__bar" style={{height: barHeight}}>
           <div className="thermometer__bar-background"></div>
         </div>
       </div>
@@ -34,8 +34,8 @@ function Thermometer(props) {
         className="thermometer__current-temperature"
         style={
           props.size === "large"
-            ? { top: `${140 - 48 * (temperature - 1.5)}px` }
-            : {}
+            ? {top: `${140 - 48 * (temperature - 1.5)}px`}
+            : {color: props.changeDisplay && temperature < 0 ? "var(--green)" : "black"}
         }
       >
         {formatted}

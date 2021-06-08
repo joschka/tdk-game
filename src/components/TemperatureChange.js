@@ -14,7 +14,7 @@ function TemperatureChange({id, onClick, text, silent, temperature, delayedDispa
   const [finished, setFinished] = useState(false);
 
   const initialThermometerProps = {
-    temperature: currentTemperature,
+    temperature: temperature,
   };
 
   const [thermometerProps, setThermometerProps] = useState(
@@ -61,7 +61,7 @@ function TemperatureChange({id, onClick, text, silent, temperature, delayedDispa
         }}
       ></div>
       <div className="temperature-change__thermometer">
-        {false && <Thermometer {...thermometerProps} size="large" />}
+        {<Thermometer {...thermometerProps} size="small" changeDisplay={true} />}
       </div>
     </div>
   );
