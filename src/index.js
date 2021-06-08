@@ -319,7 +319,7 @@ const store = configureStore({
   slides: [
     {
       type: "game-over",
-      text: "GEWONNEN!!!",
+      text: "Glückwunsch! Was für eine Klima-Kanzlerschaft!",
       background: "jubel",
     },
   ],
@@ -332,8 +332,8 @@ const store = configureStore({
   slides: [
     {
       type: "game-over",
-      text: "Verloren",
-      background: "biertisch",
+      text: "Das war wohl nichts. <br>Nochmal spielen?",
+      background: "buero",
     },
   ],
 },
@@ -353,8 +353,8 @@ const store = configureStore({
     },
     {
       type: "game-over",
-      text: "Leider verloren",
-      background: "biertisch",
+      text: "Für eine Wiederwahl hat es leider nicht gereicht!<br>Nochmal spielen?",
+      background: "interview",
     },
   ],
 },
@@ -833,8 +833,67 @@ const store = configureStore({
 // },
 
 
+{
+  id: "populisten",
+  condition: "love < 30 && tick > 400 && temperature < 2.5",
+  slides: [
+    {
+      type: "temperature-change", // text, multiple-choice, love-change, temperature-change
+      background: "berater", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
+      temperature: 0,
+      text: "Nur noch 1° bis zum Ziel: Sie haben dieses Land schon sehr verändert!"
+    },
+    {
+      type: "text", // text, multiple-choice, love-change, temperature-change
+      background: "parlament", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
+      text: "Leider haben bei so viel Veränderung haben die Populisten Aufwind."
+    },
+    {
+      type: "multiple-choice", // text, multiple-choice, love-change, temperature-change
+      background: "buero", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
+      text: "Was wollen Sie gegen die Populisten tun?",
+      ansers: [
+        {
+          text: "Bedingungsloses Grundeinkommen auf den Weg bringen",
+          variable: "bge"
+        },
+        {
+          text: "Mit Populisten zusammenarbeiten"
+          variable: "populisten"
+        }
+      ]
+    },
+  ]
+},
 
-
+{
+  id: "erneuerbare-reminder",
+  condition: "tick == 176 && !(done.includes('solarwind') || started.includes('solarwind'))",
+  slides: [
+    {
+      type: "text", // text, multiple-choice, love-change, temperature-change
+      background: "berater", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
+      title: "",
+      text: "Also die Erneuerbaren sollten wir jetzt bald mal volle Power ausbauen.",
+      position: "bottom",
+    },
+    {
+      type: "multiple-choice", // text, multiple-choice, love-change, temperature-change
+      background: "berater", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
+      title: "",
+      text: "Wollen Sie Sonne und Windkraft?",
+      position: "bottom",
+      anserws: [
+        {
+          text: "Ich schau mir das mal an."
+        },
+        {
+          text: "Ich steh schon genug unter Strom."
+        }
+      ]
+    }
+  ]
+},
 
 
 
