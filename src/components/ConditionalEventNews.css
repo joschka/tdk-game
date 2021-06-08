@@ -5,6 +5,9 @@
   justify-content: center;
   align-items: center;
 }
+.conditional-event-news__image {
+  max-width: 100%;
+}
 
 .conditional-event-news__content {
   background-image: url("../images/newspaper-background.jpg");
