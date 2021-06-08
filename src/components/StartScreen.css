@@ -20,13 +20,15 @@
 .start-screen__title {
   font-size: 40px;
   padding: 0 10% 0 10%;
+  color: #000;
+  background: rgba(255,255,255,0.6);
 }
 
 .start-screen__play-icon {
   margin-top: 5vh;
   width: 40%;
   cursor: pointer;
-  fill: white;
+  fill: var(--yellow);
 }
 
 .start-screen__bottom-text {
