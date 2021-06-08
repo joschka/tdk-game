@@ -894,13 +894,13 @@ const store = configureStore({
             {
               type: "love-change",
               love: 3,
-              background: "kaminzimmer"
+              background: "kaminzimmer",
               text: "Das kommt gut an"
             },
             {
               type: "temperature-change",
               temperature: 0.2,
-              background: "kaminzimmer"
+              background: "kaminzimmer",
               text: "Ist aber aus Klimasicht totaler Quatsch. Die Herstellung der Brennstoffe kostet viel zu viel Energie."
             }
           ]
@@ -910,7 +910,7 @@ const store = configureStore({
           slides: [
             {
               type: "text",
-              background: "berater"
+              background: "berater",
               text: "Gut, dass Sie das abgeleht haben. Die Herstellung der synthetischen Brennstoffe kostet viel zu viel Energie."
             }
           ]
