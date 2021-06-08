@@ -16,6 +16,9 @@
   background-position: center bottom;
   background-size: 100% auto;
 }
+.background > * {
+  padding-bottom: 60px !important;
+}
 
 .background.-active {
   animation: backgroundFadeIn 0.5s;
