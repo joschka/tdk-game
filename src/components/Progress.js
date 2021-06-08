@@ -18,19 +18,19 @@ function Progress() {
     if (level === 2) {
       if (tick <= 194) return 0;
       if (tick >= 388) return 100;
-      return tick / 388 * 100;
+      return (tick - 194) / (388 - 194) * 100;
     }
 
     if (level === 3) {
       if (tick <= 388) return 0;
       if (tick >= 582) return 100;
-      return tick / 582 * 100;
+      return (tick - 388) / (582 - 388) * 100;
     }
 
     if (level === 4) {
       if (tick <= 582) return 0;
       if (tick >= 636) return 100;
-      return tick / 636 * 100;
+      return (tick - 582) / (636 - 582) * 100;
     }
 
     return 0;
