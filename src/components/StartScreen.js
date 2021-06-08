@@ -36,7 +36,7 @@ function StartScreen() {
         Für das beste Spielerlebnis nutze bitte dein Smartphone.
       </div>
       <div className="start-screen__content">
-        <h1 className="start-screen__title">Ich kann Klimakanzler:in</h1>
+        <h1 className="start-screen__title">Können Sie Klimakanzler:in?</h1>
 
         {false && <svg
           viewBox="0 0 512 512"
