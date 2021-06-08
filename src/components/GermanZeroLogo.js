@@ -1,12 +1,13 @@
-import React, { useState, useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { hot } from "react-hot-loader";
+import React, {useState, useEffect} from "react";
+import {useSelector, useDispatch} from "react-redux";
+import {hot} from "react-hot-loader";
 
 import "./GermanZeroLogo.css";
 
 import LogoOneline from "../images/germanZero/logo-oneline.inline.svg";
 import LogoTwoline from "../images/germanZero/logo-twoline.inline.svg";
 import LogoVertical from "../images/germanZero/logo-vertical.inline.svg";
+import LogoSingle from "../images/germanZero/logo-single.inline.svg";
 
 function GermanZeroLogo(props) {
   const width = null;
@@ -15,6 +16,9 @@ function GermanZeroLogo(props) {
   const type = props.type || "oneline";
 
   function Logo() {
+    if (type === "single") {
+      return <LogoSingle width={width} height={height} />;
+    }
     if (type === "twoline") {
       return <LogoTwoline width={width} height={height} />;
     }

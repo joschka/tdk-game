@@ -4,6 +4,8 @@ import {hot} from "react-hot-loader";
 
 import "./LoveChart.css";
 
+import Heart from "../images/heart.inline.svg";
+
 function LoveChart(props) {
   const dispatch = useDispatch();
 
@@ -128,9 +130,17 @@ function LoveChart(props) {
     className: ["love-chart", `love-chart--${props.size}`].join(" "),
   };
 
+  const color =
+    currentLove >= thresholdPercentage ? positiveColor : negativeColor;
+
+  const cssClasses = [
+    "love-chart-new",
+    currentLove >= thresholdPercentage ? "love-chart-new--positive" : "love-chart-new--negative",
+  ].join(' ');
+
   if (props.newDashboard) {
-    return <div className="love-chart-new">
-      {renderHeart()}
+    return <div className={cssClasses}>
+      <Heart />
       <div className="love-chart-new__label">
         {formattedLabel}
       </div>

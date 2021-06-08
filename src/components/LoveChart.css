@@ -5,8 +5,17 @@
 
 }
 
+.love-chart-new--positive svg .st31 {
+  fill: #a3d869;
+}
+
+.love-chart-new--negative svg .st31 {
+  fill: #f3241c;
+}
+
 .love-chart-new > svg {
-  width: 50px;
+  width: 52px;
+  height: 50px;
 }
 
 .love-chart-new__label {
@@ -14,6 +23,9 @@
   font-size: 22px;
   font-weight: bold;
 }
+
+
+
 
 .love-chart {
   height: 200px;

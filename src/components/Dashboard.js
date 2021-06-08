@@ -68,7 +68,6 @@ function Dashboard(props) {
         </div>}
       </div>}
       <div className="dashboard-new">
-        <ProgressBar size={"large"} />
         <Progress />
       </div>
       {false && (

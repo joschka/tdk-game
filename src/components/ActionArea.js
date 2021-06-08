@@ -5,6 +5,7 @@ import {hot} from "react-hot-loader";
 import ActionList from "./ActionList.js";
 import Thermometer from "./Thermometer";
 import LoveChart from "./LoveChart";
+import GermanZeroLogo from "./GermanZeroLogo";
 
 import "./ActionArea.css";
 
@@ -13,6 +14,9 @@ function ActionArea() {
 
   return (
     <div className="action-area">
+      <div className="action-area__logo">
+        <GermanZeroLogo color="white" type="single" />
+      </div>
       <div className="action-area__thermometer">
         <LoveChart newDashboard={true} />
         <Thermometer size="large" />
