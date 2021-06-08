@@ -4,7 +4,7 @@ import {hot} from 'react-hot-loader';
 
 import './SpeechBubble.css';
 
-function SpeechBubble({text, head}) {
+function SpeechBubble({text, head, noHead}) {
   const dispatch = useDispatch();
 
   const cssClasses = [
@@ -14,7 +14,7 @@ function SpeechBubble({text, head}) {
 
   return (
     <div className={cssClasses}>
-      <div className='speech-bubble__head' />
+      {!noHead && <div className='speech-bubble__head' />}
       <p
         className='speech-bubble__content'
         dangerouslySetInnerHTML={{

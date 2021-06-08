@@ -7,7 +7,9 @@
   border-radius: var(--radius);
   box-shadow: 1px 1px 0 1px rgba(0,0,0,0.75);
   background: #fff;
-  font-size: 18px;
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--blue-dark);
   margin: 0;
 }
 
