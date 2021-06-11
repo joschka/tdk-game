@@ -33,6 +33,7 @@
 .game-over__score {
   margin-left: 20px;
   font-weight: 400;
+  font-size: 18px;
 }
 
 .game-over__score-number {
