@@ -138,27 +138,42 @@ body {
 
 /* copied from GermanZero website */
 .button {
-  padding: 20px 30px;
-  display: inline-block;
-  color: var(--blue-dark);
   border: 0;
   text-decoration: none;
-  cursor: pointer;
-  border-radius: 0;
-  transition: color 0.4s;
-  background-color: #a3d869;
-  box-shadow: 1px 1px 0 1px rgba(0,0,0,0.75);
   font-family: inherit;
-  text-align: center;
-  font-size: 24px;
-  font-weight: bold;
   min-height: 50px;
-  line-height: 32px;
-  border-radius: 30px;
+
+  padding: 12px 16px 10px 18px;
+  border-radius: 25px;
+  border-top-left-radius: 0;
+  background-color: var(--green);
+  color: var(--blue-dark);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-size: 16px;
+  user-select: none;
+  font-weight: bold;
+  display: inline-block;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.15s ease-in-out;
+}
+
+.button:hover {
+  background-color: var(--yellow);
+}
+
+.button:focus {
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
 }
 
 .button--secondary {
-  background-color: var(--blue);
+  background-color: var(--blue-dark);
   color: #fff;
+}
+
+.button--secondary:hover {
+  background-color: var(--blue);
 }
 
