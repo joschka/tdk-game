@@ -2,17 +2,10 @@ import React, {useState, useEffect} from "react";
 import {useSelector, useDispatch} from "react-redux";
 import {hot} from "react-hot-loader";
 
-import Dashboard from "./Dashboard.js";
-import ActionArea from "./ActionArea.js";
-
 import Background from "./Background";
 import SpeechBubble from "./SpeechBubble";
 
 import "./Explainer.css";
-
-import previewLove from "../images/intro-love.png";
-import previewTemperature from "../images/intro-temperature.png";
-import previewTodos from "../images/intro-todos.png";
 
 function Explainer() {
   const dispatch = useDispatch();
@@ -24,8 +17,9 @@ function Explainer() {
   if (gameStarted || gameStopped || introStep < 1) return null;
 
   function nextStep() {
-    console.log("nextStep");
     if (introStep === 6) {
+      // Start geklickt am Ende des Intros
+      window.fathom && window.fathom.trackGoal('YRBAHU90', 0);
 
       dispatch({type: "game/start"});
       dispatch({type: "clock/start"});
@@ -94,7 +88,6 @@ function Explainer() {
       </Background>
     );
   }
-
 }
 
 export default hot(module)(Explainer);
