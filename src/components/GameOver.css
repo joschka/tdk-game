@@ -10,6 +10,7 @@
 .game-over__text {
   font-size: 20px;
   font-weight: bold;
+  margin-bottom: 20px;
 }
 
 .game-over__share {
@@ -24,6 +25,15 @@ height: 50px;
 }
 
 .game-over__shares {
-text-align: center;
   padding: 40px;
+  margin-left: -40px;
+  margin-bottom: 20px;
+  width: calc(100% + 80px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--blue-dark);
+}
+.game-over__shares > * {
+  margin: 0 5px;
 }
