@@ -1,4 +1,23 @@
 @font-face {
+  font-family: "FabrikatNormal";
+  src: url("../fonts/FabrikatNormal-Regular.woff2") format("woff2"),
+    url("../fonts/FabrikatNormal-Regular.woff") format("woff");
+  font-weight: normal;
+}
+@font-face {
+  font-family: "FabrikatNormal";
+  src: url("../fonts/FabrikatNormal-Medium.woff2") format("woff2"),
+    url("../fonts/FabrikatNormal-Medium.woff") format("woff");
+  font-weight: 500;
+}
+@font-face {
+  font-family: "FabrikatNormal";
+  src: url("../fonts/FabrikatNormal-Bold.woff2") format("woff2"),
+    url("../fonts/FabrikatNormal-Bold.woff") format("woff");
+  font-weight: bold;
+}
+
+@font-face {
   font-family: "DM Sans";
   font-style: normal;
   font-weight: 400;
@@ -84,12 +103,12 @@
   --blue: #00aed8;
   --green: #a3d869;
   --blue-dark: #011633;
-  --radius: 40px;
+  --radius: 25px;
 }
 
 body {
   margin: 0;
-  font-family: "DM Sans", sans-serif;
+  font-family: "FabrikatNormal", sans-serif;
   background: lightgray;
 }
 
@@ -177,3 +196,35 @@ body {
   background-color: var(--blue);
 }
 
+.external-link {
+  color: inherit;
+  border-bottom: 6px solid var(--yellow);
+  text-decoration: none;
+  position: relative;
+  white-space: nowrap;
+  display: inline;
+  font-weight: bold;
+  z-index: 0;
+}
+
+.external-link:after {
+  content: "";
+  width: 12px;
+  height: 15px;
+  background: url("../images/arrow-external-link.svg") no-repeat;
+  position: relative;
+  display: inline-block;
+  margin-left: 5px;
+  margin-right: 2px;
+}
+
+.external-link:hover:before {
+    content: '';
+    position: absolute;
+    height: 12px;
+    left: 0;
+    bottom: -4px;
+    width: 100%;
+    background: var(--yellow);
+    z-index: -1;
+}

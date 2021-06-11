@@ -5,6 +5,7 @@
 .speech-bubble__content {
   padding: 20px 40px;
   border-radius: var(--radius);
+  border-top-left-radius: 0;
   box-shadow: 1px 1px 0 1px rgba(0,0,0,0.75);
   background: #fff;
   font-size: 20px;
