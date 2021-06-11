@@ -91,7 +91,7 @@ function GameOver({text}) {
 
         <button
           onClick={playAgain}
-          className="game-over__again button button--secondary"
+          className="game-over__again button"
         >
           Nochmal spielen
         </button>
