@@ -1,6 +1,6 @@
-import React, {useState, useEffect} from "react";
-import {useSelector, useDispatch} from "react-redux";
-import {hot} from "react-hot-loader";
+import React, { useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { hot } from "react-hot-loader";
 
 import MiniThermometer from "./MiniThermometer.js";
 import MiniHeart from "./MiniHeart.js";
@@ -42,7 +42,7 @@ function Action(props) {
     e.stopPropagation();
     e.preventDefault();
 
-    dispatch({type: "action/show", data: id});
+    dispatch({ type: "action/show", data: id });
 
     return;
   }
@@ -84,8 +84,9 @@ function Action(props) {
 
     const progressStyle = {
       strokeDasharray: `${Math.PI * 2 * 185}px`,
-      strokeDashoffset: `${((100 - progressPercentage) / 100) * Math.PI * 2 * 185
-        }px`,
+      strokeDashoffset: `${
+        ((100 - progressPercentage) / 100) * Math.PI * 2 * 185
+      }px`,
     };
     return (
       <svg xmlns="http://www.w3.org/2000/svg" {...props}>
@@ -188,7 +189,7 @@ function Action(props) {
     if (state === "active" && progressPercentage === 100) {
       //dispatch({type: "love/change", data: love});
       //dispatch({ type: "temperature/increase", data: temperature });
-      dispatch({type: "action/end", data: {id}});
+      dispatch({ type: "action/end", data: { id } });
       /*dispatch({
         type: "futures/add",
         data: {tick: tick + 1, future: {type: "follow-up", title, temperature, love, questions, successImage}},

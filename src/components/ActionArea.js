@@ -1,10 +1,9 @@
-import React, {useState, useEffect} from "react";
-import {useSelector, useDispatch} from "react-redux";
-import {hot} from "react-hot-loader";
+import React, { useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { hot } from "react-hot-loader";
 
 import ActionList from "./ActionList.js";
-import Thermometer from "./Thermometer";
-import SectorThermometer from "./SectorThermometer";
+import Thermometer2 from "./Thermometer2";
 import LoveChart from "./LoveChart";
 import GermanZeroLogo from "./GermanZeroLogo";
 
@@ -20,8 +19,7 @@ function ActionArea() {
       </div>
       <div className="action-area__thermometer">
         <LoveChart newDashboard={true} />
-        <Thermometer size="large" />
-        {false && <SectorThermometer />}
+        <Thermometer2 />
       </div>
       <div className="action-area__list">
         <ActionList />

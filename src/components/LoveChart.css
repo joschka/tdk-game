@@ -2,7 +2,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
 }
 
 .love-chart-new--positive svg .st31 {
@@ -24,9 +23,6 @@
   font-weight: bold;
 }
 
-
-
-
 .love-chart {
   height: 200px;
   position: relative;
@@ -38,7 +34,7 @@
   justify-content: center;
   width: 100%;
   border-radius: 20px;
-  box-shadow: 1px 1px 0 1px rgba(0,0,0,0.75);
+  box-shadow: 1px 1px 0 1px rgba(0, 0, 0, 0.75);
 }
 
 .love-chart--medium {

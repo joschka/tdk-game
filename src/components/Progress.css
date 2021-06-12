@@ -1,14 +1,13 @@
 .progress {
   display: flex;
   width: 100%;
-
 }
 
-.progress > *{
+.progress > * {
   width: 25%;
   margin-right: 3px;
 }
 
-.progress > *:last-child{
+.progress > *:last-child {
   margin-right: 0;
 }

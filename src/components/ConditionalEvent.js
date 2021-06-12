@@ -1,6 +1,6 @@
-import React, {useState, useEffect} from "react";
-import {useSelector, useDispatch} from "react-redux";
-import {hot} from "react-hot-loader";
+import React, { useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { hot } from "react-hot-loader";
 
 import Overlay from "./Overlay";
 import Background from "./Background";
@@ -19,7 +19,7 @@ const deserializeFunction = (funcString) =>
     `return function ({temperature, love, tick, done, started, vars}) {return ${funcString};}`
   )();
 
-function ConditionalEvent({id, condition, probability, slides}) {
+function ConditionalEvent({ id, condition, probability, slides }) {
   const conditionFn = deserializeFunction(condition);
 
   const dispatch = useDispatch();
@@ -63,17 +63,16 @@ function ConditionalEvent({id, condition, probability, slides}) {
   }, [conditionResult]);
 
   const destroyEvent = () => {
-    delayedDispatches.forEach(d => {
+    delayedDispatches.forEach((d) => {
       dispatch(d);
     });
-    dispatch({type: "conditionalEvent/destroy", data: id});
-
+    dispatch({ type: "conditionalEvent/destroy", data: id });
   };
 
   const nextSlide = () => {
-    console.log({slide, slidesLength: slides.length});
+    console.log({ slide, slidesLength: slides.length });
     if (slide < slides.length) {
-      dispatch({type: "conditionalEvent/nextSlide", data: {id}});
+      dispatch({ type: "conditionalEvent/nextSlide", data: { id } });
       //setSlide(slide + 1);
     } else {
       destroyEvent();
@@ -82,7 +81,7 @@ function ConditionalEvent({id, condition, probability, slides}) {
 
   const delayedDispatch = (payload) => {
     setDelayedDispatches([...delayedDispatches, payload]);
-    console.log({delayedDispatches});
+    console.log({ delayedDispatches });
   };
 
   function Slide(props) {
@@ -96,9 +95,23 @@ function ConditionalEvent({id, condition, probability, slides}) {
       case "game-over":
         return <GameOver {...props} />;
       case "love-change":
-        return <LoveChange id={id} {...props} delayedDispatch={delayedDispatch} onClick={nextSlide} />;
+        return (
+          <LoveChange
+            id={id}
+            {...props}
+            delayedDispatch={delayedDispatch}
+            onClick={nextSlide}
+          />
+        );
       case "temperature-change":
-        return <TemperatureChange id={id} {...props} delayedDispatch={delayedDispatch} onClick={nextSlide} />;
+        return (
+          <TemperatureChange
+            id={id}
+            {...props}
+            delayedDispatch={delayedDispatch}
+            onClick={nextSlide}
+          />
+        );
       case "multiple-choice":
         return (
           <ConditionalEventMultipleChoice

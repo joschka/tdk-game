@@ -56,8 +56,8 @@
 }
 
 .game-over__share {
-width: 50px;
-height: 50px;
+  width: 50px;
+  height: 50px;
   margin: 0 10px;
 }
 
@@ -86,5 +86,4 @@ height: 50px;
   line-height: 1.7;
   font-weight: 400;
   margin-bottom: 20px;
-
 }

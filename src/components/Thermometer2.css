@@ -1,0 +1,80 @@
+.thermometer-2 {
+  margin-top: 13px;
+  margin-left: -17px;
+}
+
+.thermometer-2__container {
+  width: 75px;
+  height: calc(4.3317 * 75px);
+  position: relative;
+  z-index: 1;
+}
+
+.thermometer-2__shape {
+  width: 100%;
+  height: 100%;
+}
+
+.thermometer-2__marker {
+  position: absolute;
+  width: 45px;
+  height: calc(0.84537 * 45px);
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  transition: bottom 500ms;
+}
+
+.thermometer-2__marker--left {
+  bottom: 25%;
+  left: -12%;
+  padding-left: 6px;
+}
+
+.thermometer-2__marker--right {
+  right: -16%;
+  padding-left: 9px;
+}
+
+.thermometer-2__marker > svg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.thermometer-2__area {
+  position: absolute;
+  left: 25%;
+  right: 25%;
+  bottom: 30.5%;
+  background: red;
+  border-bottom: 2px solid #000;
+  border-top: 1px solid #000;
+  z-index: -1;
+  transition: height 500ms, background-color 500ms;
+}
+
+.thermometer-2__filler-1 {
+  position: absolute;
+  left: 25%;
+  right: 25%;
+  top: 69.5%;
+  bottom: 10%;
+  z-index: -1;
+  transition: background-color 500ms;
+}
+
+.thermometer-2__filler-2 {
+  position: absolute;
+  left: 3%;
+  bottom: 1%;
+  width: 70px;
+  height: 70px;
+  border-radius: 200px;
+  z-index: -1;
+  transition: background-color 500ms;
+}

@@ -1,15 +1,15 @@
-import React, {useState, useEffect} from 'react';
-import {useSelector, useDispatch} from 'react-redux';
-import {hot} from 'react-hot-loader';
+import React, { useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { hot } from "react-hot-loader";
 
-import './ShareOption.css';
+import "./ShareOption.css";
 
 import IconTwitter from "../images/twitter.inline.svg";
 import IconFacebook from "../images/facebook.inline.svg";
 import IconEmail from "../images/email.inline.svg";
 import IconCopy from "../images/copy.inline.svg";
 
-function ShareOption({type, text, url = null, subject}) {
+function ShareOption({ type, text, url = null, subject }) {
   const dispatch = useDispatch();
 
   const encodedText = encodeURIComponent(text);
@@ -36,44 +36,43 @@ function ShareOption({type, text, url = null, subject}) {
       case "email":
         return `mailto:?body=${encodedText}&subject=${subject}`;
       case "copy":
-        return '#';
+        return "#";
     }
   }
 
   function copyToClipboard() {
-    const el = document.createElement('textarea');
+    const el = document.createElement("textarea");
     el.value = url;
-    el.setAttribute('readonly', '');
-    el.style.position = 'absolute';
-    el.style.left = '-9999px';
+    el.setAttribute("readonly", "");
+    el.style.position = "absolute";
+    el.style.left = "-9999px";
     document.body.appendChild(el);
     el.select();
-    document.execCommand('copy');
+    document.execCommand("copy");
     document.body.removeChild(el);
     console.log("copied");
   }
 
   return (
     <>
-      {type !== 'copy' && <a
-        target="_blank"
-        rel="noopener"
-        href={href()}
-        className='share-option'
-      >
-        <Icon />
-      </a>}
-
-      {
-        type === 'copy' && <button
-          className='share-option'
-          onClick={copyToClipboard}
+      {type !== "copy" && (
+        <a
+          target="_blank"
+          rel="noopener"
+          href={href()}
+          className="share-option"
         >
           <Icon />
-        </button>
-      }
+        </a>
+      )}
 
-    </>);
+      {type === "copy" && (
+        <button className="share-option" onClick={copyToClipboard}>
+          <Icon />
+        </button>
+      )}
+    </>
+  );
 }
 
 export default hot(module)(ShareOption);

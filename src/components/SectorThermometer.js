@@ -1,6 +1,6 @@
-import React, {useState, useEffect} from "react";
-import {useSelector, useDispatch} from "react-redux";
-import {hot} from "react-hot-loader";
+import React, { useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { hot } from "react-hot-loader";
 
 import "./SectorThermometer.css";
 
@@ -53,11 +53,11 @@ function SectorThermometer(props) {
     });
   }
 
-  function Block({height, sector}) {
+  function Block({ height, sector }) {
     return (
       <div
         className={`sector-thermometer__block sector-thermometer__block--${sector}`}
-        style={{height}}
+        style={{ height }}
       />
     );
   }
@@ -72,8 +72,7 @@ function SectorThermometer(props) {
               top: tempToHeight(sumTemperatureEnded),
               backgroundPositionY: tempToBackground(sumTemperatureEnded),
             }}
-          >
-          </div>
+          ></div>
         </div>
         <ThermometerImage />
         <div className="sector-thermometer__target">1,5°</div>

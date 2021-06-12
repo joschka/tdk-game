@@ -1,12 +1,12 @@
-import React, {useState, useEffect} from "react";
-import {useSelector, useDispatch} from "react-redux";
-import {hot} from "react-hot-loader";
+import React, { useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { hot } from "react-hot-loader";
 
 import LoveChart from "./LoveChart";
 
 import "./LoveChange.css";
 
-function LoveChange({id, text, love, silent, onClick}) {
+function LoveChange({ id, text, love, silent, onClick }) {
   const dispatch = useDispatch();
 
   const currentLove = useSelector((state) => state.love);
@@ -15,7 +15,7 @@ function LoveChange({id, text, love, silent, onClick}) {
 
   const initialChartProps = {
     love: love,
-    size: 'small',
+    size: "small",
   };
 
   const [chartProps, setChartProps] = useState(initialChartProps);
@@ -43,8 +43,7 @@ function LoveChange({id, text, love, silent, onClick}) {
     return function () {
       // dispatch({type: "love/change", data: love});
       // clearTimeout(timer);
-
-    }
+    };
   }, []);
 
   // if (silent && !finished) {

@@ -10,19 +10,24 @@
 }
 
 .action-area__logo {
-  position: absolute;
-  bottom: 15px;
-  left: 15px;
-  width: 73px;
-height: 73px;
-
+  display: none;
+}
+@media (min-height: 640px) {
+  .action-area__logo {
+    display: block;
+    position: absolute;
+    bottom: 15px;
+    left: 25px;
+    width: 55px;
+    height: 55px;
+  }
 }
 
 .action-area__list {
   border-radius: 20px;
   background: white;
   overflow: auto;
-  margin-left: 90px;
+  margin-left: 100px;
   height: 100%;
 }
 
@@ -31,7 +36,7 @@ height: 73px;
   top: 15px;
   left: 15px;
   bottom: 15px;
-  width: 90px;
+  width: 100px;
   background: transparent;
   display: flex;
   flex-direction: column;

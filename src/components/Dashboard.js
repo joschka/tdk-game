@@ -1,6 +1,6 @@
-import React, {useState, useEffect} from "react";
-import {useSelector, useDispatch} from "react-redux";
-import {hot} from "react-hot-loader";
+import React, { useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { hot } from "react-hot-loader";
 
 import "./Dashboard.css";
 
@@ -51,22 +51,26 @@ function Dashboard(props) {
 
   return (
     <div>
-      { false && <div {...opts}>
-        {false && <div className="dashboard-new__container">
-          <div className="dashboard-new__progress">
-            <ProgressBar newDashboard={true} />
-          </div>
-          <DashboardImage />
-          <div className="dashboard-new__year">2035</div>
-          <div className="dashboard-new__love">{love}%</div>
-          <div className="dashboard-new__calendar">
-            <Calendar />
-          </div>
-          <div className="dashboard-new__chart">
-            <LoveChartOverlay />
-          </div>
-        </div>}
-      </div>}
+      {false && (
+        <div {...opts}>
+          {false && (
+            <div className="dashboard-new__container">
+              <div className="dashboard-new__progress">
+                <ProgressBar newDashboard={true} />
+              </div>
+              <DashboardImage />
+              <div className="dashboard-new__year">2035</div>
+              <div className="dashboard-new__love">{love}%</div>
+              <div className="dashboard-new__calendar">
+                <Calendar />
+              </div>
+              <div className="dashboard-new__chart">
+                <LoveChartOverlay />
+              </div>
+            </div>
+          )}
+        </div>
+      )}
       <div className="dashboard-new">
         <Progress />
       </div>

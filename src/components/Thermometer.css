@@ -18,7 +18,7 @@
   justify-content: center;
   background: #fff;
   border-radius: 20px;
-  box-shadow: 1px 1px 0 1px rgba(0,0,0,0.75);
+  box-shadow: 1px 1px 0 1px rgba(0, 0, 0, 0.75);
   font-size: 24px;
   font-weight: bold;
 }
@@ -42,8 +42,8 @@
 }
 
 .thermometer--large .thermometer__current-temperature,
-.thermometer--large .thermometer__target-temperature{
-font-weight: bold;
+.thermometer--large .thermometer__target-temperature {
+  font-weight: bold;
 }
 
 .thermometer--large .thermometer__current-temperature::after,

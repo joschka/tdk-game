@@ -1,6 +1,6 @@
-import React, {useState, useEffect} from "react";
-import {useSelector, useDispatch} from "react-redux";
-import {hot} from "react-hot-loader";
+import React, { useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { hot } from "react-hot-loader";
 
 import "./LoveChart.css";
 
@@ -51,7 +51,9 @@ function LoveChart(props) {
     transform: `translateX(-${tick * slideStep}%)`,
   };
 
-  const formattedLabel = `${props.changeDisplay ? (currentLove >= 0 ? '+' : '') : ''}${Math.round(currentLove)}%`;
+  const formattedLabel = `${
+    props.changeDisplay ? (currentLove >= 0 ? "+" : "") : ""
+  }${Math.round(currentLove)}%`;
 
   function renderChart() {
     return (
@@ -108,8 +110,7 @@ function LoveChart(props) {
   }
 
   function renderHeart() {
-    const color =
-      currentLove > 0 ? positiveColor : negativeColor;
+    const color = currentLove > 0 ? positiveColor : negativeColor;
     return (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -135,17 +136,18 @@ function LoveChart(props) {
 
   const cssClasses = [
     "love-chart-new",
-    currentLove >= thresholdPercentage ? "love-chart-new--positive" : "love-chart-new--negative",
-  ].join(' ');
+    currentLove >= thresholdPercentage
+      ? "love-chart-new--positive"
+      : "love-chart-new--negative",
+  ].join(" ");
 
   if (props.newDashboard) {
-    return <div className={cssClasses}>
-      <Heart />
-      <div className="love-chart-new__label">
-        {formattedLabel}
+    return (
+      <div className={cssClasses}>
+        <Heart />
+        <div className="love-chart-new__label">{formattedLabel}</div>
       </div>
-
-    </div>
+    );
   }
 
   return (

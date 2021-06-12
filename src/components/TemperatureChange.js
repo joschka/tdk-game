@@ -1,12 +1,19 @@
-import React, {useState, useEffect} from "react";
-import {useSelector, useDispatch} from "react-redux";
-import {hot} from "react-hot-loader";
+import React, { useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { hot } from "react-hot-loader";
 
 import Thermometer from "./Thermometer";
 
 import "./TemperatureChange.css";
 
-function TemperatureChange({id, onClick, text, silent, temperature, delayedDispatch}) {
+function TemperatureChange({
+  id,
+  onClick,
+  text,
+  silent,
+  temperature,
+  delayedDispatch,
+}) {
   const dispatch = useDispatch();
 
   const currentTemperature = useSelector((state) => state.temperature.current);
@@ -61,7 +68,13 @@ function TemperatureChange({id, onClick, text, silent, temperature, delayedDispa
         }}
       ></div>
       <div className="temperature-change__thermometer">
-        {<Thermometer {...thermometerProps} size="small" changeDisplay={true} />}
+        {
+          <Thermometer
+            {...thermometerProps}
+            size="small"
+            changeDisplay={true}
+          />
+        }
       </div>
     </div>
   );
