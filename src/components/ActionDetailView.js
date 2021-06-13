@@ -20,6 +20,8 @@ import Overlay from "./Overlay";
 import MiniThermometerEmpty from "../images/mini-thermometer-empty.inline.svg";
 import MiniThermometerFilled from "../images/mini-thermometer-filled.inline.svg";
 
+import track from "../track";
+
 function ActionDetailView(props) {
   const dispatch = useDispatch();
 
@@ -163,6 +165,7 @@ function ActionDetailView(props) {
           Mehr Informationen im Klimaplan von GermanZero e.V.
           <br />
           <a
+            onClick={track("8FJWRNJY")}
             href="https://germanzero.de/Erreichen/1-5-grad-massnahmen"
             rel="noopener"
             target="_blank"

@@ -10,6 +10,8 @@ import ShareOption from "./ShareOption";
 import IconParty from "../images/party.inline.svg";
 import IconSad from "../images/sad.inline.svg";
 
+import track from "../track";
+
 function GameOver({ text }) {
   const dispatch = useDispatch();
 
@@ -39,9 +41,41 @@ function GameOver({ text }) {
 
   useEffect(() => {
     window.onbeforeunload = null;
+
+    if (won) {
+      // Gewonnen
+      track("QJ3JRI2N", score * 100)();
+    } else {
+      // Verloren
+      track("C8Q6TAES", score * 100)();
+    }
+
+    switch (score) {
+      case 1:
+        return track("C47JIIPE", won ? 100 : 0)();
+      case 2:
+        return track("SGQ0AAZO", won ? 100 : 0)();
+      case 3:
+        return track("NDUVUO6X", won ? 100 : 0)();
+      case 4:
+        return track("IIQYLW1S", won ? 100 : 0)();
+      case 5:
+        return track("YNEKEA5M", won ? 100 : 0)();
+      case 6:
+        return track("CUQ0HAO2", won ? 100 : 0)();
+      case 7:
+        return track("YCBH0UZD", won ? 100 : 0)();
+      case 8:
+        return track("ZKYG8B5J", won ? 100 : 0)();
+      case 9:
+        return track("DOW4MBHA", won ? 100 : 0)();
+      case 10:
+        return track("RK799DHP", won ? 100 : 0)();
+    }
   }, []);
 
   const playAgain = () => {
+    track("VT6DHCEF")();
     window.location.reload();
   };
 
@@ -81,10 +115,6 @@ function GameOver({ text }) {
     );
   }
 
-  function trackLinkToWebsite() {
-    return window.fathom && window.fathom.trackGoal("FXP1PIMM", 0);
-  }
-
   return (
     <div className="game-over">
       <SpeechBubble noHead={true}>
@@ -115,7 +145,7 @@ function GameOver({ text }) {
           <a
             href="https://www.germanzero.de"
             className="external-link"
-            onClick={trackLinkToWebsite}
+            onClick={track("FXP1PIMM")}
             rel="noopener"
             target="_blank"
           >

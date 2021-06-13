@@ -91,7 +91,7 @@ function ConditionalEvent({ id, condition, probability, slides }) {
       case "text":
         return <Text {...props} onClick={nextSlide} />;
       case "vote":
-        return <Vote {...props} onClick={nextSlide} />;
+        return <Vote {...props} id={id} onClick={nextSlide} />;
       case "game-over":
         return <GameOver {...props} />;
       case "love-change":

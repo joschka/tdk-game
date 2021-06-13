@@ -5,6 +5,8 @@ import { hot } from "react-hot-loader";
 import Background from "./Background";
 import SpeechBubble from "./SpeechBubble";
 
+import track from "../track";
+
 import "./Explainer.css";
 
 function Explainer() {
@@ -19,7 +21,7 @@ function Explainer() {
   function nextStep() {
     if (introStep === 6) {
       // Start geklickt am Ende des Intros
-      window.fathom && window.fathom.trackGoal("YRBAHU90", 0);
+      track("YRBAHU90")();
 
       dispatch({ type: "game/start" });
       dispatch({ type: "clock/start" });

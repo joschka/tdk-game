@@ -4,7 +4,9 @@ import { hot } from "react-hot-loader";
 
 import "./Vote.css";
 
-function Vote({ onClick, others, text }) {
+import track from "../track";
+
+function Vote({ id, onClick, others, text }) {
   const dispatch = useDispatch();
 
   const currentLove = useSelector((state) => state.love);
@@ -20,6 +22,23 @@ function Vote({ onClick, others, text }) {
     remainderPart * others[2],
     remainderPart * others[3],
   ];
+
+  useEffect(() => {
+    switch (id) {
+      case "vote-won-2025":
+        return track("5YURWJXF")();
+      case "vote-lost-2025":
+        return track("U34O6TDZ")();
+      case "vote-won-2029":
+        return track("RBLE2ZJ9")();
+      case "vote-lost-2029":
+        return track("ALCTF7HW")();
+      case "vote-won-2033":
+        return track("GKXS7FN3")();
+      case "vote-lost-2033":
+        return track("FWCJIVTV")();
+    }
+  }, []);
 
   function Bar(props) {
     const [fadeIn, setFadeIn] = useState(false);

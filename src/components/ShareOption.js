@@ -9,6 +9,8 @@ import IconFacebook from "../images/facebook.inline.svg";
 import IconEmail from "../images/email.inline.svg";
 import IconCopy from "../images/copy.inline.svg";
 
+import track from "../track";
+
 function ShareOption({ type, text, url = null, subject }) {
   const dispatch = useDispatch();
 
@@ -51,12 +53,25 @@ function ShareOption({ type, text, url = null, subject }) {
     document.execCommand("copy");
     document.body.removeChild(el);
     console.log("copied");
+    track("G7K3QXRO")();
+  }
+
+  function onClick() {
+    switch (type) {
+      case "twitter":
+        return track("XNGTLEKN")();
+      case "facebook":
+        return track("VSHGQSL5")();
+      case "email":
+        return track("TGTTTH5R")();
+    }
   }
 
   return (
     <>
       {type !== "copy" && (
         <a
+          onClick={onClick}
           target="_blank"
           rel="noopener"
           href={href()}
