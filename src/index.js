@@ -357,7 +357,7 @@ const store = configureStore({
       {
         // Gewonnen
         id: "win",
-        condition: "tick == 636 && temperature <= 1.5",
+        condition: "temperature <= 1.5",
         slides: [
           {
             type: "game-over",
@@ -624,7 +624,7 @@ const store = configureStore({
         ]
       },
       {
-        id: "folge-stromsteuer",
+        id: "folge-freeride",
         condition: "done.includes('freeride')",
         slides: [
           {
