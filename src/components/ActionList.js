@@ -30,6 +30,7 @@ function ActionList() {
   const mobilityActions = actions.filter((a) => a.sector === "mobility");
   const energyActions = actions.filter((a) => a.sector === "energy");
   const buildingsActions = actions.filter((a) => a.sector === "buildings");
+  const socialActions = actions.filter((a) => a.sector === "social");
 
   if (!visible) return null;
 
@@ -63,6 +64,12 @@ function ActionList() {
         <div className="action-list__sector action-list__sector--agriculture">
           <div className="action-list__sector-title">Landwirtschaft</div>
           {agricultureActions.sort(sortByImpact).map((a) => (
+            <Action key={a.id} {...a} actionable={actionable} />
+          ))}
+        </div>
+        <div className="action-list__sector action-list__sector--social">
+          <div className="action-list__sector-title">Sozialer Ausgleich</div>
+          {socialActions.sort(sortByImpact).map((a) => (
             <Action key={a.id} {...a} actionable={actionable} />
           ))}
         </div>

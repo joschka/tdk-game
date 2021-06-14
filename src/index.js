@@ -144,6 +144,50 @@ const store = configureStore({
         state: "available",
         activeSinceTick: null,
       },
+      {
+        id: "stromsteuer",
+        title: "Stromsteuer senken",
+        sector: "social",
+        description:
+          "...",
+        duration: duration.medium,
+        temperature: 0,
+        state: "available",
+        activeSinceTick: null,
+      },
+      {
+        id: "bge",
+        title: "Bedingungsloses Grundeinkommen",
+        sector: "social",
+        description:
+          "...",
+        duration: duration.long,
+        temperature: 0,
+        state: "available",
+        activeSinceTick: null,
+      },
+      {
+        id: "freeride",
+        title: "Kostenloser öffentl. Nahverkehr",
+        sector: "social",
+        description:
+          "...",
+        duration: duration.medium,
+        temperature: 0,
+        state: "available",
+        activeSinceTick: null,
+      },
+      {
+        id: "flyingtax",
+        title: "Vielfliegerabgabe",
+        sector: "social",
+        description:
+          "...",
+        duration: duration.short,
+        temperature: 0.1,
+        state: "available",
+        activeSinceTick: null,
+      },
     ],
     actionPartitions: ["active", "available", "ended"],
     actionsSortBy: "temperature",
@@ -553,6 +597,57 @@ const store = configureStore({
       },
 
 
+      //////// FOLGEN DER AUSGLEICHMASSNAHMEN /////
+
+      {
+        id: "folge-stromsteuer",
+        condition: "done.includes('stromsteuer')",
+        slides: [
+          {
+            type: "love-change",
+            love: 5,
+            background: "buero",
+            text: "..."
+          },
+        ]
+      },
+      {
+        id: "folge-flyingtax",
+        condition: "done.includes('flyingtax')",
+        slides: [
+          {
+            type: "love-change",
+            love: 2,
+            background: "buero",
+            text: "..."
+          },
+        ]
+      },
+      {
+        id: "folge-stromsteuer",
+        condition: "done.includes('freeride')",
+        slides: [
+          {
+            type: "love-change",
+            love: 5,
+            background: "parlament",
+            text: "..."
+          },
+        ]
+      },
+      {
+        id: "folge-bge",
+        condition: "done.includes('bge')",
+        slides: [
+          {
+            type: "love-change",
+            love: 15,
+            background: "biertisch",
+            text: "..."
+          },
+        ]
+      },
+
 
 
 
@@ -735,25 +830,25 @@ const store = configureStore({
 
 
 
-      {
-        id: "co2-lobbyreaktion",
-        condition: "started.includes('co2bepreisung')",
-        slides: [
-          {
-            type: "text", // text, multiple-choice, love-change, temperature-change
-            background: "buero", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
-            title: "",
-            text: "Leider bezahlen wir sofort den Preis für den CO2-Preis.",
-            position: "top",
-          },
-          {
-            type: "love-change",
-            love: -8,
-            background: "buero",
-            text: "Arbeitsplatzverluste, Preisanstiege, Inflation: Unsere politischen Gegner lassen nichts unversucht, um uns zu schaden. Die Stimmung im Land ist angespannt."
-          }
-        ]
-      },
+      // {
+      //   id: "co2-lobbyreaktion",
+      //   condition: "started.includes('co2bepreisung')",
+      //   slides: [
+      //     {
+      //       type: "text", // text, multiple-choice, love-change, temperature-change
+      //       background: "buero", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
+      //       title: "",
+      //       text: "Leider bezahlen wir sofort den Preis für den CO2-Preis.",
+      //       position: "top",
+      //     },
+      //     {
+      //       type: "love-change",
+      //       love: -8,
+      //       background: "buero",
+      //       text: "Arbeitsplatzverluste, Preisanstiege, Inflation: Unsere politischen Gegner lassen nichts unversucht, um uns zu schaden. Die Stimmung im Land ist angespannt."
+      //     }
+      //   ]
+      // },
 
 
       {
@@ -789,7 +884,7 @@ const store = configureStore({
             position: "top",
             answers: [
               {
-                text: "Schwarze Null",
+                text: "Auf's Sparbuch legen",
                 slides: [
                   {
                     type: "love-change",
@@ -799,11 +894,11 @@ const store = configureStore({
                 ]
               },
               {
-                text: "Stromsteuer senken",
+                text: "An Bürger*innen auszahlen",
                 slides: [
                   {
                     type: "love-change",
-                    love: -3,
+                    love: 8,
                     background: "interview"
                   }
                 ]
@@ -1114,55 +1209,55 @@ const store = configureStore({
       },
 
 
-      {
-        id: "populisten",
-        condition: "love < 40 && tick > 400 && temperature < 3",
-        slides: [
-          {
-            type: "temperature-change", // text, multiple-choice, love-change, temperature-change
-            background: "berater", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
-            temperature: 0,
-            text: "Nur noch wenige Grad Celsius bis zum Ziel: Sie haben dieses Land schon sehr verändert!"
-          },
-          {
-            type: "text", // text, multiple-choice, love-change, temperature-change
-            background: "parlament", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
-            text: "Leider haben bei so viel Veränderung die Populisten Aufwind."
-          },
-          {
-            type: "multiple-choice", // text, multiple-choice, love-change, temperature-change
-            background: "buero", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
-            text: "Was wollen Sie gegen die Populisten tun?",
-            answers: [
-              {
-                text: "Bedingungsloses Grundeinkommen auf den Weg bringen",
-                slides: [
-                  {
-                    type: "love-change",
-                    background: "biertisch",
-                    love: 15,
-                    text: "Grundeinkommen stiftet Vertrauen – auch in Ihre Politik",
-                    position: "top"
-                  }
-                ]
+      // {
+      //   id: "populisten",
+      //   condition: "love < 40 && tick > 400 && temperature < 3",
+      //   slides: [
+      //     {
+      //       type: "temperature-change", // text, multiple-choice, love-change, temperature-change
+      //       background: "berater", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
+      //       temperature: 0,
+      //       text: "Nur noch wenige Grad Celsius bis zum Ziel: Sie haben dieses Land schon sehr verändert!"
+      //     },
+      //     {
+      //       type: "text", // text, multiple-choice, love-change, temperature-change
+      //       background: "parlament", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
+      //       text: "Leider haben bei so viel Veränderung die Populisten Aufwind."
+      //     },
+      //     {
+      //       type: "multiple-choice", // text, multiple-choice, love-change, temperature-change
+      //       background: "buero", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
+      //       text: "Was wollen Sie gegen die Populisten tun?",
+      //       answers: [
+      //         {
+      //           text: "Bedingungsloses Grundeinkommen auf den Weg bringen",
+      //           slides: [
+      //             {
+      //               type: "love-change",
+      //               background: "biertisch",
+      //               love: 15,
+      //               text: "Grundeinkommen stiftet Vertrauen – auch in Ihre Politik",
+      //               position: "top"
+      //             }
+      //           ]
 
-              },
-              {
-                text: "Mit Populisten zusammenarbeiten",
-                slides: [
-                  {
-                    type: "love-change",
-                    background: "talkshow",
-                    love: -15,
-                    text: "Zu ihren politischen Freunden zählen Sie auch Demokratiefeinde. Wie erklären Sie das Ihren Wähler*innen?",
-                    position: "top"
-                  }
-                ]
-              }
-            ]
-          },
-        ]
-      },
+      //         },
+      //         {
+      //           text: "Mit Populisten zusammenarbeiten",
+      //           slides: [
+      //             {
+      //               type: "love-change",
+      //               background: "talkshow",
+      //               love: -15,
+      //               text: "Zu ihren politischen Freunden zählen Sie auch Demokratiefeinde. Wie erklären Sie das Ihren Wähler*innen?",
+      //               position: "top"
+      //             }
+      //           ]
+      //         }
+      //       ]
+      //     },
+      //   ]
+      // },
 
       {
         id: "erneuerbare-reminder",
