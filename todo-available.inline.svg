@@ -56,7 +56,7 @@
      id="layer1"
      style="display:inline">
     <circle
-       style="fill:none;fill-rule:evenodd;stroke:#fff;stroke-width:30;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stop-color:#000000"
+       style="fill:#fff;fill-rule:evenodd;stroke:#fff;stroke-width:30;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stop-color:#000000"
        id="path38"
        cx="200"
        cy="200"

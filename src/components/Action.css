@@ -4,18 +4,20 @@
 .action__stripe {
   display: flex;
   align-items: center;
-  padding: 10px 10px;
-  background: #00aed8;
-  color: #fff;
   border-radius: 100px;
   margin-bottom: 5px;
+  cursor: pointer;
 }
 
 .action__icon {
   flex-shrink: 0;
-  width: 20px;
-  height: 20px;
+  width: 36px;
+  height: 36px;
+  padding: 8px;
+  margin: 2px;
   margin-right: 10px;
+  background: #00aed8;
+  border-radius: 100px;
 }
 
 .action--minimized .action__stripe {
@@ -28,6 +30,7 @@
   text-overflow: ellipsis;
   overflow: hidden;
   margin-right: 5px;
+  padding: 10px 10px;
 }
 
 .action__title {
@@ -36,6 +39,7 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+  color: #000;
 }
 
 .action__tools {

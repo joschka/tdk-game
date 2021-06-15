@@ -8,9 +8,10 @@
 
 .action-list__sector-title {
   color: #00aed8;
-  font-size: 12px;
-  padding-left: 15px;
-  padding-bottom: 5px;
+  font-size: 13px;
+  font-weight: bold;
+  padding-left: 47px;
+  padding-top: 8px;
 }
 /*
 .action-list__sector--industry {

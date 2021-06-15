@@ -2,6 +2,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-left: -17px;
 }
 
 .love-chart-new--positive svg .st31 {

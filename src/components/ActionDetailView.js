@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { hot } from "react-hot-loader";
+import React, {useState, useEffect} from "react";
+import {useSelector, useDispatch} from "react-redux";
+import {hot} from "react-hot-loader";
 
 import "./ActionDetailView.css";
 
@@ -107,14 +107,14 @@ function ActionDetailView(props) {
     //setShowDetailView(false);
     //dispatch({type: "clock/start", data: "overlay"});
     if (state === "available" && actionable) {
-      dispatch({ type: "action/activate", data: { id } });
-      dispatch({ type: "action/hide", data: id });
+      dispatch({type: "action/activate", data: {id}});
+      dispatch({type: "action/hide", data: id});
     }
   };
 
   const onBackClick = () => {
     //setShowDetailView(false);
-    dispatch({ type: "action/hide", data: id });
+    dispatch({type: "action/hide", data: id});
     //dispatch({type: "clock/start", data: "overlay"});
   };
 
@@ -159,19 +159,24 @@ function ActionDetailView(props) {
         </div>
         {renderButtons()}
         <div className="action-detail-view__speech-bubble">
-          <SpeechBubble text={description} head={true} />
-        </div>
-        <div className="action-detail-view__link">
-          Mehr Informationen im Klimaplan von GermanZero e.V.
-          <br />
-          <a
-            onClick={track("8FJWRNJY")}
-            href="https://germanzero.de/Erreichen/1-5-grad-massnahmen"
-            rel="noopener"
-            target="_blank"
-          >
-            Klimaplan in neuem Tab öffnen
+          <SpeechBubble head={true}>
+            <p dangerouslySetInnerHTML={{
+              __html: description,
+            }}>
+            </p>
+            <div className="action-detail-view__link">
+              Mehr Informationen im Klimaplan von GermanZero.&nbsp;
+              <a
+                className="external-link"
+                onClick={track("8FJWRNJY")}
+                href="https://germanzero.de/Erreichen/1-5-grad-massnahmen"
+                rel="noopener"
+                target="_blank"
+              >
+                Schau rein!
           </a>
+            </div>
+          </SpeechBubble>
         </div>
       </div>
     </Overlay>
