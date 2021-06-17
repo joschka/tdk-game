@@ -94,16 +94,20 @@
 
 .background--blurry-actions {
   background-image: url("../images/backgrounds/blurry-actions.jpg");
+  background-position: center top;
 }
 
 .background--blurry-love {
   background-image: url("../images/backgrounds/blurry-love.jpg");
+  background-position: center top;
 }
 
 .background--blurry-temperature {
   background-image: url("../images/backgrounds/blurry-temperature.jpg");
+  background-position: center top;
 }
 
 .background--blurry-progress {
   background-image: url("../images/backgrounds/blurry-progress.jpg");
+  background-position: center top;
 }

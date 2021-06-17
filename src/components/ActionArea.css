@@ -12,12 +12,12 @@
 .action-area__logo {
   display: none;
 }
-@media (min-height: 640px) {
+@media (min-height: 700px) {
   .action-area__logo {
     display: block;
     position: absolute;
     bottom: 15px;
-    left: 25px;
+    left: 28px;
     width: 55px;
     height: 55px;
   }
