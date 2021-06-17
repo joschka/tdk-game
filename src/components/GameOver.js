@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { hot } from "react-hot-loader";
+import React, {useState, useEffect} from "react";
+import {useSelector, useDispatch} from "react-redux";
+import {hot} from "react-hot-loader";
 
 import "./GameOver.css";
 
@@ -12,7 +12,7 @@ import IconSad from "../images/sad.inline.svg";
 
 import track from "../track";
 
-function GameOver({ text }) {
+function GameOver({text}) {
   const dispatch = useDispatch();
 
   const temperature = useSelector((state) => state.temperature.current);
@@ -25,7 +25,7 @@ function GameOver({ text }) {
   const won = temperature <= 1.5;
 
   const bestScore = 5000 + 800 + 2500 + (2544 - totalDuration);
-  console.log({ bestScore });
+  console.log({bestScore});
 
   const detailScore = parseInt(
     [
@@ -76,7 +76,16 @@ function GameOver({ text }) {
 
   const playAgain = () => {
     track("VT6DHCEF")();
-    window.location.reload();
+
+    const urlParams = (new URL(document.location)).searchParams;
+    if (urlParams.has('r')) {
+      const r = parseInt(urlParams.get('r'), 10);
+      urlParams.set('r', r + 1);
+    } else {
+      urlParams.set('r', 1);
+    }
+    window.location.search = urlParams;
+
   };
 
   const socialUrl = "https://gesetzesspiel.germanzero.de";

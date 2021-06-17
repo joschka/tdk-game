@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { hot } from "react-hot-loader";
+import React, {useState, useEffect} from "react";
+import {useSelector, useDispatch} from "react-redux";
+import {hot} from "react-hot-loader";
 
 import "./App.css";
 
@@ -24,6 +24,8 @@ import FollowUp from "./FollowUp";
 import Unlover from "./Unlover";
 
 function App() {
+  const dispatch = useDispatch();
+
   const gameStarted = useSelector((state) => state.game.started);
   const gameStopped = useSelector((state) => state.game.stopped);
   const introStep = useSelector((state) => state.game.introStep);
@@ -39,6 +41,14 @@ function App() {
   } else {
     window.onbeforeunload = null;
   }
+
+  useEffect(() => {
+    const urlParams = (new URL(document.location)).searchParams;
+    if (urlParams.has('r')) {
+      const r = parseInt(urlParams.get('r'), 10);
+      dispatch({type: "conditionalEvent/setVariable", data: {variable: `replay${r}`}});
+    }
+  }, []);
 
   const renderActionDetailViews = () => {
     return actions

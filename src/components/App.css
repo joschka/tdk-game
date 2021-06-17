@@ -188,7 +188,6 @@ body {
 }
 
 .button:active {
-  background: red;
 }
 
 .button--secondary {
