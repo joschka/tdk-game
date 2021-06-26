@@ -561,7 +561,7 @@ const store = configureStore({
       {
         // Spieltipps vom Berater
         id: "beraterspieltipps",
-        condition: "needhelp",
+        condition: "vars.needhelp",
         slides: [
           {
             type: "text",
