@@ -13,7 +13,7 @@ function ActionList() {
   const visible = useSelector((state) => state.actionsVisible);
 
   const activeActions = actions.filter((a) => a.state === "active");
-  const actionable = activeActions.length < 4;
+  const actionable = activeActions.length < 3;
 
   const opts = {
     className: ["action-list"].join(" "),
