@@ -149,7 +149,7 @@ const store = configureStore({
         title: "Stromsteuer senken",
         sector: "social",
         description:
-          "...",
+          "Strom aus Erneuerbaren Energien wird faktisch nicht mehr besteuert!<br /><br />Die Energiesteuer besteuert die Stromerzeugung in Abhängigkeit der CO2-Emission des jeweils verwendeten Brennstoffs. Strom der bspw. aus Kohle gewonnen wird, wird auf Grund hoher CO2-Emissionen teurer. Beziehen Verbraucher:innen ihren Strom jedoch aus erneuerbaren Energien, wird kein CO2 bei der Stromherstellung emittiert. Dieser Strom wird folglich nur mit dem europäischen Mindestsatz besteuert, der bei fast 0% liegt.",
         duration: duration.medium,
         temperature: 0,
         state: "available",
@@ -160,7 +160,7 @@ const store = configureStore({
         title: "Bedingungsloses Grundeinkommen",
         sector: "social",
         description:
-          "...",
+          "Durch das bedingungslose Grundeinkommen wird eine materielle Grundlage für alle geschaffen und damit Mut zum Wandel in der Gesellschaft gefördert. Ist für die Grundbedürfnisse gesorgt, können sich Menschen auf die notwendigen ökologischen Umstrukturierungen einlassen.",
         duration: duration.long,
         temperature: 0,
         state: "available",
@@ -171,7 +171,7 @@ const store = configureStore({
         title: "Kostenloser öffentl. Nahverkehr",
         sector: "social",
         description:
-          "...",
+          "Busse, Fähren, Straßenbahnen, Kleinbusse bringen die Bürger*innen der Kommunen ab sofort umsonst und klimafreundlich von A nach B!",
         duration: duration.medium,
         temperature: 0,
         state: "available",
@@ -182,7 +182,7 @@ const store = configureStore({
         title: "Vielfliegerabgabe",
         sector: "social",
         description:
-          "...",
+          "Die Luftverkehrssteuer wird in eine Vielflieger*innenabgabe verwandelt – wer viel fliegt, muss auch viel zahlen – das trifft allerdings nur die 8% der Deutschen, die mehr als zwei Mal pro Jahr fliegen. In der Regel Menschen mit hohem Einkommen.",
         duration: duration.short,
         temperature: 0.1,
         state: "available",
@@ -361,7 +361,7 @@ const store = configureStore({
         slides: [
           {
             type: "game-over",
-            text: "Glückwunsch! Was für eine Klima-Kanzlerschaft!",
+            text: "Sie haben das Klima gerettet! Was für eine beeindruckende Klima-Kanzlerschaft!",
             background: "jubel",
           },
         ],
@@ -374,7 +374,7 @@ const store = configureStore({
         slides: [
           {
             type: "game-over",
-            text: "Das war wohl nichts. Nochmal spielen?",
+            text: "Sie sind zwar im Amt geblieben aber haben das Klimaziel verfehlt!",
             background: "buero",
           },
         ],
@@ -884,7 +884,7 @@ const store = configureStore({
             position: "top",
             answers: [
               {
-                text: "Auf's Sparbuch legen",
+                text: "Sparen für die Schwarze Null",
                 slides: [
                   {
                     type: "love-change",
@@ -1175,7 +1175,8 @@ const store = configureStore({
                   {
                     type: "love-change",
                     love: 2,
-                    silent: true
+                    background: "talkshow",
+                    text: "Das ist Ihnen gut gelungen!"
                   }
                 ]
               },
@@ -1185,7 +1186,8 @@ const store = configureStore({
                   {
                     type: "love-change",
                     love: 4,
-                    silent: true
+                    background: "berater",
+                    text: "Das kommt gut an!"
                   }
                 ]
               }

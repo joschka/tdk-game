@@ -13,6 +13,10 @@ import imageZuege from "../images/actions/zuege.gif";
 import imageKohleausstieg from "../images/actions/kohleausstieg.gif";
 import imageSolarWind from "../images/actions/solarwind.gif";
 import imageReparieren from "../images/actions/reparieren.gif";
+import imageStromsteuer from "../images/actions/stromsteuer.gif";
+import imageBGE from "../images/actions/bge.gif";
+import imageFreeride from "../images/actions/freeride.gif";
+import imageFlyingtax from "../images/actions/flyingtax.gif";
 
 import SpeechBubble from "./SpeechBubble";
 import Overlay from "./Overlay";
@@ -70,6 +74,18 @@ function ActionDetailView(props) {
       break;
     case "reparieren":
       imageSrc = imageReparieren;
+      break;
+    case "stromsteuer":
+      imageSrc = imageStromsteuer;
+      break;
+    case "bge":
+      imageSrc = imageBGE;
+      break;
+    case "freeride":
+      imageSrc = imageFreeride;
+      break;
+    case "flyingtax":
+      imageSrc = imageFlyingtax;
       break;
     default:
       imageSrc = "";
