@@ -61,7 +61,7 @@ const store = configureStore({
         title: "Kreislaufwirtschaft",
         sector: "industry",
         description:
-          "Durch den Aufbau einer Kreislaufwirtschaft werden bestehende Materialien und Produkte so lange wie möglich in Benutzung gehalten. Das geschieht im Wesentlichen durch Wiederverwendung, Reparatur und Recycling. Dadurch werden Emissionen eingespart, die ansonsten für die energieaufwändige Produktion von Primärmaterialien anfallen würden.",
+          "Durch den Aufbau einer Kreislaufwirtschaft werden bestehende Materialien und Produkte so lange wie möglich in Benutzung gehalten. Das geschieht im Wesentlichen durch Wiederverwendung, Reparatur und Recycling. Dadurch werden Emissionen eingespart, die ansonsten für die energieaufwändige Produktion von Primärmaterialien anfallen würden.<br /><br />Fangen Sie rechtzeitig an! Diese Maßnahme umzusetzen dauert länger als eine Wahlperiode.",
         duration: duration.long,
         temperature: -0.4375,
         state: "available",
@@ -72,7 +72,7 @@ const store = configureStore({
         title: "Moore nass machen",
         sector: "agriculture",
         description:
-          "95 % der Moore in Deutschland wurden trockegelegt, aber nur nasse Moore speichern CO2 - also: Moore nass machen!",
+          "95 % der Moore in Deutschland wurden trockegelegt, aber nur nasse Moore speichern CO2 - also: Moore nass machen! <br /><br />Fangen Sie rechtzeitig an! Diese Maßnahme umzusetzen dauert länger als eine Wahlperiode.",
         duration: duration.long,
         temperature: -0.09375,
         state: "available",
@@ -116,7 +116,7 @@ const store = configureStore({
         title: "Kohleausstieg",
         sector: "energy",
         description:
-          "Ohne Kohleausstieg keine Klimawende. Wir müssen unsere Energieerzeugung grundlegend transformieren. <br /><br />Politisch wird das nicht ganz leicht. Fangen Sie trotzdem vor 2028 an, sonst wird das mit dem Klimaziel nichts. Und schaffen Sie rechtzeitig Strom-Alterantiven!",
+          "Ohne Kohleausstieg keine Klimawende. Wir müssen unsere Energieerzeugung grundlegend transformieren. <br /><br />Politisch wird das nicht ganz leicht. Fangen Sie trotzdem vor 2028 an, sonst wird das mit dem Klimaziel nichts. Und schaffen Sie rechtzeitig Strom-Alternativen!",
         duration: duration.short,
         temperature: -0.1875,
         state: "available",
@@ -160,7 +160,7 @@ const store = configureStore({
         title: "Bedingungsloses Grundeinkommen",
         sector: "social",
         description:
-          "Durch das bedingungslose Grundeinkommen wird eine materielle Grundlage für alle geschaffen und damit Mut zum Wandel in der Gesellschaft gefördert. Ist für die Grundbedürfnisse gesorgt, können sich Menschen auf die notwendigen ökologischen Umstrukturierungen einlassen.",
+          "Durch das bedingungslose Grundeinkommen wird eine materielle Grundlage für alle geschaffen und damit Mut zum Wandel in der Gesellschaft gefördert. Ist für die Grundbedürfnisse gesorgt, können sich Menschen auf die notwendigen ökologischen Umstrukturierungen einlassen. <br /><br />Fangen Sie rechtzeitig an! Diese Maßnahme umzusetzen dauert länger als eine Wahlperiode.",
         duration: duration.long,
         temperature: 0,
         state: "available",
@@ -648,17 +648,10 @@ const store = configureStore({
         slides: [
           {
             type: "love-change",
-            love: 15,
+            love: 12,
             background: "biertisch",
             text: "Die Leute lieben das Grundeinkommen – und deshalb auch Sie"
-          }
-        ]
-      },
-
-      {
-        id: "folge-bge-longterm",
-        condition: "done.includes('bge') && tick > 416",
-        slides: [
+          },
           {
             type: "temperature-change",
             temperature: 0.1,
