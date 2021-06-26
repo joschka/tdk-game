@@ -846,25 +846,25 @@ const store = configureStore({
 
 
 
-      // {
-      //   id: "co2-lobbyreaktion",
-      //   condition: "started.includes('co2bepreisung')",
-      //   slides: [
-      //     {
-      //       type: "text", // text, multiple-choice, love-change, temperature-change
-      //       background: "buero", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
-      //       title: "",
-      //       text: "Leider bezahlen wir sofort den Preis für den CO2-Preis.",
-      //       position: "top",
-      //     },
-      //     {
-      //       type: "love-change",
-      //       love: -8,
-      //       background: "buero",
-      //       text: "Arbeitsplatzverluste, Preisanstiege, Inflation: Unsere politischen Gegner lassen nichts unversucht, um uns zu schaden. Die Stimmung im Land ist angespannt."
-      //     }
-      //   ]
-      // },
+      {
+        id: "co2-lobbyreaktion",
+        condition: "started.includes('co2bepreisung')",
+        slides: [
+          {
+            type: "text", // text, multiple-choice, love-change, temperature-change
+            background: "buero", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
+            title: "",
+            text: "Leider bezahlen wir sofort den politischen Preis für den CO2-Preis.",
+            position: "top",
+          },
+          {
+            type: "love-change",
+            love: -8,
+            background: "buero",
+            text: "Arbeitsplatzverluste, Preisanstiege, Inflation: Unsere politischen Gegner lassen nichts unversucht, um uns zu schaden. Die Stimmung im Land ist angespannt."
+          }
+        ]
+      },
 
 
       {
