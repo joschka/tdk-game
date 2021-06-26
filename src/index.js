@@ -513,6 +513,87 @@ const store = configureStore({
       },
 
 
+      // SPIELTIPPS
+
+
+      {
+        // Berater fragt 1/2
+        id: "berater1",
+        condition: "tick == 1 && replay2",
+        slides: [
+          {
+            type: "multiple-choice",
+            text: "Darf ich Ihnen ein paar Ratschläge geben, wie Sie gewinnen können?",
+            background: "berater",
+            answers: [
+              {
+                text: "Ja, bitte!",
+                variable: "needhelp"
+              },
+              {
+                text: "Nein, ich schaff das allein!",
+              }
+            ]
+          }
+        ],
+      },
+      {
+        // Berater fragt 2/2
+        id: "berater2",
+        condition: "tick == 1 && replay3",
+        slides: [
+          {
+            type: "multiple-choice",
+            text: "Jetzt ein paar Gewinn-Tipps?",
+            background: "berater",
+            answers: [
+              {
+                text: "Ja, okay.",
+                variable: "needhelp"
+              },
+              {
+                text: "Neeein.",
+              }
+            ]
+          }
+        ],
+      },
+      {
+        // Spieltipps vom Berater
+        id: "beraterspieltipps",
+        condition: "needhelp",
+        slides: [
+          {
+            type: "text",
+            text: "<b>Tipp 1 von 5:</b><br />Einige wichtige Maßnahme wie CO2-Bepreisung, das Beenden der Massentierhaltung und der Ausstieg aus dem Verbrennungsmotor sind bei der Lobby bzw. bei der Bevölkerung wenig beliebt. Achten Sie deshalb darauf, diese Maßnahmen nicht direkt vor der Wahl durchzuführen.",
+            background: "berater",
+          },
+          {
+            type: "text",
+            text: "<b>Tipp 2 von 5:</b><br />Zu viel Veränderung beunruhigt die Leute – gleichzeitig ist sie nötig um den Planeten zu retten. Schaffen Sorgen Sie deshalb dafür, dass die Leute keine Angst haben, finanzielle Verlierer der Klimapolitik zu werden. Sie finden dafür in der Maßnahmenliste ganz unten den Punkt „Sozialer Ausgleich“.",
+            background: "berater",
+          },
+          {
+            type: "text",
+            text: "<b>Tipp 3 von 5:</b><br />Wenn Ihnen der politische Betrieb zu hektisch wird, finden Sie unter dem Thermometer eine Pause-Knopf. Im Pause-Modus, können Sie sich in aller Ruhe in die Maßnahmen einlesen.",
+            background: "berater",
+          },
+          {
+            type: "text",
+            text: "<b>Tipp 4 von 5:</b><br />Einige Maßnahmen dauern sehr lange in der Umsetzung – z.B. Moore und Kreislaufwirtschaft. Fangen Sie damit allerspätestens am Anfang der dritten Wahlperiode an, sonst erreichen Sie ihr Ziel nicht.",
+            background: "berater",
+          },
+          {
+            type: "text",
+            text: "<b>Tipp 5 von 5:</b><br />Schaffen Sie klimafreundliche Alternativen bevor Sie Verbote durchsetzen. Setzen Sie rechtzeitig auf die Schiene und auf erneuerbare Energien.",
+            background: "berater",
+          },
+        ],
+      },
+
+
+
+
 
       // KLIMAFOLGEN ONLY
 
