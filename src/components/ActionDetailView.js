@@ -149,10 +149,10 @@ function ActionDetailView(props) {
     }
 
     return (
-      <div>
-        Sie können immer nur 3 Maßnahme gleichzeitig durchführen. Sobald eine Maßnahme fertig ist, können Sie eine weitere auf den Weg bringen.
-      </div>
       <div className="action-detail-view__buttons">
+        <p>
+          Sie können immer nur 3 Maßnahme gleichzeitig durchführen. Sobald eine Maßnahme fertig ist, können Sie eine weitere auf den Weg bringen.
+        </p>
         <button className="button button--secondary" onClick={onBackClick}>
           Zurück
         </button>
