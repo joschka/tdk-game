@@ -83,7 +83,7 @@ const store = configureStore({
         title: "Massentierhaltung beenden",
         sector: "agriculture",
         description:
-          "Es werden nur noch so viele Tiere gehalten, wie das Land ernähren kann und ein Emissionshandel für tierische Produkte eingeführt: Etwa zwei Drittel der Emissionen des Landwirtschaftsbereichs stammen direkt aus der Tierhaltung. Durch einen Emissionshandel für tierische Produkte könnten diese Emissionen durch eine schrittweise Reduktion der Zertifikatsmenge zielgenau und kosteneffizient gesenkt werden.",
+          "Es werden nur noch so viele Tiere gehalten, wie das Land ernähren kann und ein Emissionshandel für tierische Produkte eingeführt: Etwa zwei Drittel der Emissionen des Landwirtschaftsbereichs stammen direkt aus der Tierhaltung. Durch einen Emissionshandel für tierische Produkte könnten diese Emissionen durch eine schrittweise Reduktion der Zertifikatsmenge zielgenau und kosteneffizient gesenkt werden. <br /><br />Politisch wird das eine Herausforderung. Achten Sie auf das Timing und Ihre öffentlichen Aussagen!",
         duration: duration.medium,
         temperature: -0.09375,
         state: "available",
@@ -94,7 +94,7 @@ const store = configureStore({
         title: "E-Autos statt Verbrenner",
         sector: "mobility",
         description:
-          "Elektro- statt Verbrennungsmotoren: Deutlich weniger Emissionen und Wirtschaftsfaktor E-Mobilität",
+          "Elektro- statt Verbrennungsmotoren: Deutlich weniger Emissionen und Wirtschaftsfaktor E-Mobilität. <br /><br />Die Deutschen hängen an ihrem Verbrenner. Sorgen Sie dafür, dass dieses Thema nicht zum Wahlkampfthema wird, denn hier können wir kurzfristig nur verlieren. Außerdem braucht es Alternativen für Pendler*innen.",
         duration: duration.medium,
         temperature: -0.21875,
         state: "available",
@@ -116,7 +116,7 @@ const store = configureStore({
         title: "Kohleausstieg",
         sector: "energy",
         description:
-          "Ohne Kohleausstieg keine Klimawende. Wir müssen unsere Energieerzeugung grundlegend transformieren. ",
+          "Ohne Kohleausstieg keine Klimawende. Wir müssen unsere Energieerzeugung grundlegend transformieren. <br /><br />Politisch wird das nicht ganz leicht. Fangen Sie trotzdem vor 2028 an, sonst wird das mit dem Klimaziel nichts. Und schaffen Sie rechtzeitig Strom-Alterantiven!",
         duration: duration.short,
         temperature: -0.1875,
         state: "available",
@@ -524,7 +524,8 @@ const store = configureStore({
           {
             type: "temperature-change",
             temperature: -0.4375,
-            silent: true
+            background: "buero",
+            text: "Umstellung auf Kreislaufwirtschaft abgeschlossen! Die Ressourcen halten länger und deswegen hat uns die Rohstoffkrise nicht so hart getroffen."
           },
         ]
       },
@@ -607,7 +608,7 @@ const store = configureStore({
             type: "love-change",
             love: 5,
             background: "buero",
-            text: "..."
+            text: "Kohlestrom lohnt sich nicht! Die praktische Abschaffung der Steuer für Erneuerbare Energien war genau der richtige Anreiz für den Umbau! Strom wurde deutlich günstiger und mit den vollen Taschen steigt ihre Beliebtheit!"
           },
         ]
       },
@@ -616,10 +617,16 @@ const store = configureStore({
         condition: "done.includes('flyingtax')",
         slides: [
           {
+            type: "temperature-change",
+            temperature: -0.1,
+            background: "biertisch",
+            text: "Vielfliegersteuer eingeführt! Malle ist weiterhin gut besucht! Trotzdem geht der Trend zum Zug und das ist klasse fürs Klima!"
+          },
+          {
             type: "love-change",
             love: 2,
-            background: "buero",
-            text: "..."
+            background: "biertisch",
+            text: "... und wird als gerecht empfunden! Beliebtheit steigt"
           },
         ]
       },
@@ -631,7 +638,7 @@ const store = configureStore({
             type: "love-change",
             love: 5,
             background: "parlament",
-            text: "..."
+            text: "Die Fahrgastzahlen schnellen in die Höhe! Weniger Stau, weniger Tanken, mehr Zeit - ihre Beliebtheit steigt im Takt der Busse!"
           },
         ]
       },
@@ -643,14 +650,23 @@ const store = configureStore({
             type: "love-change",
             love: 15,
             background: "biertisch",
-            text: "..."
-          },
+            text: "Die Leute lieben das Grundeinkommen – und deshalb auch Sie"
+          }
         ]
       },
 
-
-
-
+      {
+        id: "folge-bge-longterm",
+        condition: "done.includes('bge') && tick > 416",
+        slides: [
+          {
+            type: "temperature-change",
+            temperature: 0.1,
+            background: "biertisch",
+            text: "Durch Bedingungslose Grundeinkommen sinkt der Stress in der Gesellschaft. Weniger Stress führt zu weniger kurzfristigem Konsum. Das ist gut für's Klima!"
+          },
+        ]
+      },
 
 
       //////// STORIES ///////////
@@ -1174,9 +1190,9 @@ const store = configureStore({
                 slides: [
                   {
                     type: "love-change",
-                    love: 2,
+                    love: -2,
                     background: "talkshow",
-                    text: "Das ist Ihnen gut gelungen!"
+                    text: "Sie haben die anderen Diskussionsteilnehmer*innen nie ausreden lassen – Ihre Beliebtheit sinkt!"
                   }
                 ]
               },
@@ -1187,7 +1203,7 @@ const store = configureStore({
                     type: "love-change",
                     love: 4,
                     background: "berater",
-                    text: "Das kommt gut an!"
+                    text: "Wow! Sie haben einen echten Dominoeffekt ausgelöst, die öffentliche Hand verpflichtet sich jetzt auch dazu, dass Krankenhausessen klimaverträglich wird!"
                   }
                 ]
               }
