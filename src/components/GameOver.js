@@ -84,6 +84,7 @@ function GameOver({text}) {
     } else {
       urlParams.set('r', 1);
     }
+    urlParams.set('intro', 0);
     window.location.search = urlParams;
 
   };
