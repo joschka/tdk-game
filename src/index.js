@@ -519,7 +519,7 @@ const store = configureStore({
       {
         // Berater fragt 1/2
         id: "berater1",
-        condition: "tick == 1 && replay2",
+        condition: "tick == 1 && vars.replay2",
         slides: [
           {
             type: "multiple-choice",
@@ -540,7 +540,7 @@ const store = configureStore({
       {
         // Berater fragt 2/2
         id: "berater2",
-        condition: "tick == 1 && replay3",
+        condition: "tick == 1 && vars.replay3",
         slides: [
           {
             type: "multiple-choice",
