@@ -44,7 +44,7 @@ function ActionDetailView(props) {
 
   const actions = useSelector((state) => state.actions);
   const activeActions = actions.filter((a) => a.state === "active");
-  const actionable = activeActions.length < 4;
+  const actionable = activeActions.length < 3;
 
   let imageSrc;
   switch (id) {
