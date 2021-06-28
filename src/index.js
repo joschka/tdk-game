@@ -580,7 +580,7 @@ const store = configureStore({
           },
           {
             type: "text",
-            text: "<b>Tipp 4 von 5:</b><br />Einige Maßnahmen dauern sehr lange in der Umsetzung – z.B. Moore und Kreislaufwirtschaft. Fangen Sie damit allerspätestens am Anfang der dritten Wahlperiode an, sonst erreichen Sie ihr Ziel nicht.",
+            text: "<b>Tipp 4 von 5:</b><br />Einige Maßnahmen dauern sehr lange in der Umsetzung – z.B. Moore und Kreislaufwirtschaft. Fangen Sie damit allerspätestens am Ende der zweiten Wahlperiode an, sonst erreichen Sie ihr Ziel nicht.",
             background: "berater",
           },
           {
@@ -737,7 +737,7 @@ const store = configureStore({
             type: "temperature-change",
             temperature: 0.1,
             background: "biertisch",
-            text: "Durch Bedingungslose Grundeinkommen sinkt der Stress in der Gesellschaft. Weniger Stress führt zu weniger kurzfristigem Konsum. Das ist gut für's Klima!"
+            text: "Durch der bedingungslose Grundeinkommen sinkt der Stress in der Gesellschaft. Weniger Stress führt zu weniger kurzfristigem Konsum. Das ist gut für's Klima!"
           },
         ]
       },
@@ -920,25 +920,25 @@ const store = configureStore({
 
 
 
-      {
-        id: "co2-lobbyreaktion",
-        condition: "started.includes('co2bepreisung')",
-        slides: [
-          {
-            type: "text", // text, multiple-choice, love-change, temperature-change
-            background: "buero", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
-            title: "",
-            text: "Leider bezahlen wir sofort den politischen Preis für den CO2-Preis.",
-            position: "top",
-          },
-          {
-            type: "love-change",
-            love: -8,
-            background: "buero",
-            text: "Arbeitsplatzverluste, Preisanstiege, Inflation: Unsere politischen Gegner lassen nichts unversucht, um uns zu schaden. Die Stimmung im Land ist angespannt."
-          }
-        ]
-      },
+      // {
+      //   id: "co2-lobbyreaktion",
+      //   condition: "started.includes('co2bepreisung')",
+      //   slides: [
+      //     {
+      //       type: "text", // text, multiple-choice, love-change, temperature-change
+      //       background: "buero", //talkshow, jubel, yellow, buero, biertisch, interview, parlament, kaminzimmer, berater
+      //       title: "",
+      //       text: "Leider bezahlen wir sofort den politischen Preis für den CO2-Preis.",
+      //       position: "top",
+      //     },
+      //     {
+      //       type: "love-change",
+      //       love: -8,
+      //       background: "buero",
+      //       text: "Arbeitsplatzverluste, Preisanstiege, Inflation: Unsere politischen Gegner lassen nichts unversucht, um uns zu schaden. Die Stimmung im Land ist angespannt."
+      //     }
+      //   ]
+      // },
 
 
       {
