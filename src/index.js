@@ -11,7 +11,7 @@ import App from "./components/App.js";
 const duration = {
   short: 30,
   medium: 70,
-  long: 250,
+  long: 220,
 };
 
 const store = configureStore({
