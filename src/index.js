@@ -10,8 +10,8 @@ import App from "./components/App.js";
 
 const duration = {
   short: 30,
-  medium: 70,
-  long: 220,
+  medium: 80,
+  long: 260,
 };
 
 const store = configureStore({
