@@ -26,11 +26,11 @@
   background-color: #011683;
   color: #fff;
   border-radius: var(--radius) var(--radius) 0 0;
-  padding: 10px 30px;
+  padding: 10px 30px 70px;
   position: absolute;
   width: 100%;
   bottom: 35px;
-  min-height: 100px;
+  min-height: 30px;
   font-size: 20px;
 
   font-weight: bold;
@@ -64,6 +64,11 @@
   margin-bottom: 30px;
   display: flex;
   justify-content: center;
+}
+
+.action-detail-view__hint {
+  margin-bottom: 30px;
+  padding: 0 30px;
 }
 
 .action-detail-view__buttons > :first-child {
