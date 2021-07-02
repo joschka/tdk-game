@@ -9,9 +9,9 @@ import rootReducer from "./reducers.js";
 import App from "./components/App.js";
 
 const duration = {
-  short: 30,
-  medium: 80,
-  long: 260,
+  short: 40,
+  medium: 90,
+  long: 220,
 };
 
 const store = configureStore({
