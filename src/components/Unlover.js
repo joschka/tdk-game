@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { hot } from "react-hot-loader";
+import React, {useState, useEffect} from "react";
+import {useSelector, useDispatch} from "react-redux";
+import {hot} from "react-hot-loader";
 
 import "./Unlover.css";
 
@@ -12,13 +12,13 @@ function Unlover() {
   );
   const tick = useSelector((state) => state.clock.tick);
 
-  const idleSlotsCount = 2; //4 - activeActionsCount;
+  const idleSlotsCount = 1; //4 - activeActionsCount;
 
   useEffect(() => {
     const random = Math.random();
     const extra = random < 0.5 ? -1 * random : random - 0.5;
     const loveChange = idleSlotsCount * -0.025 + 1.5 * extra;
-    dispatch({ type: "love/change", data: loveChange });
+    dispatch({type: "love/change", data: loveChange});
   }, [tick]);
 
   return <div className="unlover"></div>;
