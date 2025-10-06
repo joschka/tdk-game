@@ -1,6 +1,6 @@
 # Spiel Klimakanzler:in
 
-**Wenn keine Änderungen gemacht werden sollen, den Code aus dem `/docs` auf einen Webserver kopieren. Die `index.html`-Datei ist der Einstieg. Von da werden dann die JS-Dateien und Bilder etc. geladen.**
+**Wenn keine Änderungen gemacht werden sollen, den Code aus dem `/dist` auf einen Webserver kopieren. Die `index.html`-Datei ist der Einstieg. Von da werden dann die JS-Dateien und Bilder etc. geladen. Es funktioniert nicht, wenn das Spiel in einem Ordner liegt, also z.B. "http://lala.de/spiel/" geht nicht. "http://spiel.lala.de" geht.**
 
 
 
