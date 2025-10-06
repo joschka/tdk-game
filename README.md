@@ -1,5 +1,10 @@
 # Spiel Klimakanzler:in
 
+**Wenn keine Änderungen gemacht werden sollen, den Code aus dem `/docs` auf einen Webserver kopieren. Die `index.html`-Datei ist der Einstieg. Von da werden dann die JS-Dateien und Bilder etc. geladen.**
+
+
+
+
 https://gesetzesspiel.germanzero.de
 
 ## Development
@@ -7,7 +12,7 @@ https://gesetzesspiel.germanzero.de
 You need `node` and `npm` installed.
 
 ```
-  git clone git@github.com:tagdesklimas/tdk-game.git
+  git clone git@github.com:joschka/tdk-game.git
   cd tdk-game
   npm start
 ```
